@@ -12450,7 +12450,7 @@ paths:
       summary: Ajanda Ekleme
       description: ajanda ekleme kısmının altındaki tanımı için düzeltme kısmı.
       tags:
-      - Ajanda İşlemleri (bu kısım tags etiketi altından düzenleniyor.)
+      - Ajanda İşlemleri
   /api/Ajanda/addrange:
     post:
       requestBody:
@@ -12571,7 +12571,7 @@ paths:
           description: Success
       summary: POST /api/Ajanda/getall
       tags:
-      - Ajanda
+      - Ajanda İşlemleri
   /api/Ajanda/getbyid:
     get:
       parameters:
