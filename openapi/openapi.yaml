@@ -18475,7 +18475,7 @@ paths:
       summary: PUT /api/FatIslEtic/updaterange
       tags:
       - FatIslEtic
-  /api/Fatura/Add:
+  /Fatura Ekleme:
     post:
       requestBody:
         content:
