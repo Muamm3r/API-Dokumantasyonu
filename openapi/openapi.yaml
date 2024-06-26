@@ -1,6 +1,6 @@
 components:
   schemas:
-    Ajanda:
+    Ajanda İşlemleri:
       additionalProperties: false
       properties:
         aciklama:
