@@ -10,9 +10,8 @@ servers:
 security:
 - Bearer: []
 paths:
-/api/Ajanda/getall:
- post:
-     summary: Ajandadaki tüm öğeleri getirir. # Özet alanı eklendi
+  /api/Ajanda/getall:
+    post:
       tags:
       - Ajanda
       requestBody:
