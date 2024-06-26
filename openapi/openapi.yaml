@@ -8,7 +8,8 @@ components:
           minLength: 0
           nullable: true
           type: string
-        adSoyad:
+        adSoyad: Muammer Aydoğmuş
+        description: Ahmet Mehmet
           maxLength: 255
           minLength: 0
           nullable: true
@@ -12428,7 +12429,7 @@ info:
   version: v1.2
 openapi: 3.0.1
 paths:
-  /api/Ajanda/add:
+  /Ajanda-Ekleme:
     post:
       requestBody:
         content:
@@ -12496,7 +12497,7 @@ paths:
               $ref: '#/components/schemas/Ajanda'
           text/json:
             schema:
-              $ref: '#/components/schemas/Ajanda'
+              $ref: '#/components//Ajanda'
       responses:
         '200':
           description: Success
@@ -12527,12 +12528,12 @@ paths:
           application/*+json:
             schema:
               items:
-                $ref: '#/components/schemas/Ajanda'
+                $ref: '#/components//Ajanda'
               type: array
           application/json:
             schema:
               items:
-                $ref: '#/components/schemas/Ajanda'
+                $ref: '#/components//Ajanda'
               type: array
           application/json-patch+json:
             schema:
