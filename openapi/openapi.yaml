@@ -9,7 +9,6 @@ components:
           nullable: true
           type: string
         adSoyad: Muammer Aydoğmuş
-        description: Ahmet Mehmet
           maxLength: 255
           minLength: 0
           nullable: true
