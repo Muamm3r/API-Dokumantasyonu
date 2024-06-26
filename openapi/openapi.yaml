@@ -1,6 +1,6 @@
 components:
   schemas:
-    Ajanda İşlemleri:
+    Ajanda:
       additionalProperties: false
       properties:
         aciklama:
@@ -8,7 +8,7 @@ components:
           minLength: 0
           nullable: true
           type: string
-        adSoyad: 
+        adSoyad:
           maxLength: 255
           minLength: 0
           nullable: true
@@ -12428,7 +12428,7 @@ info:
   version: v1.2
 openapi: 3.0.1
 paths:
-  /Ajanda-Ekleme:
+  /api/Ajanda/add:
     post:
       requestBody:
         content:
@@ -12446,11 +12446,10 @@ paths:
               $ref: '#/components/schemas/Ajanda'
       responses:
         '200':
-          description: responses kısmındaki 200 yazısının yanındaki success yazısını değiştirmek düzeltme kısmı 
+          description: Success
       summary: Ajanda Ekleme
-      description: ajanda ekleme kısmının altındaki tanımı için düzeltme kısmı.
       tags:
-      - Ajanda İşlemleri
+      - Ajanda
   /api/Ajanda/addrange:
     post:
       requestBody:
@@ -12480,7 +12479,7 @@ paths:
           description: Success
       summary: POST /api/Ajanda/addrange
       tags:
-      - Ajanda İşlemleri
+      - Ajanda
   /api/Ajanda/delete:
     post:
       requestBody:
@@ -12496,13 +12495,13 @@ paths:
               $ref: '#/components/schemas/Ajanda'
           text/json:
             schema:
-              $ref: '#/components//Ajanda'
+              $ref: '#/components/schemas/Ajanda'
       responses:
         '200':
           description: Success
-      summary: Ajanda Silme
+      summary: POST /api/Ajanda/delete
       tags:
-      - Ajanda İşlemleri
+      - Ajanda
   /api/Ajanda/deletebyid:
     delete:
       parameters:
@@ -12517,9 +12516,9 @@ paths:
       responses:
         '200':
           description: Success
-      summary: DELETE /api/Ajanda/deletebyid
+      summary: Ajanda Silme
       tags:
-      - Ajanda İşlemleri
+      - Ajanda
   /api/Ajanda/deleterange:
     post:
       requestBody:
@@ -12527,12 +12526,12 @@ paths:
           application/*+json:
             schema:
               items:
-                $ref: '#/components//Ajanda'
+                $ref: '#/components/schemas/Ajanda'
               type: array
           application/json:
             schema:
               items:
-                $ref: '#/components//Ajanda'
+                $ref: '#/components/schemas/Ajanda'
               type: array
           application/json-patch+json:
             schema:
@@ -12549,7 +12548,7 @@ paths:
           description: Success
       summary: POST /api/Ajanda/deleterange
       tags:
-      - Ajanda İşlemleri
+      - Ajanda
   /api/Ajanda/getall:
     post:
       requestBody:
@@ -12571,7 +12570,7 @@ paths:
           description: Success
       summary: POST /api/Ajanda/getall
       tags:
-      - Ajanda İşlemleri
+      - Ajanda
   /api/Ajanda/getbyid:
     get:
       parameters:
@@ -12588,7 +12587,7 @@ paths:
           description: Success
       summary: GET /api/Ajanda/getbyid
       tags:
-      - Ajanda İşlemleri
+      - Ajanda
   /api/Ajanda/update:
     put:
       requestBody:
@@ -12610,7 +12609,7 @@ paths:
           description: Success
       summary: PUT /api/Ajanda/update
       tags:
-      - Ajanda İşlemleri
+      - Ajanda
   /api/Ajanda/updaterange:
     put:
       requestBody:
@@ -12640,7 +12639,7 @@ paths:
           description: Success
       summary: PUT /api/Ajanda/updaterange
       tags:
-      - Ajanda İşlemleri
+      - Ajanda
   /api/AjandaDosya/add:
     post:
       requestBody:
@@ -18476,28 +18475,6 @@ paths:
       summary: PUT /api/FatIslEtic/updaterange
       tags:
       - FatIslEtic
-  /Fatura Ekleme:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Fatura'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Fatura'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Fatura'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Fatura'
-      responses:
-        '200':
-          description: Success
-      summary: POST /api/Fatura/Add
-      tags:
-      - Fatura
   /api/Fatura/ControlDelete:
     post:
       requestBody:
@@ -31343,6 +31320,28 @@ paths:
       summary: PUT /api/Utslog/updaterange
       tags:
       - Utslog
+  /fatura-ekleme:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Fatura'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Fatura'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Fatura'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Fatura'
+      responses:
+        '200':
+          description: Success
+      summary: POST /api/Fatura/Add
+      tags:
+      - Fatura
 security:
 - Bearer: []
 servers:
