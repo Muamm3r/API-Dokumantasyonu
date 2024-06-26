@@ -12446,7 +12446,7 @@ paths:
               $ref: '#/components/schemas/Ajanda'
       responses:
         '200':
-          description: Success
+          description: ajanda ekleme açıklama kısmı için descriptionu değiştir.
       summary: Ajanda Ekleme
       tags:
       - Ajanda
