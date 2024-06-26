@@ -31,11 +31,13 @@ paths:
               $ref: '#/components/schemas/AjandaFilterHelper'
       responses:
         "200":
-          description: Success
+          paths:
   /api/Ajanda/getbyid:
     get:
+      summary: Ajandada belirli bir öğeyi ID ile getirir.
       tags:
-      - Ajanda
+        - Ajanda
+
       parameters:
       - name: id
         in: query
