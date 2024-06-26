@@ -1570,6 +1570,7 @@ paths:
     delete:
       tags:
       - Banka
+      summary:
       parameters:
       - name: entityId
         in: query
