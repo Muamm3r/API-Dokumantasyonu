@@ -8,6 +8,7 @@ components:
           minLength: 0
           nullable: true
           type: string
+          description: açıklama alanının açıklama düzenlenmesi için
         adSoyad:
           maxLength: 255
           minLength: 0
