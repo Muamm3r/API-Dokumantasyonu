@@ -28,11 +28,26 @@ paths:
               $ref: '#/components/schemas/AjandaFilterHelper'
           application/*+json:
             schema:
+             paths:
+  /api/Ajanda/getall:
+    post:
+      summary: Ajandadaki tüm öğeleri getirir.
+      tags:
+        - Ajanda
+      requestBody:
+        content:
+          application/json:
+            schema:
               $ref: '#/components/schemas/AjandaFilterHelper'
       responses:
         "200":
-          paths:
-  /api/Ajanda/getbyid:
+          description: Başarılı yanıt. Ajandadaki tüm öğeleri içerir.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AjandaItem'
     get:
       summary: Ajandada belirli bir öğeyi ID ile getirir.
       tags:
