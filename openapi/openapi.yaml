@@ -12,8 +12,9 @@ security:
 paths:
   /api/Ajanda/getall:
     post:
+      summary: Ajandadaki tüm öğeleri getirir.
       tags:
-      - Ajanda
+        - Ajanda
       requestBody:
         content:
           application/json-patch+json:
