@@ -12663,7 +12663,7 @@ paths:
           description: Success
       summary: POST /api/AjandaDosya/add
       tags:
-      - AjandaDosya
+      - Ajanda Dosya İşlemleri
   /api/AjandaDosya/addrange:
     post:
       requestBody:
@@ -12693,7 +12693,7 @@ paths:
           description: Success
       summary: POST /api/AjandaDosya/addrange
       tags:
-      - AjandaDosya
+      - Ajanda Dosya İşlemleri
   /api/AjandaDosya/delete:
     post:
       requestBody:
@@ -12715,7 +12715,7 @@ paths:
           description: Success
       summary: POST /api/AjandaDosya/delete
       tags:
-      - AjandaDosya
+      - Ajanda Dosya İşlemleri
   /api/AjandaDosya/deletebyid:
     delete:
       parameters:
@@ -12732,7 +12732,7 @@ paths:
           description: Success
       summary: DELETE /api/AjandaDosya/deletebyid
       tags:
-      - AjandaDosya
+      - Ajanda Dosya İşlemleri
   /api/AjandaDosya/deleterange:
     post:
       requestBody:
@@ -12762,7 +12762,7 @@ paths:
           description: Success
       summary: POST /api/AjandaDosya/deleterange
       tags:
-      - AjandaDosya
+      - Ajanda Dosya İşlemleri
   /api/AjandaDosya/getall:
     post:
       requestBody:
@@ -12784,7 +12784,7 @@ paths:
           description: Success
       summary: POST /api/AjandaDosya/getall
       tags:
-      - AjandaDosya
+      - Ajanda Dosya İşlemleri
   /api/AjandaDosya/getbyid:
     get:
       parameters:
@@ -12801,7 +12801,7 @@ paths:
           description: Success
       summary: GET /api/AjandaDosya/getbyid
       tags:
-      - AjandaDosya
+      - Ajanda Dosya İşlemleri
   /api/AjandaDosya/update:
     put:
       requestBody:
@@ -12823,7 +12823,7 @@ paths:
           description: Success
       summary: PUT /api/AjandaDosya/update
       tags:
-      - AjandaDosya
+      - Ajanda Dosya İşlemleri
   /api/AjandaDosya/updaterange:
     put:
       requestBody:
@@ -12853,7 +12853,7 @@ paths:
           description: Success
       summary: PUT /api/AjandaDosya/updaterange
       tags:
-      - AjandaDosya
+      - Ajanda Dosya İşlemleri
   /api/AjandaNotlar/add:
     post:
       requestBody:
