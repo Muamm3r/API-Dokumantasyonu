@@ -8,7 +8,8 @@ components:
           minLength: 0
           nullable: true
           type: string
-        adSoyad: Muammer Aydoğmuş
+        adSoyad: 
+        description: Muammer
           maxLength: 255
           minLength: 0
           nullable: true
