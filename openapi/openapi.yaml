@@ -9,6 +9,7 @@ components:
           nullable: true
           type: string
         adSoyad:
+        
           maxLength: 255
           minLength: 0
           nullable: true
