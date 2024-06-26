@@ -12446,8 +12446,9 @@ paths:
               $ref: '#/components/schemas/Ajanda'
       responses:
         '200':
-          description: ajanda ekleme açıklama kısmı için descriptionu değiştir.
+          description: responses kısmındaki 200 yazısının yanındaki success yazısını değiştirmek düzeltme kısmı 
       summary: Ajanda Ekleme
+      description: ajanda ekleme kısmının altındaki tanımı için düzeltme kısmı.
       tags:
       - Ajanda
   /api/Ajanda/addrange:
