@@ -12449,7 +12449,7 @@ paths:
           description: Success
       summary: Ajanda Ekleme
       tags:
-      - Ajanda
+      - Ajanda İşlemleri
   /api/Ajanda/addrange:
     post:
       requestBody:
@@ -12479,7 +12479,7 @@ paths:
           description: Success
       summary: POST /api/Ajanda/addrange
       tags:
-      - Ajanda
+      - Ajanda İşlemleri
   /api/Ajanda/delete:
     post:
       requestBody:
@@ -12501,7 +12501,7 @@ paths:
           description: Success
       summary: POST /api/Ajanda/delete
       tags:
-      - Ajanda
+      - Ajanda İşlemleri
   /api/Ajanda/deletebyid:
     delete:
       parameters:
@@ -12518,7 +12518,7 @@ paths:
           description: Success
       summary: Ajanda Silme
       tags:
-      - Ajanda
+      - Ajanda İşlemleri
   /api/Ajanda/deleterange:
     post:
       requestBody:
@@ -12548,7 +12548,7 @@ paths:
           description: Success
       summary: POST /api/Ajanda/deleterange
       tags:
-      - Ajanda
+      - Ajanda İşlemleri
   /api/Ajanda/getall:
     post:
       requestBody:
@@ -12570,7 +12570,7 @@ paths:
           description: Success
       summary: POST /api/Ajanda/getall
       tags:
-      - Ajanda
+      - Ajanda İşlemleri
   /api/Ajanda/getbyid:
     get:
       parameters:
@@ -12587,7 +12587,7 @@ paths:
           description: Success
       summary: GET /api/Ajanda/getbyid
       tags:
-      - Ajanda
+      - Ajanda İşlemleri
   /api/Ajanda/update:
     put:
       requestBody:
@@ -12609,7 +12609,7 @@ paths:
           description: Success
       summary: PUT /api/Ajanda/update
       tags:
-      - Ajanda
+      - Ajanda İşlemleri
   /api/Ajanda/updaterange:
     put:
       requestBody:
@@ -12639,7 +12639,7 @@ paths:
           description: Success
       summary: PUT /api/Ajanda/updaterange
       tags:
-      - Ajanda
+      - Ajanda İşlemleri
   /api/AjandaDosya/add:
     post:
       requestBody:
