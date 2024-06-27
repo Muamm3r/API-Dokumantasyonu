@@ -12418,13 +12418,7 @@ components:
         veri:
           $ref: '#/components/schemas/Utslog'
       type: object
-  securitySchemes:
-    Bearer:
-      description: islem yapabilmek icin bearer token a ihtiyaciniz vardir
-      in: header
-      name: Authorization
-      type: apiKey
-info:
+  info:
   title: Bilsoft
   version: v1.2
 openapi: 3.0.1
@@ -31344,8 +31338,6 @@ paths:
       summary: POST /api/Fatura/Add
       tags:
       - Fatura
-security:
-- Bearer: []
 servers:
 - description: SwaggerHub API Auto Mocking
   url: https://virtserver.swaggerhub.com/Muammeryeni/Bilsoft-Api-Documentation2/v1.2
