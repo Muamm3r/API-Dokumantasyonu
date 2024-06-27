@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Bilsoft API Reference | ReDoc</title>
     <!-- needed for adaptive design -->
@@ -8,23 +8,32 @@
     <link rel="icon" type="image/png" href="bilsoft.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-
     <!--
     ReDoc uses font options from the parent element
     So override default browser styles
     -->
     <style>
-      body {
-    margin: 0;
-    padding: 0;
-    background: #F98827;  // Arka plan rengi
-    font-family: 'Montserrat', sans-serif;  // Yazı tipi güncellendi
-  }
-  }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1B3954;  // Mavi arka plan rengi
+            font-family: 'Montserrat', sans-serif;  // Yazı tipi güncellendi
+        }
+        .redoc-wrap {
+            background: #FFFFFF;  // Beyaz içerik arka planı
+            border-top: 4px solid #F98827;  // Turuncu üst çubuk
+        }
+        .menu-content {
+            background: #2C5282;  // Koyu mavi menü arka planı
+            color: #FFFFFF;  // Beyaz yazı rengi
+        }
+        .api-info {
+            border-bottom: 3px solid #F98827;  // Turuncu alt çizgi
+        }
     </style>
     {{{redocHead}}}
-  </head>
-  <body>
+</head>
+<body>
     {{{redocHTML}}}
-  </body>
+</body>
 </html>
