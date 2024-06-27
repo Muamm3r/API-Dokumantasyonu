@@ -9,7 +9,7 @@ components:
           nullable: true
           type: string
           description: açıklama alanının açıklama düzenlenmesi için
-        adSoyad:
+        adSoyad(düzenlenebilir):
           maxLength: 255
           minLength: 0
           nullable: true
