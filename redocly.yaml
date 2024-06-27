@@ -12,7 +12,7 @@ theme:
     htmlTemplate: ./docs/index.html
     theme:
       colors:
-        primary: "#e05b0d"
+        primary:
           main: "#e05b0d"
     generateCodeSamples:
       languages:  # Array of language config objects; indicates in which languages to generate code samples.
