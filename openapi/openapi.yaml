@@ -31344,7 +31344,7 @@ paths:
       summary: POST /api/Fatura/Add
       tags:
       - Fatura
-      security:
+security:
 - Bearer: []
 servers:
 - description: SwaggerHub API Auto Mocking
