@@ -12425,8 +12425,8 @@ components:
       name: Authorization
       type: apiKey
 info:
-  title: Bilsoft
-  version: v1.2
+  title: BİLSOFT
+  version: v1
 openapi: 3.0.1
 paths:
   /api/Ajanda/add:
