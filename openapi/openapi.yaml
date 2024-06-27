@@ -12875,7 +12875,7 @@ paths:
           description: Success
       summary: POST /api/AjandaNotlar/add
       tags:
-      - AjandaNotlar
+      - Ajanda Notlar
   /api/AjandaNotlar/addrange:
     post:
       requestBody:
@@ -12905,7 +12905,7 @@ paths:
           description: Success
       summary: POST /api/AjandaNotlar/addrange
       tags:
-      - AjandaNotlar
+      - Ajanda Notlar
   /api/AjandaNotlar/delete:
     post:
       requestBody:
@@ -12927,7 +12927,7 @@ paths:
           description: Success
       summary: POST /api/AjandaNotlar/delete
       tags:
-      - AjandaNotlar
+      - Ajanda Notlar
   /api/AjandaNotlar/deletebyid:
     delete:
       parameters:
@@ -12944,7 +12944,7 @@ paths:
           description: Success
       summary: DELETE /api/AjandaNotlar/deletebyid
       tags:
-      - AjandaNotlar
+      - Ajanda Notlar
   /api/AjandaNotlar/deleterange:
     post:
       requestBody:
@@ -12974,7 +12974,7 @@ paths:
           description: Success
       summary: POST /api/AjandaNotlar/deleterange
       tags:
-      - AjandaNotlar
+      - Ajanda Notlar
   /api/AjandaNotlar/getall:
     post:
       requestBody:
@@ -12996,7 +12996,7 @@ paths:
           description: Success
       summary: POST /api/AjandaNotlar/getall
       tags:
-      - AjandaNotlar
+      - Ajanda Notlar
   /api/AjandaNotlar/getbyid:
     get:
       parameters:
@@ -13013,7 +13013,7 @@ paths:
           description: Success
       summary: GET /api/AjandaNotlar/getbyid
       tags:
-      - AjandaNotlar
+      - Ajanda Notlar
   /api/AjandaNotlar/update:
     put:
       requestBody:
@@ -13035,7 +13035,7 @@ paths:
           description: Success
       summary: PUT /api/AjandaNotlar/update
       tags:
-      - AjandaNotlar
+      - Ajanda Notlar
   /api/AjandaNotlar/updaterange:
     put:
       requestBody:
@@ -13065,7 +13065,7 @@ paths:
           description: Success
       summary: PUT /api/AjandaNotlar/updaterange
       tags:
-      - AjandaNotlar
+      - Ajanda Notlar
   /api/ApiKullanici/add:
     post:
       requestBody:
@@ -13087,7 +13087,7 @@ paths:
           description: Success
       summary: POST /api/ApiKullanici/add
       tags:
-      - ApiKullanici
+      - Api Kullanici
   /api/ApiKullanici/addrange:
     post:
       requestBody:
@@ -13117,7 +13117,7 @@ paths:
           description: Success
       summary: POST /api/ApiKullanici/addrange
       tags:
-      - ApiKullanici
+      - Api Kullanici
   /api/ApiKullanici/delete:
     post:
       requestBody:
@@ -13139,7 +13139,7 @@ paths:
           description: Success
       summary: POST /api/ApiKullanici/delete
       tags:
-      - ApiKullanici
+      - Api Kullanici
   /api/ApiKullanici/deletebyid:
     delete:
       parameters:
@@ -13156,7 +13156,7 @@ paths:
           description: Success
       summary: DELETE /api/ApiKullanici/deletebyid
       tags:
-      - ApiKullanici
+      - Api Kullanici
   /api/ApiKullanici/deleterange:
     post:
       requestBody:
@@ -13186,7 +13186,7 @@ paths:
           description: Success
       summary: POST /api/ApiKullanici/deleterange
       tags:
-      - ApiKullanici
+      - Api Kullanici
   /api/ApiKullanici/getall:
     post:
       requestBody:
@@ -13208,7 +13208,7 @@ paths:
           description: Success
       summary: POST /api/ApiKullanici/getall
       tags:
-      - ApiKullanici
+      - Api Kullanici
   /api/ApiKullanici/getbyid:
     get:
       parameters:
@@ -13225,7 +13225,7 @@ paths:
           description: Success
       summary: GET /api/ApiKullanici/getbyid
       tags:
-      - ApiKullanici
+      - Api Kullanici
   /api/ApiKullanici/update:
     put:
       requestBody:
@@ -13247,7 +13247,7 @@ paths:
           description: Success
       summary: PUT /api/ApiKullanici/update
       tags:
-      - ApiKullanici
+      - Api Kullanici
   /api/ApiKullanici/updaterange:
     put:
       requestBody:
@@ -13277,7 +13277,7 @@ paths:
           description: Success
       summary: PUT /api/ApiKullanici/updaterange
       tags:
-      - ApiKullanici
+      - Api Kullanici
   /api/Auth/GirisYap:
     post:
       requestBody:
@@ -13638,7 +13638,7 @@ paths:
           description: Success
       summary: POST /api/Ayarekmodul/add
       tags:
-      - Ayarekmodul
+      - Ayar Ek Modül
   /api/Ayarekmodul/addrange:
     post:
       requestBody:
@@ -13668,7 +13668,7 @@ paths:
           description: Success
       summary: POST /api/Ayarekmodul/addrange
       tags:
-      - Ayarekmodul
+      - Ayar Ek Modül
   /api/Ayarekmodul/delete:
     post:
       requestBody:
@@ -13690,7 +13690,7 @@ paths:
           description: Success
       summary: POST /api/Ayarekmodul/delete
       tags:
-      - Ayarekmodul
+      - Ayar Ek Modül
   /api/Ayarekmodul/deletebyid:
     delete:
       parameters:
@@ -13707,7 +13707,7 @@ paths:
           description: Success
       summary: DELETE /api/Ayarekmodul/deletebyid
       tags:
-      - Ayarekmodul
+      - Ayar Ek Modül
   /api/Ayarekmodul/deleterange:
     post:
       requestBody:
@@ -13737,7 +13737,7 @@ paths:
           description: Success
       summary: POST /api/Ayarekmodul/deleterange
       tags:
-      - Ayarekmodul
+      - Ayar Ek Modül
   /api/Ayarekmodul/getall:
     post:
       requestBody:
@@ -13759,7 +13759,7 @@ paths:
           description: Success
       summary: POST /api/Ayarekmodul/getall
       tags:
-      - Ayarekmodul
+      - Ayar Ek Modül
   /api/Ayarekmodul/getbyid:
     get:
       parameters:
@@ -13776,7 +13776,7 @@ paths:
           description: Success
       summary: GET /api/Ayarekmodul/getbyid
       tags:
-      - Ayarekmodul
+      - Ayar Ek Modül
   /api/Ayarekmodul/update:
     put:
       requestBody:
@@ -13798,7 +13798,7 @@ paths:
           description: Success
       summary: PUT /api/Ayarekmodul/update
       tags:
-      - Ayarekmodul
+      - Ayar Ek Modül
   /api/Ayarekmodul/updaterange:
     put:
       requestBody:
@@ -13828,7 +13828,7 @@ paths:
           description: Success
       summary: PUT /api/Ayarekmodul/updaterange
       tags:
-      - Ayarekmodul
+      - Ayar Ek Modül
   /api/Banka/ControlDelete:
     post:
       requestBody:
