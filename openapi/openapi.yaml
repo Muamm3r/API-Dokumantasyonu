@@ -12420,7 +12420,7 @@ components:
       type: object
   securitySchemes:
     Bearer:
-      description: islem yapabilmek icin bearer token a ihtiyaciniz vardir
+      description: islem yapabilmek icin bearer token a ihtiyaciniz vardir(bu kısmı değiştirebiliyorum)
       in: header
       name: Authorization
       type: apiKey
