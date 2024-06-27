@@ -13,7 +13,7 @@ theme:
     theme:
       colors:
         primary:
-          main: "#32329f"
+          main: "#e05b0d"
     generateCodeSamples:
       languages:  # Array of language config objects; indicates in which languages to generate code samples.
         - lang: C#
