@@ -661,7 +661,7 @@ components:
             $ref: '#/components/schemas/GiderIsl'
           nullable: true
           type: array
-        id:
+        iddd:
           format: int32
           type: integer
         kasalarIsl:
