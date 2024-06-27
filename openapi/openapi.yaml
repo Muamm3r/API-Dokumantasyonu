@@ -31344,8 +31344,6 @@ paths:
       summary: POST /api/Fatura/Add
       tags:
       - Fatura
-security:
-- Bearer: []
 servers:
 - description: SwaggerHub API Auto Mocking
   url: https://virtserver.swaggerhub.com/Muammeryeni/Bilsoft-Api-Documentation2/v1.2
