@@ -12429,7 +12429,7 @@ info:
   version: v1
 openapi: 3.0.1
 paths:
-  Ajanda Ekleme:
+  /api/Ajanda/add:
     post:
       requestBody:
         content:
