@@ -14445,7 +14445,7 @@ paths:
           description: Success
       summary: POST /api/BankaKullanicisifre/add
       tags:
-      - BankaKullanicisifre
+      - Banka Kullanici Şifre İşlemleri
   /api/BankaKullanicisifre/addrange:
     post:
       requestBody:
@@ -14475,7 +14475,7 @@ paths:
           description: Success
       summary: POST /api/BankaKullanicisifre/addrange
       tags:
-      - BankaKullanicisifre
+      - Banka Kullanici Şifre İşlemleri
   /api/BankaKullanicisifre/delete:
     post:
       requestBody:
@@ -14497,7 +14497,7 @@ paths:
           description: Success
       summary: POST /api/BankaKullanicisifre/delete
       tags:
-      - BankaKullanicisifre
+      - Banka Kullanici Şifre İşlemleri
   /api/BankaKullanicisifre/deletebyid:
     delete:
       parameters:
@@ -14514,7 +14514,7 @@ paths:
           description: Success
       summary: DELETE /api/BankaKullanicisifre/deletebyid
       tags:
-      - BankaKullanicisifre
+      - Banka Kullanici Şifre İşlemleri
   /api/BankaKullanicisifre/deleterange:
     post:
       requestBody:
@@ -14544,7 +14544,7 @@ paths:
           description: Success
       summary: POST /api/BankaKullanicisifre/deleterange
       tags:
-      - BankaKullanicisifre
+      - Banka Kullanici Şifre İşlemleri
   /api/BankaKullanicisifre/getall:
     post:
       requestBody:
@@ -14566,7 +14566,7 @@ paths:
           description: Success
       summary: POST /api/BankaKullanicisifre/getall
       tags:
-      - BankaKullanicisifre
+      - Banka Kullanici Şifre İşlemleri
   /api/BankaKullanicisifre/getbyid:
     get:
       parameters:
@@ -14583,7 +14583,7 @@ paths:
           description: Success
       summary: GET /api/BankaKullanicisifre/getbyid
       tags:
-      - BankaKullanicisifre
+      - Banka Kullanici Şifre İşlemleri
   /api/BankaKullanicisifre/update:
     put:
       requestBody:
@@ -14605,7 +14605,7 @@ paths:
           description: Success
       summary: PUT /api/BankaKullanicisifre/update
       tags:
-      - BankaKullanicisifre
+      - Banka Kullanici Şifre İşlemleri
   /api/BankaKullanicisifre/updaterange:
     put:
       requestBody:
@@ -14635,7 +14635,7 @@ paths:
           description: Success
       summary: PUT /api/BankaKullanicisifre/updaterange
       tags:
-      - BankaKullanicisifre
+      - Banka Kullanici Şifre İşlemleri
   /api/Bodrotablo/add:
     post:
       requestBody:
@@ -14657,7 +14657,7 @@ paths:
           description: Success
       summary: POST /api/Bodrotablo/add
       tags:
-      - Bodrotablo
+      - Bodro Tablo 
   /api/Bodrotablo/addrange:
     post:
       requestBody:
@@ -14687,7 +14687,7 @@ paths:
           description: Success
       summary: POST /api/Bodrotablo/addrange
       tags:
-      - Bodrotablo
+      - Bodro Tablo
   /api/Bodrotablo/delete:
     post:
       requestBody:
@@ -14709,7 +14709,7 @@ paths:
           description: Success
       summary: POST /api/Bodrotablo/delete
       tags:
-      - Bodrotablo
+      - Bodro Tablo
   /api/Bodrotablo/deletebyid:
     delete:
       parameters:
@@ -14726,7 +14726,7 @@ paths:
           description: Success
       summary: DELETE /api/Bodrotablo/deletebyid
       tags:
-      - Bodrotablo
+      - Bodro Tablo
   /api/Bodrotablo/deleterange:
     post:
       requestBody:
@@ -14756,7 +14756,7 @@ paths:
           description: Success
       summary: POST /api/Bodrotablo/deleterange
       tags:
-      - Bodrotablo
+      - Bodro Tablo
   /api/Bodrotablo/getall:
     post:
       requestBody:
@@ -14778,7 +14778,7 @@ paths:
           description: Success
       summary: POST /api/Bodrotablo/getall
       tags:
-      - Bodrotablo
+      - Bodro Tablo
   /api/Bodrotablo/getbyid:
     get:
       parameters:
@@ -14795,7 +14795,7 @@ paths:
           description: Success
       summary: GET /api/Bodrotablo/getbyid
       tags:
-      - Bodrotablo
+      - Bodro Tablo
   /api/Bodrotablo/update:
     put:
       requestBody:
@@ -14817,7 +14817,7 @@ paths:
           description: Success
       summary: PUT /api/Bodrotablo/update
       tags:
-      - Bodrotablo
+      - Bodro Tablo
   /api/Bodrotablo/updaterange:
     put:
       requestBody:
@@ -14847,7 +14847,7 @@ paths:
           description: Success
       summary: PUT /api/Bodrotablo/updaterange
       tags:
-      - Bodrotablo
+      - Bodro Tablo
   /api/Bordroayar/add:
     post:
       requestBody:
@@ -14869,7 +14869,7 @@ paths:
           description: Success
       summary: POST /api/Bordroayar/add
       tags:
-      - Bordroayar
+      - Bordro Ayar
   /api/Bordroayar/addrange:
     post:
       requestBody:
@@ -14899,7 +14899,7 @@ paths:
           description: Success
       summary: POST /api/Bordroayar/addrange
       tags:
-      - Bordroayar
+      - Bordro Ayar
   /api/Bordroayar/delete:
     post:
       requestBody:
@@ -14921,7 +14921,7 @@ paths:
           description: Success
       summary: POST /api/Bordroayar/delete
       tags:
-      - Bordroayar
+      - Bordro Ayar
   /api/Bordroayar/deletebyid:
     delete:
       parameters:
@@ -14938,7 +14938,7 @@ paths:
           description: Success
       summary: DELETE /api/Bordroayar/deletebyid
       tags:
-      - Bordroayar
+      - Bordro Ayar
   /api/Bordroayar/deleterange:
     post:
       requestBody:
@@ -14968,7 +14968,7 @@ paths:
           description: Success
       summary: POST /api/Bordroayar/deleterange
       tags:
-      - Bordroayar
+      - Bordro Ayar
   /api/Bordroayar/getall:
     post:
       requestBody:
@@ -14990,7 +14990,7 @@ paths:
           description: Success
       summary: POST /api/Bordroayar/getall
       tags:
-      - Bordroayar
+      - Bordro Ayar
   /api/Bordroayar/getbyid:
     get:
       parameters:
@@ -15007,7 +15007,7 @@ paths:
           description: Success
       summary: GET /api/Bordroayar/getbyid
       tags:
-      - Bordroayar
+      - Bordro Ayar
   /api/Bordroayar/update:
     put:
       requestBody:
@@ -15029,7 +15029,7 @@ paths:
           description: Success
       summary: PUT /api/Bordroayar/update
       tags:
-      - Bordroayar
+      - Bordro Ayar
   /api/Bordroayar/updaterange:
     put:
       requestBody:
@@ -15059,7 +15059,7 @@ paths:
           description: Success
       summary: PUT /api/Bordroayar/updaterange
       tags:
-      - Bordroayar
+      - Bordro Ayar
   /api/Bordrovergidilimayar/add:
     post:
       requestBody:
@@ -15081,7 +15081,7 @@ paths:
           description: Success
       summary: POST /api/Bordrovergidilimayar/add
       tags:
-      - Bordrovergidilimayar
+      - Bordro Vergi Dilim Ayar
   /api/Bordrovergidilimayar/addrange:
     post:
       requestBody:
@@ -15111,7 +15111,7 @@ paths:
           description: Success
       summary: POST /api/Bordrovergidilimayar/addrange
       tags:
-      - Bordrovergidilimayar
+      - Bordro Vergi Dilim Ayar
   /api/Bordrovergidilimayar/delete:
     post:
       requestBody:
@@ -15133,7 +15133,7 @@ paths:
           description: Success
       summary: POST /api/Bordrovergidilimayar/delete
       tags:
-      - Bordrovergidilimayar
+      - Bordro Vergi Dilim Ayar
   /api/Bordrovergidilimayar/deletebyid:
     delete:
       parameters:
@@ -15150,7 +15150,7 @@ paths:
           description: Success
       summary: DELETE /api/Bordrovergidilimayar/deletebyid
       tags:
-      - Bordrovergidilimayar
+      - Bordro Vergi Dilim Ayar
   /api/Bordrovergidilimayar/deleterange:
     post:
       requestBody:
@@ -15180,7 +15180,7 @@ paths:
           description: Success
       summary: POST /api/Bordrovergidilimayar/deleterange
       tags:
-      - Bordrovergidilimayar
+      - Bordro Vergi Dilim Ayar
   /api/Bordrovergidilimayar/getall:
     post:
       requestBody:
@@ -15202,7 +15202,7 @@ paths:
           description: Success
       summary: POST /api/Bordrovergidilimayar/getall
       tags:
-      - Bordrovergidilimayar
+      - Bordro Vergi Dilim Ayar
   /api/Bordrovergidilimayar/getbyid:
     get:
       parameters:
@@ -15219,7 +15219,7 @@ paths:
           description: Success
       summary: GET /api/Bordrovergidilimayar/getbyid
       tags:
-      - Bordrovergidilimayar
+      - Bordro Vergi Dilim Ayar
   /api/Bordrovergidilimayar/update:
     put:
       requestBody:
@@ -15241,7 +15241,7 @@ paths:
           description: Success
       summary: PUT /api/Bordrovergidilimayar/update
       tags:
-      - Bordrovergidilimayar
+      - Bordro Vergi Dilim Ayar
   /api/Bordrovergidilimayar/updaterange:
     put:
       requestBody:
@@ -15271,7 +15271,7 @@ paths:
           description: Success
       summary: PUT /api/Bordrovergidilimayar/updaterange
       tags:
-      - Bordrovergidilimayar
+      - Bordro Vergi Dilim Ayar
   /api/CariAdresler/add:
     post:
       requestBody:
@@ -15293,7 +15293,7 @@ paths:
           description: Success
       summary: POST /api/CariAdresler/add
       tags:
-      - CariAdresler
+      - Cari Adresler
   /api/CariAdresler/addrange:
     post:
       requestBody:
@@ -15323,7 +15323,7 @@ paths:
           description: Success
       summary: POST /api/CariAdresler/addrange
       tags:
-      - CariAdresler
+      - Cari Adresler
   /api/CariAdresler/delete:
     post:
       requestBody:
@@ -15345,7 +15345,7 @@ paths:
           description: Success
       summary: POST /api/CariAdresler/delete
       tags:
-      - CariAdresler
+      - Cari Adresler
   /api/CariAdresler/deletebyid:
     delete:
       parameters:
@@ -15362,7 +15362,7 @@ paths:
           description: Success
       summary: DELETE /api/CariAdresler/deletebyid
       tags:
-      - CariAdresler
+      - Cari Adresler
   /api/CariAdresler/deleterange:
     post:
       requestBody:
@@ -15392,7 +15392,7 @@ paths:
           description: Success
       summary: POST /api/CariAdresler/deleterange
       tags:
-      - CariAdresler
+      - Cari Adresler
   /api/CariAdresler/getall:
     post:
       requestBody:
@@ -15414,7 +15414,7 @@ paths:
           description: Success
       summary: POST /api/CariAdresler/getall
       tags:
-      - CariAdresler
+      - Cari Adresler
   /api/CariAdresler/getbyid:
     get:
       parameters:
@@ -15431,7 +15431,7 @@ paths:
           description: Success
       summary: GET /api/CariAdresler/getbyid
       tags:
-      - CariAdresler
+      - Cari Adresler
   /api/CariAdresler/update:
     put:
       requestBody:
@@ -15453,7 +15453,7 @@ paths:
           description: Success
       summary: PUT /api/CariAdresler/update
       tags:
-      - CariAdresler
+      - Cari Adresler
   /api/CariAdresler/updaterange:
     put:
       requestBody:
@@ -15483,7 +15483,7 @@ paths:
           description: Success
       summary: PUT /api/CariAdresler/updaterange
       tags:
-      - CariAdresler
+      - Cari Adresler
   /api/CariBanka/add:
     post:
       requestBody:
@@ -15505,7 +15505,7 @@ paths:
           description: Success
       summary: POST /api/CariBanka/add
       tags:
-      - CariBanka
+      - Cari Banka
   /api/CariBanka/addrange:
     post:
       requestBody:
@@ -15535,7 +15535,7 @@ paths:
           description: Success
       summary: POST /api/CariBanka/addrange
       tags:
-      - CariBanka
+      - Cari Banka
   /api/CariBanka/delete:
     post:
       requestBody:
@@ -15557,7 +15557,7 @@ paths:
           description: Success
       summary: POST /api/CariBanka/delete
       tags:
-      - CariBanka
+      - Cari Banka
   /api/CariBanka/deletebyid:
     delete:
       parameters:
@@ -15574,7 +15574,7 @@ paths:
           description: Success
       summary: DELETE /api/CariBanka/deletebyid
       tags:
-      - CariBanka
+      - Cari Banka
   /api/CariBanka/deleterange:
     post:
       requestBody:
@@ -15604,7 +15604,7 @@ paths:
           description: Success
       summary: POST /api/CariBanka/deleterange
       tags:
-      - CariBanka
+      - Cari Banka
   /api/CariBanka/getall:
     post:
       requestBody:
@@ -15626,7 +15626,7 @@ paths:
           description: Success
       summary: POST /api/CariBanka/getall
       tags:
-      - CariBanka
+      - Cari Banka
   /api/CariBanka/getbyid:
     get:
       parameters:
@@ -15643,7 +15643,7 @@ paths:
           description: Success
       summary: GET /api/CariBanka/getbyid
       tags:
-      - CariBanka
+      - Cari Banka
   /api/CariBanka/update:
     put:
       requestBody:
@@ -15665,7 +15665,7 @@ paths:
           description: Success
       summary: PUT /api/CariBanka/update
       tags:
-      - CariBanka
+      - Cari Banka
   /api/CariBanka/updaterange:
     put:
       requestBody:
@@ -15695,7 +15695,7 @@ paths:
           description: Success
       summary: PUT /api/CariBanka/updaterange
       tags:
-      - CariBanka
+      - Cari Banka
   /api/CariGrup/add:
     post:
       requestBody:
@@ -15717,7 +15717,7 @@ paths:
           description: Success
       summary: POST /api/CariGrup/add
       tags:
-      - CariGrup
+      - Cari Grup
   /api/CariGrup/addrange:
     post:
       requestBody:
@@ -15747,7 +15747,7 @@ paths:
           description: Success
       summary: POST /api/CariGrup/addrange
       tags:
-      - CariGrup
+      - Cari Grup
   /api/CariGrup/delete:
     post:
       requestBody:
@@ -15769,7 +15769,7 @@ paths:
           description: Success
       summary: POST /api/CariGrup/delete
       tags:
-      - CariGrup
+      - Cari Grup
   /api/CariGrup/deletebyid:
     delete:
       parameters:
@@ -15786,7 +15786,7 @@ paths:
           description: Success
       summary: DELETE /api/CariGrup/deletebyid
       tags:
-      - CariGrup
+      - Cari Grup
   /api/CariGrup/deleterange:
     post:
       requestBody:
@@ -15816,7 +15816,7 @@ paths:
           description: Success
       summary: POST /api/CariGrup/deleterange
       tags:
-      - CariGrup
+      - Cari Grup
   /api/CariGrup/getall:
     post:
       requestBody:
@@ -15838,7 +15838,7 @@ paths:
           description: Success
       summary: POST /api/CariGrup/getall
       tags:
-      - CariGrup
+      - Cari Grup
   /api/CariGrup/getbyid:
     get:
       parameters:
@@ -15855,7 +15855,7 @@ paths:
           description: Success
       summary: GET /api/CariGrup/getbyid
       tags:
-      - CariGrup
+      - Cari Grup
   /api/CariGrup/update:
     put:
       requestBody:
@@ -15877,7 +15877,7 @@ paths:
           description: Success
       summary: PUT /api/CariGrup/update
       tags:
-      - CariGrup
+      - Cari Grup
   /api/CariGrup/updaterange:
     put:
       requestBody:
@@ -15907,7 +15907,7 @@ paths:
           description: Success
       summary: PUT /api/CariGrup/updaterange
       tags:
-      - CariGrup
+      - Cari Grup
   /api/CariIsl/CariIslemBorcAlacakBakiye:
     post:
       requestBody:
@@ -16273,7 +16273,7 @@ paths:
           description: Success
       summary: POST /api/CariKart/CariEkstre
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKart/CariRapor:
     post:
       requestBody:
@@ -16295,7 +16295,7 @@ paths:
           description: Success
       summary: POST /api/CariKart/CariRapor
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKart/ControlDelete:
     post:
       requestBody:
@@ -16317,7 +16317,7 @@ paths:
           description: Success
       summary: POST /api/CariKart/ControlDelete
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKart/ControlDeleteById:
     delete:
       parameters:
@@ -16334,7 +16334,7 @@ paths:
           description: Success
       summary: DELETE /api/CariKart/ControlDeleteById
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKart/GetListWithBakiye:
     post:
       requestBody:
@@ -16356,7 +16356,7 @@ paths:
           description: Success
       summary: POST /api/CariKart/GetListWithBakiye
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKart/add:
     post:
       requestBody:
@@ -16378,7 +16378,7 @@ paths:
           description: Success
       summary: POST /api/CariKart/add
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKart/addrange:
     post:
       requestBody:
@@ -16408,7 +16408,7 @@ paths:
           description: Success
       summary: POST /api/CariKart/addrange
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKart/delete:
     post:
       requestBody:
@@ -16430,7 +16430,7 @@ paths:
           description: Success
       summary: POST /api/CariKart/delete
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKart/deletebyid:
     delete:
       parameters:
@@ -16447,7 +16447,7 @@ paths:
           description: Success
       summary: DELETE /api/CariKart/deletebyid
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKart/deleterange:
     post:
       requestBody:
@@ -16477,7 +16477,7 @@ paths:
           description: Success
       summary: POST /api/CariKart/deleterange
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKart/getall:
     post:
       requestBody:
@@ -16499,7 +16499,7 @@ paths:
           description: Success
       summary: POST /api/CariKart/getall
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKart/getbyid:
     get:
       parameters:
@@ -16516,7 +16516,7 @@ paths:
           description: Success
       summary: GET /api/CariKart/getbyid
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKart/update:
     put:
       requestBody:
@@ -16538,7 +16538,7 @@ paths:
           description: Success
       summary: PUT /api/CariKart/update
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKart/updaterange:
     put:
       requestBody:
@@ -16568,7 +16568,7 @@ paths:
           description: Success
       summary: PUT /api/CariKart/updaterange
       tags:
-      - CariKart
+      - Cari Kart İşlemleri
   /api/CariKartEticaret/add:
     post:
       requestBody:
@@ -16590,7 +16590,7 @@ paths:
           description: Success
       summary: POST /api/CariKartEticaret/add
       tags:
-      - CariKartEticaret
+      - Cari Kart Eticaret
   /api/CariKartEticaret/addrange:
     post:
       requestBody:
@@ -16620,7 +16620,7 @@ paths:
           description: Success
       summary: POST /api/CariKartEticaret/addrange
       tags:
-      - CariKartEticaret
+      - Cari Kart Eticaret
   /api/CariKartEticaret/delete:
     post:
       requestBody:
@@ -16642,7 +16642,7 @@ paths:
           description: Success
       summary: POST /api/CariKartEticaret/delete
       tags:
-      - CariKartEticaret
+      - Cari Kart Eticaret
   /api/CariKartEticaret/deletebyid:
     delete:
       parameters:
@@ -16659,7 +16659,7 @@ paths:
           description: Success
       summary: DELETE /api/CariKartEticaret/deletebyid
       tags:
-      - CariKartEticaret
+      - Cari Kart Eticaret
   /api/CariKartEticaret/deleterange:
     post:
       requestBody:
@@ -16689,7 +16689,7 @@ paths:
           description: Success
       summary: POST /api/CariKartEticaret/deleterange
       tags:
-      - CariKartEticaret
+      - Cari Kart Eticaret
   /api/CariKartEticaret/getall:
     post:
       requestBody:
@@ -16711,7 +16711,7 @@ paths:
           description: Success
       summary: POST /api/CariKartEticaret/getall
       tags:
-      - CariKartEticaret
+      - Cari Kart Eticaret
   /api/CariKartEticaret/getbyid:
     get:
       parameters:
@@ -16728,7 +16728,7 @@ paths:
           description: Success
       summary: GET /api/CariKartEticaret/getbyid
       tags:
-      - CariKartEticaret
+      - Cari Kart Eticaret
   /api/CariKartEticaret/update:
     put:
       requestBody:
@@ -16750,7 +16750,7 @@ paths:
           description: Success
       summary: PUT /api/CariKartEticaret/update
       tags:
-      - CariKartEticaret
+      - Cari Kart Eticaret
   /api/CariKartEticaret/updaterange:
     put:
       requestBody:
@@ -16780,7 +16780,7 @@ paths:
           description: Success
       summary: PUT /api/CariKartEticaret/updaterange
       tags:
-      - CariKartEticaret
+      - Cari Kart Eticaret
   /api/CariKodlar/add:
     post:
       requestBody:
@@ -16802,7 +16802,7 @@ paths:
           description: Success
       summary: POST /api/CariKodlar/add
       tags:
-      - CariKodlar
+      - Cari Kodlar
   /api/CariKodlar/addrange:
     post:
       requestBody:
@@ -16832,7 +16832,7 @@ paths:
           description: Success
       summary: POST /api/CariKodlar/addrange
       tags:
-      - CariKodlar
+      - Cari Kodlar
   /api/CariKodlar/delete:
     post:
       requestBody:
@@ -16854,7 +16854,7 @@ paths:
           description: Success
       summary: POST /api/CariKodlar/delete
       tags:
-      - CariKodlar
+      - Cari Kodlar
   /api/CariKodlar/deletebyid:
     delete:
       parameters:
@@ -16871,7 +16871,7 @@ paths:
           description: Success
       summary: DELETE /api/CariKodlar/deletebyid
       tags:
-      - CariKodlar
+      - Cari Kodlar
   /api/CariKodlar/deleterange:
     post:
       requestBody:
@@ -16901,7 +16901,7 @@ paths:
           description: Success
       summary: POST /api/CariKodlar/deleterange
       tags:
-      - CariKodlar
+      - Cari Kodlar
   /api/CariKodlar/getall:
     post:
       requestBody:
@@ -16923,7 +16923,7 @@ paths:
           description: Success
       summary: POST /api/CariKodlar/getall
       tags:
-      - CariKodlar
+      - Cari Kodlar
   /api/CariKodlar/getbyid:
     get:
       parameters:
@@ -16940,7 +16940,7 @@ paths:
           description: Success
       summary: GET /api/CariKodlar/getbyid
       tags:
-      - CariKodlar
+      - Cari Kodlar
   /api/CariKodlar/update:
     put:
       requestBody:
@@ -16962,7 +16962,7 @@ paths:
           description: Success
       summary: PUT /api/CariKodlar/update
       tags:
-      - CariKodlar
+      - Cari Kodlar
   /api/CariKodlar/updaterange:
     put:
       requestBody:
@@ -16992,7 +16992,7 @@ paths:
           description: Success
       summary: PUT /api/CariKodlar/updaterange
       tags:
-      - CariKodlar
+      - Cari Kodlar
   /api/CariNot/add:
     post:
       requestBody:
@@ -17014,7 +17014,7 @@ paths:
           description: Success
       summary: POST /api/CariNot/add
       tags:
-      - CariNot
+      - Cari Not
   /api/CariNot/addrange:
     post:
       requestBody:
@@ -17044,7 +17044,7 @@ paths:
           description: Success
       summary: POST /api/CariNot/addrange
       tags:
-      - CariNot
+      - Cari Not
   /api/CariNot/delete:
     post:
       requestBody:
@@ -17066,7 +17066,7 @@ paths:
           description: Success
       summary: POST /api/CariNot/delete
       tags:
-      - CariNot
+      - Cari Not
   /api/CariNot/deletebyid:
     delete:
       parameters:
@@ -17083,7 +17083,7 @@ paths:
           description: Success
       summary: DELETE /api/CariNot/deletebyid
       tags:
-      - CariNot
+      - Cari Not
   /api/CariNot/deleterange:
     post:
       requestBody:
@@ -17113,7 +17113,7 @@ paths:
           description: Success
       summary: POST /api/CariNot/deleterange
       tags:
-      - CariNot
+      - Cari Not
   /api/CariNot/getall:
     post:
       requestBody:
@@ -17135,7 +17135,7 @@ paths:
           description: Success
       summary: POST /api/CariNot/getall
       tags:
-      - CariNot
+      - Cari Not
   /api/CariNot/getbyid:
     get:
       parameters:
@@ -17152,7 +17152,7 @@ paths:
           description: Success
       summary: GET /api/CariNot/getbyid
       tags:
-      - CariNot
+      - Cari Not
   /api/CariNot/update:
     put:
       requestBody:
@@ -17174,7 +17174,7 @@ paths:
           description: Success
       summary: PUT /api/CariNot/update
       tags:
-      - CariNot
+      - Cari Not
   /api/CariNot/updaterange:
     put:
       requestBody:
@@ -17204,7 +17204,7 @@ paths:
           description: Success
       summary: PUT /api/CariNot/updaterange
       tags:
-      - CariNot
+      - Cari Not
   /api/Cek/add:
     post:
       requestBody:
@@ -17438,7 +17438,7 @@ paths:
           description: Success
       summary: POST /api/Efaturaayari/add
       tags:
-      - Efaturaayari
+      - Efatura Ayarı
   /api/Efaturaayari/addrange:
     post:
       requestBody:
@@ -17468,7 +17468,7 @@ paths:
           description: Success
       summary: POST /api/Efaturaayari/addrange
       tags:
-      - Efaturaayari
+      - Efatura Ayarı
   /api/Efaturaayari/delete:
     post:
       requestBody:
@@ -17490,7 +17490,7 @@ paths:
           description: Success
       summary: POST /api/Efaturaayari/delete
       tags:
-      - Efaturaayari
+      - Efatura Ayarı
   /api/Efaturaayari/deletebyid:
     delete:
       parameters:
@@ -17507,7 +17507,7 @@ paths:
           description: Success
       summary: DELETE /api/Efaturaayari/deletebyid
       tags:
-      - Efaturaayari
+      - Efatura Ayarı
   /api/Efaturaayari/deleterange:
     post:
       requestBody:
@@ -17537,7 +17537,7 @@ paths:
           description: Success
       summary: POST /api/Efaturaayari/deleterange
       tags:
-      - Efaturaayari
+      - Efatura Ayarı
   /api/Efaturaayari/getall:
     post:
       requestBody:
@@ -17559,7 +17559,7 @@ paths:
           description: Success
       summary: POST /api/Efaturaayari/getall
       tags:
-      - Efaturaayari
+      - Efatura Ayarı
   /api/Efaturaayari/getbyid:
     get:
       parameters:
@@ -17576,7 +17576,7 @@ paths:
           description: Success
       summary: GET /api/Efaturaayari/getbyid
       tags:
-      - Efaturaayari
+      - Efatura Ayarı
   /api/Efaturaayari/update:
     put:
       requestBody:
@@ -17598,7 +17598,7 @@ paths:
           description: Success
       summary: PUT /api/Efaturaayari/update
       tags:
-      - Efaturaayari
+      - Efatura Ayarı
   /api/Efaturaayari/updaterange:
     put:
       requestBody:
@@ -17628,7 +17628,7 @@ paths:
           description: Success
       summary: PUT /api/Efaturaayari/updaterange
       tags:
-      - Efaturaayari
+      - Efatura Ayarı
   /api/Eticaretayarlar/add:
     post:
       requestBody:
@@ -17650,7 +17650,7 @@ paths:
           description: Success
       summary: POST /api/Eticaretayarlar/add
       tags:
-      - Eticaretayarlar
+      - Eticaret Ayarlar
   /api/Eticaretayarlar/addrange:
     post:
       requestBody:
@@ -17680,7 +17680,7 @@ paths:
           description: Success
       summary: POST /api/Eticaretayarlar/addrange
       tags:
-      - Eticaretayarlar
+      - Eticaret Ayarlar
   /api/Eticaretayarlar/delete:
     post:
       requestBody:
@@ -17702,7 +17702,7 @@ paths:
           description: Success
       summary: POST /api/Eticaretayarlar/delete
       tags:
-      - Eticaretayarlar
+      - Eticaret Ayarlar
   /api/Eticaretayarlar/deletebyid:
     delete:
       parameters:
@@ -17719,7 +17719,7 @@ paths:
           description: Success
       summary: DELETE /api/Eticaretayarlar/deletebyid
       tags:
-      - Eticaretayarlar
+      - Eticaret Ayarlar
   /api/Eticaretayarlar/deleterange:
     post:
       requestBody:
@@ -17749,7 +17749,7 @@ paths:
           description: Success
       summary: POST /api/Eticaretayarlar/deleterange
       tags:
-      - Eticaretayarlar
+      - Eticaret Ayarlar
   /api/Eticaretayarlar/getall:
     post:
       requestBody:
@@ -17771,7 +17771,7 @@ paths:
           description: Success
       summary: POST /api/Eticaretayarlar/getall
       tags:
-      - Eticaretayarlar
+      - Eticaret Ayarlar
   /api/Eticaretayarlar/getbyid:
     get:
       parameters:
@@ -17788,7 +17788,7 @@ paths:
           description: Success
       summary: GET /api/Eticaretayarlar/getbyid
       tags:
-      - Eticaretayarlar
+      - Eticaret Ayarlar
   /api/Eticaretayarlar/update:
     put:
       requestBody:
@@ -17810,7 +17810,7 @@ paths:
           description: Success
       summary: PUT /api/Eticaretayarlar/update
       tags:
-      - Eticaretayarlar
+      - Eticaret Ayarlar
   /api/Eticaretayarlar/updaterange:
     put:
       requestBody:
@@ -17840,7 +17840,7 @@ paths:
           description: Success
       summary: PUT /api/Eticaretayarlar/updaterange
       tags:
-      - Eticaretayarlar
+      - Eticaret Ayarlar
   /api/FatHammeIsl/add:
     post:
       requestBody:
@@ -18498,7 +18498,7 @@ paths:
           description: Success
       summary: POST /api/Fatura/ControlDelete
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/ControlDeleteById:
     delete:
       parameters:
@@ -18515,7 +18515,7 @@ paths:
           description: Success
       summary: DELETE /api/Fatura/ControlDeleteById
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/GetByIdAll:
     get:
       parameters:
@@ -18532,7 +18532,7 @@ paths:
           description: Success
       summary: GET /api/Fatura/GetByIdAll
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/GetListAll:
     post:
       requestBody:
@@ -18554,7 +18554,7 @@ paths:
           description: Success
       summary: POST /api/Fatura/GetListAll
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/SatisBilgileriRapor:
     post:
       requestBody:
@@ -18576,7 +18576,7 @@ paths:
           description: Success
       summary: POST /api/Fatura/SatisBilgileriRapor
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/Update:
     post:
       requestBody:
@@ -18598,7 +18598,7 @@ paths:
           description: Success
       summary: POST /api/Fatura/Update
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/addrange:
     post:
       requestBody:
@@ -18628,7 +18628,7 @@ paths:
           description: Success
       summary: POST /api/Fatura/addrange
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/delete:
     post:
       requestBody:
@@ -18650,7 +18650,7 @@ paths:
           description: Success
       summary: POST /api/Fatura/delete
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/deletebyid:
     delete:
       parameters:
@@ -18667,7 +18667,7 @@ paths:
           description: Success
       summary: DELETE /api/Fatura/deletebyid
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/deleterange:
     post:
       requestBody:
@@ -18697,7 +18697,7 @@ paths:
           description: Success
       summary: POST /api/Fatura/deleterange
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/getall:
     post:
       requestBody:
@@ -18719,7 +18719,7 @@ paths:
           description: Success
       summary: POST /api/Fatura/getall
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/getbyid:
     get:
       parameters:
@@ -18736,7 +18736,7 @@ paths:
           description: Success
       summary: GET /api/Fatura/getbyid
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/getevrakno:
     post:
       requestBody:
@@ -18758,7 +18758,7 @@ paths:
           description: Success
       summary: POST /api/Fatura/getevrakno
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/update:
     put:
       requestBody:
@@ -18780,7 +18780,7 @@ paths:
           description: Success
       summary: PUT /api/Fatura/update
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/Fatura/updaterange:
     put:
       requestBody:
@@ -18810,7 +18810,7 @@ paths:
           description: Success
       summary: PUT /api/Fatura/updaterange
       tags:
-      - Fatura
+      - Fatura İşlemleri
   /api/FaturaAciklamalari/add:
     post:
       requestBody:
@@ -18832,7 +18832,7 @@ paths:
           description: Success
       summary: POST /api/FaturaAciklamalari/add
       tags:
-      - FaturaAciklamalari
+      - Fatura Açıklamaları
   /api/FaturaAciklamalari/addrange:
     post:
       requestBody:
@@ -18862,7 +18862,7 @@ paths:
           description: Success
       summary: POST /api/FaturaAciklamalari/addrange
       tags:
-      - FaturaAciklamalari
+      - Fatura Açıklamaları
   /api/FaturaAciklamalari/delete:
     post:
       requestBody:
@@ -18884,7 +18884,7 @@ paths:
           description: Success
       summary: POST /api/FaturaAciklamalari/delete
       tags:
-      - FaturaAciklamalari
+      - Fatura Açıklamaları
   /api/FaturaAciklamalari/deletebyid:
     delete:
       parameters:
@@ -18901,7 +18901,7 @@ paths:
           description: Success
       summary: DELETE /api/FaturaAciklamalari/deletebyid
       tags:
-      - FaturaAciklamalari
+      - Fatura Açıklamaları
   /api/FaturaAciklamalari/deleterange:
     post:
       requestBody:
@@ -18931,7 +18931,7 @@ paths:
           description: Success
       summary: POST /api/FaturaAciklamalari/deleterange
       tags:
-      - FaturaAciklamalari
+      - Fatura Açıklamaları
   /api/FaturaAciklamalari/getall:
     post:
       requestBody:
@@ -18953,7 +18953,7 @@ paths:
           description: Success
       summary: POST /api/FaturaAciklamalari/getall
       tags:
-      - FaturaAciklamalari
+      - Fatura Açıklamaları
   /api/FaturaAciklamalari/getbyid:
     get:
       parameters:
@@ -18970,7 +18970,7 @@ paths:
           description: Success
       summary: GET /api/FaturaAciklamalari/getbyid
       tags:
-      - FaturaAciklamalari
+      - Fatura Açıklamaları
   /api/FaturaAciklamalari/update:
     put:
       requestBody:
@@ -18992,7 +18992,7 @@ paths:
           description: Success
       summary: PUT /api/FaturaAciklamalari/update
       tags:
-      - FaturaAciklamalari
+      - Fatura Açıklamaları
   /api/FaturaAciklamalari/updaterange:
     put:
       requestBody:
@@ -19022,7 +19022,7 @@ paths:
           description: Success
       summary: PUT /api/FaturaAciklamalari/updaterange
       tags:
-      - FaturaAciklamalari
+      - Fatura Açıklamaları
   /api/FaturaKodlar/add:
     post:
       requestBody:
@@ -19044,7 +19044,7 @@ paths:
           description: Success
       summary: POST /api/FaturaKodlar/add
       tags:
-      - FaturaKodlar
+      - Fatura Kodlar
   /api/FaturaKodlar/addrange:
     post:
       requestBody:
@@ -19074,7 +19074,7 @@ paths:
           description: Success
       summary: POST /api/FaturaKodlar/addrange
       tags:
-      - FaturaKodlar
+      - Fatura Kodlar
   /api/FaturaKodlar/delete:
     post:
       requestBody:
@@ -19096,7 +19096,7 @@ paths:
           description: Success
       summary: POST /api/FaturaKodlar/delete
       tags:
-      - FaturaKodlar
+      - Fatura Kodlar
   /api/FaturaKodlar/deletebyid:
     delete:
       parameters:
@@ -19113,7 +19113,7 @@ paths:
           description: Success
       summary: DELETE /api/FaturaKodlar/deletebyid
       tags:
-      - FaturaKodlar
+      - Fatura Kodlar
   /api/FaturaKodlar/deleterange:
     post:
       requestBody:
@@ -19143,7 +19143,7 @@ paths:
           description: Success
       summary: POST /api/FaturaKodlar/deleterange
       tags:
-      - FaturaKodlar
+      - Fatura Kodlar
   /api/FaturaKodlar/getall:
     post:
       requestBody:
@@ -19165,7 +19165,7 @@ paths:
           description: Success
       summary: POST /api/FaturaKodlar/getall
       tags:
-      - FaturaKodlar
+      - Fatura Kodlar
   /api/FaturaKodlar/getbyid:
     get:
       parameters:
@@ -19182,7 +19182,7 @@ paths:
           description: Success
       summary: GET /api/FaturaKodlar/getbyid
       tags:
-      - FaturaKodlar
+      - Fatura Kodlar
   /api/FaturaKodlar/update:
     put:
       requestBody:
@@ -19204,7 +19204,7 @@ paths:
           description: Success
       summary: PUT /api/FaturaKodlar/update
       tags:
-      - FaturaKodlar
+      - Fatura Kodlar
   /api/FaturaKodlar/updaterange:
     put:
       requestBody:
@@ -19234,7 +19234,7 @@ paths:
           description: Success
       summary: PUT /api/FaturaKodlar/updaterange
       tags:
-      - FaturaKodlar
+      - Fatura Kodlar
   /api/FaturaTeslimAdres/add:
     post:
       requestBody:
@@ -19256,7 +19256,7 @@ paths:
           description: Success
       summary: POST /api/FaturaTeslimAdres/add
       tags:
-      - FaturaTeslimAdres
+      - Fatura Teslim Adres İşlemleri
   /api/FaturaTeslimAdres/addrange:
     post:
       requestBody:
@@ -19286,7 +19286,7 @@ paths:
           description: Success
       summary: POST /api/FaturaTeslimAdres/addrange
       tags:
-      - FaturaTeslimAdres
+      - Fatura Teslim Adres İşlemleri
   /api/FaturaTeslimAdres/delete:
     post:
       requestBody:
@@ -19308,7 +19308,7 @@ paths:
           description: Success
       summary: POST /api/FaturaTeslimAdres/delete
       tags:
-      - FaturaTeslimAdres
+      - Fatura Teslim Adres İşlemleri
   /api/FaturaTeslimAdres/deletebyid:
     delete:
       parameters:
@@ -19325,7 +19325,7 @@ paths:
           description: Success
       summary: DELETE /api/FaturaTeslimAdres/deletebyid
       tags:
-      - FaturaTeslimAdres
+      - Fatura Teslim Adres İşlemleri
   /api/FaturaTeslimAdres/deleterange:
     post:
       requestBody:
@@ -19355,7 +19355,7 @@ paths:
           description: Success
       summary: POST /api/FaturaTeslimAdres/deleterange
       tags:
-      - FaturaTeslimAdres
+      - Fatura Teslim Adres İşlemleri
   /api/FaturaTeslimAdres/getall:
     post:
       requestBody:
@@ -19377,7 +19377,7 @@ paths:
           description: Success
       summary: POST /api/FaturaTeslimAdres/getall
       tags:
-      - FaturaTeslimAdres
+      - Fatura Teslim Adres İşlemleri
   /api/FaturaTeslimAdres/getbyid:
     get:
       parameters:
@@ -19394,7 +19394,7 @@ paths:
           description: Success
       summary: GET /api/FaturaTeslimAdres/getbyid
       tags:
-      - FaturaTeslimAdres
+      - Fatura Teslim Adres İşlemleri
   /api/FaturaTeslimAdres/update:
     put:
       requestBody:
@@ -19416,7 +19416,7 @@ paths:
           description: Success
       summary: PUT /api/FaturaTeslimAdres/update
       tags:
-      - FaturaTeslimAdres
+      - Fatura Teslim Adres İşlemleri
   /api/FaturaTeslimAdres/updaterange:
     put:
       requestBody:
@@ -19446,7 +19446,7 @@ paths:
           description: Success
       summary: PUT /api/FaturaTeslimAdres/updaterange
       tags:
-      - FaturaTeslimAdres
+      - Fatura Teslim Adres İşlemleri
   /api/Firma/add:
     post:
       requestBody:
@@ -19680,7 +19680,7 @@ paths:
           description: Success
       summary: POST /api/FirmaKodlar/add
       tags:
-      - FirmaKodlar
+      - Firma Kodlar
   /api/FirmaKodlar/addrange:
     post:
       requestBody:
@@ -19710,7 +19710,7 @@ paths:
           description: Success
       summary: POST /api/FirmaKodlar/addrange
       tags:
-      - FirmaKodlar
+      - Firma Kodlar
   /api/FirmaKodlar/delete:
     post:
       requestBody:
@@ -19732,7 +19732,7 @@ paths:
           description: Success
       summary: POST /api/FirmaKodlar/delete
       tags:
-      - FirmaKodlar
+      - Firma Kodlar
   /api/FirmaKodlar/deletebyid:
     delete:
       parameters:
@@ -19749,7 +19749,7 @@ paths:
           description: Success
       summary: DELETE /api/FirmaKodlar/deletebyid
       tags:
-      - FirmaKodlar
+      - Firma Kodlar
   /api/FirmaKodlar/deleterange:
     post:
       requestBody:
@@ -19779,7 +19779,7 @@ paths:
           description: Success
       summary: POST /api/FirmaKodlar/deleterange
       tags:
-      - FirmaKodlar
+      - Firma Kodlar
   /api/FirmaKodlar/getall:
     post:
       requestBody:
@@ -19801,7 +19801,7 @@ paths:
           description: Success
       summary: POST /api/FirmaKodlar/getall
       tags:
-      - FirmaKodlar
+      - Firma Kodlar
   /api/FirmaKodlar/getbyid:
     get:
       parameters:
@@ -19818,7 +19818,7 @@ paths:
           description: Success
       summary: GET /api/FirmaKodlar/getbyid
       tags:
-      - FirmaKodlar
+      - Firma Kodlar
   /api/FirmaKodlar/update:
     put:
       requestBody:
@@ -19840,7 +19840,7 @@ paths:
           description: Success
       summary: PUT /api/FirmaKodlar/update
       tags:
-      - FirmaKodlar
+      - Firma Kodlar
   /api/FirmaKodlar/updaterange:
     put:
       requestBody:
@@ -19870,7 +19870,7 @@ paths:
           description: Success
       summary: PUT /api/FirmaKodlar/updaterange
       tags:
-      - FirmaKodlar
+      - Firma Kodlar
   /api/Genelayar/add:
     post:
       requestBody:
@@ -19892,7 +19892,7 @@ paths:
           description: Success
       summary: POST /api/Genelayar/add
       tags:
-      - Genelayar
+      - Genel Ayar İşlemleri
   /api/Genelayar/addrange:
     post:
       requestBody:
@@ -19922,7 +19922,7 @@ paths:
           description: Success
       summary: POST /api/Genelayar/addrange
       tags:
-      - Genelayar
+      - Genel Ayar İşlemleri
   /api/Genelayar/delete:
     post:
       requestBody:
@@ -19944,7 +19944,7 @@ paths:
           description: Success
       summary: POST /api/Genelayar/delete
       tags:
-      - Genelayar
+      - Genel Ayar İşlemleri
   /api/Genelayar/deletebyid:
     delete:
       parameters:
@@ -19961,7 +19961,7 @@ paths:
           description: Success
       summary: DELETE /api/Genelayar/deletebyid
       tags:
-      - Genelayar
+      - Genel Ayar İşlemleri
   /api/Genelayar/deleterange:
     post:
       requestBody:
@@ -19991,7 +19991,7 @@ paths:
           description: Success
       summary: POST /api/Genelayar/deleterange
       tags:
-      - Genelayar
+      - Genel Ayar İşlemleri
   /api/Genelayar/getall:
     post:
       requestBody:
@@ -20013,7 +20013,7 @@ paths:
           description: Success
       summary: POST /api/Genelayar/getall
       tags:
-      - Genelayar
+      - Genel Ayar İşlemleri
   /api/Genelayar/getbyid:
     get:
       parameters:
@@ -20030,7 +20030,7 @@ paths:
           description: Success
       summary: GET /api/Genelayar/getbyid
       tags:
-      - Genelayar
+      - Genel Ayar İşlemleri
   /api/Genelayar/update:
     put:
       requestBody:
@@ -20052,7 +20052,7 @@ paths:
           description: Success
       summary: PUT /api/Genelayar/update
       tags:
-      - Genelayar
+      - Genel Ayar İşlemleri
   /api/Genelayar/updaterange:
     put:
       requestBody:
@@ -20082,7 +20082,7 @@ paths:
           description: Success
       summary: PUT /api/Genelayar/updaterange
       tags:
-      - Genelayar
+      - Genel Ayar İşlemleri
   /api/Gider/ControlDelete:
     post:
       requestBody:
@@ -20589,7 +20589,7 @@ paths:
           description: Success
       summary: POST /api/Hizlisatisayar/add
       tags:
-      - Hizlisatisayar
+      - Hızlı Satış Ayar İşlemleri
   /api/Hizlisatisayar/addrange:
     post:
       requestBody:
@@ -20619,7 +20619,7 @@ paths:
           description: Success
       summary: POST /api/Hizlisatisayar/addrange
       tags:
-      - Hizlisatisayar
+      - Hızlı Satış Ayar İşlemleri
   /api/Hizlisatisayar/delete:
     post:
       requestBody:
@@ -20641,7 +20641,7 @@ paths:
           description: Success
       summary: POST /api/Hizlisatisayar/delete
       tags:
-      - Hizlisatisayar
+      - Hızlı Satış Ayar İşlemleri
   /api/Hizlisatisayar/deletebyid:
     delete:
       parameters:
@@ -20658,7 +20658,7 @@ paths:
           description: Success
       summary: DELETE /api/Hizlisatisayar/deletebyid
       tags:
-      - Hizlisatisayar
+      - Hızlı Satış Ayar İşlemleri
   /api/Hizlisatisayar/deleterange:
     post:
       requestBody:
@@ -20688,7 +20688,7 @@ paths:
           description: Success
       summary: POST /api/Hizlisatisayar/deleterange
       tags:
-      - Hizlisatisayar
+      - Hızlı Satış Ayar İşlemleri
   /api/Hizlisatisayar/getall:
     post:
       requestBody:
@@ -20710,7 +20710,7 @@ paths:
           description: Success
       summary: POST /api/Hizlisatisayar/getall
       tags:
-      - Hizlisatisayar
+      - Hızlı Satış Ayar İşlemleri
   /api/Hizlisatisayar/getbyid:
     get:
       parameters:
@@ -20727,7 +20727,7 @@ paths:
           description: Success
       summary: GET /api/Hizlisatisayar/getbyid
       tags:
-      - Hizlisatisayar
+      - Hızlı Satış Ayar İşlemleri
   /api/Hizlisatisayar/update:
     put:
       requestBody:
@@ -20749,7 +20749,7 @@ paths:
           description: Success
       summary: PUT /api/Hizlisatisayar/update
       tags:
-      - Hizlisatisayar
+      - Hızlı Satış Ayar İşlemleri
   /api/Hizlisatisayar/updaterange:
     put:
       requestBody:
@@ -20779,7 +20779,7 @@ paths:
           description: Success
       summary: PUT /api/Hizlisatisayar/updaterange
       tags:
-      - Hizlisatisayar
+      - Hızlı Satış Ayar İşlemleri
   /api/Hizlisatisbutonayarlari/add:
     post:
       requestBody:
@@ -20801,7 +20801,7 @@ paths:
           description: Success
       summary: POST /api/Hizlisatisbutonayarlari/add
       tags:
-      - Hizlisatisbutonayarlari
+      - Hızlı Satış Buton Ayarları
   /api/Hizlisatisbutonayarlari/addrange:
     post:
       requestBody:
@@ -20831,7 +20831,7 @@ paths:
           description: Success
       summary: POST /api/Hizlisatisbutonayarlari/addrange
       tags:
-      - Hizlisatisbutonayarlari
+      - Hızlı Satış Buton Ayarları
   /api/Hizlisatisbutonayarlari/delete:
     post:
       requestBody:
@@ -20853,7 +20853,7 @@ paths:
           description: Success
       summary: POST /api/Hizlisatisbutonayarlari/delete
       tags:
-      - Hizlisatisbutonayarlari
+      - Hızlı Satış Buton Ayarları
   /api/Hizlisatisbutonayarlari/deletebyid:
     delete:
       parameters:
@@ -20870,7 +20870,7 @@ paths:
           description: Success
       summary: DELETE /api/Hizlisatisbutonayarlari/deletebyid
       tags:
-      - Hizlisatisbutonayarlari
+      - Hızlı Satış Buton Ayarları
   /api/Hizlisatisbutonayarlari/deleterange:
     post:
       requestBody:
@@ -20900,7 +20900,7 @@ paths:
           description: Success
       summary: POST /api/Hizlisatisbutonayarlari/deleterange
       tags:
-      - Hizlisatisbutonayarlari
+      - Hızlı Satış Buton Ayarları
   /api/Hizlisatisbutonayarlari/getall:
     post:
       requestBody:
@@ -20922,7 +20922,7 @@ paths:
           description: Success
       summary: POST /api/Hizlisatisbutonayarlari/getall
       tags:
-      - Hizlisatisbutonayarlari
+      - Hızlı Satış Buton Ayarları
   /api/Hizlisatisbutonayarlari/getbyid:
     get:
       parameters:
@@ -20939,7 +20939,7 @@ paths:
           description: Success
       summary: GET /api/Hizlisatisbutonayarlari/getbyid
       tags:
-      - Hizlisatisbutonayarlari
+      - Hızlı Satış Buton Ayarları
   /api/Hizlisatisbutonayarlari/update:
     put:
       requestBody:
@@ -20961,7 +20961,7 @@ paths:
           description: Success
       summary: PUT /api/Hizlisatisbutonayarlari/update
       tags:
-      - Hizlisatisbutonayarlari
+      - Hızlı Satış Buton Ayarları
   /api/Hizlisatisbutonayarlari/updaterange:
     put:
       requestBody:
@@ -20991,7 +20991,7 @@ paths:
           description: Success
       summary: PUT /api/Hizlisatisbutonayarlari/updaterange
       tags:
-      - Hizlisatisbutonayarlari
+      - Hızlı Satış Buton Ayarları
   /api/Kasalar/ControlDelete:
     post:
       requestBody:
@@ -21608,7 +21608,7 @@ paths:
           description: Success
       summary: POST /api/KullaniciIslemler/add
       tags:
-      - KullaniciIslemler
+      - Kullanıcı İşlemleri
   /api/KullaniciIslemler/addrange:
     post:
       requestBody:
@@ -21638,7 +21638,7 @@ paths:
           description: Success
       summary: POST /api/KullaniciIslemler/addrange
       tags:
-      - KullaniciIslemler
+      - Kullanıcı İşlemleri
   /api/KullaniciIslemler/delete:
     post:
       requestBody:
@@ -21660,7 +21660,7 @@ paths:
           description: Success
       summary: POST /api/KullaniciIslemler/delete
       tags:
-      - KullaniciIslemler
+      - Kullanıcı İşlemleri
   /api/KullaniciIslemler/deletebyid:
     delete:
       parameters:
@@ -21677,7 +21677,7 @@ paths:
           description: Success
       summary: DELETE /api/KullaniciIslemler/deletebyid
       tags:
-      - KullaniciIslemler
+      - Kullanıcı İşlemleri
   /api/KullaniciIslemler/deleterange:
     post:
       requestBody:
@@ -21707,7 +21707,7 @@ paths:
           description: Success
       summary: POST /api/KullaniciIslemler/deleterange
       tags:
-      - KullaniciIslemler
+      - Kullanıcı İşlemleri
   /api/KullaniciIslemler/getall:
     post:
       requestBody:
@@ -21729,7 +21729,7 @@ paths:
           description: Success
       summary: POST /api/KullaniciIslemler/getall
       tags:
-      - KullaniciIslemler
+      - Kullanıcı İşlemleri
   /api/KullaniciIslemler/getbyid:
     get:
       parameters:
@@ -21746,7 +21746,7 @@ paths:
           description: Success
       summary: GET /api/KullaniciIslemler/getbyid
       tags:
-      - KullaniciIslemler
+      - Kullanıcı İşlemleri
   /api/KullaniciIslemler/update:
     put:
       requestBody:
@@ -21768,7 +21768,7 @@ paths:
           description: Success
       summary: PUT /api/KullaniciIslemler/update
       tags:
-      - KullaniciIslemler
+      - Kullanıcı İşlemleri
   /api/KullaniciIslemler/updaterange:
     put:
       requestBody:
@@ -21798,7 +21798,7 @@ paths:
           description: Success
       summary: PUT /api/KullaniciIslemler/updaterange
       tags:
-      - KullaniciIslemler
+      - Kullanıcı İşlemleri
   /api/Kurlar/add:
     post:
       requestBody:
@@ -22032,7 +22032,7 @@ paths:
           description: Success
       summary: POST /api/Mailayari/add
       tags:
-      - Mailayari
+      - Mail Ayarı
   /api/Mailayari/addrange:
     post:
       requestBody:
@@ -22062,7 +22062,7 @@ paths:
           description: Success
       summary: POST /api/Mailayari/addrange
       tags:
-      - Mailayari
+      - Mail Ayarı
   /api/Mailayari/delete:
     post:
       requestBody:
@@ -22084,7 +22084,7 @@ paths:
           description: Success
       summary: POST /api/Mailayari/delete
       tags:
-      - Mailayari
+      - Mail Ayarı
   /api/Mailayari/deletebyid:
     delete:
       parameters:
@@ -22101,7 +22101,7 @@ paths:
           description: Success
       summary: DELETE /api/Mailayari/deletebyid
       tags:
-      - Mailayari
+      - Mail Ayarı
   /api/Mailayari/deleterange:
     post:
       requestBody:
@@ -22131,7 +22131,7 @@ paths:
           description: Success
       summary: POST /api/Mailayari/deleterange
       tags:
-      - Mailayari
+      - Mail Ayarı
   /api/Mailayari/getall:
     post:
       requestBody:
@@ -22153,7 +22153,7 @@ paths:
           description: Success
       summary: POST /api/Mailayari/getall
       tags:
-      - Mailayari
+      - Mail Ayarı
   /api/Mailayari/getbyid:
     get:
       parameters:
@@ -22170,7 +22170,7 @@ paths:
           description: Success
       summary: GET /api/Mailayari/getbyid
       tags:
-      - Mailayari
+      - Mail Ayarı
   /api/Mailayari/update:
     put:
       requestBody:
@@ -22192,7 +22192,7 @@ paths:
           description: Success
       summary: PUT /api/Mailayari/update
       tags:
-      - Mailayari
+      - Mail Ayarı
   /api/Mailayari/updaterange:
     put:
       requestBody:
@@ -22222,7 +22222,7 @@ paths:
           description: Success
       summary: PUT /api/Mailayari/updaterange
       tags:
-      - Mailayari
+      - Mail Ayarı
   /api/Mokaayarlar/add:
     post:
       requestBody:
@@ -22244,7 +22244,7 @@ paths:
           description: Success
       summary: POST /api/Mokaayarlar/add
       tags:
-      - Mokaayarlar
+      - Moka Ayarlar
   /api/Mokaayarlar/addrange:
     post:
       requestBody:
@@ -22274,7 +22274,7 @@ paths:
           description: Success
       summary: POST /api/Mokaayarlar/addrange
       tags:
-      - Mokaayarlar
+      - Moka Ayarlar
   /api/Mokaayarlar/delete:
     post:
       requestBody:
@@ -22296,7 +22296,7 @@ paths:
           description: Success
       summary: POST /api/Mokaayarlar/delete
       tags:
-      - Mokaayarlar
+      - Moka Ayarlar
   /api/Mokaayarlar/deletebyid:
     delete:
       parameters:
@@ -22313,7 +22313,7 @@ paths:
           description: Success
       summary: DELETE /api/Mokaayarlar/deletebyid
       tags:
-      - Mokaayarlar
+      - Moka Ayarlar
   /api/Mokaayarlar/deleterange:
     post:
       requestBody:
@@ -22343,7 +22343,7 @@ paths:
           description: Success
       summary: POST /api/Mokaayarlar/deleterange
       tags:
-      - Mokaayarlar
+      - Moka Ayarlar
   /api/Mokaayarlar/getall:
     post:
       requestBody:
@@ -22365,7 +22365,7 @@ paths:
           description: Success
       summary: POST /api/Mokaayarlar/getall
       tags:
-      - Mokaayarlar
+      - Moka Ayarlar
   /api/Mokaayarlar/getbyid:
     get:
       parameters:
@@ -22382,7 +22382,7 @@ paths:
           description: Success
       summary: GET /api/Mokaayarlar/getbyid
       tags:
-      - Mokaayarlar
+      - Moka Ayarlar
   /api/Mokaayarlar/update:
     put:
       requestBody:
@@ -22404,7 +22404,7 @@ paths:
           description: Success
       summary: PUT /api/Mokaayarlar/update
       tags:
-      - Mokaayarlar
+      - Moka Ayarlar
   /api/Mokaayarlar/updaterange:
     put:
       requestBody:
@@ -22434,7 +22434,7 @@ paths:
           description: Success
       summary: PUT /api/Mokaayarlar/updaterange
       tags:
-      - Mokaayarlar
+      - Moka Ayarlar
   /api/Mokaiade/add:
     post:
       requestBody:
@@ -22456,7 +22456,7 @@ paths:
           description: Success
       summary: POST /api/Mokaiade/add
       tags:
-      - Mokaiade
+      - Moka İade
   /api/Mokaiade/addrange:
     post:
       requestBody:
@@ -22486,7 +22486,7 @@ paths:
           description: Success
       summary: POST /api/Mokaiade/addrange
       tags:
-      - Mokaiade
+      - Moka İade
   /api/Mokaiade/delete:
     post:
       requestBody:
@@ -22508,7 +22508,7 @@ paths:
           description: Success
       summary: POST /api/Mokaiade/delete
       tags:
-      - Mokaiade
+      - Moka İade
   /api/Mokaiade/deletebyid:
     delete:
       parameters:
@@ -22525,7 +22525,7 @@ paths:
           description: Success
       summary: DELETE /api/Mokaiade/deletebyid
       tags:
-      - Mokaiade
+      - Moka İade
   /api/Mokaiade/deleterange:
     post:
       requestBody:
@@ -22555,7 +22555,7 @@ paths:
           description: Success
       summary: POST /api/Mokaiade/deleterange
       tags:
-      - Mokaiade
+      - Moka İade
   /api/Mokaiade/getall:
     post:
       requestBody:
@@ -22577,7 +22577,7 @@ paths:
           description: Success
       summary: POST /api/Mokaiade/getall
       tags:
-      - Mokaiade
+      - Moka İade
   /api/Mokaiade/getbyid:
     get:
       parameters:
@@ -22594,7 +22594,7 @@ paths:
           description: Success
       summary: GET /api/Mokaiade/getbyid
       tags:
-      - Mokaiade
+      - Moka İade
   /api/Mokaiade/update:
     put:
       requestBody:
@@ -22616,7 +22616,7 @@ paths:
           description: Success
       summary: PUT /api/Mokaiade/update
       tags:
-      - Mokaiade
+      - Moka İade
   /api/Mokaiade/updaterange:
     put:
       requestBody:
@@ -22646,7 +22646,7 @@ paths:
           description: Success
       summary: PUT /api/Mokaiade/updaterange
       tags:
-      - Mokaiade
+      - Moka İade
   /api/Mokaisllog/add:
     post:
       requestBody:
@@ -22880,7 +22880,7 @@ paths:
           description: Success
       summary: POST /api/Mokalog/add
       tags:
-      - Mokalog
+      - Moka Log
   /api/Mokalog/addrange:
     post:
       requestBody:
@@ -22910,7 +22910,7 @@ paths:
           description: Success
       summary: POST /api/Mokalog/addrange
       tags:
-      - Mokalog
+      - Moka Log
   /api/Mokalog/delete:
     post:
       requestBody:
@@ -22932,7 +22932,7 @@ paths:
           description: Success
       summary: POST /api/Mokalog/delete
       tags:
-      - Mokalog
+      - Moka Log
   /api/Mokalog/deletebyid:
     delete:
       parameters:
@@ -22949,7 +22949,7 @@ paths:
           description: Success
       summary: DELETE /api/Mokalog/deletebyid
       tags:
-      - Mokalog
+      - Moka Log
   /api/Mokalog/deleterange:
     post:
       requestBody:
@@ -22979,7 +22979,7 @@ paths:
           description: Success
       summary: POST /api/Mokalog/deleterange
       tags:
-      - Mokalog
+      - Moka Log
   /api/Mokalog/getall:
     post:
       requestBody:
@@ -23001,7 +23001,7 @@ paths:
           description: Success
       summary: POST /api/Mokalog/getall
       tags:
-      - Mokalog
+      - Moka Log
   /api/Mokalog/getbyid:
     get:
       parameters:
@@ -23018,7 +23018,7 @@ paths:
           description: Success
       summary: GET /api/Mokalog/getbyid
       tags:
-      - Mokalog
+      - Moka Log
   /api/Mokalog/update:
     put:
       requestBody:
@@ -23040,7 +23040,7 @@ paths:
           description: Success
       summary: PUT /api/Mokalog/update
       tags:
-      - Mokalog
+      - Moka Log
   /api/Mokalog/updaterange:
     put:
       requestBody:
@@ -23070,7 +23070,7 @@ paths:
           description: Success
       summary: PUT /api/Mokalog/updaterange
       tags:
-      - Mokalog
+      - Moka Log
   /api/Personel/add:
     post:
       requestBody:
@@ -23092,7 +23092,7 @@ paths:
           description: Success
       summary: POST /api/Personel/add
       tags:
-      - Personel
+      - Personel İşlemleri
   /api/Personel/addrange:
     post:
       requestBody:
@@ -23122,7 +23122,7 @@ paths:
           description: Success
       summary: POST /api/Personel/addrange
       tags:
-      - Personel
+      - Personel İşlemleri
   /api/Personel/delete:
     post:
       requestBody:
@@ -23144,7 +23144,7 @@ paths:
           description: Success
       summary: POST /api/Personel/delete
       tags:
-      - Personel
+      - Personel İşlemleri
   /api/Personel/deletebyid:
     delete:
       parameters:
@@ -23161,7 +23161,7 @@ paths:
           description: Success
       summary: DELETE /api/Personel/deletebyid
       tags:
-      - Personel
+      - Personel İşlemleri
   /api/Personel/deleterange:
     post:
       requestBody:
@@ -23191,7 +23191,7 @@ paths:
           description: Success
       summary: POST /api/Personel/deleterange
       tags:
-      - Personel
+      - Personel İşlemleri
   /api/Personel/getall:
     post:
       requestBody:
@@ -23213,7 +23213,7 @@ paths:
           description: Success
       summary: POST /api/Personel/getall
       tags:
-      - Personel
+      - Personel İşlemleri
   /api/Personel/getbyid:
     get:
       parameters:
@@ -23230,7 +23230,7 @@ paths:
           description: Success
       summary: GET /api/Personel/getbyid
       tags:
-      - Personel
+      - Personel İşlemleri
   /api/Personel/update:
     put:
       requestBody:
@@ -23252,7 +23252,7 @@ paths:
           description: Success
       summary: PUT /api/Personel/update
       tags:
-      - Personel
+      - Personel İşlemleri
   /api/Personel/updaterange:
     put:
       requestBody:
@@ -23282,7 +23282,7 @@ paths:
           description: Success
       summary: PUT /api/Personel/updaterange
       tags:
-      - Personel
+      - Personel İşlemleri
   /api/Personelizinler/add:
     post:
       requestBody:
@@ -23304,7 +23304,7 @@ paths:
           description: Success
       summary: POST /api/Personelizinler/add
       tags:
-      - Personelizinler
+      - Personel İzinler
   /api/Personelizinler/addrange:
     post:
       requestBody:
@@ -23334,7 +23334,7 @@ paths:
           description: Success
       summary: POST /api/Personelizinler/addrange
       tags:
-      - Personelizinler
+      - Personel İzinler
   /api/Personelizinler/delete:
     post:
       requestBody:
@@ -23356,7 +23356,7 @@ paths:
           description: Success
       summary: POST /api/Personelizinler/delete
       tags:
-      - Personelizinler
+      - Personel İzinler
   /api/Personelizinler/deletebyid:
     delete:
       parameters:
@@ -23373,7 +23373,7 @@ paths:
           description: Success
       summary: DELETE /api/Personelizinler/deletebyid
       tags:
-      - Personelizinler
+      - Personel İzinler
   /api/Personelizinler/deleterange:
     post:
       requestBody:
@@ -23403,7 +23403,7 @@ paths:
           description: Success
       summary: POST /api/Personelizinler/deleterange
       tags:
-      - Personelizinler
+      - Personel İzinler
   /api/Personelizinler/getall:
     post:
       requestBody:
@@ -23425,7 +23425,7 @@ paths:
           description: Success
       summary: POST /api/Personelizinler/getall
       tags:
-      - Personelizinler
+      - Personel İzinler
   /api/Personelizinler/getbyid:
     get:
       parameters:
@@ -23442,7 +23442,7 @@ paths:
           description: Success
       summary: GET /api/Personelizinler/getbyid
       tags:
-      - Personelizinler
+      - Personel İzinler
   /api/Personelizinler/update:
     put:
       requestBody:
@@ -23464,7 +23464,7 @@ paths:
           description: Success
       summary: PUT /api/Personelizinler/update
       tags:
-      - Personelizinler
+      - Personel İzinler
   /api/Personelizinler/updaterange:
     put:
       requestBody:
@@ -23494,7 +23494,7 @@ paths:
           description: Success
       summary: PUT /api/Personelizinler/updaterange
       tags:
-      - Personelizinler
+      - Personel İzinler
   /api/Personelnot/add:
     post:
       requestBody:
@@ -23516,7 +23516,7 @@ paths:
           description: Success
       summary: POST /api/Personelnot/add
       tags:
-      - Personelnot
+      - Personel Not
   /api/Personelnot/addrange:
     post:
       requestBody:
@@ -23546,7 +23546,7 @@ paths:
           description: Success
       summary: POST /api/Personelnot/addrange
       tags:
-      - Personelnot
+      - Personel Not
   /api/Personelnot/delete:
     post:
       requestBody:
@@ -23568,7 +23568,7 @@ paths:
           description: Success
       summary: POST /api/Personelnot/delete
       tags:
-      - Personelnot
+      - Personel Not
   /api/Personelnot/deletebyid:
     delete:
       parameters:
@@ -23585,7 +23585,7 @@ paths:
           description: Success
       summary: DELETE /api/Personelnot/deletebyid
       tags:
-      - Personelnot
+      - Personel Not
   /api/Personelnot/deleterange:
     post:
       requestBody:
@@ -23615,7 +23615,7 @@ paths:
           description: Success
       summary: POST /api/Personelnot/deleterange
       tags:
-      - Personelnot
+      - Personel Not
   /api/Personelnot/getall:
     post:
       requestBody:
@@ -23637,7 +23637,7 @@ paths:
           description: Success
       summary: POST /api/Personelnot/getall
       tags:
-      - Personelnot
+      - Personel Not
   /api/Personelnot/getbyid:
     get:
       parameters:
@@ -23654,7 +23654,7 @@ paths:
           description: Success
       summary: GET /api/Personelnot/getbyid
       tags:
-      - Personelnot
+      - Personel Not
   /api/Personelnot/update:
     put:
       requestBody:
@@ -23676,7 +23676,7 @@ paths:
           description: Success
       summary: PUT /api/Personelnot/update
       tags:
-      - Personelnot
+      - Personel Not
   /api/Personelnot/updaterange:
     put:
       requestBody:
@@ -23706,7 +23706,7 @@ paths:
           description: Success
       summary: PUT /api/Personelnot/updaterange
       tags:
-      - Personelnot
+      - Personel Not
   /api/Pos/AddPos:
     post:
       requestBody:
@@ -23728,7 +23728,7 @@ paths:
           description: Success
       summary: POST /api/Pos/AddPos
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Pos/ControlDeleteById:
     delete:
       parameters:
@@ -23745,7 +23745,7 @@ paths:
           description: Success
       summary: DELETE /api/Pos/ControlDeleteById
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Pos/DeletePos:
     delete:
       parameters:
@@ -23761,7 +23761,7 @@ paths:
           description: Success
       summary: DELETE /api/Pos/DeletePos
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Pos/GetListPos:
     post:
       requestBody:
@@ -23783,7 +23783,7 @@ paths:
           description: Success
       summary: POST /api/Pos/GetListPos
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Pos/UpdatePos:
     post:
       requestBody:
@@ -23805,7 +23805,7 @@ paths:
           description: Success
       summary: POST /api/Pos/UpdatePos
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Pos/add:
     post:
       requestBody:
@@ -23827,7 +23827,7 @@ paths:
           description: Success
       summary: POST /api/Pos/add
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Pos/addrange:
     post:
       requestBody:
@@ -23857,7 +23857,7 @@ paths:
           description: Success
       summary: POST /api/Pos/addrange
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Pos/delete:
     post:
       requestBody:
@@ -23879,7 +23879,7 @@ paths:
           description: Success
       summary: POST /api/Pos/delete
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Pos/deletebyid:
     delete:
       parameters:
@@ -23896,7 +23896,7 @@ paths:
           description: Success
       summary: DELETE /api/Pos/deletebyid
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Pos/deleterange:
     post:
       requestBody:
@@ -23926,7 +23926,7 @@ paths:
           description: Success
       summary: POST /api/Pos/deleterange
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Pos/getall:
     post:
       requestBody:
@@ -23948,7 +23948,7 @@ paths:
           description: Success
       summary: POST /api/Pos/getall
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Pos/getbyid:
     get:
       parameters:
@@ -23965,7 +23965,7 @@ paths:
           description: Success
       summary: GET /api/Pos/getbyid
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Pos/update:
     put:
       requestBody:
@@ -23987,7 +23987,7 @@ paths:
           description: Success
       summary: PUT /api/Pos/update
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Pos/updaterange:
     put:
       requestBody:
@@ -24017,7 +24017,7 @@ paths:
           description: Success
       summary: PUT /api/Pos/updaterange
       tags:
-      - Pos
+      - Pos İşlemleri
   /api/Posislemdetay/add:
     post:
       requestBody:
@@ -24039,7 +24039,7 @@ paths:
           description: Success
       summary: POST /api/Posislemdetay/add
       tags:
-      - Posislemdetay
+      - Pos İşlem Detay
   /api/Posislemdetay/addrange:
     post:
       requestBody:
@@ -24069,7 +24069,7 @@ paths:
           description: Success
       summary: POST /api/Posislemdetay/addrange
       tags:
-      - Posislemdetay
+      - Pos İşlem Detay
   /api/Posislemdetay/delete:
     post:
       requestBody:
@@ -24091,7 +24091,7 @@ paths:
           description: Success
       summary: POST /api/Posislemdetay/delete
       tags:
-      - Posislemdetay
+      - Pos İşlem Detay
   /api/Posislemdetay/deletebyid:
     delete:
       parameters:
@@ -24108,7 +24108,7 @@ paths:
           description: Success
       summary: DELETE /api/Posislemdetay/deletebyid
       tags:
-      - Posislemdetay
+      - Pos İşlem Detay
   /api/Posislemdetay/deleterange:
     post:
       requestBody:
@@ -24138,7 +24138,7 @@ paths:
           description: Success
       summary: POST /api/Posislemdetay/deleterange
       tags:
-      - Posislemdetay
+      - Pos İşlem Detay
   /api/Posislemdetay/getall:
     post:
       requestBody:
@@ -24160,7 +24160,7 @@ paths:
           description: Success
       summary: POST /api/Posislemdetay/getall
       tags:
-      - Posislemdetay
+      - Pos İşlem Detay
   /api/Posislemdetay/getbyid:
     get:
       parameters:
@@ -24177,7 +24177,7 @@ paths:
           description: Success
       summary: GET /api/Posislemdetay/getbyid
       tags:
-      - Posislemdetay
+      - Pos İşlem Detay
   /api/Posislemdetay/update:
     put:
       requestBody:
@@ -24199,7 +24199,7 @@ paths:
           description: Success
       summary: PUT /api/Posislemdetay/update
       tags:
-      - Posislemdetay
+      - Pos İşlem Detay
   /api/Posislemdetay/updaterange:
     put:
       requestBody:
@@ -24229,7 +24229,7 @@ paths:
           description: Success
       summary: PUT /api/Posislemdetay/updaterange
       tags:
-      - Posislemdetay
+      - Pos İşlem Detay
   /api/Posmakinebilgileri/add:
     post:
       requestBody:
@@ -24251,7 +24251,7 @@ paths:
           description: Success
       summary: POST /api/Posmakinebilgileri/add
       tags:
-      - Posmakinebilgileri
+      - Pos Makine Bilgileri
   /api/Posmakinebilgileri/addrange:
     post:
       requestBody:
@@ -24281,7 +24281,7 @@ paths:
           description: Success
       summary: POST /api/Posmakinebilgileri/addrange
       tags:
-      - Posmakinebilgileri
+      - Pos Makine Bilgileri
   /api/Posmakinebilgileri/delete:
     post:
       requestBody:
@@ -24303,7 +24303,7 @@ paths:
           description: Success
       summary: POST /api/Posmakinebilgileri/delete
       tags:
-      - Posmakinebilgileri
+      - Pos Makine Bilgileri
   /api/Posmakinebilgileri/deletebyid:
     delete:
       parameters:
@@ -24320,7 +24320,7 @@ paths:
           description: Success
       summary: DELETE /api/Posmakinebilgileri/deletebyid
       tags:
-      - Posmakinebilgileri
+      - Pos Makine Bilgileri
   /api/Posmakinebilgileri/deleterange:
     post:
       requestBody:
@@ -24350,7 +24350,7 @@ paths:
           description: Success
       summary: POST /api/Posmakinebilgileri/deleterange
       tags:
-      - Posmakinebilgileri
+      - Pos Makine Bilgileri
   /api/Posmakinebilgileri/getall:
     post:
       requestBody:
@@ -24372,7 +24372,7 @@ paths:
           description: Success
       summary: POST /api/Posmakinebilgileri/getall
       tags:
-      - Posmakinebilgileri
+      - Pos Makine Bilgileri
   /api/Posmakinebilgileri/getbyid:
     get:
       parameters:
@@ -24389,7 +24389,7 @@ paths:
           description: Success
       summary: GET /api/Posmakinebilgileri/getbyid
       tags:
-      - Posmakinebilgileri
+      - Pos Makine Bilgileri
   /api/Posmakinebilgileri/update:
     put:
       requestBody:
@@ -24411,7 +24411,7 @@ paths:
           description: Success
       summary: PUT /api/Posmakinebilgileri/update
       tags:
-      - Posmakinebilgileri
+      - Pos Makine Bilgileri
   /api/Posmakinebilgileri/updaterange:
     put:
       requestBody:
@@ -24441,7 +24441,7 @@ paths:
           description: Success
       summary: PUT /api/Posmakinebilgileri/updaterange
       tags:
-      - Posmakinebilgileri
+      - Pos Makine Bilgileri
   /api/Raporlar/add:
     post:
       requestBody:
@@ -24675,7 +24675,7 @@ paths:
           description: Success
       summary: POST /api/Sanalsantralayar/add
       tags:
-      - Sanalsantralayar
+      - Sanal Santral Ayar İşlemleri
   /api/Sanalsantralayar/addrange:
     post:
       requestBody:
@@ -24705,7 +24705,7 @@ paths:
           description: Success
       summary: POST /api/Sanalsantralayar/addrange
       tags:
-      - Sanalsantralayar
+      - Sanal Santral Ayar İşlemleri
   /api/Sanalsantralayar/delete:
     post:
       requestBody:
@@ -24727,7 +24727,7 @@ paths:
           description: Success
       summary: POST /api/Sanalsantralayar/delete
       tags:
-      - Sanalsantralayar
+      - Sanal Santral Ayar İşlemleri
   /api/Sanalsantralayar/deletebyid:
     delete:
       parameters:
@@ -24744,7 +24744,7 @@ paths:
           description: Success
       summary: DELETE /api/Sanalsantralayar/deletebyid
       tags:
-      - Sanalsantralayar
+      - Sanal Santral Ayar İşlemleri
   /api/Sanalsantralayar/deleterange:
     post:
       requestBody:
@@ -24774,7 +24774,7 @@ paths:
           description: Success
       summary: POST /api/Sanalsantralayar/deleterange
       tags:
-      - Sanalsantralayar
+      - Sanal Santral Ayar İşlemleri
   /api/Sanalsantralayar/getall:
     post:
       requestBody:
@@ -24796,7 +24796,7 @@ paths:
           description: Success
       summary: POST /api/Sanalsantralayar/getall
       tags:
-      - Sanalsantralayar
+      - Sanal Santral Ayar İşlemleri
   /api/Sanalsantralayar/getbyid:
     get:
       parameters:
@@ -24813,7 +24813,7 @@ paths:
           description: Success
       summary: GET /api/Sanalsantralayar/getbyid
       tags:
-      - Sanalsantralayar
+      - Sanal Santral Ayar İşlemleri
   /api/Sanalsantralayar/update:
     put:
       requestBody:
@@ -24835,7 +24835,7 @@ paths:
           description: Success
       summary: PUT /api/Sanalsantralayar/update
       tags:
-      - Sanalsantralayar
+      - Sanal Santral Ayar İşlemleri
   /api/Sanalsantralayar/updaterange:
     put:
       requestBody:
@@ -24865,7 +24865,7 @@ paths:
           description: Success
       summary: PUT /api/Sanalsantralayar/updaterange
       tags:
-      - Sanalsantralayar
+      - Sanal Santral Ayar İşlemleri
   /api/Sayim/add:
     post:
       requestBody:
@@ -24887,7 +24887,7 @@ paths:
           description: Success
       summary: POST /api/Sayim/add
       tags:
-      - Sayim
+      - Sayım
   /api/Sayim/addrange:
     post:
       requestBody:
@@ -24917,7 +24917,7 @@ paths:
           description: Success
       summary: POST /api/Sayim/addrange
       tags:
-      - Sayim
+      - Sayım
   /api/Sayim/delete:
     post:
       requestBody:
@@ -24939,7 +24939,7 @@ paths:
           description: Success
       summary: POST /api/Sayim/delete
       tags:
-      - Sayim
+      - Sayım
   /api/Sayim/deletebyid:
     delete:
       parameters:
@@ -24956,7 +24956,7 @@ paths:
           description: Success
       summary: DELETE /api/Sayim/deletebyid
       tags:
-      - Sayim
+      - Sayım
   /api/Sayim/deleterange:
     post:
       requestBody:
@@ -24986,7 +24986,7 @@ paths:
           description: Success
       summary: POST /api/Sayim/deleterange
       tags:
-      - Sayim
+      - Sayım
   /api/Sayim/getall:
     post:
       requestBody:
@@ -25008,7 +25008,7 @@ paths:
           description: Success
       summary: POST /api/Sayim/getall
       tags:
-      - Sayim
+      - Sayım
   /api/Sayim/getbyid:
     get:
       parameters:
@@ -25025,7 +25025,7 @@ paths:
           description: Success
       summary: GET /api/Sayim/getbyid
       tags:
-      - Sayim
+      - Sayım
   /api/Sayim/update:
     put:
       requestBody:
@@ -25047,7 +25047,7 @@ paths:
           description: Success
       summary: PUT /api/Sayim/update
       tags:
-      - Sayim
+      - Sayım
   /api/Sayim/updaterange:
     put:
       requestBody:
@@ -25077,7 +25077,7 @@ paths:
           description: Success
       summary: PUT /api/Sayim/updaterange
       tags:
-      - Sayim
+      - Sayım
   /api/Sayimtemple/add:
     post:
       requestBody:
@@ -25099,7 +25099,7 @@ paths:
           description: Success
       summary: POST /api/Sayimtemple/add
       tags:
-      - Sayimtemple
+      - Sayım Temple
   /api/Sayimtemple/addrange:
     post:
       requestBody:
@@ -25129,7 +25129,7 @@ paths:
           description: Success
       summary: POST /api/Sayimtemple/addrange
       tags:
-      - Sayimtemple
+      - Sayım Temple
   /api/Sayimtemple/delete:
     post:
       requestBody:
@@ -25151,7 +25151,7 @@ paths:
           description: Success
       summary: POST /api/Sayimtemple/delete
       tags:
-      - Sayimtemple
+      - Sayım Temple
   /api/Sayimtemple/deletebyid:
     delete:
       parameters:
@@ -25168,7 +25168,7 @@ paths:
           description: Success
       summary: DELETE /api/Sayimtemple/deletebyid
       tags:
-      - Sayimtemple
+      - Sayım Temple
   /api/Sayimtemple/deleterange:
     post:
       requestBody:
@@ -25198,7 +25198,7 @@ paths:
           description: Success
       summary: POST /api/Sayimtemple/deleterange
       tags:
-      - Sayimtemple
+      - Sayım Temple
   /api/Sayimtemple/getall:
     post:
       requestBody:
@@ -25220,7 +25220,7 @@ paths:
           description: Success
       summary: POST /api/Sayimtemple/getall
       tags:
-      - Sayimtemple
+      - Sayım Temple
   /api/Sayimtemple/getbyid:
     get:
       parameters:
@@ -25237,7 +25237,7 @@ paths:
           description: Success
       summary: GET /api/Sayimtemple/getbyid
       tags:
-      - Sayimtemple
+      - Sayım Temple
   /api/Sayimtemple/update:
     put:
       requestBody:
@@ -25259,7 +25259,7 @@ paths:
           description: Success
       summary: PUT /api/Sayimtemple/update
       tags:
-      - Sayimtemple
+      - Sayım Temple
   /api/Sayimtemple/updaterange:
     put:
       requestBody:
@@ -25289,7 +25289,7 @@ paths:
           description: Success
       summary: PUT /api/Sayimtemple/updaterange
       tags:
-      - Sayimtemple
+      - Sayım Temple
   /api/SevkBilgileri/add:
     post:
       requestBody:
@@ -25311,7 +25311,7 @@ paths:
           description: Success
       summary: POST /api/SevkBilgileri/add
       tags:
-      - SevkBilgileri
+      - Sevk Bilgileri
   /api/SevkBilgileri/addrange:
     post:
       requestBody:
@@ -25341,7 +25341,7 @@ paths:
           description: Success
       summary: POST /api/SevkBilgileri/addrange
       tags:
-      - SevkBilgileri
+      - Sevk Bilgileri
   /api/SevkBilgileri/delete:
     post:
       requestBody:
@@ -25363,7 +25363,7 @@ paths:
           description: Success
       summary: POST /api/SevkBilgileri/delete
       tags:
-      - SevkBilgileri
+      - Sevk Bilgileri
   /api/SevkBilgileri/deletebyid:
     delete:
       parameters:
@@ -25380,7 +25380,7 @@ paths:
           description: Success
       summary: DELETE /api/SevkBilgileri/deletebyid
       tags:
-      - SevkBilgileri
+      - Sevk Bilgileri
   /api/SevkBilgileri/deleterange:
     post:
       requestBody:
@@ -25410,7 +25410,7 @@ paths:
           description: Success
       summary: POST /api/SevkBilgileri/deleterange
       tags:
-      - SevkBilgileri
+      - Sevk Bilgileri
   /api/SevkBilgileri/getall:
     post:
       requestBody:
@@ -25432,7 +25432,7 @@ paths:
           description: Success
       summary: POST /api/SevkBilgileri/getall
       tags:
-      - SevkBilgileri
+      - Sevk Bilgileri
   /api/SevkBilgileri/getbyid:
     get:
       parameters:
@@ -25449,7 +25449,7 @@ paths:
           description: Success
       summary: GET /api/SevkBilgileri/getbyid
       tags:
-      - SevkBilgileri
+      - Sevk Bilgileri
   /api/SevkBilgileri/update:
     put:
       requestBody:
@@ -25471,7 +25471,7 @@ paths:
           description: Success
       summary: PUT /api/SevkBilgileri/update
       tags:
-      - SevkBilgileri
+      - Sevk Bilgileri
   /api/SevkBilgileri/updaterange:
     put:
       requestBody:
@@ -25501,7 +25501,7 @@ paths:
           description: Success
       summary: PUT /api/SevkBilgileri/updaterange
       tags:
-      - SevkBilgileri
+      - Sevk Bilgileri
   /api/Smsayar/add:
     post:
       requestBody:
@@ -25735,7 +25735,7 @@ paths:
           description: Success
       summary: POST /api/SoforBilgileri/add
       tags:
-      - SoforBilgileri
+      - Şoför Bilgileri
   /api/SoforBilgileri/addrange:
     post:
       requestBody:
@@ -25765,7 +25765,7 @@ paths:
           description: Success
       summary: POST /api/SoforBilgileri/addrange
       tags:
-      - SoforBilgileri
+      - Şoför Bilgileri
   /api/SoforBilgileri/delete:
     post:
       requestBody:
@@ -25787,7 +25787,7 @@ paths:
           description: Success
       summary: POST /api/SoforBilgileri/delete
       tags:
-      - SoforBilgileri
+      - Şoför Bilgileri
   /api/SoforBilgileri/deletebyid:
     delete:
       parameters:
@@ -25804,7 +25804,7 @@ paths:
           description: Success
       summary: DELETE /api/SoforBilgileri/deletebyid
       tags:
-      - SoforBilgileri
+      - Şoför Bilgileri
   /api/SoforBilgileri/deleterange:
     post:
       requestBody:
@@ -25834,7 +25834,7 @@ paths:
           description: Success
       summary: POST /api/SoforBilgileri/deleterange
       tags:
-      - SoforBilgileri
+      - Şoför Bilgileri
   /api/SoforBilgileri/getall:
     post:
       requestBody:
@@ -25856,7 +25856,7 @@ paths:
           description: Success
       summary: POST /api/SoforBilgileri/getall
       tags:
-      - SoforBilgileri
+      - Şoför Bilgileri
   /api/SoforBilgileri/getbyid:
     get:
       parameters:
@@ -25873,7 +25873,7 @@ paths:
           description: Success
       summary: GET /api/SoforBilgileri/getbyid
       tags:
-      - SoforBilgileri
+      - Şoför Bilgileri
   /api/SoforBilgileri/update:
     put:
       requestBody:
@@ -25895,7 +25895,7 @@ paths:
           description: Success
       summary: PUT /api/SoforBilgileri/update
       tags:
-      - SoforBilgileri
+      - Şoför Bilgileri
   /api/SoforBilgileri/updaterange:
     put:
       requestBody:
@@ -25925,7 +25925,7 @@ paths:
           description: Success
       summary: PUT /api/SoforBilgileri/updaterange
       tags:
-      - SoforBilgileri
+      - Şoför Bilgileri
   /api/Stok/ControlDelete:
     post:
       requestBody:
@@ -25947,7 +25947,7 @@ paths:
           description: Success
       summary: POST /api/Stok/ControlDelete
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/ControlDeleteById:
     delete:
       parameters:
@@ -25964,7 +25964,7 @@ paths:
           description: Success
       summary: DELETE /api/Stok/ControlDeleteById
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/GetListWithBakiye:
     post:
       requestBody:
@@ -25986,7 +25986,7 @@ paths:
           description: Success
       summary: POST /api/Stok/GetListWithBakiye
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/StokFiyatListesiReport:
     post:
       requestBody:
@@ -26008,7 +26008,7 @@ paths:
           description: Success
       summary: POST /api/Stok/StokFiyatListesiReport
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/StokHareketeriRapor:
     post:
       requestBody:
@@ -26030,7 +26030,7 @@ paths:
           description: Success
       summary: POST /api/Stok/StokHareketeriRapor
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/StokTopluReport:
     post:
       requestBody:
@@ -26052,7 +26052,7 @@ paths:
           description: Success
       summary: POST /api/Stok/StokTopluReport
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/add:
     post:
       requestBody:
@@ -26074,7 +26074,7 @@ paths:
           description: Success
       summary: POST /api/Stok/add
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/addrange:
     post:
       requestBody:
@@ -26104,7 +26104,7 @@ paths:
           description: Success
       summary: POST /api/Stok/addrange
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/delete:
     post:
       requestBody:
@@ -26126,7 +26126,7 @@ paths:
           description: Success
       summary: POST /api/Stok/delete
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/deletebyid:
     delete:
       parameters:
@@ -26143,7 +26143,7 @@ paths:
           description: Success
       summary: DELETE /api/Stok/deletebyid
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/deleterange:
     post:
       requestBody:
@@ -26173,7 +26173,7 @@ paths:
           description: Success
       summary: POST /api/Stok/deleterange
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/getall:
     post:
       requestBody:
@@ -26195,7 +26195,7 @@ paths:
           description: Success
       summary: POST /api/Stok/getall
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/getbyid:
     get:
       parameters:
@@ -26212,7 +26212,7 @@ paths:
           description: Success
       summary: GET /api/Stok/getbyid
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/update:
     put:
       requestBody:
@@ -26234,7 +26234,7 @@ paths:
           description: Success
       summary: PUT /api/Stok/update
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/Stok/updaterange:
     put:
       requestBody:
@@ -26264,7 +26264,7 @@ paths:
           description: Success
       summary: PUT /api/Stok/updaterange
       tags:
-      - Stok
+      - Stok İşlemleri
   /api/StokBirim/add:
     post:
       requestBody:
@@ -26286,7 +26286,7 @@ paths:
           description: Success
       summary: POST /api/StokBirim/add
       tags:
-      - StokBirim
+      - Stok Birim İşlemleri
   /api/StokBirim/addrange:
     post:
       requestBody:
@@ -26316,7 +26316,7 @@ paths:
           description: Success
       summary: POST /api/StokBirim/addrange
       tags:
-      - StokBirim
+      - Stok Birim İşlemleri
   /api/StokBirim/delete:
     post:
       requestBody:
@@ -26338,7 +26338,7 @@ paths:
           description: Success
       summary: POST /api/StokBirim/delete
       tags:
-      - StokBirim
+      - Stok Birim İşlemleri
   /api/StokBirim/deletebyid:
     delete:
       parameters:
@@ -26355,7 +26355,7 @@ paths:
           description: Success
       summary: DELETE /api/StokBirim/deletebyid
       tags:
-      - StokBirim
+      - Stok Birim İşlemleri
   /api/StokBirim/deleterange:
     post:
       requestBody:
@@ -26385,7 +26385,7 @@ paths:
           description: Success
       summary: POST /api/StokBirim/deleterange
       tags:
-      - StokBirim
+      - Stok Birim İşlemleri
   /api/StokBirim/getall:
     post:
       requestBody:
@@ -26407,7 +26407,7 @@ paths:
           description: Success
       summary: POST /api/StokBirim/getall
       tags:
-      - StokBirim
+      - Stok Birim İşlemleri
   /api/StokBirim/getbyid:
     get:
       parameters:
@@ -26424,7 +26424,7 @@ paths:
           description: Success
       summary: GET /api/StokBirim/getbyid
       tags:
-      - StokBirim
+      - Stok Birim İşlemleri
   /api/StokBirim/update:
     put:
       requestBody:
@@ -26446,7 +26446,7 @@ paths:
           description: Success
       summary: PUT /api/StokBirim/update
       tags:
-      - StokBirim
+      - Stok Birim İşlemleri
   /api/StokBirim/updaterange:
     put:
       requestBody:
@@ -26476,7 +26476,7 @@ paths:
           description: Success
       summary: PUT /api/StokBirim/updaterange
       tags:
-      - StokBirim
+      - Stok Birim İşlemleri
   /api/StokDepo/add:
     post:
       requestBody:
@@ -26498,7 +26498,7 @@ paths:
           description: Success
       summary: POST /api/StokDepo/add
       tags:
-      - StokDepo
+      - Stok Depo İşlemleri
   /api/StokDepo/addrange:
     post:
       requestBody:
@@ -26528,7 +26528,7 @@ paths:
           description: Success
       summary: POST /api/StokDepo/addrange
       tags:
-      - StokDepo
+      - Stok Depo İşlemleri
   /api/StokDepo/delete:
     post:
       requestBody:
@@ -26550,7 +26550,7 @@ paths:
           description: Success
       summary: POST /api/StokDepo/delete
       tags:
-      - StokDepo
+      - Stok Depo İşlemleri
   /api/StokDepo/deletebyid:
     delete:
       parameters:
@@ -26567,7 +26567,7 @@ paths:
           description: Success
       summary: DELETE /api/StokDepo/deletebyid
       tags:
-      - StokDepo
+      - Stok Depo İşlemleri
   /api/StokDepo/deleterange:
     post:
       requestBody:
@@ -26597,7 +26597,7 @@ paths:
           description: Success
       summary: POST /api/StokDepo/deleterange
       tags:
-      - StokDepo
+      - Stok Depo İşlemleri
   /api/StokDepo/getall:
     post:
       requestBody:
@@ -26619,7 +26619,7 @@ paths:
           description: Success
       summary: POST /api/StokDepo/getall
       tags:
-      - StokDepo
+      - Stok Depo İşlemleri
   /api/StokDepo/getbyid:
     get:
       parameters:
@@ -26636,7 +26636,7 @@ paths:
           description: Success
       summary: GET /api/StokDepo/getbyid
       tags:
-      - StokDepo
+      - Stok Depo İşlemleri
   /api/StokDepo/update:
     put:
       requestBody:
@@ -26658,7 +26658,7 @@ paths:
           description: Success
       summary: PUT /api/StokDepo/update
       tags:
-      - StokDepo
+      - Stok Depo İşlemleri
   /api/StokDepo/updaterange:
     put:
       requestBody:
@@ -26688,7 +26688,7 @@ paths:
           description: Success
       summary: PUT /api/StokDepo/updaterange
       tags:
-      - StokDepo
+      - Stok Depo İşlemleri
   /api/StokEticaret/add:
     post:
       requestBody:
@@ -26710,7 +26710,7 @@ paths:
           description: Success
       summary: POST /api/StokEticaret/add
       tags:
-      - StokEticaret
+      - Stok Eticaret İşlemleri
   /api/StokEticaret/addrange:
     post:
       requestBody:
@@ -26740,7 +26740,7 @@ paths:
           description: Success
       summary: POST /api/StokEticaret/addrange
       tags:
-      - StokEticaret
+      - Stok Eticaret İşlemleri
   /api/StokEticaret/delete:
     post:
       requestBody:
@@ -26762,7 +26762,7 @@ paths:
           description: Success
       summary: POST /api/StokEticaret/delete
       tags:
-      - StokEticaret
+      - Stok Eticaret İşlemleri
   /api/StokEticaret/deletebyid:
     delete:
       parameters:
@@ -26779,7 +26779,7 @@ paths:
           description: Success
       summary: DELETE /api/StokEticaret/deletebyid
       tags:
-      - StokEticaret
+      - Stok Eticaret İşlemleri
   /api/StokEticaret/deleterange:
     post:
       requestBody:
@@ -26809,7 +26809,7 @@ paths:
           description: Success
       summary: POST /api/StokEticaret/deleterange
       tags:
-      - StokEticaret
+      - Stok Eticaret İşlemleri
   /api/StokEticaret/getall:
     post:
       requestBody:
@@ -26831,7 +26831,7 @@ paths:
           description: Success
       summary: POST /api/StokEticaret/getall
       tags:
-      - StokEticaret
+      - Stok Eticaret İşlemleri
   /api/StokEticaret/getbyid:
     get:
       parameters:
@@ -26848,7 +26848,7 @@ paths:
           description: Success
       summary: GET /api/StokEticaret/getbyid
       tags:
-      - StokEticaret
+      - Stok Eticaret İşlemleri
   /api/StokEticaret/update:
     put:
       requestBody:
@@ -26870,7 +26870,7 @@ paths:
           description: Success
       summary: PUT /api/StokEticaret/update
       tags:
-      - StokEticaret
+      - Stok Eticaret İşlemleri
   /api/StokEticaret/updaterange:
     put:
       requestBody:
@@ -26900,7 +26900,7 @@ paths:
           description: Success
       summary: PUT /api/StokEticaret/updaterange
       tags:
-      - StokEticaret
+      - Stok Eticaret İşlemleri
   /api/StokGrup/add:
     post:
       requestBody:
@@ -26922,7 +26922,7 @@ paths:
           description: Success
       summary: POST /api/StokGrup/add
       tags:
-      - StokGrup
+      - Stok Grup İşlemleri
   /api/StokGrup/addrange:
     post:
       requestBody:
@@ -26952,7 +26952,7 @@ paths:
           description: Success
       summary: POST /api/StokGrup/addrange
       tags:
-      - StokGrup
+      - Stok Grup İşlemleri
   /api/StokGrup/delete:
     post:
       requestBody:
@@ -26974,7 +26974,7 @@ paths:
           description: Success
       summary: POST /api/StokGrup/delete
       tags:
-      - StokGrup
+      - Stok Grup İşlemleri
   /api/StokGrup/deletebyid:
     delete:
       parameters:
@@ -26991,7 +26991,7 @@ paths:
           description: Success
       summary: DELETE /api/StokGrup/deletebyid
       tags:
-      - StokGrup
+      - Stok Grup İşlemleri
   /api/StokGrup/deleterange:
     post:
       requestBody:
@@ -27021,7 +27021,7 @@ paths:
           description: Success
       summary: POST /api/StokGrup/deleterange
       tags:
-      - StokGrup
+      - Stok Grup İşlemleri
   /api/StokGrup/getall:
     post:
       requestBody:
@@ -27043,7 +27043,7 @@ paths:
           description: Success
       summary: POST /api/StokGrup/getall
       tags:
-      - StokGrup
+      - Stok Grup İşlemleri
   /api/StokGrup/getbyid:
     get:
       parameters:
@@ -27060,7 +27060,7 @@ paths:
           description: Success
       summary: GET /api/StokGrup/getbyid
       tags:
-      - StokGrup
+      - Stok Grup İşlemleri
   /api/StokGrup/update:
     put:
       requestBody:
@@ -27082,7 +27082,7 @@ paths:
           description: Success
       summary: PUT /api/StokGrup/update
       tags:
-      - StokGrup
+      - Stok Grup İşlemleri
   /api/StokGrup/updaterange:
     put:
       requestBody:
@@ -27112,7 +27112,7 @@ paths:
           description: Success
       summary: PUT /api/StokGrup/updaterange
       tags:
-      - StokGrup
+      - Stok Grup İşlemleri
   /api/StokHammadde/add:
     post:
       requestBody:
@@ -27134,7 +27134,7 @@ paths:
           description: Success
       summary: POST /api/StokHammadde/add
       tags:
-      - StokHammadde
+      - Stok Hammadde İşlemleri
   /api/StokHammadde/addrange:
     post:
       requestBody:
@@ -27164,7 +27164,7 @@ paths:
           description: Success
       summary: POST /api/StokHammadde/addrange
       tags:
-      - StokHammadde
+      - Stok Hammadde İşlemleri
   /api/StokHammadde/delete:
     post:
       requestBody:
@@ -27186,7 +27186,7 @@ paths:
           description: Success
       summary: POST /api/StokHammadde/delete
       tags:
-      - StokHammadde
+      - Stok Hammadde İşlemleri
   /api/StokHammadde/deletebyid:
     delete:
       parameters:
@@ -27203,7 +27203,7 @@ paths:
           description: Success
       summary: DELETE /api/StokHammadde/deletebyid
       tags:
-      - StokHammadde
+      - Stok Hammadde İşlemleri
   /api/StokHammadde/deleterange:
     post:
       requestBody:
@@ -27233,7 +27233,7 @@ paths:
           description: Success
       summary: POST /api/StokHammadde/deleterange
       tags:
-      - StokHammadde
+      - Stok Hammadde İşlemleri
   /api/StokHammadde/getall:
     post:
       requestBody:
@@ -27255,7 +27255,7 @@ paths:
           description: Success
       summary: POST /api/StokHammadde/getall
       tags:
-      - StokHammadde
+      - Stok Hammadde İşlemleri
   /api/StokHammadde/getbyid:
     get:
       parameters:
@@ -27272,7 +27272,7 @@ paths:
           description: Success
       summary: GET /api/StokHammadde/getbyid
       tags:
-      - StokHammadde
+      - Stok Hammadde İşlemleri
   /api/StokHammadde/update:
     put:
       requestBody:
@@ -27294,7 +27294,7 @@ paths:
           description: Success
       summary: PUT /api/StokHammadde/update
       tags:
-      - StokHammadde
+      - Stok Hammadde İşlemleri
   /api/StokHammadde/updaterange:
     put:
       requestBody:
@@ -27324,7 +27324,7 @@ paths:
           description: Success
       summary: PUT /api/StokHammadde/updaterange
       tags:
-      - StokHammadde
+      - Stok Hammadde İşlemleri
   /api/StokIsl/GetListWithDTO:
     post:
       requestBody:
@@ -27580,7 +27580,7 @@ paths:
           description: Success
       summary: POST /api/Stokfiyatlar/add
       tags:
-      - Stokfiyatlar
+      - Stok Fiyatlar
   /api/Stokfiyatlar/addrange:
     post:
       requestBody:
@@ -27610,7 +27610,7 @@ paths:
           description: Success
       summary: POST /api/Stokfiyatlar/addrange
       tags:
-      - Stokfiyatlar
+      - Stok Fiyatlar
   /api/Stokfiyatlar/delete:
     post:
       requestBody:
@@ -27632,7 +27632,7 @@ paths:
           description: Success
       summary: POST /api/Stokfiyatlar/delete
       tags:
-      - Stokfiyatlar
+      - Stok Fiyatlar
   /api/Stokfiyatlar/deletebyid:
     delete:
       parameters:
@@ -27649,7 +27649,7 @@ paths:
           description: Success
       summary: DELETE /api/Stokfiyatlar/deletebyid
       tags:
-      - Stokfiyatlar
+      - Stok Fiyatlar
   /api/Stokfiyatlar/deleterange:
     post:
       requestBody:
@@ -27679,7 +27679,7 @@ paths:
           description: Success
       summary: POST /api/Stokfiyatlar/deleterange
       tags:
-      - Stokfiyatlar
+      - Stok Fiyatlar
   /api/Stokfiyatlar/getall:
     post:
       requestBody:
@@ -27701,7 +27701,7 @@ paths:
           description: Success
       summary: POST /api/Stokfiyatlar/getall
       tags:
-      - Stokfiyatlar
+      - Stok Fiyatlar
   /api/Stokfiyatlar/getbyid:
     get:
       parameters:
@@ -27718,7 +27718,7 @@ paths:
           description: Success
       summary: GET /api/Stokfiyatlar/getbyid
       tags:
-      - Stokfiyatlar
+      - Stok Fiyatlar
   /api/Stokfiyatlar/update:
     put:
       requestBody:
@@ -27740,7 +27740,7 @@ paths:
           description: Success
       summary: PUT /api/Stokfiyatlar/update
       tags:
-      - Stokfiyatlar
+      - Stok Fiyatlar
   /api/Stokfiyatlar/updaterange:
     put:
       requestBody:
@@ -27770,7 +27770,7 @@ paths:
           description: Success
       summary: PUT /api/Stokfiyatlar/updaterange
       tags:
-      - Stokfiyatlar
+      - Stok Fiyatlar
   /api/Stoklot/add:
     post:
       requestBody:
@@ -27792,7 +27792,7 @@ paths:
           description: Success
       summary: POST /api/Stoklot/add
       tags:
-      - Stoklot
+      - Stok Lot İşlemleri
   /api/Stoklot/addrange:
     post:
       requestBody:
@@ -27822,7 +27822,7 @@ paths:
           description: Success
       summary: POST /api/Stoklot/addrange
       tags:
-      - Stoklot
+      - Stok Lot İşlemleri
   /api/Stoklot/delete:
     post:
       requestBody:
@@ -27844,7 +27844,7 @@ paths:
           description: Success
       summary: POST /api/Stoklot/delete
       tags:
-      - Stoklot
+      - Stok Lot İşlemleri
   /api/Stoklot/deletebyid:
     delete:
       parameters:
@@ -27861,7 +27861,7 @@ paths:
           description: Success
       summary: DELETE /api/Stoklot/deletebyid
       tags:
-      - Stoklot
+      - Stok Lot İşlemleri
   /api/Stoklot/deleterange:
     post:
       requestBody:
@@ -27891,7 +27891,7 @@ paths:
           description: Success
       summary: POST /api/Stoklot/deleterange
       tags:
-      - Stoklot
+      - Stok Lot İşlemleri
   /api/Stoklot/getall:
     post:
       requestBody:
@@ -27913,7 +27913,7 @@ paths:
           description: Success
       summary: POST /api/Stoklot/getall
       tags:
-      - Stoklot
+      - Stok Lot İşlemleri
   /api/Stoklot/getbyid:
     get:
       parameters:
@@ -27930,7 +27930,7 @@ paths:
           description: Success
       summary: GET /api/Stoklot/getbyid
       tags:
-      - Stoklot
+      - Stok Lot İşlemleri
   /api/Stoklot/update:
     put:
       requestBody:
@@ -27952,7 +27952,7 @@ paths:
           description: Success
       summary: PUT /api/Stoklot/update
       tags:
-      - Stoklot
+      - Stok Lot İşlemleri
   /api/Stoklot/updaterange:
     put:
       requestBody:
@@ -27982,7 +27982,7 @@ paths:
           description: Success
       summary: PUT /api/Stoklot/updaterange
       tags:
-      - Stoklot
+      - Stok Lot İşlemleri
   /api/Stokpaketgrup/add:
     post:
       requestBody:
@@ -28004,7 +28004,7 @@ paths:
           description: Success
       summary: POST /api/Stokpaketgrup/add
       tags:
-      - Stokpaketgrup
+      - Stok Paket Grup İşlemleri
   /api/Stokpaketgrup/addrange:
     post:
       requestBody:
@@ -28034,7 +28034,7 @@ paths:
           description: Success
       summary: POST /api/Stokpaketgrup/addrange
       tags:
-      - Stokpaketgrup
+      - Stok Paket Grup İşlemleri
   /api/Stokpaketgrup/delete:
     post:
       requestBody:
@@ -28056,7 +28056,7 @@ paths:
           description: Success
       summary: POST /api/Stokpaketgrup/delete
       tags:
-      - Stokpaketgrup
+      - Stok Paket Grup İşlemleri
   /api/Stokpaketgrup/deletebyid:
     delete:
       parameters:
@@ -28073,7 +28073,7 @@ paths:
           description: Success
       summary: DELETE /api/Stokpaketgrup/deletebyid
       tags:
-      - Stokpaketgrup
+      - Stok Paket Grup İşlemleri
   /api/Stokpaketgrup/deleterange:
     post:
       requestBody:
@@ -28103,7 +28103,7 @@ paths:
           description: Success
       summary: POST /api/Stokpaketgrup/deleterange
       tags:
-      - Stokpaketgrup
+      - Stok Paket Grup İşlemleri
   /api/Stokpaketgrup/getall:
     post:
       requestBody:
@@ -28125,7 +28125,7 @@ paths:
           description: Success
       summary: POST /api/Stokpaketgrup/getall
       tags:
-      - Stokpaketgrup
+      - Stok Paket Grup İşlemleri
   /api/Stokpaketgrup/getbyid:
     get:
       parameters:
@@ -28142,7 +28142,7 @@ paths:
           description: Success
       summary: GET /api/Stokpaketgrup/getbyid
       tags:
-      - Stokpaketgrup
+      - Stok Paket Grup İşlemleri
   /api/Stokpaketgrup/update:
     put:
       requestBody:
@@ -28164,7 +28164,7 @@ paths:
           description: Success
       summary: PUT /api/Stokpaketgrup/update
       tags:
-      - Stokpaketgrup
+      - Stok Paket Grup İşlemleri
   /api/Stokpaketgrup/updaterange:
     put:
       requestBody:
@@ -28194,7 +28194,7 @@ paths:
           description: Success
       summary: PUT /api/Stokpaketgrup/updaterange
       tags:
-      - Stokpaketgrup
+      - Stok Paket Grup İşlemleri
   /api/Subeler/add:
     post:
       requestBody:
@@ -28216,7 +28216,7 @@ paths:
           description: Success
       summary: POST /api/Subeler/add
       tags:
-      - Subeler
+      - Şubeler
   /api/Subeler/addrange:
     post:
       requestBody:
@@ -28246,7 +28246,7 @@ paths:
           description: Success
       summary: POST /api/Subeler/addrange
       tags:
-      - Subeler
+      - Şubeler
   /api/Subeler/delete:
     post:
       requestBody:
@@ -28268,7 +28268,7 @@ paths:
           description: Success
       summary: POST /api/Subeler/delete
       tags:
-      - Subeler
+      - Şubeler
   /api/Subeler/deletebyid:
     delete:
       parameters:
@@ -28285,7 +28285,7 @@ paths:
           description: Success
       summary: DELETE /api/Subeler/deletebyid
       tags:
-      - Subeler
+      - Şubeler
   /api/Subeler/deleterange:
     post:
       requestBody:
@@ -28315,7 +28315,7 @@ paths:
           description: Success
       summary: POST /api/Subeler/deleterange
       tags:
-      - Subeler
+      - Şubeler
   /api/Subeler/getall:
     post:
       requestBody:
@@ -28337,7 +28337,7 @@ paths:
           description: Success
       summary: POST /api/Subeler/getall
       tags:
-      - Subeler
+      - Şubeler
   /api/Subeler/getbyid:
     get:
       parameters:
@@ -28354,7 +28354,7 @@ paths:
           description: Success
       summary: GET /api/Subeler/getbyid
       tags:
-      - Subeler
+      - Şubeler
   /api/Subeler/update:
     put:
       requestBody:
@@ -28376,7 +28376,7 @@ paths:
           description: Success
       summary: PUT /api/Subeler/update
       tags:
-      - Subeler
+      - Şubeler
   /api/Subeler/updaterange:
     put:
       requestBody:
@@ -28406,7 +28406,7 @@ paths:
           description: Success
       summary: PUT /api/Subeler/updaterange
       tags:
-      - Subeler
+      - Şubeler
   /api/Taksit/ControlDelete:
     post:
       requestBody:
@@ -28428,7 +28428,7 @@ paths:
           description: Success
       summary: POST /api/Taksit/ControlDelete
       tags:
-      - Taksit
+      - Taksit İşlemleri
   /api/Taksit/ControlDeleteById:
     delete:
       parameters:
@@ -28445,7 +28445,7 @@ paths:
           description: Success
       summary: DELETE /api/Taksit/ControlDeleteById
       tags:
-      - Taksit
+      - Taksit İşlemleri
   /api/Taksit/add:
     post:
       requestBody:
@@ -28467,7 +28467,7 @@ paths:
           description: Success
       summary: POST /api/Taksit/add
       tags:
-      - Taksit
+      - Taksit İşlemleri
   /api/Taksit/addrange:
     post:
       requestBody:
@@ -28497,7 +28497,7 @@ paths:
           description: Success
       summary: POST /api/Taksit/addrange
       tags:
-      - Taksit
+      - Taksit İşlemleri
   /api/Taksit/delete:
     post:
       requestBody:
@@ -28519,7 +28519,7 @@ paths:
           description: Success
       summary: POST /api/Taksit/delete
       tags:
-      - Taksit
+      - Taksit İşlemleri
   /api/Taksit/deletebyid:
     delete:
       parameters:
@@ -28536,7 +28536,7 @@ paths:
           description: Success
       summary: DELETE /api/Taksit/deletebyid
       tags:
-      - Taksit
+      - Taksit İşlemleri
   /api/Taksit/deleterange:
     post:
       requestBody:
@@ -28566,7 +28566,7 @@ paths:
           description: Success
       summary: POST /api/Taksit/deleterange
       tags:
-      - Taksit
+      - Taksit İşlemleri
   /api/Taksit/getall:
     post:
       requestBody:
@@ -28588,7 +28588,7 @@ paths:
           description: Success
       summary: POST /api/Taksit/getall
       tags:
-      - Taksit
+      - Taksit İşlemleri
   /api/Taksit/getbyid:
     get:
       parameters:
@@ -28605,7 +28605,7 @@ paths:
           description: Success
       summary: GET /api/Taksit/getbyid
       tags:
-      - Taksit
+      - Taksit İşlemleri
   /api/Taksit/update:
     put:
       requestBody:
@@ -28627,7 +28627,7 @@ paths:
           description: Success
       summary: PUT /api/Taksit/update
       tags:
-      - Taksit
+      - Taksit İşlemleri
   /api/Taksit/updaterange:
     put:
       requestBody:
@@ -28657,7 +28657,7 @@ paths:
           description: Success
       summary: PUT /api/Taksit/updaterange
       tags:
-      - Taksit
+      - Taksit İşlemleri
   /api/TaksitIsl/add:
     post:
       requestBody:
@@ -28891,7 +28891,7 @@ paths:
           description: Success
       summary: POST /api/Teklifsiparis/add
       tags:
-      - Teklifsiparis
+      - Teklif Sipariş İşlemleri
   /api/Teklifsiparis/addrange:
     post:
       requestBody:
@@ -28921,7 +28921,7 @@ paths:
           description: Success
       summary: POST /api/Teklifsiparis/addrange
       tags:
-      - Teklifsiparis
+      - Teklif Sipariş İşlemleri
   /api/Teklifsiparis/delete:
     post:
       requestBody:
@@ -28943,7 +28943,7 @@ paths:
           description: Success
       summary: POST /api/Teklifsiparis/delete
       tags:
-      - Teklifsiparis
+      - Teklif Sipariş İşlemleri
   /api/Teklifsiparis/deletebyid:
     delete:
       parameters:
@@ -28960,7 +28960,7 @@ paths:
           description: Success
       summary: DELETE /api/Teklifsiparis/deletebyid
       tags:
-      - Teklifsiparis
+      - Teklif Sipariş İşlemleri
   /api/Teklifsiparis/deleterange:
     post:
       requestBody:
@@ -28990,7 +28990,7 @@ paths:
           description: Success
       summary: POST /api/Teklifsiparis/deleterange
       tags:
-      - Teklifsiparis
+      - Teklif Sipariş İşlemleri
   /api/Teklifsiparis/getall:
     post:
       requestBody:
@@ -29012,7 +29012,7 @@ paths:
           description: Success
       summary: POST /api/Teklifsiparis/getall
       tags:
-      - Teklifsiparis
+      - Teklif Sipariş İşlemleri
   /api/Teklifsiparis/getbyid:
     get:
       parameters:
@@ -29029,7 +29029,7 @@ paths:
           description: Success
       summary: GET /api/Teklifsiparis/getbyid
       tags:
-      - Teklifsiparis
+      - Teklif Sipariş İşlemleri
   /api/Teklifsiparis/update:
     put:
       requestBody:
@@ -29051,7 +29051,7 @@ paths:
           description: Success
       summary: PUT /api/Teklifsiparis/update
       tags:
-      - Teklifsiparis
+      - Teklif Sipariş İşlemleri
   /api/Teklifsiparis/updaterange:
     put:
       requestBody:
@@ -29081,7 +29081,7 @@ paths:
           description: Success
       summary: PUT /api/Teklifsiparis/updaterange
       tags:
-      - Teklifsiparis
+      - Teklif Sipariş İşlemleri
   /api/TeklifsiparisAciklamalari/add:
     post:
       requestBody:
@@ -29103,7 +29103,7 @@ paths:
           description: Success
       summary: POST /api/TeklifsiparisAciklamalari/add
       tags:
-      - TeklifsiparisAciklamalari
+      - Teklif Sipariş Açıklamaları
   /api/TeklifsiparisAciklamalari/addrange:
     post:
       requestBody:
@@ -29133,7 +29133,7 @@ paths:
           description: Success
       summary: POST /api/TeklifsiparisAciklamalari/addrange
       tags:
-      - TeklifsiparisAciklamalari
+      - Teklif Sipariş Açıklamaları
   /api/TeklifsiparisAciklamalari/delete:
     post:
       requestBody:
@@ -29155,7 +29155,7 @@ paths:
           description: Success
       summary: POST /api/TeklifsiparisAciklamalari/delete
       tags:
-      - TeklifsiparisAciklamalari
+      - Teklif Sipariş Açıklamaları
   /api/TeklifsiparisAciklamalari/deletebyid:
     delete:
       parameters:
@@ -29172,7 +29172,7 @@ paths:
           description: Success
       summary: DELETE /api/TeklifsiparisAciklamalari/deletebyid
       tags:
-      - TeklifsiparisAciklamalari
+      - Teklif Sipariş Açıklamaları
   /api/TeklifsiparisAciklamalari/deleterange:
     post:
       requestBody:
@@ -29202,7 +29202,7 @@ paths:
           description: Success
       summary: POST /api/TeklifsiparisAciklamalari/deleterange
       tags:
-      - TeklifsiparisAciklamalari
+      - Teklif Sipariş Açıklamaları
   /api/TeklifsiparisAciklamalari/getall:
     post:
       requestBody:
@@ -29224,7 +29224,7 @@ paths:
           description: Success
       summary: POST /api/TeklifsiparisAciklamalari/getall
       tags:
-      - TeklifsiparisAciklamalari
+      - Teklif Sipariş Açıklamaları
   /api/TeklifsiparisAciklamalari/getbyid:
     get:
       parameters:
@@ -29241,7 +29241,7 @@ paths:
           description: Success
       summary: GET /api/TeklifsiparisAciklamalari/getbyid
       tags:
-      - TeklifsiparisAciklamalari
+      - Teklif Sipariş Açıklamaları
   /api/TeklifsiparisAciklamalari/update:
     put:
       requestBody:
@@ -29263,7 +29263,7 @@ paths:
           description: Success
       summary: PUT /api/TeklifsiparisAciklamalari/update
       tags:
-      - TeklifsiparisAciklamalari
+      - Teklif Sipariş Açıklamaları
   /api/TeklifsiparisAciklamalari/updaterange:
     put:
       requestBody:
@@ -29293,7 +29293,7 @@ paths:
           description: Success
       summary: PUT /api/TeklifsiparisAciklamalari/updaterange
       tags:
-      - TeklifsiparisAciklamalari
+      - Teklif Sipariş Açıklamaları
   /api/TeklifsiparisDurum/add:
     post:
       requestBody:
@@ -29315,7 +29315,7 @@ paths:
           description: Success
       summary: POST /api/TeklifsiparisDurum/add
       tags:
-      - TeklifsiparisDurum
+      - Teklif Sipariş Durum
   /api/TeklifsiparisDurum/addrange:
     post:
       requestBody:
@@ -29345,7 +29345,7 @@ paths:
           description: Success
       summary: POST /api/TeklifsiparisDurum/addrange
       tags:
-      - TeklifsiparisDurum
+      - Teklif Sipariş Durum
   /api/TeklifsiparisDurum/delete:
     post:
       requestBody:
@@ -29367,7 +29367,7 @@ paths:
           description: Success
       summary: POST /api/TeklifsiparisDurum/delete
       tags:
-      - TeklifsiparisDurum
+      - Teklif Sipariş Durum
   /api/TeklifsiparisDurum/deletebyid:
     delete:
       parameters:
@@ -29384,7 +29384,7 @@ paths:
           description: Success
       summary: DELETE /api/TeklifsiparisDurum/deletebyid
       tags:
-      - TeklifsiparisDurum
+      - Teklif Sipariş Durum
   /api/TeklifsiparisDurum/deleterange:
     post:
       requestBody:
@@ -29414,7 +29414,7 @@ paths:
           description: Success
       summary: POST /api/TeklifsiparisDurum/deleterange
       tags:
-      - TeklifsiparisDurum
+      - Teklif Sipariş Durum
   /api/TeklifsiparisDurum/getall:
     post:
       requestBody:
@@ -29436,7 +29436,7 @@ paths:
           description: Success
       summary: POST /api/TeklifsiparisDurum/getall
       tags:
-      - TeklifsiparisDurum
+      - Teklif Sipariş Durum
   /api/TeklifsiparisDurum/getbyid:
     get:
       parameters:
@@ -29453,7 +29453,7 @@ paths:
           description: Success
       summary: GET /api/TeklifsiparisDurum/getbyid
       tags:
-      - TeklifsiparisDurum
+      - Teklif Sipariş Durum
   /api/TeklifsiparisDurum/update:
     put:
       requestBody:
@@ -29475,7 +29475,7 @@ paths:
           description: Success
       summary: PUT /api/TeklifsiparisDurum/update
       tags:
-      - TeklifsiparisDurum
+      - Teklif Sipariş Durum
   /api/TeklifsiparisDurum/updaterange:
     put:
       requestBody:
@@ -29505,7 +29505,7 @@ paths:
           description: Success
       summary: PUT /api/TeklifsiparisDurum/updaterange
       tags:
-      - TeklifsiparisDurum
+      - Teklif Sipariş Durum
   /api/TeklifsiparisIsl/add:
     post:
       requestBody:
@@ -30163,7 +30163,7 @@ paths:
           description: Success
       summary: POST /api/TmpFatura/add
       tags:
-      - TmpFatura
+      - Tmp Fatura
   /api/TmpFatura/addrange:
     post:
       requestBody:
@@ -30193,7 +30193,7 @@ paths:
           description: Success
       summary: POST /api/TmpFatura/addrange
       tags:
-      - TmpFatura
+      - Tmp Fatura
   /api/TmpFatura/delete:
     post:
       requestBody:
@@ -30215,7 +30215,7 @@ paths:
           description: Success
       summary: POST /api/TmpFatura/delete
       tags:
-      - TmpFatura
+      - Tmp Fatura
   /api/TmpFatura/deletebyid:
     delete:
       parameters:
@@ -30232,7 +30232,7 @@ paths:
           description: Success
       summary: DELETE /api/TmpFatura/deletebyid
       tags:
-      - TmpFatura
+      - Tmp Fatura
   /api/TmpFatura/deleterange:
     post:
       requestBody:
@@ -30262,7 +30262,7 @@ paths:
           description: Success
       summary: POST /api/TmpFatura/deleterange
       tags:
-      - TmpFatura
+      - Tmp Fatura
   /api/TmpFatura/getall:
     post:
       requestBody:
@@ -30284,7 +30284,7 @@ paths:
           description: Success
       summary: POST /api/TmpFatura/getall
       tags:
-      - TmpFatura
+      - Tmp Fatura
   /api/TmpFatura/getbyid:
     get:
       parameters:
@@ -30301,7 +30301,7 @@ paths:
           description: Success
       summary: GET /api/TmpFatura/getbyid
       tags:
-      - TmpFatura
+      - Tmp Fatura
   /api/TmpFatura/update:
     put:
       requestBody:
@@ -30323,7 +30323,7 @@ paths:
           description: Success
       summary: PUT /api/TmpFatura/update
       tags:
-      - TmpFatura
+      - Tmp Fatura
   /api/TmpFatura/updaterange:
     put:
       requestBody:
@@ -30353,7 +30353,7 @@ paths:
           description: Success
       summary: PUT /api/TmpFatura/updaterange
       tags:
-      - TmpFatura
+      - Tmp Fatura
   /api/User/Add:
     post:
       requestBody:
