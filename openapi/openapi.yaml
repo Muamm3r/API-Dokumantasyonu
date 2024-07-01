@@ -1,6 +1,7 @@
 components:
   schemas:
     Ajanda:
+      type: object
       additionalProperties: false
       properties:
         aciklama:
