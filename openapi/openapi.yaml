@@ -29,7 +29,7 @@ paths:
       responses:
         '200':
           description: Success
-              summary: Ajanda Ekleme
+      summary: Ajanda Ekleme
       description: Ajanda ekleme kısmının altındaki tanım yerini summary kımının altına ekleyerek yapabiliyoruz.
       tags:
         - Ajanda İşlemleri
