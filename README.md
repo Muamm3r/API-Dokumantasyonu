@@ -7,6 +7,7 @@ Bu proje, [Redocly](https://redocly.com/) kullanılarak hazırlanmış kapsamlı
 ### Dökümantasyon Sayfası
 
 API dökümantasyon sayfasının ekran görüntüleri linkten ulaşabilirsiniz: 
+
 [API Dökümantasyonu](https://hizliresim.com/ijfhnnf)
 
 [API Dökümantasyonu Örnek İstek](https://hizliresim.com/it2ta6p)
