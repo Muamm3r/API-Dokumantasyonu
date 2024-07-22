@@ -26665,16 +26665,6 @@ components:
           maxLength: 50
           minLength: 0
           type: string
-        fatIsl:
-          items:
-            $ref: '#/components/schemas/FatIsl'
-          nullable: true
-          type: array
-        hizlisatisayar:
-          items:
-            $ref: '#/components/schemas/Hizlisatisayar'
-          nullable: true
-          type: array
         id:
           format: int32
           type: integer
@@ -26683,36 +26673,11 @@ components:
           minLength: 0
           nullable: true
           type: string
-        sayim:
-          items:
-            $ref: '#/components/schemas/Sayim'
-          nullable: true
-          type: array
-        sayimtemple:
-          items:
-            $ref: '#/components/schemas/Sayimtemple'
-          nullable: true
-          type: array
-        stokIsl:
-          items:
-            $ref: '#/components/schemas/StokIsl'
-          nullable: true
-          type: array
         subeAdi:
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
-        teklifsiparisIsl:
-          items:
-            $ref: '#/components/schemas/TeklifsiparisIsl'
-          nullable: true
-          type: array
-        tmpFatIsl:
-          items:
-            $ref: '#/components/schemas/TmpFatIsl'
-          nullable: true
-          type: array
       required:
         - depo
       type: object
