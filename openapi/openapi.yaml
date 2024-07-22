@@ -26473,32 +26473,12 @@ components:
           maxLength: 50
           minLength: 0
           nullable: true
-          type: string
-        fatHammaddeIsl:
-          items:
-            $ref: '#/components/schemas/FatHammaddeIsl'
-          nullable: true
-          type: array
-        fatIsl:
-          items:
-            $ref: '#/components/schemas/FatIsl'
-          nullable: true
-          type: array
-        fatIslEtic:
-          items:
-            $ref: '#/components/schemas/FatIslEtic'
-          nullable: true
-          type: array
+          type: string               
         grup:
           maxLength: 150
           minLength: 0
           nullable: true
           type: string
-        hizlisatisbutonayarlari:
-          items:
-            $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-          nullable: true
-          type: array
         id:
           format: int32
           type: integer
@@ -26556,36 +26536,11 @@ components:
           minLength: 0
           nullable: true
           type: string
-        sayim:
-          items:
-            $ref: '#/components/schemas/Sayim'
-          nullable: true
-          type: array
-        sayimtemple:
-          items:
-            $ref: '#/components/schemas/Sayimtemple'
-          nullable: true
-          type: array
         seriNo:
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
-        stokEticaret:
-          items:
-            $ref: '#/components/schemas/StokEticaret'
-          nullable: true
-          type: array
-        stokHammadde:
-          items:
-            $ref: '#/components/schemas/StokHammadde'
-          nullable: true
-          type: array
-        stokIsl:
-          items:
-            $ref: '#/components/schemas/StokIsl'
-          nullable: true
-          type: array
         stokN11Id:
           maxLength: 255
           minLength: 0
@@ -26616,26 +26571,11 @@ components:
           minLength: 0
           nullable: true
           type: string
-        stokfiyatlar:
-          items:
-            $ref: '#/components/schemas/Stokfiyatlar'
-          nullable: true
-          type: array
         subeAdi:
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
-        teklifsiparisIsl:
-          items:
-            $ref: '#/components/schemas/TeklifsiparisIsl'
-          nullable: true
-          type: array
-        tmpFatIsl:
-          items:
-            $ref: '#/components/schemas/TmpFatIsl'
-          nullable: true
-          type: array
       type: object
     StokBirim:
       additionalProperties: false
