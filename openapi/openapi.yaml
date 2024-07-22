@@ -18941,11 +18941,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        ajandaDosya:
-          items:
-            $ref: '#/components/schemas/AjandaDosya'
-          nullable: true
-          type: array
         cep:
           maxLength: 255
           minLength: 0
@@ -18971,8 +18966,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        user:
-          $ref: '#/components/schemas/User'
         userId:
           format: int32
           nullable: true
@@ -18981,8 +18974,6 @@ components:
     AjandaDosya:
       additionalProperties: false
       properties:
-        ajanda:
-          $ref: '#/components/schemas/Ajanda'
         ajandaId:
           format: int32
           nullable: true
@@ -19428,16 +19419,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        bankaIsl:
-          items:
-            $ref: '#/components/schemas/BankaIsl'
-          nullable: true
-          type: array
-        bankaKullanicisifre:
-          items:
-            $ref: '#/components/schemas/BankaKullanicisifre'
-          nullable: true
-          type: array
         bankaSube:
           maxLength: 255
           minLength: 0
@@ -19448,11 +19429,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        hizlisatisayar:
-          items:
-            $ref: '#/components/schemas/Hizlisatisayar'
-          nullable: true
-          type: array
         iban:
           maxLength: 255
           minLength: 0
@@ -19680,8 +19656,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -19693,14 +19667,10 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/BankaIsl'
       type: object
     BankaKullanicisifre:
       additionalProperties: false
       properties:
-        banka:
-          $ref: '#/components/schemas/Banka'
         bankaId:
           format: int32
           nullable: true
@@ -19825,11 +19795,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        cariIsl:
-          items:
-            $ref: '#/components/schemas/CariIsl'
-          nullable: true
-          type: array
         cariIslemId:
           format: int32
           maxLength: 255
@@ -20169,11 +20134,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        cariKart:
-          items:
-            $ref: '#/components/schemas/CariKart'
-          nullable: true
-          type: array
         cep:
           maxLength: 255
           minLength: 0
@@ -20296,11 +20256,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        cariKart:
-          items:
-            $ref: '#/components/schemas/CariKart'
-          nullable: true
-          type: array
         hesapNo:
           maxLength: 255
           minLength: 0
@@ -20643,8 +20598,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -20656,8 +20609,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/CariIsl'
       type: object
     CariKart:
       additionalProperties: false
@@ -20888,11 +20839,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        cariKart:
-          items:
-            $ref: '#/components/schemas/CariKart'
-          nullable: true
-          type: array
         eticaretBilgi:
           maxLength: 100
           minLength: 0
@@ -21002,8 +20948,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -21015,8 +20959,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/CariKart'
       type: object
     CariKodlar:
       additionalProperties: false
@@ -21025,11 +20967,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        cariKart:
-          items:
-            $ref: '#/components/schemas/CariKart'
-          nullable: true
-          type: array
         deger:
           maxLength: 255
           minLength: 0
@@ -21114,11 +21051,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        cariKart:
-          items:
-            $ref: '#/components/schemas/CariKart'
-          nullable: true
-          type: array
         id:
           format: int32
           type: integer
@@ -21211,11 +21143,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        bankaIsl:
-          items:
-            $ref: '#/components/schemas/BankaIsl'
-          nullable: true
-          type: array
         bankaIslId:
           format: int32
           nullable: true
@@ -21229,11 +21156,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        cariIsl:
-          items:
-            $ref: '#/components/schemas/CariIsl'
-          nullable: true
-          type: array
         cekDurumu:
           maxLength: 255
           minLength: 0
@@ -21273,11 +21195,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        kasalarIsl:
-          items:
-            $ref: '#/components/schemas/KasalarIsl'
-          nullable: true
-          type: array
         kullaniciAdi:
           maxLength: 50
           minLength: 0
@@ -21606,8 +21523,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        faturaId:
-          $ref: '#/components/schemas/Fatura'
         faturaUnvan:
           maxLength: 255
           minLength: 0
@@ -21642,15 +21557,11 @@ components:
           format: int32
           nullable: true
           type: integer
-        stokIsl:
-          $ref: '#/components/schemas/StokIsl'
         stokKodu:
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
-        stokhammaddeId:
-          $ref: '#/components/schemas/StokHammadde'
         subeAdi:
           maxLength: 255
           minLength: 0
@@ -21747,19 +21658,12 @@ components:
           minimum: 0
           nullable: true
           type: number
-        cariIsl:
-          items:
-            $ref: '#/components/schemas/CariIsl'
-          nullable: true
-          type: array
         depoId:
           format: int32
           type: integer
         fatId:
           format: int32
           type: integer
-        fatura:
-          $ref: '#/components/schemas/Fatura'
         gonderilmeSekliAdi:
           maxLength: 255
           minLength: 0
@@ -21958,16 +21862,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        stok:
-          items:
-            $ref: '#/components/schemas/Stok'
-          nullable: true
-          type: array
-        stokDepo:
-          items:
-            $ref: '#/components/schemas/StokDepo'
-          nullable: true
-          type: array
         stokId:
           format: int32
           type: integer
@@ -22064,8 +21958,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        fatIsl:
-          $ref: '#/components/schemas/FatIsl'
         fatIslId:
           format: int32
           nullable: true
@@ -22096,8 +21988,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        stok:
-          $ref: '#/components/schemas/Stok'
         stokId:
           format: int32
           nullable: true
@@ -22241,11 +22131,6 @@ components:
           minimum: 0
           nullable: true
           type: number
-        bankaIsl:
-          items:
-            $ref: '#/components/schemas/BankaIsl'
-          nullable: true
-          type: array
         cariGrup:
           maxLength: 255
           minLength: 0
@@ -22254,11 +22139,6 @@ components:
         cariId:
           format: int32
           type: integer
-        cariKart:
-          items:
-            $ref: '#/components/schemas/CariKart'
-          nullable: true
-          type: array
         cariKod:
           maxLength: 255
           minLength: 0
@@ -22312,35 +22192,15 @@ components:
           minLength: 0
           nullable: true
           type: string
-        fatHammaddeIsl:
-          items:
-            $ref: '#/components/schemas/FatHammaddeIsl'
-          nullable: true
-          type: array
-        fatIsl:
-          items:
-            $ref: '#/components/schemas/FatIsl'
-          nullable: true
-          type: array
         fatTarih:
           format: date-time
           nullable: true
           type: string
-        faturaKodlar:
-          items:
-            $ref: '#/components/schemas/FaturaKodlar'
-          nullable: true
-          type: array
         faturaResimYolu:
           maxLength: 500
           minLength: 0
           nullable: true
           type: string
-        faturaTeslimAdres:
-          items:
-            $ref: '#/components/schemas/FaturaTeslimAdres'
-          nullable: true
-          type: array
         faturaTuru:
           maxLength: 50
           minLength: 0
@@ -22385,8 +22245,6 @@ components:
           minimum: 0
           nullable: true
           type: number
-        kasalarIsl:
-          $ref: '#/components/schemas/KasalarIsl'
         kdv:
           format: double
           minimum: 0
@@ -22448,11 +22306,6 @@ components:
           format: date-time
           nullable: true
           type: string
-        posislemdetay:
-          items:
-            $ref: '#/components/schemas/Posislemdetay'
-          nullable: true
-          type: array
         postakodu:
           maxLength: 255
           minLength: 0
@@ -22468,11 +22321,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        sevkBilgileri:
-          items:
-            $ref: '#/components/schemas/SevkBilgileri'
-          nullable: true
-          type: array
         sevkTarih:
           format: date-time
           nullable: true
@@ -22486,16 +22334,6 @@ components:
           format: date-time
           nullable: true
           type: string
-        soforBilgileri:
-          items:
-            $ref: '#/components/schemas/SoforBilgileri'
-          nullable: true
-          type: array
-        stokIsl:
-          items:
-            $ref: '#/components/schemas/StokIsl'
-          nullable: true
-          type: array
         stopajOran1:
           format: double
           nullable: true
@@ -22552,11 +22390,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        tmpFatIsl:
-          items:
-            $ref: '#/components/schemas/TmpFatIsl'
-          nullable: true
-          type: array
         toplam:
           format: double
           minimum: 0
@@ -22748,8 +22581,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        fatura:
-          $ref: '#/components/schemas/Fatura'
         id:
           format: int32
           type: integer
@@ -22838,8 +22669,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        fatura:
-          $ref: '#/components/schemas/Fatura'
         id:
           format: int32
           type: integer
@@ -23208,11 +23037,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        user:
-          items:
-            $ref: '#/components/schemas/User'
-          nullable: true
-          type: array
       type: object
     GenelayarFilterHelper:
       additionalProperties: false
@@ -23290,11 +23114,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        giderIsl:
-          items:
-            $ref: '#/components/schemas/GiderIsl'
-          nullable: true
-          type: array
         giderKategori:
           maxLength: 255
           minLength: 0
@@ -23388,11 +23207,6 @@ components:
         aciklama:
           nullable: true
           type: string
-        bankaIsl:
-          items:
-            $ref: '#/components/schemas/BankaIsl'
-          nullable: true
-          type: array
         bankaIslId:
           format: int32
           nullable: true
@@ -23413,11 +23227,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        kasalarIsl:
-          items:
-            $ref: '#/components/schemas/KasalarIsl'
-          nullable: true
-          type: array
         kullaniciAdi:
           maxLength: 50
           minLength: 0
@@ -23559,11 +23368,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        banka:
-          items:
-            $ref: '#/components/schemas/Banka'
-          nullable: true
-          type: array
         bilgiFisiCiktiAl:
           nullable: true
           type: boolean
@@ -23576,11 +23380,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        cariKart:
-          items:
-            $ref: '#/components/schemas/CariKart'
-          nullable: true
-          type: array
         depoId:
           format: int32
           nullable: true
@@ -23603,11 +23402,6 @@ components:
         id:
           format: int32
           type: integer
-        kasalar:
-          items:
-            $ref: '#/components/schemas/Kasalar'
-          nullable: true
-          type: array
         makbuzCiktiAl:
           nullable: true
           type: boolean
@@ -23620,18 +23414,11 @@ components:
           format: int32
           nullable: true
           type: integer
-        stokDepo:
-          items:
-            $ref: '#/components/schemas/StokDepo'
-          nullable: true
-          type: array
         subeAdi:
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
-        user:
-          $ref: '#/components/schemas/User'
         userId:
           format: int32
           nullable: true
@@ -23718,8 +23505,6 @@ components:
         id:
           format: int32
           type: integer
-        stok:
-          $ref: '#/components/schemas/Stok'
         stokAdi:
           maxLength: 255
           minLength: 0
@@ -23812,11 +23597,6 @@ components:
           maxLength: 255
           minLength: 0
           type: string
-        hizlisatisayar:
-          items:
-            $ref: '#/components/schemas/Hizlisatisayar'
-          nullable: true
-          type: array
         id:
           format: int32
           nullable: true
@@ -23825,11 +23605,6 @@ components:
           maxLength: 50
           minLength: 0
           type: string
-        kasalarIsl:
-          items:
-            $ref: '#/components/schemas/KasalarIsl'
-          nullable: true
-          type: array
         kullaniciAdi:
           maxLength: 255
           minLength: 0
@@ -24059,8 +23834,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -24072,8 +23845,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/KasalarIsl'
       type: object
     KullaniciIslemler:
       additionalProperties: false
@@ -25470,8 +25241,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        fatura:
-          $ref: '#/components/schemas/Fatura'
         id:
           format: int32
           type: integer
@@ -25499,11 +25268,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        posmakinebilgileri:
-          items:
-            $ref: '#/components/schemas/Posmakinebilgileri'
-          nullable: true
-          type: array
         processType:
           maxLength: 255
           minLength: 0
@@ -25653,11 +25417,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        posislemdetay:
-          items:
-            $ref: '#/components/schemas/Posislemdetay'
-          nullable: true
-          type: array
         seriNo:
           maxLength: 255
           minLength: 0
@@ -25673,16 +25432,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        tmpFatIsl:
-          items:
-            $ref: '#/components/schemas/TmpFatIsl'
-          nullable: true
-          type: array
-        tmpFatura:
-          items:
-            $ref: '#/components/schemas/TmpFatura'
-          nullable: true
-          type: array
         verifoneFormBekleme:
           maxLength: 255
           minLength: 0
@@ -25920,14 +25669,7 @@ components:
         sayimMiktar:
           format: int32
           nullable: true
-          type: integer
-        stok:
-          items:
-            $ref: '#/components/schemas/Stok'
-          nullable: true
-          type: array
-        stokDepo:
-          $ref: '#/components/schemas/StokDepo'
+          type: integer  
         stokId:
           format: int32
           nullable: true
@@ -26026,10 +25768,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        stok:
-          $ref: '#/components/schemas/Stok'
-        stokDepo:
-          $ref: '#/components/schemas/StokDepo'
         stokId:
           format: int32
           nullable: true
@@ -26114,8 +25852,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        fatura:
-          $ref: '#/components/schemas/Fatura'
         id:
           format: int32
           type: integer
@@ -26348,8 +26084,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        fatura:
-          $ref: '#/components/schemas/Fatura'
         id:
           format: int32
           type: integer
@@ -26750,8 +26484,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        stok:
-          $ref: '#/components/schemas/Stok'
         stokId:
           format: int32
           nullable: true
@@ -26969,16 +26701,9 @@ components:
           format: double
           nullable: true
           type: number
-        fatHammaddeIsl:
-          items:
-            $ref: '#/components/schemas/FatHammaddeIsl'
-          nullable: true
-          type: array
         id:
           format: int32
           type: integer
-        stok:
-          $ref: '#/components/schemas/Stok'
         stokHammaddeChild:
           items:
             $ref: '#/components/schemas/StokHammadde'
@@ -27173,8 +26898,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -27186,8 +26909,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/StokIsl'
       type: object
     Stokfiyatlar:
       additionalProperties: false
@@ -27219,8 +26940,6 @@ components:
         sirano:
           format: int32
           type: integer
-        stok:
-          $ref: '#/components/schemas/Stok'
         stokId:
           format: int32
           nullable: true
@@ -27305,11 +27024,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        fatIsl:
-          items:
-            $ref: '#/components/schemas/FatIsl'
-          nullable: true
-          type: array
         id:
           format: int32
           type: integer
@@ -27342,17 +27056,10 @@ components:
           format: date-time
           nullable: true
           type: string
-        stok:
-          $ref: '#/components/schemas/Stok'
         stokId:
           format: int32
           nullable: true
           type: integer
-        stokIsl:
-          items:
-            $ref: '#/components/schemas/StokIsl'
-          nullable: true
-          type: array
         subeAdi:
           maxLength: 255
           minLength: 0
@@ -27362,11 +27069,6 @@ components:
           format: date-time
           nullable: true
           type: string
-        teklifsiparisIsl:
-          items:
-            $ref: '#/components/schemas/TeklifsiparisIsl'
-          nullable: true
-          type: array
         uretimTarihi:
           format: date-time
           nullable: true
@@ -27610,29 +27312,14 @@ components:
           minLength: 0
           nullable: true
           type: string
-        bankaIsl:
-          items:
-            $ref: '#/components/schemas/BankaIsl'
-          nullable: true
-          type: array
         cariId:
           format: int32
           nullable: true
           type: integer
-        cariIsl:
-          items:
-            $ref: '#/components/schemas/CariIsl'
-          nullable: true
-          type: array
         cariIslId:
           format: int32
           nullable: true
           type: integer
-        cariKart:
-          items:
-            $ref: '#/components/schemas/CariKart'
-          nullable: true
-          type: array
         cariUnvan:
           maxLength: 255
           minLength: 0
@@ -27657,11 +27344,6 @@ components:
           format: double
           nullable: true
           type: number
-        kasalarIsl:
-          items:
-            $ref: '#/components/schemas/KasalarIsl'
-          nullable: true
-          type: array
         kullaniciAdi:
           maxLength: 50
           minLength: 0
@@ -27680,11 +27362,6 @@ components:
           format: double
           nullable: true
           type: number
-        taksitIsl:
-          items:
-            $ref: '#/components/schemas/TaksitIsl'
-          nullable: true
-          type: array
         taksitPeriyodu:
           maxLength: 255
           minLength: 0
@@ -27765,25 +27442,10 @@ components:
           minLength: 0
           nullable: true
           type: string
-        bankaIsl:
-          items:
-            $ref: '#/components/schemas/BankaIsl'
-          nullable: true
-          type: array
         cariId:
           format: int32
           nullable: true
           type: integer
-        cariIsl:
-          items:
-            $ref: '#/components/schemas/CariIsl'
-          nullable: true
-          type: array
-        cariKart:
-          items:
-            $ref: '#/components/schemas/CariKart'
-          nullable: true
-          type: array
         durum:
           maxLength: 255
           minLength: 0
@@ -27796,11 +27458,6 @@ components:
           format: double
           nullable: true
           type: number
-        kasalarIsl:
-          items:
-            $ref: '#/components/schemas/KasalarIsl'
-          nullable: true
-          type: array
         kullaniciAdi:
           maxLength: 50
           minLength: 0
@@ -27820,8 +27477,6 @@ components:
           format: double
           nullable: true
           type: number
-        taksit:
-          $ref: '#/components/schemas/Taksit'
         taksitId:
           format: int32
           nullable: true
@@ -28119,11 +27774,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        teklifsiparisIsl:
-          items:
-            $ref: '#/components/schemas/TeklifsiparisIsl'
-          nullable: true
-          type: array
         teksipDurum:
           maxLength: 255
           minLength: 0
@@ -28658,16 +28308,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        stok:
-          items:
-            $ref: '#/components/schemas/Stok'
-          nullable: true
-          type: array
-        stokDepo:
-          items:
-            $ref: '#/components/schemas/StokDepo'
-          nullable: true
-          type: array
         stokId:
           maxLength: 255
           minLength: 0
@@ -28702,11 +28342,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        teklifsipari:
-          items:
-            $ref: '#/components/schemas/Teklifsiparis'
-          nullable: true
-          type: array
         teksipId:
           format: int32
           nullable: true
@@ -28922,8 +28557,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        fatura:
-          $ref: '#/components/schemas/Fatura'
         gtopfiyat:
           format: double
           nullable: true
@@ -28994,21 +28627,6 @@ components:
           format: double
           nullable: true
           type: number
-        posmakinebilgileri:
-          items:
-            $ref: '#/components/schemas/Posmakinebilgileri'
-          nullable: true
-          type: array
-        stok:
-          items:
-            $ref: '#/components/schemas/Stok'
-          nullable: true
-          type: array
-        stokDepo:
-          items:
-            $ref: '#/components/schemas/StokDepo'
-          nullable: true
-          type: array
         stokId:
           format: int32
           nullable: true
@@ -29126,11 +28744,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        cariKart:
-          items:
-            $ref: '#/components/schemas/CariKart'
-          nullable: true
-          type: array
         cariKod:
           nullable: true
           type: string
@@ -29247,11 +28860,6 @@ components:
           format: double
           nullable: true
           type: number
-        posmakinebilgileri:
-          items:
-            $ref: '#/components/schemas/Posmakinebilgileri'
-          nullable: true
-          type: array
         postakodu:
           maxLength: 255
           minLength: 0
@@ -30155,11 +29763,6 @@ components:
     UserDTO:
       additionalProperties: false
       properties:
-        ajanda:
-          items:
-            $ref: '#/components/schemas/Ajanda'
-          nullable: true
-          type: array
         ajandaBildirimGoster:
           maxLength: 255
           minLength: 0
@@ -30552,11 +30155,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        genelayar:
-          items:
-            $ref: '#/components/schemas/Genelayar'
-          nullable: true
-          type: array
         gider:
           maxLength: 10
           minLength: 0
@@ -30607,11 +30205,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        hizlisatisayar:
-          items:
-            $ref: '#/components/schemas/Hizlisatisayar'
-          nullable: true
-          type: array
         id:
           format: int32
           type: integer
@@ -31005,8 +30598,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        kullaniciIslemler:
-          $ref: '#/components/schemas/KullaniciIslemler'
         tag:
           maxLength: 255
           minLength: 0
