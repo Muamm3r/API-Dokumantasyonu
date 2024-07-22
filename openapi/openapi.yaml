@@ -4,9 +4,11 @@ info:
   version: v1
 servers:
   - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/Muammeryeni/Bilsoft-Api-Documentation2/v1.2
+    url: >-
+      https://virtserver.swaggerhub.com/Muammeryeni/Bilsoft-Api-Documentation2/v1.2
   - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/MUAMMERYENI0/Bilsoft-Api-Documentation/v1.1
+    url: >-
+      https://virtserver.swaggerhub.com/MUAMMERYENI0/Bilsoft-Api-Documentation/v1.1
 security:
   - Bearer: []
 paths:
@@ -30,7 +32,9 @@ paths:
         '200':
           description: Success
       summary: Ajanda Ekleme
-      description: Ajanda ekleme kısmının altındaki tanım yerini summary kımının altına ekleyerek yapabiliyoruz.
+      description: >-
+        Ajanda ekleme kısmının altındaki tanım yerini summary kımının altına
+        ekleyerek yapabiliyoruz.
       tags:
         - Ajanda İşlemleri
   /api/Ajanda/addrange:
@@ -25669,7 +25673,7 @@ components:
         sayimMiktar:
           format: int32
           nullable: true
-          type: integer  
+          type: integer
         stokId:
           format: int32
           nullable: true
@@ -26197,7 +26201,7 @@ components:
           maxLength: 50
           minLength: 0
           nullable: true
-          type: string               
+          type: string
         grup:
           maxLength: 150
           minLength: 0
@@ -30833,7 +30837,9 @@ components:
       type: object
   securitySchemes:
     Bearer:
-      description: islem yapabilmek icin bearer token a ihtiyaciniz vardir(bu kısmı değiştirebiliyorum)
+      description: >-
+        islem yapabilmek icin bearer token a ihtiyaciniz vardir(bu kısmı
+        değiştirebiliyorum)
       in: header
       name: Authorization
       type: apiKey
