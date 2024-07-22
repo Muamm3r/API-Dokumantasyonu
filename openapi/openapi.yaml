@@ -19553,16 +19553,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        cariIsl:
-          items:
-            $ref: '#/components/schemas/CariIsl'
-          nullable: true
-          type: array
-        cariKart:
-          items:
-            $ref: '#/components/schemas/CariKart'
-          nullable: true
-          type: array
         cek:
           $ref: '#/components/schemas/Cek'
         cekId:
