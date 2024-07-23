@@ -21730,8 +21730,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -21743,8 +21741,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/AjandaDosya'
       type: object
     AjandaFilterHelper:
       additionalProperties: false
@@ -21861,8 +21857,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -21874,8 +21868,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/AjandaNotlar'
       type: object
     ApiKullanici:
       additionalProperties: false
@@ -21946,8 +21938,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -21959,8 +21949,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/ApiKullanici'
       type: object
     Ayar:
       additionalProperties: false
@@ -22016,8 +22004,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -22029,8 +22015,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Ayar'
       type: object
     Ayarekmodul:
       additionalProperties: false
@@ -22086,8 +22070,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -22099,8 +22081,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Ayarekmodul'
       type: object
     Banka:
       additionalProperties: false
@@ -22191,8 +22171,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -22204,8 +22182,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Banka'
       type: object
     BankaIsl:
       additionalProperties: false
@@ -22215,8 +22191,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        banka:
-          $ref: '#/components/schemas/Banka'
         bankaId:
           format: int32
           nullable: true
@@ -22225,8 +22199,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        cek:
-          $ref: '#/components/schemas/Cek'
         cekId:
           format: int32
           nullable: true
@@ -22240,21 +22212,9 @@ components:
           format: int32
           nullable: true
           type: integer
-        fatura:
-          items:
-            $ref: '#/components/schemas/Fatura'
-          nullable: true
-          type: array
-        giderIsl:
-          items:
-            $ref: '#/components/schemas/GiderIsl'
-          nullable: true
-          type: array
-        iddd:
+        id:
           format: int32
           type: integer
-        kasalarIsl:
-          $ref: '#/components/schemas/KasalarIsl'
         kullaniciAdi:
           maxLength: 50
           minLength: 0
@@ -22279,14 +22239,10 @@ components:
           minLength: 0
           nullable: true
           type: string
-        taksit:
-          $ref: '#/components/schemas/Taksit'
         taksitId:
           format: int32
           nullable: true
           type: integer
-        taksitIsl:
-          $ref: '#/components/schemas/TaksitIsl'
         taksitIslId:
           format: int32
           nullable: true
@@ -22437,8 +22393,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -22450,8 +22404,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/BankaKullanicisifre'
       type: object
     Bodrotablo:
       additionalProperties: false
@@ -22627,8 +22579,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -22640,8 +22590,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Bodrotablo'
       type: object
     Bordroayar:
       additionalProperties: false
@@ -22707,8 +22655,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -22720,8 +22666,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Bordroayar'
       type: object
     Bordrovergidilimayar:
       additionalProperties: false
@@ -22807,8 +22751,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -22820,8 +22762,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Bordrovergidilimayar'
       type: object
     CariAdresler:
       additionalProperties: false
@@ -22921,8 +22861,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -22934,8 +22872,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/CariAdresler'
       type: object
     CariBanka:
       additionalProperties: false
@@ -23026,8 +22962,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -23039,8 +22973,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/CariBanka'
       type: object
     CariGrup:
       additionalProperties: false
@@ -23106,8 +23038,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -23119,8 +23049,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/CariGrup'
       type: object
     CariIsl:
       additionalProperties: false
@@ -23139,20 +23067,10 @@ components:
           minLength: 0
           nullable: true
           type: string
-        bankaIsl:
-          items:
-            $ref: '#/components/schemas/BankaIsl'
-          nullable: true
-          type: array
         bankaIslId:
           format: int32
           nullable: true
           type: integer
-        bodrotablo:
-          items:
-            $ref: '#/components/schemas/Bodrotablo'
-          nullable: true
-          type: array
         borc:
           format: double
           nullable: true
@@ -23166,13 +23084,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        cariKart:
-          $ref: '#/components/schemas/CariKart'
-        cek:
-          items:
-            $ref: '#/components/schemas/Cek'
-          nullable: true
-          type: array
         cekId:
           format: int32
           nullable: true
@@ -23186,11 +23097,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        fatIsl:
-          items:
-            $ref: '#/components/schemas/FatIsl'
-          nullable: true
-          type: array
         id:
           format: int32
           type: integer
@@ -23198,11 +23104,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        kasalarIsl:
-          items:
-            $ref: '#/components/schemas/KasalarIsl'
-          nullable: true
-          type: array
         kullaniciAdi:
           maxLength: 50
           minLength: 0
@@ -23223,17 +23124,10 @@ components:
           minLength: 0
           nullable: true
           type: string
-        taksit:
-          $ref: '#/components/schemas/Taksit'
         taksitId:
           format: int32
           nullable: true
           type: integer
-        taksitIsl:
-          items:
-            $ref: '#/components/schemas/TaksitIsl'
-          nullable: true
-          type: array
         taksitIslId:
           format: int32
           nullable: true
@@ -23317,51 +23211,16 @@ components:
           minLength: 0
           nullable: true
           type: string
-        bankaIsl:
-          items:
-            $ref: '#/components/schemas/BankaIsl'
-          nullable: true
-          type: array
-        cariAdresler:
-          items:
-            $ref: '#/components/schemas/CariAdresler'
-          nullable: true
-          type: array
-        cariBanka:
-          items:
-            $ref: '#/components/schemas/CariBanka'
-          nullable: true
-          type: array
-        cariIsl:
-          items:
-            $ref: '#/components/schemas/CariIsl'
-          nullable: true
-          type: array
-        cariKartEticaret:
-          items:
-            $ref: '#/components/schemas/CariKartEticaret'
-          nullable: true
-          type: array
         cariKod:
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
-        cariKodlar:
-          items:
-            $ref: '#/components/schemas/CariKodlar'
-          nullable: true
-          type: array
         cariN11Id:
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
-        cariNot:
-          items:
-            $ref: '#/components/schemas/CariNot'
-          nullable: true
-          type: array
         cariaciklama:
           nullable: true
           type: string
@@ -23370,11 +23229,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        fatura:
-          items:
-            $ref: '#/components/schemas/Fatura'
-          nullable: true
-          type: array
         faturaAdres:
           maxLength: 255
           minLength: 0
@@ -23409,19 +23263,9 @@ components:
           minLength: 0
           nullable: true
           type: string
-        hizlisatisayar:
-          items:
-            $ref: '#/components/schemas/Hizlisatisayar'
-          nullable: true
-          type: array
         id:
           format: int32
           type: integer
-        kasalarIsl:
-          items:
-            $ref: '#/components/schemas/KasalarIsl'
-          nullable: true
-          type: array
         kullaniciAdi:
           maxLength: 50
           minLength: 0
@@ -23471,16 +23315,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        taksit:
-          items:
-            $ref: '#/components/schemas/Taksit'
-          nullable: true
-          type: array
-        taksitIsl:
-          items:
-            $ref: '#/components/schemas/TaksitIsl'
-          nullable: true
-          type: array
         tel:
           maxLength: 150
           minLength: 0
@@ -23491,11 +23325,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        tmpFatura:
-          items:
-            $ref: '#/components/schemas/TmpFatura'
-          nullable: true
-          type: array
         varsayilanKasa:
           maxLength: 255
           minLength: 0
@@ -23586,8 +23415,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -23599,8 +23426,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/CariKartEticaret'
       type: object
     CariKartFilterHelper:
       additionalProperties: false
@@ -23719,8 +23544,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -23732,8 +23555,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/CariKodlar'
       type: object
     CariNot:
       additionalProperties: false
@@ -23807,8 +23628,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -23820,8 +23639,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/CariNot'
       type: object
     Cek:
       additionalProperties: false
@@ -23956,8 +23773,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -23969,8 +23784,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Cek'
       type: object
     DataPagingOptions:
       additionalProperties: false
@@ -24093,8 +23906,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -24106,8 +23917,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Efaturaayari'
       type: object
     Eticaretayarlar:
       additionalProperties: false
@@ -24173,8 +23982,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -24186,8 +23993,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Eticaretayarlar'
       type: object
     FatHammaddeIsl:
       additionalProperties: false
@@ -24310,8 +24115,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -24323,8 +24126,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/FatHammaddeIsl'
       type: object
     FatIsl:
       additionalProperties: false
@@ -24735,8 +24536,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -24748,8 +24547,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/FatIslEtic'
       type: object
     FatIslFilterHelper:
       additionalProperties: false
@@ -24793,8 +24590,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -24806,8 +24601,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/FatIsl'
       type: object
     Fatura:
       additionalProperties: false
@@ -25191,8 +24984,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -25204,8 +24995,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/FaturaAciklamalari'
       type: object
     FaturaFilterHelper:
       additionalProperties: false
@@ -25249,8 +25038,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -25262,8 +25049,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Fatura'
       type: object
     FaturaKodlar:
       additionalProperties: false
@@ -25337,8 +25122,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -25350,8 +25133,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/FaturaKodlar'
       type: object
     FaturaTeslimAdres:
       additionalProperties: false
@@ -25449,8 +25230,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -25462,8 +25241,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/FaturaTeslimAdres'
       type: object
     Firma:
       additionalProperties: false
@@ -25626,8 +25403,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -25639,8 +25414,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Firma'
       type: object
     FirmaKodlar:
       additionalProperties: false
@@ -25701,8 +25474,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -25714,8 +25485,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/FirmaKodlar'
       type: object
     Genelayar:
       additionalProperties: false
@@ -25776,8 +25545,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -25789,8 +25556,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Genelayar'
       type: object
     Gider:
       additionalProperties: false
@@ -25881,8 +25646,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -25894,8 +25657,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Gider'
       type: object
     GiderIsl:
       additionalProperties: false
@@ -25999,8 +25760,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -26012,8 +25771,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/GiderIsl'
       type: object
     GirisYapDonemGetirRequestDTO:
       additionalProperties: false
@@ -26174,8 +25931,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -26187,8 +25942,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Hizlisatisayar'
       type: object
     Hizlisatisbutonayarlari:
       additionalProperties: false
@@ -26270,8 +26023,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -26283,8 +26034,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Hizlisatisbutonayarlari'
       type: object
     Kasalar:
       additionalProperties: false
@@ -26357,8 +26106,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -26370,8 +26117,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Kasalar'
       type: object
     KasalarIsl:
       additionalProperties: false
@@ -26381,8 +26126,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        bankaIsl:
-          $ref: '#/components/schemas/BankaIsl'
         bankaIslId:
           format: int32
           nullable: true
@@ -26391,22 +26134,10 @@ components:
           format: int32
           nullable: true
           type: integer
-        cariIsl:
-          items:
-            $ref: '#/components/schemas/CariIsl'
-          nullable: true
-          type: array
         cariIslId:
           format: int32
           nullable: true
           type: integer
-        cariKart:
-          items:
-            $ref: '#/components/schemas/CariKart'
-          nullable: true
-          type: array
-        cek:
-          $ref: '#/components/schemas/Cek'
         cekId:
           format: int32
           nullable: true
@@ -26416,17 +26147,10 @@ components:
           minLength: 0
           nullable: true
           type: string
-        fatura:
-          $ref: '#/components/schemas/Fatura'
         faturaId:
           format: int32
           nullable: true
           type: integer
-        giderIsl:
-          items:
-            $ref: '#/components/schemas/GiderIsl'
-          nullable: true
-          type: array
         id:
           format: int32
           type: integer
@@ -26439,11 +26163,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        kasalar:
-          items:
-            $ref: '#/components/schemas/Kasalar'
-          nullable: true
-          type: array
         kasalarId:
           format: int32
           type: integer
@@ -26457,14 +26176,10 @@ components:
           minLength: 0
           nullable: true
           type: string
-        taksit:
-          $ref: '#/components/schemas/Taksit'
         taksitId:
           format: int32
           nullable: true
           type: integer
-        taksitIsl:
-          $ref: '#/components/schemas/TaksitIsl'
         taksitIslId:
           format: int32
           nullable: true
@@ -26649,8 +26364,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -26662,8 +26375,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/KullaniciIslemler'
       type: object
     Kurlar:
       additionalProperties: false
@@ -26740,8 +26451,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -26753,8 +26462,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Kurlar'
       type: object
     Mailayari:
       additionalProperties: false
@@ -26848,8 +26555,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -26861,8 +26566,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Mailayari'
       type: object
     Mokaayarlar:
       additionalProperties: false
@@ -26936,8 +26639,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -26949,8 +26650,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Mokaayarlar'
       type: object
     Mokaiade:
       additionalProperties: false
@@ -27045,8 +26744,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -27058,8 +26755,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Mokaiade'
       type: object
     Mokaisllog:
       additionalProperties: false
@@ -27173,8 +26868,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -27186,8 +26879,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Mokaisllog'
       type: object
     Mokalog:
       additionalProperties: false
@@ -27315,8 +27006,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -27328,8 +27017,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Mokalog'
       type: object
     Personel:
       additionalProperties: false
@@ -27566,8 +27253,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -27579,8 +27264,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Personel'
       type: object
     Personelizinler:
       additionalProperties: false
@@ -27689,8 +27372,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -27702,8 +27383,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Personelizinler'
       type: object
     Personelnot:
       additionalProperties: false
@@ -27774,8 +27453,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -27787,8 +27464,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Personelnot'
       type: object
     Pos:
       additionalProperties: false
@@ -27879,8 +27554,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -27892,8 +27565,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Pos'
       type: object
     Posislemdetay:
       additionalProperties: false
@@ -28047,8 +27718,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -28060,8 +27729,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Posislemdetay'
       type: object
     Posmakinebilgileri:
       additionalProperties: false
@@ -28176,8 +27843,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -28189,8 +27854,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Posmakinebilgileri'
       type: object
     Raporlar:
       additionalProperties: false
@@ -28249,8 +27912,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -28262,8 +27923,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Raporlar'
       type: object
     Sanalsantralayar:
       additionalProperties: false
@@ -28329,8 +27988,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -28342,8 +27999,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Sanalsantralayar'
       type: object
     Sayim:
       additionalProperties: false
@@ -28427,8 +28082,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -28440,8 +28093,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Sayim'
       type: object
     Sayimtemple:
       additionalProperties: false
@@ -28525,8 +28176,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -28538,8 +28187,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Sayimtemple'
       type: object
     SevkBilgileri:
       additionalProperties: false
@@ -28662,8 +28309,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -28675,8 +28320,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/SevkBilgileri'
       type: object
     Smsayar:
       additionalProperties: false
@@ -28757,8 +28400,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -28770,8 +28411,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Smsayar'
       type: object
     SoforBilgileri:
       additionalProperties: false
@@ -28851,8 +28490,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -28864,8 +28501,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/SoforBilgileri'
       type: object
     Stok:
       additionalProperties: false
@@ -29062,8 +28697,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -29075,8 +28708,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/StokBirim'
       type: object
     StokDepo:
       additionalProperties: false
@@ -29143,8 +28774,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -29156,8 +28785,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/StokDepo'
       type: object
     StokEticaret:
       additionalProperties: false
@@ -29230,8 +28857,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -29243,8 +28868,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/StokEticaret'
       type: object
     StokFilterHelper:
       additionalProperties: false
@@ -29288,8 +28911,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -29301,8 +28922,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Stok'
       type: object
     StokGrup:
       additionalProperties: false
@@ -29369,8 +28988,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -29382,8 +28999,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/StokGrup'
       type: object
     StokHammadde:
       additionalProperties: false
@@ -29400,13 +29015,6 @@ components:
         id:
           format: int32
           type: integer
-        stokHammaddeChild:
-          items:
-            $ref: '#/components/schemas/StokHammadde'
-          nullable: true
-          type: array
-        stokHammaddeParent:
-          $ref: '#/components/schemas/StokHammadde'
         stokId:
           format: int32
           nullable: true
@@ -29458,8 +29066,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -29471,8 +29077,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/StokHammadde'
       type: object
     StokIsl:
       additionalProperties: false
@@ -29491,20 +29095,10 @@ components:
           format: int32
           nullable: true
           type: integer
-        fatHammaddeIsls:
-          items:
-            $ref: '#/components/schemas/FatHammaddeIsl'
-          nullable: true
-          type: array
         fatId:
           format: int32
           nullable: true
           type: integer
-        fatura:
-          items:
-            $ref: '#/components/schemas/Fatura'
-          nullable: true
-          type: array
         hedefdepoId:
           format: int32
           nullable: true
@@ -29526,13 +29120,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        stok:
-          $ref: '#/components/schemas/Stok'
-        stokDepo:
-          items:
-            $ref: '#/components/schemas/StokDepo'
-          nullable: true
-          type: array
         stokId:
           format: int32
           nullable: true
@@ -29692,8 +29279,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -29705,8 +29290,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Stokfiyatlar'
       type: object
     Stoklot:
       additionalProperties: false
@@ -29823,8 +29406,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -29836,8 +29417,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Stoklot'
       type: object
     Stokpaketgrup:
       additionalProperties: false
@@ -29914,8 +29493,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -29927,8 +29504,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Stokpaketgrup'
       type: object
     Subeler:
       additionalProperties: false
@@ -29984,8 +29559,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -29997,8 +29570,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Subeler'
       type: object
     Taksit:
       additionalProperties: false
@@ -30114,8 +29685,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -30127,8 +29696,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Taksit'
       type: object
     TaksitIsl:
       additionalProperties: false
@@ -30228,8 +29795,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -30241,8 +29806,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/TaksitIsl'
       type: object
     Teklifsiparis:
       additionalProperties: false
@@ -30611,8 +30174,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -30624,8 +30185,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/TeklifsiparisAciklamalari'
       type: object
     TeklifsiparisDurum:
       additionalProperties: false
@@ -30692,8 +30251,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -30705,8 +30262,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/TeklifsiparisDurum'
       type: object
     TeklifsiparisFilterHelper:
       additionalProperties: false
@@ -30750,8 +30305,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -30763,8 +30316,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Teklifsiparis'
       type: object
     TeklifsiparisIsl:
       additionalProperties: false
@@ -31133,8 +30684,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -31146,8 +30695,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/TeklifsiparisIsl'
       type: object
     TevkifatOran:
       additionalProperties: false
@@ -31203,8 +30750,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -31216,8 +30761,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/TevkifatOran'
       type: object
     TmpFatIsl:
       additionalProperties: false
@@ -31403,8 +30946,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -31416,8 +30957,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/TmpFatIsl'
       type: object
     TmpFatura:
       additionalProperties: false
@@ -31671,8 +31210,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -31684,8 +31221,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/TmpFatura'
       type: object
     User:
       additionalProperties: false
@@ -33139,8 +32674,6 @@ components:
           maxLength: 255
           minLength: 0
           type: string
-        user:
-          $ref: '#/components/schemas/User'
         vergiNo:
           nullable: true
           type: string
@@ -33248,8 +32781,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -33261,8 +32792,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/User'
       type: object
     UsersYetki1:
       additionalProperties: false
@@ -33327,8 +32856,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -33340,8 +32867,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/UsersYetki1'
       type: object
     Utsayar:
       additionalProperties: false
@@ -33402,8 +32927,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -33415,8 +32938,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Utsayar'
       type: object
     Utslog:
       additionalProperties: false
@@ -33496,8 +33017,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -33509,8 +33028,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Utslog'
       type: object
   securitySchemes:
     Bearer:
