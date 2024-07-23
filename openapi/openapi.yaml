@@ -9034,7 +9034,7 @@ paths:
         kullanılır.
       tags:
         - Gider
-    /api/GiderIsl/GelirGiderIslemYap: null
+  /api/GiderIsl/GelirGiderIslemYap: null
     post:
       requestBody:
         content:
@@ -9301,7 +9301,7 @@ paths:
         gerektiğinde kullanılır.
       tags:
         - GiderIsl
-    /api/Hizlisatisayar/add: null
+  /api/Hizlisatisayar/add: null
     post:
       requestBody:
         content:
@@ -17002,7 +17002,7 @@ paths:
             schema:
               items:
                 $ref: '#/components/schemas/StokHammadde'
-            type: array
+              type: array
           text/json:
             schema:
               items:
