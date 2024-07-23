@@ -8289,40 +8289,37 @@ paths:
           description: Success
       tags:
         - Firma Kodlar
+    paths:
+  /api/FirmaKodlar/addrange:
+    post:
+      summary: Firma Kodları Aralığı Ekleme
+      description: >-
+        Belirtilen aralıkta birden fazla firma kodu kaydı ekler. Bu işlem, toplu
+        firma kodu bilgilerini sisteme eklemek için kullanılır.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+          text/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+      responses:
+        '200':
+          description: Success
+      tags:
+        - Firma Kodlar
 
-/api/FirmaKodlar/addrange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
-              $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        application/json:
-          schema:
-            items:
-              $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
-              $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        text/json:
-          schema:
-            items:
-              $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Firma Kodları Aralığı Ekleme
-    description: >-
-      Belirtilen aralıkta birden fazla firma kodu kaydı ekler. Bu işlem, toplu
-      firma kodu bilgilerini sisteme eklemek için kullanılır.
-    tags:
-      - Firma Kodlar
 /api/FirmaKodlar/delete:
   post:
     requestBody:
