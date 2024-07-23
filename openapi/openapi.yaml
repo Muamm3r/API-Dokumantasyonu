@@ -21784,6 +21784,8 @@ components:
         orderBy:
           nullable: true
           type: string
+        pagingOptions:
+          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
