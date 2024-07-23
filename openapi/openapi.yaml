@@ -8264,1528 +8264,1528 @@ paths:
         gerektiğinde kullanılır.
       tags:
         - Firma
-/api/FirmaKodlar/add:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-    responses:
-      '200':
-        description: Success
-    summary: Firma Kodları Ekleme
-    description: >-
-      Yeni bir firma kodu kaydı ekler. Bu işlem, sisteme yeni firma kodu
-      bilgileri eklemek için kullanılır.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/addrange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+  /api/FirmaKodlar/add:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Firma Kodları Aralığı Ekleme
-    description: >-
-      Belirtilen aralıkta birden fazla firma kodu kaydı ekler. Bu işlem, toplu
-      firma kodu bilgilerini sisteme eklemek için kullanılır.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/delete:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-    responses:
-      '200':
-        description: Success
-    summary: Firma Kodları Silme
-    description: >-
-      Belirtilen firma kodu bilgilerini siler. Bu işlem, kullanıcıların belirli
-      firma kodu bilgilerini sistemden kaldırmalarına olanak tanır.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/deletebyid:
-  delete:
-    parameters:
-      - explode: true
-        in: query
-        name: entityId
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Firma Kodunu Silme
-    description: >-
-      Belirtilen ID'ye sahip firma kodunu siler. Bu işlem, belirli bir firma
-      kodunun sistemden kaldırılmasını sağlar.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/deleterange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+      responses:
+        '200':
+          description: Success
+      summary: Firma Kodları Ekleme
+      description: >-
+        Yeni bir firma kodu kaydı ekler. Bu işlem, sisteme yeni firma kodu
+        bilgileri eklemek için kullanılır.
+      tags:
+        - Firma Kodlar
+  /api/FirmaKodlar/addrange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Firma Kodları Aralığı Ekleme
+      description: >-
+        Belirtilen aralıkta birden fazla firma kodu kaydı ekler. Bu işlem, toplu
+        firma kodu bilgilerini sisteme eklemek için kullanılır.
+      tags:
+        - Firma Kodlar
+  /api/FirmaKodlar/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Firma Kodları Silme
-    description: >-
-      Belirtilen aralıkta bulunan firma kodu kayıtlarını toplu olarak siler. Bu
-      işlem, birden fazla firma kodu bilgisinin aynı anda kaldırılması
-      gerektiğinde kullanılır.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/getall:
-  post:
-    requestBody:
-      content:
-        application/*+json:
+      responses:
+        '200':
+          description: Success
+      summary: Firma Kodları Silme
+      description: >-
+        Belirtilen firma kodu bilgilerini siler. Bu işlem, kullanıcıların belirli
+        firma kodu bilgilerini sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Firma Kodlar
+  /api/FirmaKodlar/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
           schema:
-            $ref: '#/components/schemas/FirmaKodlarFilterHelper'
-        application/json:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Firma Kodunu Silme
+      description: >-
+        Belirtilen ID'ye sahip firma kodunu siler. Bu işlem, belirli bir firma
+        kodunun sistemden kaldırılmasını sağlar.
+      tags:
+        - Firma Kodlar
+  /api/FirmaKodlar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Firma Kodları Silme
+      description: >-
+        Belirtilen aralıkta bulunan firma kodu kayıtlarını toplu olarak siler. Bu
+        işlem, birden fazla firma kodu bilgisinin aynı anda kaldırılması
+        gerektiğinde kullanılır.
+      tags:
+        - Firma Kodlar
+  /api/FirmaKodlar/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FirmaKodlarFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FirmaKodlarFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FirmaKodlarFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FirmaKodlarFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Tüm Firma Kodlarını Getir
+      description: >-
+        Veritabanındaki tüm firma kodu kayıtlarını getirir. Bu işlem,
+        kullanıcıların tüm firma kodu bilgilerini listelemelerini sağlar.
+      tags:
+        - Firma Kodlar
+  /api/FirmaKodlar/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
           schema:
-            $ref: '#/components/schemas/FirmaKodlarFilterHelper'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlarFilterHelper'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlarFilterHelper'
-    responses:
-      '200':
-        description: Success
-    summary: Tüm Firma Kodlarını Getir
-    description: >-
-      Veritabanındaki tüm firma kodu kayıtlarını getirir. Bu işlem,
-      kullanıcıların tüm firma kodu bilgilerini listelemelerini sağlar.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/getbyid:
-  get:
-    parameters:
-      - explode: true
-        in: query
-        name: id
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Firma Kodunu Getir
-    description: >-
-      Belirtilen ID'ye sahip firma kodu kaydını getirir. Bu işlem, belirli bir
-      firma kodu bilgisini görüntülemek için kullanılır.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/update:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-    responses:
-      '200':
-        description: Success
-    summary: Firma Kodunu Güncelleme
-    description: >-
-      Belirtilen ID'ye sahip firma kodunu günceller. Bu işlem, mevcut bir firma
-      kodu bilgisindeki bilgileri güncellemek için kullanılır.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/updaterange:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Firma Kodunu Getir
+      description: >-
+        Belirtilen ID'ye sahip firma kodu kaydını getirir. Bu işlem, belirli bir
+        firma kodu bilgisini görüntülemek için kullanılır.
+      tags:
+        - Firma Kodlar
+  /api/FirmaKodlar/update:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Firma Kodlarını Güncelleme
-    description: >-
-      Belirtilen aralıkta bulunan firma kodu kayıtlarını toplu olarak günceller.
-      Bu işlem, birden fazla firma kodu bilgisinin aynı anda güncellenmesi
-      gerektiğinde kullanılır.
-    tags:
-      - Firma Kodlar
-/api/Genelayar/add:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Genelayar'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Genelayar'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Genelayar'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Genelayar'
-    responses:
-      '200':
-        description: Success
-    summary: Yeni Genel Ayar Ekleme
-    description: >-
-      Sisteme yeni bir genel ayar kaydı ekler. Bu işlem, sistemde genel ayar
-      bilgilerini güncellemek için kullanılır.
-    tags:
-      - Genel Ayar İşlemleri
-/api/Genelayar/addrange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+      responses:
+        '200':
+          description: Success
+      summary: Firma Kodunu Güncelleme
+      description: >-
+        Belirtilen ID'ye sahip firma kodunu günceller. Bu işlem, mevcut bir firma
+        kodu bilgisindeki bilgileri güncellemek için kullanılır.
+      tags:
+        - Firma Kodlar
+  /api/FirmaKodlar/updaterange:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Firma Kodlarını Güncelleme
+      description: >-
+        Belirtilen aralıkta bulunan firma kodu kayıtlarını toplu olarak günceller.
+        Bu işlem, birden fazla firma kodu bilgisinin aynı anda güncellenmesi
+        gerektiğinde kullanılır.
+      tags:
+        - Firma Kodlar
+  /api/Genelayar/add:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/Genelayar'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Genelayar'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Genelayar'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Genelayar'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Genel Ayar Ekleme
-    description: >-
-      Birden fazla genel ayar kaydını toplu olarak sisteme ekler. Bu işlem, çok
-      sayıda genel ayar bilgisinin aynı anda eklenmesi gerektiğinde kullanılır.
-    tags:
-      - Genel Ayar İşlemleri
-/api/Genelayar/delete:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Genelayar'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Genelayar'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Genelayar'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Genelayar'
-    responses:
-      '200':
-        description: Success
-    summary: Genel Ayar Silme
-    description: >-
-      Belirtilen genel ayar bilgilerini sistemden siler. Bu işlem, genel
-      ayarları kaldırmak için kullanılır.
-    tags:
-      - Genel Ayar İşlemleri
-/api/Genelayar/deletebyid:
-  delete:
-    parameters:
-      - explode: true
-        in: query
-        name: entityId
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Genel Ayar Silme
-    description: >-
-      Belirtilen ID'ye sahip genel ayar kaydını sistemden siler. Bu işlem,
-      belirli bir genel ayar bilgisinin kaldırılmasını sağlar.
-    tags:
-      - Genel Ayar İşlemleri
-/api/Genelayar/deleterange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+      responses:
+        '200':
+          description: Success
+      summary: Yeni Genel Ayar Ekleme
+      description: >-
+        Sisteme yeni bir genel ayar kaydı ekler. Bu işlem, sistemde genel ayar
+        bilgilerini güncellemek için kullanılır.
+      tags:
+        - Genel Ayar İşlemleri
+  /api/Genelayar/addrange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Genelayar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Genelayar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Genelayar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Genelayar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Genel Ayar Ekleme
+      description: >-
+        Birden fazla genel ayar kaydını toplu olarak sisteme ekler. Bu işlem, çok
+        sayıda genel ayar bilgisinin aynı anda eklenmesi gerektiğinde kullanılır.
+      tags:
+        - Genel Ayar İşlemleri
+  /api/Genelayar/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/Genelayar'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Genelayar'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Genelayar'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Genelayar'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Genel Ayar Silme
-    description: >-
-      Belirtilen aralıkta bulunan genel ayar kayıtlarını toplu olarak siler. Bu
-      işlem, birden fazla genel ayar bilgisinin aynı anda kaldırılması
-      gerektiğinde kullanılır.
-    tags:
-      - Genel Ayar İşlemleri
-/api/Genelayar/getall:
-  post:
-    requestBody:
-      content:
-        application/*+json:
+      responses:
+        '200':
+          description: Success
+      summary: Genel Ayar Silme
+      description: >-
+        Belirtilen genel ayar bilgilerini sistemden siler. Bu işlem, genel
+        ayarları kaldırmak için kullanılır.
+      tags:
+        - Genel Ayar İşlemleri
+  /api/Genelayar/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
           schema:
-            $ref: '#/components/schemas/GenelayarFilterHelper'
-        application/json:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Genel Ayar Silme
+      description: >-
+        Belirtilen ID'ye sahip genel ayar kaydını sistemden siler. Bu işlem,
+        belirli bir genel ayar bilgisinin kaldırılmasını sağlar.
+      tags:
+        - Genel Ayar İşlemleri
+  /api/Genelayar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Genelayar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Genelayar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Genelayar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Genelayar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Genel Ayar Silme
+      description: >-
+        Belirtilen aralıkta bulunan genel ayar kayıtlarını toplu olarak siler. Bu
+        işlem, birden fazla genel ayar bilgisinin aynı anda kaldırılması
+        gerektiğinde kullanılır.
+      tags:
+        - Genel Ayar İşlemleri
+  /api/Genelayar/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GenelayarFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenelayarFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/GenelayarFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GenelayarFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Tüm Genel Ayarları Getir
+      description: >-
+        Sistemdeki tüm genel ayar kayıtlarını getirir. Bu işlem, genel ayar
+        bilgilerini listelemek için kullanılır.
+      tags:
+        - Genel Ayar İşlemleri
+  /api/Genelayar/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
           schema:
-            $ref: '#/components/schemas/GenelayarFilterHelper'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/GenelayarFilterHelper'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/GenelayarFilterHelper'
-    responses:
-      '200':
-        description: Success
-    summary: Tüm Genel Ayarları Getir
-    description: >-
-      Sistemdeki tüm genel ayar kayıtlarını getirir. Bu işlem, genel ayar
-      bilgilerini listelemek için kullanılır.
-    tags:
-      - Genel Ayar İşlemleri
-/api/Genelayar/getbyid:
-  get:
-    parameters:
-      - explode: true
-        in: query
-        name: id
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Genel Ayarı Getir
-    description: >-
-      Belirtilen ID'ye sahip genel ayar kaydını getirir. Bu işlem, belirli bir
-      genel ayar bilgisini görüntülemek için kullanılır.
-    tags:
-      - Genel Ayar İşlemleri
-/api/Genelayar/update:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Genelayar'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Genelayar'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Genelayar'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Genelayar'
-    responses:
-      '200':
-        description: Success
-    summary: Genel Ayarı Güncelle
-    description: >-
-      Belirtilen ID'ye sahip genel ayar kaydını günceller. Bu işlem, mevcut
-      genel ayar bilgisindeki bilgileri güncellemek için kullanılır.
-    tags:
-      - Genel Ayar İşlemleri
-/api/Genelayar/updaterange:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Genel Ayarı Getir
+      description: >-
+        Belirtilen ID'ye sahip genel ayar kaydını getirir. Bu işlem, belirli bir
+        genel ayar bilgisini görüntülemek için kullanılır.
+      tags:
+        - Genel Ayar İşlemleri
+  /api/Genelayar/update:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/Genelayar'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Genelayar'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Genelayar'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Genelayar'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Genel Ayar Güncelleme
-    description: >-
-      Belirtilen aralıkta bulunan genel ayar kayıtlarını toplu olarak günceller.
-      Bu işlem, birden fazla genel ayar bilgisinin aynı anda güncellenmesi
-      gerektiğinde kullanılır.
-    tags:
-      - Genel Ayar İşlemleri
-/api/Gider/ControlDelete:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-    responses:
-      '200':
-        description: Success
-    summary: Gider Silme Kontrolü
-    description: >-
-      Belirtilen gider bilgilerini kontrol eder ve silme işlemi için uygun olup
-      olmadığını değerlendirir. Bu işlem, giderlerin silinmesi öncesinde
-      doğruluk ve uygunluk kontrolü yapmak için kullanılır.
-    tags:
-      - Gider
-/api/Gider/ControlDeleteById:
-  delete:
-    parameters:
-      - explode: true
-        in: query
-        name: entityId
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Gider Silme Kontrolü
-    description: >-
-      Belirtilen ID'ye sahip gider kaydını kontrol eder ve silme işlemi için
-      uygun olup olmadığını değerlendirir. Bu işlem, belirli bir giderin
-      silinmeden önce kontrol edilmesini sağlar.
-    tags:
-      - Gider
-/api/Gider/add:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-    responses:
-      '200':
-        description: Success
-    summary: Yeni Gider Ekleme
-    description: >-
-      Sisteme yeni bir gider kaydı ekler. Bu işlem, finansal kayıtları
-      güncellemek ve yeni gider bilgilerini eklemek için kullanılır.
-    tags:
-      - Gider
-/api/Gider/addrange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+      responses:
+        '200':
+          description: Success
+      summary: Genel Ayarı Güncelle
+      description: >-
+        Belirtilen ID'ye sahip genel ayar kaydını günceller. Bu işlem, mevcut
+        genel ayar bilgisindeki bilgileri güncellemek için kullanılır.
+      tags:
+        - Genel Ayar İşlemleri
+  /api/Genelayar/updaterange:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Genelayar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Genelayar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Genelayar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Genelayar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Genel Ayar Güncelleme
+      description: >-
+        Belirtilen aralıkta bulunan genel ayar kayıtlarını toplu olarak günceller.
+        Bu işlem, birden fazla genel ayar bilgisinin aynı anda güncellenmesi
+        gerektiğinde kullanılır.
+      tags:
+        - Genel Ayar İşlemleri
+  /api/Gider/ControlDelete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Gider Ekleme
-    description: >-
-      Birden fazla gider kaydını toplu olarak sisteme ekler. Bu işlem, çok
-      sayıda gider bilgisinin aynı anda eklenmesi gerektiğinde kullanılır.
-    tags:
-      - Gider
-/api/Gider/delete:
-  post:
-    requestBody:
-      content:
-        application/*+json:
+      responses:
+        '200':
+          description: Success
+      summary: Gider Silme Kontrolü
+      description: >-
+        Belirtilen gider bilgilerini kontrol eder ve silme işlemi için uygun olup
+        olmadığını değerlendirir. Bu işlem, giderlerin silinmesi öncesinde
+        doğruluk ve uygunluk kontrolü yapmak için kullanılır.
+      tags:
+        - Gider
+  /api/Gider/ControlDeleteById:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
           schema:
-            $ref: '#/components/schemas/Gider'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-    responses:
-      '200':
-        description: Success
-    summary: Gider Silme
-    description: >-
-      Belirtilen gider bilgilerini sistemden siler. Bu işlem, mevcut gider
-      kayıtlarını kaldırmak için kullanılır.
-    tags:
-      - Gider
-/api/Gider/deletebyid:
-  delete:
-    parameters:
-      - explode: true
-        in: query
-        name: entityId
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Gider Silme
-    description: >-
-      Belirtilen ID'ye sahip gider kaydını sistemden siler. Bu işlem, belirli
-      bir gider bilgisinin kaldırılmasını sağlar.
-    tags:
-      - Gider
-/api/Gider/deleterange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Gider Silme Kontrolü
+      description: >-
+        Belirtilen ID'ye sahip gider kaydını kontrol eder ve silme işlemi için
+        uygun olup olmadığını değerlendirir. Bu işlem, belirli bir giderin
+        silinmeden önce kontrol edilmesini sağlar.
+      tags:
+        - Gider
+  /api/Gider/add:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Gider Silme
-    description: >-
-      Belirtilen aralıkta bulunan gider kayıtlarını toplu olarak siler. Bu
-      işlem, birden fazla gider bilgisinin aynı anda kaldırılması gerektiğinde
-      kullanılır.
-    tags:
-      - Gider
-/api/Gider/getall:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/GiderFilterHelper'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/GiderFilterHelper'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/GiderFilterHelper'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/GiderFilterHelper'
-    responses:
-      '200':
-        description: Success
-    summary: Tüm Giderleri Getir
-    description: >-
-      Sistemdeki tüm gider kayıtlarını getirir. Bu işlem, gider bilgilerini
-      listelemek ve incelemek için kullanılır.
-    tags:
-      - Gider
-/api/Gider/getbyid:
-  get:
-    parameters:
-      - explode: true
-        in: query
-        name: id
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Gider Getir
-    description: >-
-      Belirtilen ID'ye sahip gider kaydını getirir. Bu işlem, belirli bir gider
-      bilgisini görüntülemek için kullanılır.
-    tags:
-      - Gider
-/api/Gider/update:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-    responses:
-      '200':
-        description: Success
-    summary: Gider Güncelleme
-    description: >-
-      Belirtilen ID'ye sahip gider kaydını günceller. Bu işlem, mevcut gider
-      bilgisindeki bilgileri güncellemek için kullanılır.
-    tags:
-      - Gider
-/api/Gider/updaterange:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+      responses:
+        '200':
+          description: Success
+      summary: Yeni Gider Ekleme
+      description: >-
+        Sisteme yeni bir gider kaydı ekler. Bu işlem, finansal kayıtları
+        güncellemek ve yeni gider bilgilerini eklemek için kullanılır.
+      tags:
+        - Gider
+  /api/Gider/addrange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Gider'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Gider'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Gider'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Gider'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Gider Ekleme
+      description: >-
+        Birden fazla gider kaydını toplu olarak sisteme ekler. Bu işlem, çok
+        sayıda gider bilgisinin aynı anda eklenmesi gerektiğinde kullanılır.
+      tags:
+        - Gider
+  /api/Gider/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Gider Güncelleme
-    description: >-
-      Belirtilen aralıkta bulunan gider kayıtlarını toplu olarak günceller. Bu
-      işlem, birden fazla gider bilgisinin aynı anda güncellenmesi gerektiğinde
-      kullanılır.
-    tags:
-      - Gider
-  /api/GiderIsl/GelirGiderIslemYap: null
-  post:
-    requestBody:
-      content:
-        application/*+json:
+      responses:
+        '200':
+          description: Success
+      summary: Gider Silme
+      description: >-
+        Belirtilen gider bilgilerini sistemden siler. Bu işlem, mevcut gider
+        kayıtlarını kaldırmak için kullanılır.
+      tags:
+        - Gider
+  /api/Gider/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
           schema:
-            $ref: '#/components/schemas/GiderIsl'
-        application/json:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Gider Silme
+      description: >-
+        Belirtilen ID'ye sahip gider kaydını sistemden siler. Bu işlem, belirli
+        bir gider bilgisinin kaldırılmasını sağlar.
+      tags:
+        - Gider
+  /api/Gider/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Gider'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Gider'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Gider'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Gider'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Gider Silme
+      description: >-
+        Belirtilen aralıkta bulunan gider kayıtlarını toplu olarak siler. Bu
+        işlem, birden fazla gider bilgisinin aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - Gider
+  /api/Gider/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GiderFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GiderFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/GiderFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GiderFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Tüm Giderleri Getir
+      description: >-
+        Sistemdeki tüm gider kayıtlarını getirir. Bu işlem, gider bilgilerini
+        listelemek ve incelemek için kullanılır.
+      tags:
+        - Gider
+  /api/Gider/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
           schema:
-            $ref: '#/components/schemas/GiderIsl'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-    responses:
-      '200':
-        description: Success
-    summary: Gelir ve Gider İşlemi Yap
-    description: >-
-      Gelir ve gider işlemleri için gerekli verileri işleyerek belirli finansal
-      işlemleri gerçekleştirir. Bu işlem, sistemde gelir ve gider kayıtlarının
-      yönetilmesi için kullanılır.
-    tags:
-      - GiderIsl
-/api/GiderIsl/add:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-    responses:
-      '200':
-        description: Success
-    summary: Yeni Gider İşlemi Ekle
-    description: >-
-      Sisteme yeni bir gider işlemi kaydı ekler. Bu işlem, finansal kayıtların
-      güncellenmesi ve yeni gider bilgilerini eklemek için kullanılır.
-    tags:
-      - GiderIsl
-/api/GiderIsl/addrange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Gider Getir
+      description: >-
+        Belirtilen ID'ye sahip gider kaydını getirir. Bu işlem, belirli bir gider
+        bilgisini görüntülemek için kullanılır.
+      tags:
+        - Gider
+  /api/Gider/update:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Gider'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Gider'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Gider'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Gider'
+      responses:
+        '200':
+          description: Success
+      summary: Gider Güncelleme
+      description: >-
+        Belirtilen ID'ye sahip gider kaydını günceller. Bu işlem, mevcut gider
+        bilgisindeki bilgileri güncellemek için kullanılır.
+      tags:
+        - Gider
+  /api/Gider/updaterange:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Gider'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Gider'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Gider'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Gider'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Gider Güncelleme
+      description: >-
+        Belirtilen aralıkta bulunan gider kayıtlarını toplu olarak günceller. Bu
+        işlem, birden fazla gider bilgisinin aynı anda güncellenmesi gerektiğinde
+        kullanılır.
+      tags:
+        - Gider
+    /api/GiderIsl/GelirGiderIslemYap: null
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/GiderIsl'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/GiderIsl'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/GiderIsl'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/GiderIsl'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Gider İşlemi Ekle
-    description: >-
-      Birden fazla gider işlemi kaydını toplu olarak sisteme ekler. Bu işlem,
-      çok sayıda finansal kaydın aynı anda eklenmesi gerektiğinde kullanılır.
-    tags:
-      - GiderIsl
-/api/GiderIsl/delete:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-    responses:
-      '200':
-        description: Success
-    summary: Gider İşlemi Silme
-    description: >-
-      Belirtilen gider işlemi bilgilerini sistemden siler. Bu işlem, mevcut
-      gider kayıtlarının kaldırılması için kullanılır.
-    tags:
-      - GiderIsl
-/api/GiderIsl/deletebyid:
-  delete:
-    parameters:
-      - explode: true
-        in: query
-        name: entityId
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Gider İşlemi Silme
-    description: >-
-      Belirtilen ID'ye sahip gider işlemi kaydını sistemden siler. Bu işlem,
-      belirli bir gider kaydının kaldırılmasını sağlar.
-    tags:
-      - GiderIsl
-/api/GiderIsl/deleterange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+      responses:
+        '200':
+          description: Success
+      summary: Gelir ve Gider İşlemi Yap
+      description: >-
+        Gelir ve gider işlemleri için gerekli verileri işleyerek belirli finansal
+        işlemleri gerçekleştirir. Bu işlem, sistemde gelir ve gider kayıtlarının
+        yönetilmesi için kullanılır.
+      tags:
+        - GiderIsl
+  /api/GiderIsl/add:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/GiderIsl'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/GiderIsl'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/GiderIsl'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/GiderIsl'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Gider İşlemi Silme
-    description: >-
-      Belirtilen aralıkta bulunan gider işlemi kayıtlarını toplu olarak siler.
-      Bu işlem, birden fazla gider kaydının aynı anda kaldırılması gerektiğinde
-      kullanılır.
-    tags:
-      - GiderIsl
-/api/GiderIsl/getall:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/GiderIslFilterHelper'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/GiderIslFilterHelper'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/GiderIslFilterHelper'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/GiderIslFilterHelper'
-    responses:
-      '200':
-        description: Success
-    summary: Tüm Gider İşlemlerini Getir
-    description: >-
-      Sistemdeki tüm gider işlemi kayıtlarını getirir. Bu işlem, gider
-      bilgilerini listelemek ve incelemek için kullanılır.
-    tags:
-      - GiderIsl
-/api/GiderIsl/getbyid:
-  get:
-    parameters:
-      - explode: true
-        in: query
-        name: id
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Gider İşlemi Getir
-    description: >-
-      Belirtilen ID'ye sahip gider işlemi kaydını getirir. Bu işlem, belirli bir
-      gider bilgisini görüntülemek için kullanılır.
-    tags:
-      - GiderIsl
-/api/GiderIsl/update:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/GiderIsl'
-    responses:
-      '200':
-        description: Success
-    summary: Gider İşlemi Güncelleme
-    description: >-
-      Belirtilen ID'ye sahip gider işlemi kaydını günceller. Bu işlem, mevcut
-      gider bilgisindeki bilgileri güncellemek için kullanılır.
-    tags:
-      - GiderIsl
-/api/GiderIsl/updaterange:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+      responses:
+        '200':
+          description: Success
+      summary: Yeni Gider İşlemi Ekle
+      description: >-
+        Sisteme yeni bir gider işlemi kaydı ekler. Bu işlem, finansal kayıtların
+        güncellenmesi ve yeni gider bilgilerini eklemek için kullanılır.
+      tags:
+        - GiderIsl
+  /api/GiderIsl/addrange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/GiderIsl'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/GiderIsl'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/GiderIsl'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/GiderIsl'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Gider İşlemi Ekle
+      description: >-
+        Birden fazla gider işlemi kaydını toplu olarak sisteme ekler. Bu işlem,
+        çok sayıda finansal kaydın aynı anda eklenmesi gerektiğinde kullanılır.
+      tags:
+        - GiderIsl
+  /api/GiderIsl/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/GiderIsl'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/GiderIsl'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/GiderIsl'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/GiderIsl'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Gider İşlemi Güncelleme
-    description: >-
-      Belirtilen aralıkta bulunan gider işlemi kayıtlarını toplu olarak
-      günceller. Bu işlem, birden fazla gider bilgisinin aynı anda güncellenmesi
-      gerektiğinde kullanılır.
-    tags:
-      - GiderIsl
-  /api/Hizlisatisayar/add: null
-  post:
-    requestBody:
-      content:
-        application/*+json:
+      responses:
+        '200':
+          description: Success
+      summary: Gider İşlemi Silme
+      description: >-
+        Belirtilen gider işlemi bilgilerini sistemden siler. Bu işlem, mevcut
+        gider kayıtlarının kaldırılması için kullanılır.
+      tags:
+        - GiderIsl
+  /api/GiderIsl/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
           schema:
-            $ref: '#/components/schemas/Hizlisatisayar'
-        application/json:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Gider İşlemi Silme
+      description: >-
+        Belirtilen ID'ye sahip gider işlemi kaydını sistemden siler. Bu işlem,
+        belirli bir gider kaydının kaldırılmasını sağlar.
+      tags:
+        - GiderIsl
+  /api/GiderIsl/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/GiderIsl'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/GiderIsl'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/GiderIsl'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/GiderIsl'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Gider İşlemi Silme
+      description: >-
+        Belirtilen aralıkta bulunan gider işlemi kayıtlarını toplu olarak siler.
+        Bu işlem, birden fazla gider kaydının aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - GiderIsl
+  /api/GiderIsl/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GiderIslFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GiderIslFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/GiderIslFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GiderIslFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Tüm Gider İşlemlerini Getir
+      description: >-
+        Sistemdeki tüm gider işlemi kayıtlarını getirir. Bu işlem, gider
+        bilgilerini listelemek ve incelemek için kullanılır.
+      tags:
+        - GiderIsl
+  /api/GiderIsl/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
           schema:
-            $ref: '#/components/schemas/Hizlisatisayar'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisayar'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisayar'
-    responses:
-      '200':
-        description: Success
-    summary: Hızlı Satış Ayarı Ekle
-    description: >-
-      Yeni bir hızlı satış ayarı kaydı ekler. Bu işlem, hızlı satış süreçlerinin
-      yapılandırılması ve yönetilmesi için gerekli ayarların sisteme eklenmesini
-      sağlar.
-    tags:
-      - Hızlı Satış Ayar İşlemleri
-/api/Hizlisatisayar/addrange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Gider İşlemi Getir
+      description: >-
+        Belirtilen ID'ye sahip gider işlemi kaydını getirir. Bu işlem, belirli bir
+        gider bilgisini görüntülemek için kullanılır.
+      tags:
+        - GiderIsl
+  /api/GiderIsl/update:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GiderIsl'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GiderIsl'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/GiderIsl'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GiderIsl'
+      responses:
+        '200':
+          description: Success
+      summary: Gider İşlemi Güncelleme
+      description: >-
+        Belirtilen ID'ye sahip gider işlemi kaydını günceller. Bu işlem, mevcut
+        gider bilgisindeki bilgileri güncellemek için kullanılır.
+      tags:
+        - GiderIsl
+  /api/GiderIsl/updaterange:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/GiderIsl'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/GiderIsl'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/GiderIsl'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/GiderIsl'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Gider İşlemi Güncelleme
+      description: >-
+        Belirtilen aralıkta bulunan gider işlemi kayıtlarını toplu olarak
+        günceller. Bu işlem, birden fazla gider bilgisinin aynı anda güncellenmesi
+        gerektiğinde kullanılır.
+      tags:
+        - GiderIsl
+    /api/Hizlisatisayar/add: null
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisayar'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisayar'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisayar'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisayar'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Hızlı Satış Ayarı Ekle
-    description: >-
-      Birden fazla hızlı satış ayarı kaydını toplu olarak sisteme ekler. Bu
-      işlem, çok sayıda hızlı satış ayarının aynı anda eklenmesini sağlar.
-    tags:
-      - Hızlı Satış Ayar İşlemleri
-/api/Hizlisatisayar/delete:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisayar'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisayar'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisayar'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisayar'
-    responses:
-      '200':
-        description: Success
-    summary: Hızlı Satış Ayarını Sil
-    description: >-
-      Belirtilen hızlı satış ayarı kaydını sistemden siler. Bu işlem, mevcut bir
-      hızlı satış ayarının kaldırılmasını sağlar.
-    tags:
-      - Hızlı Satış Ayar İşlemleri
-/api/Hizlisatisayar/deletebyid:
-  delete:
-    parameters:
-      - explode: true
-        in: query
-        name: entityId
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Hızlı Satış Ayarını Sil
-    description: >-
-      Belirtilen ID'ye sahip hızlı satış ayarı kaydını sistemden siler. Bu
-      işlem, belirli bir hızlı satış ayarının kaldırılmasını sağlar.
-    tags:
-      - Hızlı Satış Ayar İşlemleri
-/api/Hizlisatisayar/deleterange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+      responses:
+        '200':
+          description: Success
+      summary: Hızlı Satış Ayarı Ekle
+      description: >-
+        Yeni bir hızlı satış ayarı kaydı ekler. Bu işlem, hızlı satış süreçlerinin
+        yapılandırılması ve yönetilmesi için gerekli ayarların sisteme eklenmesini
+        sağlar.
+      tags:
+        - Hızlı Satış Ayar İşlemleri
+  /api/Hizlisatisayar/addrange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisayar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisayar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisayar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisayar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Hızlı Satış Ayarı Ekle
+      description: >-
+        Birden fazla hızlı satış ayarı kaydını toplu olarak sisteme ekler. Bu
+        işlem, çok sayıda hızlı satış ayarının aynı anda eklenmesini sağlar.
+      tags:
+        - Hızlı Satış Ayar İşlemleri
+  /api/Hizlisatisayar/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisayar'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisayar'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisayar'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisayar'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Hızlı Satış Ayarı Sil
-    description: >-
-      Belirtilen aralıkta bulunan hızlı satış ayarı kayıtlarını toplu olarak
-      siler. Bu işlem, birden fazla hızlı satış ayarının aynı anda kaldırılması
-      gerektiğinde kullanılır.
-    tags:
-      - Hızlı Satış Ayar İşlemleri
-/api/Hizlisatisayar/getall:
-  post:
-    requestBody:
-      content:
-        application/*+json:
+      responses:
+        '200':
+          description: Success
+      summary: Hızlı Satış Ayarını Sil
+      description: >-
+        Belirtilen hızlı satış ayarı kaydını sistemden siler. Bu işlem, mevcut bir
+        hızlı satış ayarının kaldırılmasını sağlar.
+      tags:
+        - Hızlı Satış Ayar İşlemleri
+  /api/Hizlisatisayar/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
           schema:
-            $ref: '#/components/schemas/HizlisatisayarFilterHelper'
-        application/json:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Hızlı Satış Ayarını Sil
+      description: >-
+        Belirtilen ID'ye sahip hızlı satış ayarı kaydını sistemden siler. Bu
+        işlem, belirli bir hızlı satış ayarının kaldırılmasını sağlar.
+      tags:
+        - Hızlı Satış Ayar İşlemleri
+  /api/Hizlisatisayar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisayar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisayar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisayar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisayar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Hızlı Satış Ayarı Sil
+      description: >-
+        Belirtilen aralıkta bulunan hızlı satış ayarı kayıtlarını toplu olarak
+        siler. Bu işlem, birden fazla hızlı satış ayarının aynı anda kaldırılması
+        gerektiğinde kullanılır.
+      tags:
+        - Hızlı Satış Ayar İşlemleri
+  /api/Hizlisatisayar/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/HizlisatisayarFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HizlisatisayarFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/HizlisatisayarFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/HizlisatisayarFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Tüm Hızlı Satış Ayarlarını Getir
+      description: >-
+        Sistemdeki tüm hızlı satış ayarı kayıtlarını getirir. Bu işlem, hızlı
+        satış ayarlarının listelenmesi ve gözden geçirilmesi için kullanılır.
+      tags:
+        - Hızlı Satış Ayar İşlemleri
+  /api/Hizlisatisayar/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
           schema:
-            $ref: '#/components/schemas/HizlisatisayarFilterHelper'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/HizlisatisayarFilterHelper'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/HizlisatisayarFilterHelper'
-    responses:
-      '200':
-        description: Success
-    summary: Tüm Hızlı Satış Ayarlarını Getir
-    description: >-
-      Sistemdeki tüm hızlı satış ayarı kayıtlarını getirir. Bu işlem, hızlı
-      satış ayarlarının listelenmesi ve gözden geçirilmesi için kullanılır.
-    tags:
-      - Hızlı Satış Ayar İşlemleri
-/api/Hizlisatisayar/getbyid:
-  get:
-    parameters:
-      - explode: true
-        in: query
-        name: id
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Hızlı Satış Ayarını Getir
-    description: >-
-      Belirtilen ID'ye sahip hızlı satış ayarı kaydını getirir. Bu işlem,
-      belirli bir hızlı satış ayarının detaylarını görüntülemek için kullanılır.
-    tags:
-      - Hızlı Satış Ayar İşlemleri
-/api/Hizlisatisayar/update:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisayar'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisayar'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisayar'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisayar'
-    responses:
-      '200':
-        description: Success
-    summary: Hızlı Satış Ayarını Güncelle
-    description: >-
-      Belirtilen ID'ye sahip hızlı satış ayarı kaydını günceller. Bu işlem,
-      mevcut hızlı satış ayarlarının bilgilerini güncellemek için kullanılır.
-    tags:
-      - Hızlı Satış Ayar İşlemleri
-/api/Hizlisatisayar/updaterange:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Hızlı Satış Ayarını Getir
+      description: >-
+        Belirtilen ID'ye sahip hızlı satış ayarı kaydını getirir. Bu işlem,
+        belirli bir hızlı satış ayarının detaylarını görüntülemek için kullanılır.
+      tags:
+        - Hızlı Satış Ayar İşlemleri
+  /api/Hizlisatisayar/update:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisayar'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisayar'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisayar'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisayar'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Hızlı Satış Ayarını Güncelle
-    description: >-
-      Belirtilen aralıkta bulunan hızlı satış ayarı kayıtlarını toplu olarak
-      günceller. Bu işlem, birden fazla hızlı satış ayarının aynı anda
-      güncellenmesi gerektiğinde kullanılır.
-    tags:
-      - Hızlı Satış Ayar İşlemleri
-  /api/Hizlisatisbutonayarlari/add: null
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-    responses:
-      '200':
-        description: Success
-    summary: Hızlı Satış Buton Ayarı Ekle
-    description: >-
-      Yeni bir hızlı satış buton ayarı kaydı ekler. Bu işlem, hızlı satış
-      işlemlerinde kullanılacak buton ayarlarının sisteme eklenmesini sağlar.
-    tags:
-      - Hızlı Satış Buton Ayarları
-/api/Hizlisatisbutonayarlari/addrange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+      responses:
+        '200':
+          description: Success
+      summary: Hızlı Satış Ayarını Güncelle
+      description: >-
+        Belirtilen ID'ye sahip hızlı satış ayarı kaydını günceller. Bu işlem,
+        mevcut hızlı satış ayarlarının bilgilerini güncellemek için kullanılır.
+      tags:
+        - Hızlı Satış Ayar İşlemleri
+  /api/Hizlisatisayar/updaterange:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisayar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisayar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisayar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisayar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Hızlı Satış Ayarını Güncelle
+      description: >-
+        Belirtilen aralıkta bulunan hızlı satış ayarı kayıtlarını toplu olarak
+        günceller. Bu işlem, birden fazla hızlı satış ayarının aynı anda
+        güncellenmesi gerektiğinde kullanılır.
+      tags:
+        - Hızlı Satış Ayar İşlemleri
+    /api/Hizlisatisbutonayarlari/add: null
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Hızlı Satış Buton Ayarı Ekle
-    description: >-
-      Birden fazla hızlı satış buton ayarını toplu olarak sisteme ekler. Bu
-      işlem, çok sayıda hızlı satış buton ayarının aynı anda eklenmesini sağlar.
-    tags:
-      - Hızlı Satış Buton Ayarları
-/api/Hizlisatisbutonayarlari/delete:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-    responses:
-      '200':
-        description: Success
-    summary: Hızlı Satış Buton Ayarını Sil
-    description: >-
-      Belirtilen hızlı satış buton ayarını sistemden siler. Bu işlem, mevcut bir
-      hızlı satış buton ayarının kaldırılmasını sağlar.
-    tags:
-      - Hızlı Satış Buton Ayarları
-/api/Hizlisatisbutonayarlari/deletebyid:
-  delete:
-    parameters:
-      - explode: true
-        in: query
-        name: entityId
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Hızlı Satış Buton Ayarını Sil
-    description: >-
-      Belirtilen ID'ye sahip hızlı satış buton ayarını sistemden siler. Bu
-      işlem, belirli bir hızlı satış buton ayarının kaldırılmasını sağlar.
-    tags:
-      - Hızlı Satış Buton Ayarları
-/api/Hizlisatisbutonayarlari/deleterange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+      responses:
+        '200':
+          description: Success
+      summary: Hızlı Satış Buton Ayarı Ekle
+      description: >-
+        Yeni bir hızlı satış buton ayarı kaydı ekler. Bu işlem, hızlı satış
+        işlemlerinde kullanılacak buton ayarlarının sisteme eklenmesini sağlar.
+      tags:
+        - Hızlı Satış Buton Ayarları
+  /api/Hizlisatisbutonayarlari/addrange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisbutonayarlari'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisbutonayarlari'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisbutonayarlari'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisbutonayarlari'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Hızlı Satış Buton Ayarı Ekle
+      description: >-
+        Birden fazla hızlı satış buton ayarını toplu olarak sisteme ekler. Bu
+        işlem, çok sayıda hızlı satış buton ayarının aynı anda eklenmesini sağlar.
+      tags:
+        - Hızlı Satış Buton Ayarları
+  /api/Hizlisatisbutonayarlari/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Hızlı Satış Buton Ayarını Sil
-    description: >-
-      Belirtilen aralıkta bulunan hızlı satış buton ayarlarını toplu olarak
-      siler. Bu işlem, birden fazla hızlı satış buton ayarının aynı anda
-      kaldırılması gerektiğinde kullanılır.
-    tags:
-      - Hızlı Satış Buton Ayarları
-/api/Hizlisatisbutonayarlari/getall:
-  post:
-    requestBody:
-      content:
-        application/*+json:
+      responses:
+        '200':
+          description: Success
+      summary: Hızlı Satış Buton Ayarını Sil
+      description: >-
+        Belirtilen hızlı satış buton ayarını sistemden siler. Bu işlem, mevcut bir
+        hızlı satış buton ayarının kaldırılmasını sağlar.
+      tags:
+        - Hızlı Satış Buton Ayarları
+  /api/Hizlisatisbutonayarlari/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
           schema:
-            $ref: '#/components/schemas/HizlisatisbutonayarlariFilterHelper'
-        application/json:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Hızlı Satış Buton Ayarını Sil
+      description: >-
+        Belirtilen ID'ye sahip hızlı satış buton ayarını sistemden siler. Bu
+        işlem, belirli bir hızlı satış buton ayarının kaldırılmasını sağlar.
+      tags:
+        - Hızlı Satış Buton Ayarları
+  /api/Hizlisatisbutonayarlari/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisbutonayarlari'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisbutonayarlari'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisbutonayarlari'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisbutonayarlari'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Hızlı Satış Buton Ayarını Sil
+      description: >-
+        Belirtilen aralıkta bulunan hızlı satış buton ayarlarını toplu olarak
+        siler. Bu işlem, birden fazla hızlı satış buton ayarının aynı anda
+        kaldırılması gerektiğinde kullanılır.
+      tags:
+        - Hızlı Satış Buton Ayarları
+  /api/Hizlisatisbutonayarlari/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/HizlisatisbutonayarlariFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HizlisatisbutonayarlariFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/HizlisatisbutonayarlariFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/HizlisatisbutonayarlariFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Tüm Hızlı Satış Buton Ayarlarını Getir
+      description: >-
+        Sistemdeki tüm hızlı satış buton ayarlarını getirir. Bu işlem, hızlı satış
+        buton ayarlarının listelenmesi ve gözden geçirilmesi için kullanılır.
+      tags:
+        - Hızlı Satış Buton Ayarları
+  /api/Hizlisatisbutonayarlari/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
           schema:
-            $ref: '#/components/schemas/HizlisatisbutonayarlariFilterHelper'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/HizlisatisbutonayarlariFilterHelper'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/HizlisatisbutonayarlariFilterHelper'
-    responses:
-      '200':
-        description: Success
-    summary: Tüm Hızlı Satış Buton Ayarlarını Getir
-    description: >-
-      Sistemdeki tüm hızlı satış buton ayarlarını getirir. Bu işlem, hızlı satış
-      buton ayarlarının listelenmesi ve gözden geçirilmesi için kullanılır.
-    tags:
-      - Hızlı Satış Buton Ayarları
-/api/Hizlisatisbutonayarlari/getbyid:
-  get:
-    parameters:
-      - explode: true
-        in: query
-        name: id
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Hızlı Satış Buton Ayarını Getir
-    description: >-
-      Belirtilen ID'ye sahip hızlı satış buton ayarını getirir. Bu işlem,
-      belirli bir hızlı satış buton ayarının detaylarını görüntülemek için
-      kullanılır.
-    tags:
-      - Hızlı Satış Buton Ayarları
-/api/Hizlisatisbutonayarlari/update:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-    responses:
-      '200':
-        description: Success
-    summary: Hızlı Satış Buton Ayarını Güncelle
-    description: >-
-      Belirtilen ID'ye sahip hızlı satış buton ayarını günceller. Bu işlem,
-      mevcut hızlı satış buton ayarlarının bilgilerini güncellemek için
-      kullanılır.
-    tags:
-      - Hızlı Satış Buton Ayarları
-/api/Hizlisatisbutonayarlari/updaterange:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Hızlı Satış Buton Ayarını Getir
+      description: >-
+        Belirtilen ID'ye sahip hızlı satış buton ayarını getirir. Bu işlem,
+        belirli bir hızlı satış buton ayarının detaylarını görüntülemek için
+        kullanılır.
+      tags:
+        - Hızlı Satış Buton Ayarları
+  /api/Hizlisatisbutonayarlari/update:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-            type: array
-        text/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Hizlisatisbutonayarlari'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Hızlı Satış Buton Ayarını Güncelle
-    description: >-
-      Belirtilen aralıkta bulunan hızlı satış buton ayarlarını toplu olarak
-      günceller. Bu işlem, birden fazla hızlı satış buton ayarının aynı anda
-      güncellenmesi gerektiğinde kullanılır.
-    tags:
-      - Hızlı Satış Buton Ayarları
+      responses:
+        '200':
+          description: Success
+      summary: Hızlı Satış Buton Ayarını Güncelle
+      description: >-
+        Belirtilen ID'ye sahip hızlı satış buton ayarını günceller. Bu işlem,
+        mevcut hızlı satış buton ayarlarının bilgilerini güncellemek için
+        kullanılır.
+      tags:
+        - Hızlı Satış Buton Ayarları
+  /api/Hizlisatisbutonayarlari/updaterange:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisbutonayarlari'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisbutonayarlari'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisbutonayarlari'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Hizlisatisbutonayarlari'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Hızlı Satış Buton Ayarını Güncelle
+      description: >-
+        Belirtilen aralıkta bulunan hızlı satış buton ayarlarını toplu olarak
+        günceller. Bu işlem, birden fazla hızlı satış buton ayarının aynı anda
+        güncellenmesi gerektiğinde kullanılır.
+      tags:
+        - Hızlı Satış Buton Ayarları
 /api/Kasalar/ControlDelete:
   post:
     requestBody:
