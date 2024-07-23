@@ -21784,8 +21784,6 @@ components:
         orderBy:
           nullable: true
           type: string
-        pagingOptions:
-          $ref: '#/components/schemas/DataPagingOptions'
         searchType:
           items:
             type: string
@@ -21797,8 +21795,6 @@ components:
         tarihSutunAdi:
           nullable: true
           type: string
-        veri:
-          $ref: '#/components/schemas/Ajanda'
       type: object
     AjandaNotlar:
       additionalProperties: false
