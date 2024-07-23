@@ -28998,11 +28998,6 @@ components:
     User:
       additionalProperties: false
       properties:
-        ajanda:
-          items:
-            $ref: '#/components/schemas/Ajanda'
-          nullable: true
-          type: array
         ajandaBildirimGoster:
           maxLength: 255
           minLength: 0
@@ -29395,11 +29390,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        genelayar:
-          items:
-            $ref: '#/components/schemas/Genelayar'
-          nullable: true
-          type: array
         gider:
           maxLength: 10
           minLength: 0
@@ -29450,11 +29440,6 @@ components:
           minLength: 0
           nullable: true
           type: string
-        hizlisatisayar:
-          items:
-            $ref: '#/components/schemas/Hizlisatisayar'
-          nullable: true
-          type: array
         id:
           format: int32
           type: integer
