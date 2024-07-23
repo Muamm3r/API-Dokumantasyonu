@@ -8707,295 +8707,270 @@ paths:
         gerektiğinde kullanılır.
       tags:
         - Genel Ayar İşlemleri
-    paths:
-/api/Gider/ControlDelete:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-    responses:
-      '200':
-        description: Success
-    summary: Gider Silme Kontrolü
-    description: >-
-      Belirtilen gider bilgilerini kontrol eder ve silme işlemi için uygun olup
-      olmadığını değerlendirir. Bu işlem, giderlerin silinmesi öncesinde
-      doğruluk ve uygunluk kontrolü yapmak için kullanılır.
-    tags:
-      - Gider
-/api/Gider/ControlDeleteById:
-  delete:
-    parameters:
-      - explode: true
-        in: query
-        name: entityId
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Gider Silme Kontrolü
-    description: >-
-      Belirtilen ID'ye sahip gider kaydını kontrol eder ve silme işlemi için
-      uygun olup olmadığını değerlendirir. Bu işlem, belirli bir giderin
-      silinmeden önce kontrol edilmesini sağlar.
-    tags:
-      - Gider
-/api/Gider/add:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-    responses:
-      '200':
-        description: Success
-    summary: Yeni Gider Ekleme
-    description: >-
-      Sisteme yeni bir gider kaydı ekler. Bu işlem, finansal kayıtları
-      güncellemek ve yeni gider bilgilerini eklemek için kullanılır.
-    tags:
-      - Gider
-/api/Gider/addrange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+paths:
+  /api/Gider/ControlDelete:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        text/json:
+      responses:
+        '200':
+          description: Success
+      summary: Gider Silme Kontrolü
+      description: >-
+        Belirtilen gider bilgilerini kontrol eder ve silme işlemi için uygun olup
+        olmadığını değerlendirir. Bu işlem, giderlerin silinmesi öncesinde
+        doğruluk ve uygunluk kontrolü yapmak için kullanılır.
+      tags:
+        - Gider
+
+  /api/Gider/ControlDeleteById:
+    delete:
+      parameters:
+        - name: entityId
+          in: query
+          required: true
           schema:
-            items:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Gider Silme Kontrolü
+      description: >-
+        Belirtilen ID'ye sahip gider kaydını kontrol eder ve silme işlemi için
+        uygun olup olmadığını değerlendirir. Bu işlem, belirli bir giderin
+        silinmeden önce kontrol edilmesini sağlar.
+      tags:
+        - Gider
+
+  /api/Gider/add:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Gider Ekleme
-    description: >-
-      Birden fazla gider kaydını toplu olarak sisteme ekler. Bu işlem, çok
-      sayıda gider bilgisinin aynı anda eklenmesi gerektiğinde kullanılır.
-    tags:
-      - Gider
-/api/Gider/delete:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-    responses:
-      '200':
-        description: Success
-    summary: Gider Silme
-    description: >-
-      Belirtilen gider bilgilerini sistemden siler. Bu işlem, mevcut gider
-      kayıtlarını kaldırmak için kullanılır.
-    tags:
-      - Gider
-/api/Gider/deletebyid:
-  delete:
-    parameters:
-      - explode: true
-        in: query
-        name: entityId
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Gider Silme
-    description: >-
-      Belirtilen ID'ye sahip gider kaydını sistemden siler. Bu işlem, belirli
-      bir gider bilgisinin kaldırılmasını sağlar.
-    tags:
-      - Gider
-/api/Gider/deleterange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        application/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+      responses:
+        '200':
+          description: Success
+      summary: Yeni Gider Ekleme
+      description: >-
+        Sisteme yeni bir gider kaydı ekler. Bu işlem, finansal kayıtları
+        güncellemek ve yeni gider bilgilerini eklemek için kullanılır.
+      tags:
+        - Gider
+
+  /api/Gider/addrange:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Gider'
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Gider'
+          text/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Gider'
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Gider Ekleme
+      description: >-
+        Birden fazla gider kaydını toplu olarak sisteme ekler. Bu işlem, çok
+        sayıda gider bilgisinin aynı anda eklenmesi gerektiğinde kullanılır.
+      tags:
+        - Gider
+
+  /api/Gider/delete:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        text/json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Gider Silme
-    description: >-
-      Belirtilen aralıkta bulunan gider kayıtlarını toplu olarak siler. Bu
-      işlem, birden fazla gider bilgisinin aynı anda kaldırılması gerektiğinde
-      kullanılır.
-    tags:
-      - Gider
-/api/Gider/getall:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/GiderFilterHelper'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/GiderFilterHelper'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/GiderFilterHelper'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/GiderFilterHelper'
-    responses:
-      '200':
-        description: Success
-    summary: Tüm Giderleri Getir
-    description: >-
-      Sistemdeki tüm gider kayıtlarını getirir. Bu işlem, gider bilgilerini
-      listelemek ve incelemek için kullanılır.
-    tags:
-      - Gider
-/api/Gider/getbyid:
-  get:
-    parameters:
-      - explode: true
-        in: query
-        name: id
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Gider Getir
-    description: >-
-      Belirtilen ID'ye sahip gider kaydını getirir. Bu işlem, belirli bir gider
-      bilgisini görüntülemek için kullanılır.
-    tags:
-      - Gider
-/api/Gider/update:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/Gider'
-    responses:
-      '200':
-        description: Success
-    summary: Gider Güncelleme
-    description: >-
-      Belirtilen ID'ye sahip gider kaydını günceller. Bu işlem, mevcut gider
-      bilgisindeki bilgileri güncellemek için kullanılır.
-    tags:
-      - Gider
-/api/Gider/updaterange:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        application/json:
+      responses:
+        '200':
+          description: Success
+      summary: Gider Silme
+      description: >-
+        Belirtilen gider bilgilerini sistemden siler. Bu işlem, mevcut gider
+        kayıtlarını kaldırmak için kullanılır.
+      tags:
+        - Gider
+
+  /api/Gider/deletebyid:
+    delete:
+      parameters:
+        - name: entityId
+          in: query
+          required: true
           schema:
-            items:
-              $ref: '#/components/schemas/Gider'
-            type: array
-        application/json-patch+json:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Gider Silme
+      description: >-
+        Belirtilen ID'ye sahip gider kaydını sistemden siler. Bu işlem, belirli
+        bir gider bilgisinin kaldırılmasını sağlar.
+      tags:
+        - Gider
+
+  /api/Gider/deleterange:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Gider'
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Gider'
+          text/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Gider'
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Gider Silme
+      description: >-
+        Belirtilen aralıkta bulunan gider kayıtlarını toplu olarak siler. Bu
+        işlem, birden fazla gider bilgisinin aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - Gider
+
+  /api/Gider/getall:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GiderFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/GiderFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GiderFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Tüm Giderleri Getir
+      description: >-
+        Sistemdeki tüm gider kayıtlarını getirir. Bu işlem, gider bilgilerini
+        listelemek ve incelemek için kullanılır.
+      tags:
+        - Gider
+
+  /api/Gider/getbyid:
+    get:
+      parameters:
+        - name: id
+          in: query
+          required: true
           schema:
-            items:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Gider Getir
+      description: >-
+        Belirtilen ID'ye sahip gider kaydını getirir. Bu işlem, belirli bir gider
+        bilgisini görüntülemek için kullanılır.
+      tags:
+        - Gider
+
+  /api/Gider/update:
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-        text/json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/Gider'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Gider Güncelleme
-    description: >-
-      Belirtilen aralıkta bulunan gider kayıtlarını toplu olarak günceller. Bu
-      işlem, birden fazla gider bilgisinin aynı anda güncellenmesi gerektiğinde
-      kullanılır.
-    tags:
-      - Gider
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Gider'
+      responses:
+        '200':
+          description: Success
+      summary: Gider Güncelleme
+      description: >-
+        Belirtilen ID'ye sahip gider kaydını günceller. Bu işlem, mevcut gider
+        bilgisindeki bilgileri güncellemek için kullanılır.
+      tags:
+        - Gider
+
+  /api/Gider/updaterange:
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Gider'
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Gider'
+          text/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Gider'
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Gider Güncelleme
+      description: >-
+        Belirtilen aralıkta bulunan gider kayıtlarını toplu olarak günceller. Bu
+        işlem, birden fazla gider bilgisinin aynı anda güncellenmesi gerektiğinde
+        kullanılır.
+      tags:
+        - Gider
+
   /api/GiderIsl/GelirGiderIslemYap: null
   post:
     requestBody:
