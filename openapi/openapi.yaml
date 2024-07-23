@@ -8707,7 +8707,7 @@ paths:
         gerektiğinde kullanılır.
       tags:
         - Genel Ayar İşlemleri
-
+    paths:
 /api/Gider/ControlDelete:
   post:
     requestBody:
