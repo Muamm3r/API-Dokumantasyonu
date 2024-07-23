@@ -8264,31 +8264,31 @@ paths:
         gerektiğinde kullanılır.
       tags:
         - Firma
-/api/FirmaKodlar/add:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-    responses:
-      '200':
-        description: Success
-    summary: Firma Kodları Ekleme
-    description: >-
-      Yeni bir firma kodu kaydı ekler. Bu işlem, sisteme yeni firma kodu
-      bilgileri eklemek için kullanılır.
-    tags:
-      - Firma Kodlar
+  paths:
+  /api/FirmaKodlar/add:
+    post:
+      summary: Firma Kodları Ekleme
+      description: >-
+        Yeni bir firma kodu kaydı ekler. Bu işlem, sisteme yeni firma kodu
+        bilgileri eklemek için kullanılır.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FirmaKodlar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FirmaKodlar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FirmaKodlar'
+      responses:
+        '200':
+          description: Success
+      tags:
+        - Firma Kodlar
+
 /api/FirmaKodlar/addrange:
   post:
     requestBody:
