@@ -8320,189 +8320,174 @@ paths:
       tags:
         - Firma Kodlar
 
-/api/FirmaKodlar/delete:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-    responses:
-      '200':
-        description: Success
-    summary: Firma Kodları Silme
-    description: >-
-      Belirtilen firma kodu bilgilerini siler. Bu işlem, kullanıcıların belirli
-      firma kodu bilgilerini sistemden kaldırmalarına olanak tanır.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/deletebyid:
-  delete:
-    parameters:
-      - explode: true
-        in: query
-        name: entityId
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Firma Kodunu Silme
-    description: >-
-      Belirtilen ID'ye sahip firma kodunu siler. Bu işlem, belirli bir firma
-      kodunun sistemden kaldırılmasını sağlar.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/deleterange:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+    paths:
+  /api/FirmaKodlar/delete:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        application/json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        text/json:
+      responses:
+        '200':
+          description: Success
+      summary: Firma Kodları Silme
+      description: >-
+        Belirtilen firma kodu bilgilerini siler. Bu işlem, kullanıcıların belirli
+        firma kodu bilgilerini sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Firma Kodlar
+
+  /api/FirmaKodlar/deletebyid:
+    delete:
+      parameters:
+        - name: entityId
+          in: query
+          required: true
           schema:
-            items:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Firma Kodunu Silme
+      description: >-
+        Belirtilen ID'ye sahip firma kodunu siler. Bu işlem, belirli bir firma
+        kodunun sistemden kaldırılmasını sağlar.
+      tags:
+        - Firma Kodlar
+
+  /api/FirmaKodlar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+          text/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Firma Kodları Silme
+      description: >-
+        Belirtilen aralıkta bulunan firma kodu kayıtlarını toplu olarak siler. Bu
+        işlem, birden fazla firma kodu bilgisinin aynı anda kaldırılması
+        gerektiğinde kullanılır.
+      tags:
+        - Firma Kodlar
+
+  /api/FirmaKodlar/getall:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FirmaKodlarFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FirmaKodlarFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FirmaKodlarFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Tüm Firma Kodlarını Getir
+      description: >-
+        Veritabanındaki tüm firma kodu kayıtlarını getirir. Bu işlem,
+        kullanıcıların tüm firma kodu bilgilerini listelemelerini sağlar.
+      tags:
+        - Firma Kodlar
+
+  /api/FirmaKodlar/getbyid:
+    get:
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+      summary: ID ile Firma Kodunu Getir
+      description: >-
+        Belirtilen ID'ye sahip firma kodu kaydını getirir. Bu işlem, belirli bir
+        firma kodu bilgisini görüntülemek için kullanılır.
+      tags:
+        - Firma Kodlar
+
+  /api/FirmaKodlar/update:
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Firma Kodları Silme
-    description: >-
-      Belirtilen aralıkta bulunan firma kodu kayıtlarını toplu olarak siler. Bu
-      işlem, birden fazla firma kodu bilgisinin aynı anda kaldırılması
-      gerektiğinde kullanılır.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/getall:
-  post:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlarFilterHelper'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlarFilterHelper'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlarFilterHelper'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlarFilterHelper'
-    responses:
-      '200':
-        description: Success
-    summary: Tüm Firma Kodlarını Getir
-    description: >-
-      Veritabanındaki tüm firma kodu kayıtlarını getirir. Bu işlem,
-      kullanıcıların tüm firma kodu bilgilerini listelemelerini sağlar.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/getbyid:
-  get:
-    parameters:
-      - explode: true
-        in: query
-        name: id
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-    responses:
-      '200':
-        description: Success
-    summary: ID ile Firma Kodunu Getir
-    description: >-
-      Belirtilen ID'ye sahip firma kodu kaydını getirir. Bu işlem, belirli bir
-      firma kodu bilgisini görüntülemek için kullanılır.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/update:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        application/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        application/json-patch+json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/FirmaKodlar'
-    responses:
-      '200':
-        description: Success
-    summary: Firma Kodunu Güncelleme
-    description: >-
-      Belirtilen ID'ye sahip firma kodunu günceller. Bu işlem, mevcut bir firma
-      kodu bilgisindeki bilgileri güncellemek için kullanılır.
-    tags:
-      - Firma Kodlar
-/api/FirmaKodlar/updaterange:
-  put:
-    requestBody:
-      content:
-        application/*+json:
-          schema:
-            items:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        application/json:
-          schema:
-            items:
+          text/json:
+            schema:
               $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        application/json-patch+json:
-          schema:
-            items:
-              $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-        text/json:
-          schema:
-            items:
-              $ref: '#/components/schemas/FirmaKodlar'
-            type: array
-    responses:
-      '200':
-        description: Success
-    summary: Toplu Firma Kodlarını Güncelleme
-    description: >-
-      Belirtilen aralıkta bulunan firma kodu kayıtlarını toplu olarak günceller.
-      Bu işlem, birden fazla firma kodu bilgisinin aynı anda güncellenmesi
-      gerektiğinde kullanılır.
-    tags:
-      - Firma Kodlar
+      responses:
+        '200':
+          description: Success
+      summary: Firma Kodunu Güncelleme
+      description: >-
+        Belirtilen ID'ye sahip firma kodunu günceller. Bu işlem, mevcut bir firma
+        kodu bilgisindeki bilgileri güncellemek için kullanılır.
+      tags:
+        - Firma Kodlar
+
+  /api/FirmaKodlar/updaterange:
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+          text/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/FirmaKodlar'
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Firma Kodlarını Güncelleme
+      description: >-
+        Belirtilen aralıkta bulunan firma kodu kayıtlarını toplu olarak günceller.
+        Bu işlem, birden fazla firma kodu bilgisinin aynı anda güncellenmesi
+        gerektiğinde kullanılır.
+      tags:
+        - Firma Kodlar
+
 /api/Genelayar/add:
   post:
     requestBody:
