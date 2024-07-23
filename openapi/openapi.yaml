@@ -6888,30 +6888,31 @@ paths:
         güncellenmesi gerektiğinde kullanılır.
       tags:
         - FatIslEtic
-  /api/Fatura/Add:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Fatura'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Fatura'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Fatura'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Fatura'
-      responses:
-        '200':
-          description: Success
-      summary: Fatura Ekleme
-      description: >-
-        Sisteme yeni bir Fatura ekler. Bu işlem, belirtilen Fatura bilgilerini kaydeder ve başarılı olduğunu belirtir.
-      tags:
-        - Fatura İşlemleri
+  /api/Fatura/Add: null
+  post:
+    requestBody:
+      content:
+        application/*+json:
+          schema:
+            $ref: '#/components/schemas/Fatura'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Fatura'
+        application/json-patch+json:
+          schema:
+            $ref: '#/components/schemas/Fatura'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/Fatura'
+    responses:
+      '200':
+        description: Success
+    summary: Fatura Ekleme
+    description: >-
+      Sisteme yeni bir Fatura ekler. Bu işlem, belirtilen Fatura bilgilerini
+      kaydeder ve başarılı olduğunu belirtir.
+    tags:
+      - Fatura İşlemleri
   /api/Fatura/ControlDelete:
     post:
       requestBody:
@@ -8264,31 +8265,31 @@ paths:
         gerektiğinde kullanılır.
       tags:
         - Firma
-  paths:
-  /api/FirmaKodlar/add:
-    post:
-      summary: Firma Kodları Ekleme
-      description: >-
-        Yeni bir firma kodu kaydı ekler. Bu işlem, sisteme yeni firma kodu
-        bilgileri eklemek için kullanılır.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FirmaKodlar'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FirmaKodlar'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FirmaKodlar'
-      responses:
-        '200':
-          description: Success
-      tags:
-        - Firma Kodlar
-
+/api/FirmaKodlar/add:
+  post:
+    requestBody:
+      content:
+        application/*+json:
+          schema:
+            $ref: '#/components/schemas/FirmaKodlar'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FirmaKodlar'
+        application/json-patch+json:
+          schema:
+            $ref: '#/components/schemas/FirmaKodlar'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/FirmaKodlar'
+    responses:
+      '200':
+        description: Success
+    summary: Firma Kodları Ekleme
+    description: >-
+      Yeni bir firma kodu kaydı ekler. Bu işlem, sisteme yeni firma kodu
+      bilgileri eklemek için kullanılır.
+    tags:
+      - Firma Kodlar
 /api/FirmaKodlar/addrange:
   post:
     requestBody:
