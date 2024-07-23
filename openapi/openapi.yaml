@@ -9034,7 +9034,7 @@ paths:
         kullanılır.
       tags:
         - Gider
-  /api/GiderIsl/GelirGiderIslemYap: null
+  /api/GiderIsl/GelirGiderIslemYap:
     post:
       requestBody:
         content:
@@ -9301,7 +9301,7 @@ paths:
         gerektiğinde kullanılır.
       tags:
         - GiderIsl
-  /api/Hizlisatisayar/add: null
+  /api/Hizlisatisayar/add:
     post:
       requestBody:
         content:
@@ -9543,7 +9543,7 @@ paths:
         güncellenmesi gerektiğinde kullanılır.
       tags:
         - Hızlı Satış Ayar İşlemleri
-    /api/Hizlisatisbutonayarlari/add: null
+  /api/Hizlisatisbutonayarlari/add:
     post:
       requestBody:
         content:
