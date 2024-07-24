@@ -486,6 +486,51 @@ paths:
         kullanılır.
       tags:
         - Ajanda Dosya İşlemleri
+  /api/AjandaNotlar/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AjandaNotlarFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AjandaNotlarFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AjandaNotlarFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AjandaNotlarFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Ajanda Notlarını Listele
+      description: >-
+        Veritabanındaki tüm ajanda notlarını getirir. Bu işlem, kullanıcıların
+        tüm notları listelemelerini sağlar.
+      tags:
+        - Ajanda Not
+  /api/AjandaNotlar/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Ajanda Not Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip ajanda notunu getirir. Bu işlem, belirli bir
+        ajanda notunu görüntülemek için kullanılır.
+      tags:
+        - Ajanda Not
   /api/AjandaNotlar/add:
     post:
       requestBody:
@@ -505,12 +550,12 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Notları Ekleme
+      summary: Ajanda Not Ekle
       description: >-
         Yeni bir ajanda notu ekler. Bu işlem, kullanıcıların ajandalarına not
         eklemelerini sağlar.
       tags:
-        - Ajanda Notlar
+        - Ajanda Not
   /api/AjandaNotlar/addrange:
     post:
       requestBody:
@@ -538,136 +583,12 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Notları Aralığı Ekleme
+      summary: Ajanda Not Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla ajanda notu ekler. Bu işlem, toplu not
         eklemeleri yapmak için kullanılır.
       tags:
-        - Ajanda Notlar
-  /api/AjandaNotlar/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/AjandaNotlar'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AjandaNotlar'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/AjandaNotlar'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/AjandaNotlar'
-      responses:
-        '200':
-          description: Success
-      summary: Ajanda Notları Silme
-      description: >-
-        Belirtilen ID'ye sahip ajanda notunu siler. Bu işlem, kullanıcıların
-        belirli bir ajanda notunu kaldırmalarına olanak tanır.
-      tags:
-        - Ajanda Notlar
-  /api/AjandaNotlar/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Ajanda Notu Silme
-      description: >-
-        Belirtilen ID'ye sahip ajanda notunu siler. Bu işlem, belirli bir notun
-        kaldırılmasını sağlar.
-      tags:
-        - Ajanda Notlar
-  /api/AjandaNotlar/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/AjandaNotlar'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/AjandaNotlar'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/AjandaNotlar'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/AjandaNotlar'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Ajanda Notları Silme
-      description: >-
-        Belirtilen aralıkta bulunan ajanda notlarını toplu olarak siler. Bu
-        işlem, birden fazla notun aynı anda temizlenmesi gerektiğinde
-        kullanılır.
-      tags:
-        - Ajanda Notlar
-  /api/AjandaNotlar/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/AjandaNotlarFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AjandaNotlarFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/AjandaNotlarFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/AjandaNotlarFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Ajanda Notlarını Getir
-      description: >-
-        Veritabanındaki tüm ajanda notlarını getirir. Bu işlem, kullanıcıların
-        tüm notları listelemelerini sağlar.
-      tags:
-        - Ajanda Notlar
-  /api/AjandaNotlar/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Ajanda Notu Getir
-      description: >-
-        Belirtilen ID'ye sahip ajanda notunu getirir. Bu işlem, belirli bir
-        ajanda notunu görüntülemek için kullanılır.
-      tags:
-        - Ajanda Notlar
+        - Ajanda Not
   /api/AjandaNotlar/update:
     put:
       requestBody:
@@ -687,12 +608,12 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Notu Güncelle
+      summary: Ajanda Not Güncelle
       description: >-
         Belirtilen ID'ye sahip ajanda notunu günceller. Bu işlem, mevcut bir
         ajanda notundaki bilgileri güncellemek için kullanılır.
       tags:
-        - Ajanda Notlar
+        - Ajanda Not
   /api/AjandaNotlar/updaterange:
     put:
       requestBody:
@@ -720,13 +641,92 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Ajanda Notları Güncelleme
+      summary: Ajanda Notlarını Güncelle
       description: >-
         Belirtilen aralıkta bulunan ajanda notlarını toplu olarak günceller. Bu
         işlem, birden fazla notun aynı anda güncellenmesi gerektiğinde
         kullanılır.
       tags:
-        - Ajanda Notlar
+        - Ajanda Not
+  /api/AjandaNotlar/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AjandaNotlar'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AjandaNotlar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AjandaNotlar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AjandaNotlar'
+      responses:
+        '200':
+          description: Success
+      summary: Ajanda Not Silme
+      description: >-
+        Belirtilen ID'ye sahip ajanda notunu siler. Bu işlem, kullanıcıların
+        belirli bir ajanda notunu kaldırmalarına olanak tanır.
+      tags:
+        - Ajanda Not
+  /api/AjandaNotlar/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Ajanda Not Silme ID ile
+      description: >-
+        Belirtilen ID'ye sahip ajanda notunu siler. Bu işlem, belirli bir notun
+        kaldırılmasını sağlar.
+      tags:
+        - Ajanda Not
+  /api/AjandaNotlar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/AjandaNotlar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/AjandaNotlar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/AjandaNotlar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/AjandaNotlar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Ajanda Not Silme Toplu
+      description: >-
+        Belirtilen aralıkta bulunan ajanda notlarını toplu olarak siler. Bu
+        işlem, birden fazla notun aynı anda temizlenmesi gerektiğinde
+        kullanılır.
+      tags:
+        - Ajanda Not
   /api/ApiKullanici/add:
     post:
       requestBody:
