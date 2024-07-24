@@ -7296,6 +7296,51 @@ paths:
         verilerini içeren ayrıntılı bir rapor hazırlamak için kullanılır.
       tags:
         - Fatura İşlemleri
+  /api/FaturaAciklamalari/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FaturaAciklamalariFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaturaAciklamalariFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FaturaAciklamalariFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FaturaAciklamalariFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Açıklamaları Listele
+      description: >-
+        Veritabanındaki tüm Fatura açıklamaları kayıtlarını getirir. Bu işlem,
+        kullanıcıların tüm açıklama bilgilerini listelemelerini sağlar.
+      tags:
+        - Fatura Açıklamaları
+  /api/FaturaAciklamalari/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Açıklama Liste ID ile 
+      description: >-
+        Belirtilen ID'ye sahip Fatura açıklamasını getirir. Bu işlem, belirli
+        bir açıklama bilgisini görüntülemek için kullanılır.
+      tags:
+        - Fatura Açıklamaları
   /api/FaturaAciklamalari/add:
     post:
       requestBody:
@@ -7315,7 +7360,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Açıklamaları Ekleme
+      summary: Fatura Açıklama Ekle
       description: >-
         Yeni bir Fatura açıklaması ekler. Bu işlem, sisteme yeni açıklama
         bilgileri eklemek için kullanılır.
@@ -7348,135 +7393,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Açıklamaları Aralığı Ekleme
+      summary: Fatura Açıklama Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla Fatura açıklaması ekler. Bu işlem,
         toplu açıklama bilgileri eklemek için kullanılır.
-      tags:
-        - Fatura Açıklamaları
-  /api/FaturaAciklamalari/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FaturaAciklamalari'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FaturaAciklamalari'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FaturaAciklamalari'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FaturaAciklamalari'
-      responses:
-        '200':
-          description: Success
-      summary: Fatura Açıklamaları Silme
-      description: >-
-        Belirtilen ID'ye sahip Fatura açıklamasını siler. Bu işlem,
-        kullanıcıların belirli açıklama bilgilerini sistemden kaldırmalarına
-        olanak tanır.
-      tags:
-        - Fatura Açıklamaları
-  /api/FaturaAciklamalari/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Fatura Açıklaması Silme
-      description: >-
-        Belirtilen ID'ye sahip Fatura açıklamasını siler. Bu işlem, belirli bir
-        açıklamanın sistemden kaldırılmasını sağlar.
-      tags:
-        - Fatura Açıklamaları
-  /api/FaturaAciklamalari/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FaturaAciklamalari'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FaturaAciklamalari'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FaturaAciklamalari'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FaturaAciklamalari'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Fatura Açıklamaları Silme
-      description: >-
-        Belirtilen aralıkta bulunan Fatura açıklamalarını toplu olarak siler. Bu
-        işlem, birden fazla açıklamanın aynı anda kaldırılması gerektiğinde
-        kullanılır.
-      tags:
-        - Fatura Açıklamaları
-  /api/FaturaAciklamalari/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FaturaAciklamalariFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FaturaAciklamalariFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FaturaAciklamalariFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FaturaAciklamalariFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Fatura Açıklamaları Kayıtlarını Getir
-      description: >-
-        Veritabanındaki tüm Fatura açıklamaları kayıtlarını getirir. Bu işlem,
-        kullanıcıların tüm açıklama bilgilerini listelemelerini sağlar.
-      tags:
-        - Fatura Açıklamaları
-  /api/FaturaAciklamalari/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Fatura Açıklaması Getir
-      description: >-
-        Belirtilen ID'ye sahip Fatura açıklamasını getirir. Bu işlem, belirli
-        bir açıklama bilgisini görüntülemek için kullanılır.
       tags:
         - Fatura Açıklamaları
   /api/FaturaAciklamalari/update:
@@ -7498,7 +7418,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Açıklamaları Güncelleme
+      summary: Fatura Açıklama Güncelle
       description: >-
         Belirtilen ID'ye sahip Fatura açıklamasını günceller. Bu işlem, mevcut
         bir açıklama bilgisindeki bilgileri güncellemek için kullanılır.
@@ -7531,13 +7451,138 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Fatura Açıklamaları Güncelleme
+      summary: Fatura Açıklama Güncelle Toplu 
       description: >-
         Belirtilen aralıkta bulunan Fatura açıklamalarını toplu olarak
         günceller. Bu işlem, birden fazla açıklamanın aynı anda güncellenmesi
         gerektiğinde kullanılır.
       tags:
         - Fatura Açıklamaları
+  /api/FaturaAciklamalari/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FaturaAciklamalari'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaturaAciklamalari'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FaturaAciklamalari'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FaturaAciklamalari'
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Açıklama Sil
+      description: >-
+        Belirtilen ID'ye sahip Fatura açıklamasını siler. Bu işlem,
+        kullanıcıların belirli açıklama bilgilerini sistemden kaldırmalarına
+        olanak tanır.
+      tags:
+        - Fatura Açıklamaları
+  /api/FaturaAciklamalari/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Açıklama Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip Fatura açıklamasını siler. Bu işlem, belirli bir
+        açıklamanın sistemden kaldırılmasını sağlar.
+      tags:
+        - Fatura Açıklamaları
+  /api/FaturaAciklamalari/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FaturaAciklamalari'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FaturaAciklamalari'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FaturaAciklamalari'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FaturaAciklamalari'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Açıklama Silme Toplu 
+      description: >-
+        Belirtilen aralıkta bulunan Fatura açıklamalarını toplu olarak siler. Bu
+        işlem, birden fazla açıklamanın aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - Fatura Açıklamaları
+  /api/FaturaKodlar/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FaturaKodlarFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaturaKodlarFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FaturaKodlarFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FaturaKodlarFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Kodlarını Listele 
+      description: >-
+        Veritabanındaki tüm Fatura kodları kayıtlarını getirir. Bu işlem,
+        kullanıcıların tüm Fatura kodlarını listelemelerini sağlar.
+      tags:
+        - Fatura Kodlar
+  /api/FaturaKodlar/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Kod Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip Fatura kodunu getirir. Bu işlem, belirli bir
+        Fatura kodunu görüntülemek için kullanılır.
+      tags:
+        - Fatura Kodlar
   /api/FaturaKodlar/add:
     post:
       requestBody:
@@ -7557,7 +7602,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Kodları Ekleme
+      summary: Fatura Kod Ekle
       description: >-
         Yeni bir Fatura kodu ekler. Bu işlem, sisteme yeni Fatura kodları
         eklemek için kullanılır.
@@ -7590,134 +7635,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Kodları Aralığı Ekleme
+      summary: Fatura Kod Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla Fatura kodu ekler. Bu işlem, toplu
         Fatura kodları eklemek için kullanılır.
-      tags:
-        - Fatura Kodlar
-  /api/FaturaKodlar/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FaturaKodlar'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FaturaKodlar'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FaturaKodlar'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FaturaKodlar'
-      responses:
-        '200':
-          description: Success
-      summary: Fatura Kodları Silme
-      description: >-
-        Belirtilen ID'ye sahip Fatura kodunu siler. Bu işlem, kullanıcıların
-        belirli Fatura kodlarını sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Fatura Kodlar
-  /api/FaturaKodlar/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Fatura Kodu Silme
-      description: >-
-        Belirtilen ID'ye sahip Fatura kodunu siler. Bu işlem, belirli bir Fatura
-        kodunun sistemden kaldırılmasını sağlar.
-      tags:
-        - Fatura Kodlar
-  /api/FaturaKodlar/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FaturaKodlar'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FaturaKodlar'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FaturaKodlar'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FaturaKodlar'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Fatura Kodları Silme
-      description: >-
-        Belirtilen aralıkta bulunan Fatura kodlarını toplu olarak siler. Bu
-        işlem, birden fazla Fatura kodunun aynı anda kaldırılması gerektiğinde
-        kullanılır.
-      tags:
-        - Fatura Kodlar
-  /api/FaturaKodlar/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FaturaKodlarFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FaturaKodlarFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FaturaKodlarFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FaturaKodlarFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Fatura Kodları Kayıtlarını Getir
-      description: >-
-        Veritabanındaki tüm Fatura kodları kayıtlarını getirir. Bu işlem,
-        kullanıcıların tüm Fatura kodlarını listelemelerini sağlar.
-      tags:
-        - Fatura Kodlar
-  /api/FaturaKodlar/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Fatura Kodu Getir
-      description: >-
-        Belirtilen ID'ye sahip Fatura kodunu getirir. Bu işlem, belirli bir
-        Fatura kodunu görüntülemek için kullanılır.
       tags:
         - Fatura Kodlar
   /api/FaturaKodlar/update:
@@ -7739,7 +7660,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Kodları Güncelleme
+      summary: Fatura Kod Güncelle
       description: >-
         Belirtilen ID'ye sahip Fatura kodunu günceller. Bu işlem, mevcut bir
         Fatura kodundaki bilgileri güncellemek için kullanılır.
@@ -7772,13 +7693,138 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Fatura Kodları Güncelleme
+      summary: Fatura Kod Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan Fatura kodlarını toplu olarak günceller. Bu
         işlem, birden fazla Fatura kodunun aynı anda güncellenmesi gerektiğinde
         kullanılır.
       tags:
         - Fatura Kodlar
+  /api/FaturaKodlar/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FaturaKodlar'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaturaKodlar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FaturaKodlar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FaturaKodlar'
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Kod Sil
+      description: >-
+        Belirtilen ID'ye sahip Fatura kodunu siler. Bu işlem, kullanıcıların
+        belirli Fatura kodlarını sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Fatura Kodlar
+  /api/FaturaKodlar/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Kod Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip Fatura kodunu siler. Bu işlem, belirli bir Fatura
+        kodunun sistemden kaldırılmasını sağlar.
+      tags:
+        - Fatura Kodlar
+  /api/FaturaKodlar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FaturaKodlar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FaturaKodlar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FaturaKodlar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FaturaKodlar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Kod Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan Fatura kodlarını toplu olarak siler. Bu
+        işlem, birden fazla Fatura kodunun aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - Fatura Kodlar
+  /api/FaturaTeslimAdres/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FaturaTeslimAdresFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaturaTeslimAdresFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FaturaTeslimAdresFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FaturaTeslimAdresFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Teslim Adres Kayıtlarını Listele
+      description: >-
+        Veritabanındaki tüm Fatura teslim adresleri kayıtlarını getirir. Bu
+        işlem, kullanıcıların tüm teslim adresi bilgilerini listelemelerini
+        sağlar.
+      tags:
+        - Fatura Teslim Adres İşlemleri
+  /api/FaturaTeslimAdres/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Teslim Adres Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip Fatura teslim adresini getirir. Bu işlem, belirli
+        bir teslim adresi bilgisini görüntülemek için kullanılır.
+      tags:
+        - Fatura Teslim Adres İşlemleri
   /api/FaturaTeslimAdres/add:
     post:
       requestBody:
@@ -7798,7 +7844,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Teslim Adresi Ekleme
+      summary: Fatura Teslim Adres Ekle
       description: >-
         Yeni bir Fatura teslim adresi ekler. Bu işlem, sisteme yeni teslim
         adresi bilgileri eklemek için kullanılır.
@@ -7831,136 +7877,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Teslim Adresi Aralığı Ekleme
+      summary: Fatura Teslim Adres Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla Fatura teslim adresi ekler. Bu işlem,
         toplu teslim adresi bilgileri eklemek için kullanılır.
-      tags:
-        - Fatura Teslim Adres İşlemleri
-  /api/FaturaTeslimAdres/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FaturaTeslimAdres'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FaturaTeslimAdres'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FaturaTeslimAdres'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FaturaTeslimAdres'
-      responses:
-        '200':
-          description: Success
-      summary: Fatura Teslim Adresi Silme
-      description: >-
-        Belirtilen ID'ye sahip Fatura teslim adresini siler. Bu işlem,
-        kullanıcıların belirli teslim adresi bilgilerini sistemden
-        kaldırmalarına olanak tanır.
-      tags:
-        - Fatura Teslim Adres İşlemleri
-  /api/FaturaTeslimAdres/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Fatura Teslim Adresi Silme
-      description: >-
-        Belirtilen ID'ye sahip Fatura teslim adresini siler. Bu işlem, belirli
-        bir teslim adresinin sistemden kaldırılmasını sağlar.
-      tags:
-        - Fatura Teslim Adres İşlemleri
-  /api/FaturaTeslimAdres/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FaturaTeslimAdres'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FaturaTeslimAdres'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FaturaTeslimAdres'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FaturaTeslimAdres'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Fatura Teslim Adresleri Silme
-      description: >-
-        Belirtilen aralıkta bulunan Fatura teslim adreslerini toplu olarak
-        siler. Bu işlem, birden fazla teslim adresinin aynı anda kaldırılması
-        gerektiğinde kullanılır.
-      tags:
-        - Fatura Teslim Adres İşlemleri
-  /api/FaturaTeslimAdres/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FaturaTeslimAdresFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FaturaTeslimAdresFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FaturaTeslimAdresFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FaturaTeslimAdresFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Fatura Teslim Adresleri Kayıtlarını Getir
-      description: >-
-        Veritabanındaki tüm Fatura teslim adresleri kayıtlarını getirir. Bu
-        işlem, kullanıcıların tüm teslim adresi bilgilerini listelemelerini
-        sağlar.
-      tags:
-        - Fatura Teslim Adres İşlemleri
-  /api/FaturaTeslimAdres/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Fatura Teslim Adresi Getir
-      description: >-
-        Belirtilen ID'ye sahip Fatura teslim adresini getirir. Bu işlem, belirli
-        bir teslim adresi bilgisini görüntülemek için kullanılır.
       tags:
         - Fatura Teslim Adres İşlemleri
   /api/FaturaTeslimAdres/update:
@@ -7982,7 +7902,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Teslim Adresi Güncelleme
+      summary: Fatura Teslim Adres Güncelle
       description: >-
         Belirtilen ID'ye sahip Fatura teslim adresini günceller. Bu işlem,
         mevcut bir teslim adresi bilgisindeki bilgileri güncellemek için
@@ -8016,13 +7936,138 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Fatura Teslim Adresleri Güncelleme
+      summary: Fatura Teslim Adres Güncelle Toplu 
       description: >-
         Belirtilen aralıkta bulunan Fatura teslim adreslerini toplu olarak
         günceller. Bu işlem, birden fazla teslim adresinin aynı anda
         güncellenmesi gerektiğinde kullanılır.
       tags:
         - Fatura Teslim Adres İşlemleri
+  /api/FaturaTeslimAdres/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FaturaTeslimAdres'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaturaTeslimAdres'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FaturaTeslimAdres'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FaturaTeslimAdres'
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Teslim Adres Sil
+      description: >-
+        Belirtilen ID'ye sahip Fatura teslim adresini siler. Bu işlem,
+        kullanıcıların belirli teslim adresi bilgilerini sistemden
+        kaldırmalarına olanak tanır.
+      tags:
+        - Fatura Teslim Adres İşlemleri
+  /api/FaturaTeslimAdres/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Teslim Adres Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip Fatura teslim adresini siler. Bu işlem, belirli
+        bir teslim adresinin sistemden kaldırılmasını sağlar.
+      tags:
+        - Fatura Teslim Adres İşlemleri
+  /api/FaturaTeslimAdres/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FaturaTeslimAdres'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FaturaTeslimAdres'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FaturaTeslimAdres'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FaturaTeslimAdres'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Teslim Adres Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan Fatura teslim adreslerini toplu olarak
+        siler. Bu işlem, birden fazla teslim adresinin aynı anda kaldırılması
+        gerektiğinde kullanılır.
+      tags:
+        - Fatura Teslim Adres İşlemleri
+  /api/Firma/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FirmaFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FirmaFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FirmaFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FirmaFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Firma Kayıtlarını Listele
+      description: >-
+        Veritabanındaki tüm firma kayıtlarını getirir. Bu işlem, kullanıcıların
+        tüm firma bilgilerini listelemelerini sağlar.
+      tags:
+        - Firma
+  /api/Firma/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Firma Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip firma kaydını getirir. Bu işlem, belirli bir
+        firma bilgisini görüntülemek için kullanılır.
+      tags:
+        - Firma
   /api/Firma/add:
     post:
       requestBody:
@@ -8042,7 +8087,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Firma Ekleme
+      summary: Firma Kayıt Ekle
       description: >-
         Yeni bir firma kaydı ekler. Bu işlem, sisteme yeni firma bilgileri
         eklemek için kullanılır.
@@ -8075,134 +8120,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Firma Aralığı Ekleme
+      summary: Firma Kayıt Ekle Toplu 
       description: >-
         Belirtilen aralıkta birden fazla firma kaydı ekler. Bu işlem, toplu
         firma bilgileri eklemek için kullanılır.
-      tags:
-        - Firma
-  /api/Firma/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Firma'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Firma'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Firma'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Firma'
-      responses:
-        '200':
-          description: Success
-      summary: Firma Silme
-      description: >-
-        Belirtilen ID'ye sahip firma kaydını siler. Bu işlem, kullanıcıların
-        belirli firma bilgilerini sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Firma
-  /api/Firma/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Firma Silme
-      description: >-
-        Belirtilen ID'ye sahip firma kaydını siler. Bu işlem, belirli bir firma
-        bilgisinin sistemden kaldırılmasını sağlar.
-      tags:
-        - Firma
-  /api/Firma/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Firma'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Firma'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Firma'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Firma'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Firma Silme
-      description: >-
-        Belirtilen aralıkta bulunan firma kayıtlarını toplu olarak siler. Bu
-        işlem, birden fazla firma bilgisinin aynı anda kaldırılması gerektiğinde
-        kullanılır.
-      tags:
-        - Firma
-  /api/Firma/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FirmaFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FirmaFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FirmaFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FirmaFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Firma Kayıtlarını Getir
-      description: >-
-        Veritabanındaki tüm firma kayıtlarını getirir. Bu işlem, kullanıcıların
-        tüm firma bilgilerini listelemelerini sağlar.
-      tags:
-        - Firma
-  /api/Firma/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Firma Getir
-      description: >-
-        Belirtilen ID'ye sahip firma kaydını getirir. Bu işlem, belirli bir
-        firma bilgisini görüntülemek için kullanılır.
       tags:
         - Firma
   /api/Firma/update:
@@ -8224,7 +8145,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Firma Güncelleme
+      summary: Firma Güncelle
       description: >-
         Belirtilen ID'ye sahip firma kaydını günceller. Bu işlem, mevcut bir
         firma bilgisindeki bilgileri güncellemek için kullanılır.
@@ -8257,11 +8178,90 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Firma Güncelleme
+      summary: Firma Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan firma kayıtlarını toplu olarak günceller. Bu
         işlem, birden fazla firma bilgisinin aynı anda güncellenmesi
         gerektiğinde kullanılır.
+      tags:
+        - Firma
+  /api/Firma/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Firma'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Firma'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Firma'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Firma'
+      responses:
+        '200':
+          description: Success
+      summary: Firma Kayıt Sil
+      description: >-
+        Belirtilen ID'ye sahip firma kaydını siler. Bu işlem, kullanıcıların
+        belirli firma bilgilerini sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Firma
+  /api/Firma/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Firma Kayıt Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip firma kaydını siler. Bu işlem, belirli bir firma
+        bilgisinin sistemden kaldırılmasını sağlar.
+      tags:
+        - Firma
+  /api/Firma/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Firma'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Firma'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Firma'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Firma'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Firma Kayıt Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan firma kayıtlarını toplu olarak siler. Bu
+        işlem, birden fazla firma bilgisinin aynı anda kaldırılması gerektiğinde
+        kullanılır.
       tags:
         - Firma
   /api/FirmaKodlar/add:
