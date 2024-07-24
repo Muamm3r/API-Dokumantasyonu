@@ -1797,7 +1797,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Banka Sil
+      summary: Banka Kayıt Sil
       description: >-
         Belirtilen ID'ye sahip banka kaydını siler. Bu işlem, kullanıcıların
         belirli bir banka kaydını sistemden kaldırmalarına olanak tanır.
@@ -4958,6 +4958,51 @@ paths:
         anda kaldırılması gerektiğinde kullanılır.
       tags:
         - Cari Kart Eticaret
+  /api/CariKodlar/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariKodlarFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariKodlarFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariKodlarFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariKodlarFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kodları Listele
+      description: >-
+        Veritabanındaki tüm cari kodları getirir. Bu işlem, kullanıcıların tüm
+        müşteri kodlarını listelemelerini sağlar.
+      tags:
+        - Cari Kodlar
+  /api/CariKodlar/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kod Listele ID ile 
+      description: >-
+        Belirtilen ID'ye sahip cari kodu getirir. Bu işlem, belirli bir müşteri
+        kodunu görüntülemek için kullanılır.
+      tags:
+        - Cari Kodlar
   /api/CariKodlar/add:
     post:
       requestBody:
@@ -4977,7 +5022,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Kod Ekleme
+      summary: Cari Kod Ekle
       description: >-
         Yeni bir cari kod ekler. Bu işlem, sisteme yeni müşteri kodları eklemek
         için kullanılır.
@@ -5010,134 +5055,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Kod Aralığı Ekleme
+      summary: Cari Kod Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla cari kod ekler. Bu işlem, toplu müşteri
         kodları eklemek için kullanılır.
-      tags:
-        - Cari Kodlar
-  /api/CariKodlar/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariKodlar'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariKodlar'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariKodlar'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariKodlar'
-      responses:
-        '200':
-          description: Success
-      summary: Cari Kod Silme
-      description: >-
-        Belirtilen ID'ye sahip cari kodu siler. Bu işlem, kullanıcıların belirli
-        müşteri kodlarını sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Cari Kodlar
-  /api/CariKodlar/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Kod Silme
-      description: >-
-        Belirtilen ID'ye sahip cari kodu siler. Bu işlem, belirli bir müşteri
-        kodunun sistemden kaldırılmasını sağlar.
-      tags:
-        - Cari Kodlar
-  /api/CariKodlar/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariKodlar'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariKodlar'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariKodlar'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariKodlar'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Cari Kod Silme
-      description: >-
-        Belirtilen aralıkta bulunan cari kodları toplu olarak siler. Bu işlem,
-        birden fazla müşteri kodunun aynı anda kaldırılması gerektiğinde
-        kullanılır.
-      tags:
-        - Cari Kodlar
-  /api/CariKodlar/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariKodlarFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariKodlarFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariKodlarFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariKodlarFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Cari Kodları Getir
-      description: >-
-        Veritabanındaki tüm cari kodları getirir. Bu işlem, kullanıcıların tüm
-        müşteri kodlarını listelemelerini sağlar.
-      tags:
-        - Cari Kodlar
-  /api/CariKodlar/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Kod Getir
-      description: >-
-        Belirtilen ID'ye sahip cari kodu getirir. Bu işlem, belirli bir müşteri
-        kodunu görüntülemek için kullanılır.
       tags:
         - Cari Kodlar
   /api/CariKodlar/update:
@@ -5192,13 +5113,137 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Cari Kod Güncelleme
+      summary: Cari Kod Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan cari kodları toplu olarak günceller. Bu
         işlem, birden fazla müşteri kodunun aynı anda güncellenmesi gerektiğinde
         kullanılır.
       tags:
         - Cari Kodlar
+  /api/CariKodlar/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariKodlar'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariKodlar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariKodlar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariKodlar'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kod Sil
+      description: >-
+        Belirtilen ID'ye sahip cari kodu siler. Bu işlem, kullanıcıların belirli
+        müşteri kodlarını sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Cari Kodlar
+  /api/CariKodlar/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kod Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip cari kodu siler. Bu işlem, belirli bir müşteri
+        kodunun sistemden kaldırılmasını sağlar.
+      tags:
+        - Cari Kodlar
+  /api/CariKodlar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariKodlar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariKodlar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariKodlar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariKodlar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kod Sil Toplu 
+      description: >-
+        Belirtilen aralıkta bulunan cari kodları toplu olarak siler. Bu işlem,
+        birden fazla müşteri kodunun aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - Cari Kodlar
+  /api/CariNot/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariNotFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariNotFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariNotFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariNotFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Notları Listele
+      description: >-
+        Veritabanındaki tüm cari notları getirir. Bu işlem, kullanıcıların tüm
+        müşteri notlarını listelemelerini sağlar.
+      tags:
+        - Cari Not
+  /api/CariNot/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Not Listele ID ile  
+      description: >-
+        Belirtilen ID'ye sahip cari notu getirir. Bu işlem, belirli bir müşteri
+        notunu görüntülemek için kullanılır.
+      tags:
+        - Cari Not
   /api/CariNot/add:
     post:
       requestBody:
@@ -5218,7 +5263,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Not Ekleme
+      summary: Cari Not Ekle
       description: >-
         Yeni bir cari not ekler. Bu işlem, sisteme yeni müşteri notları eklemek
         için kullanılır.
@@ -5251,134 +5296,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Not Aralığı Ekleme
+      summary: Cari Not Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla cari not ekler. Bu işlem, toplu müşteri
         notları eklemek için kullanılır.
-      tags:
-        - Cari Not
-  /api/CariNot/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariNot'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariNot'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariNot'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariNot'
-      responses:
-        '200':
-          description: Success
-      summary: Cari Not Silme
-      description: >-
-        Belirtilen ID'ye sahip cari notu siler. Bu işlem, kullanıcıların belirli
-        müşteri notlarını sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Cari Not
-  /api/CariNot/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Not Silme
-      description: >-
-        Belirtilen ID'ye sahip cari notu siler. Bu işlem, belirli bir müşteri
-        notunun sistemden kaldırılmasını sağlar.
-      tags:
-        - Cari Not
-  /api/CariNot/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariNot'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariNot'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariNot'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariNot'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Cari Not Silme
-      description: >-
-        Belirtilen aralıkta bulunan cari notları toplu olarak siler. Bu işlem,
-        birden fazla müşteri notunun aynı anda kaldırılması gerektiğinde
-        kullanılır.
-      tags:
-        - Cari Not
-  /api/CariNot/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariNotFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariNotFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariNotFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariNotFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Cari Notları Getir
-      description: >-
-        Veritabanındaki tüm cari notları getirir. Bu işlem, kullanıcıların tüm
-        müşteri notlarını listelemelerini sağlar.
-      tags:
-        - Cari Not
-  /api/CariNot/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Not Getir
-      description: >-
-        Belirtilen ID'ye sahip cari notu getirir. Bu işlem, belirli bir müşteri
-        notunu görüntülemek için kullanılır.
       tags:
         - Cari Not
   /api/CariNot/update:
@@ -5433,13 +5354,137 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Cari Not Güncelleme
+      summary: Cari Not Güncelle Toplu 
       description: >-
         Belirtilen aralıkta bulunan cari notları toplu olarak günceller. Bu
         işlem, birden fazla müşteri notunun aynı anda güncellenmesi gerektiğinde
         kullanılır.
       tags:
         - Cari Not
+  /api/CariNot/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariNot'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariNot'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariNot'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariNot'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Not Sil
+      description: >-
+        Belirtilen ID'ye sahip cari notu siler. Bu işlem, kullanıcıların belirli
+        müşteri notlarını sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Cari Not
+  /api/CariNot/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Not Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip cari notu siler. Bu işlem, belirli bir müşteri
+        notunun sistemden kaldırılmasını sağlar.
+      tags:
+        - Cari Not
+  /api/CariNot/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariNot'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariNot'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariNot'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariNot'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Cari Not Sil Toplu 
+      description: >-
+        Belirtilen aralıkta bulunan cari notları toplu olarak siler. Bu işlem,
+        birden fazla müşteri notunun aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - Cari Not
+  /api/Cek/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CekFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CekFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CekFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CekFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Çekleri Listele
+      description: >-
+        Veritabanındaki tüm çekleri getirir. Bu işlem, kullanıcıların tüm çek
+        bilgilerini listelemelerini sağlar.
+      tags:
+        - Cek
+  /api/Cek/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Çek Listele ID ile 
+      description: >-
+        Belirtilen ID'ye sahip çeki getirir. Bu işlem, belirli bir çek bilgisini
+        görüntülemek için kullanılır.
+      tags:
+        - Cek
   /api/Cek/add:
     post:
       requestBody:
@@ -5459,7 +5504,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Çek Ekleme
+      summary: Çek Ekle
       description: >-
         Yeni bir çek ekler. Bu işlem, sisteme yeni çek bilgileri eklemek için
         kullanılır.
@@ -5492,133 +5537,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Çek Aralığı Ekleme
+      summary: Çek Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla çek ekler. Bu işlem, toplu çek
         bilgileri eklemek için kullanılır.
-      tags:
-        - Cek
-  /api/Cek/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Cek'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Cek'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Cek'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Cek'
-      responses:
-        '200':
-          description: Success
-      summary: Çek Silme
-      description: >-
-        Belirtilen ID'ye sahip çeki siler. Bu işlem, kullanıcıların belirli çek
-        bilgilerini sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Cek
-  /api/Cek/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Çek Silme
-      description: >-
-        Belirtilen ID'ye sahip çeki siler. Bu işlem, belirli bir çek bilgisinin
-        sistemden kaldırılmasını sağlar.
-      tags:
-        - Cek
-  /api/Cek/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Cek'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Cek'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Cek'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Cek'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Çek Silme
-      description: >-
-        Belirtilen aralıkta bulunan çekleri toplu olarak siler. Bu işlem, birden
-        fazla çek bilgisinin aynı anda kaldırılması gerektiğinde kullanılır.
-      tags:
-        - Cek
-  /api/Cek/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CekFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CekFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CekFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CekFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Çekleri Getir
-      description: >-
-        Veritabanındaki tüm çekleri getirir. Bu işlem, kullanıcıların tüm çek
-        bilgilerini listelemelerini sağlar.
-      tags:
-        - Cek
-  /api/Cek/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Çek Getir
-      description: >-
-        Belirtilen ID'ye sahip çeki getirir. Bu işlem, belirli bir çek bilgisini
-        görüntülemek için kullanılır.
       tags:
         - Cek
   /api/Cek/update:
@@ -5673,13 +5595,136 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Çek Güncelleme
+      summary: Çek Güncelle Toplu 
       description: >-
         Belirtilen aralıkta bulunan çekleri toplu olarak günceller. Bu işlem,
         birden fazla çek bilgisinin aynı anda güncellenmesi gerektiğinde
         kullanılır.
       tags:
         - Cek
+  /api/Cek/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Cek'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cek'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Cek'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Cek'
+      responses:
+        '200':
+          description: Success
+      summary: Çek Sil
+      description: >-
+        Belirtilen ID'ye sahip çeki siler. Bu işlem, kullanıcıların belirli çek
+        bilgilerini sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Cek
+  /api/Cek/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Çek Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip çeki siler. Bu işlem, belirli bir çek bilgisinin
+        sistemden kaldırılmasını sağlar.
+      tags:
+        - Cek
+  /api/Cek/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Cek'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Cek'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Cek'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Cek'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Çek Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan çekleri toplu olarak siler. Bu işlem, birden
+        fazla çek bilgisinin aynı anda kaldırılması gerektiğinde kullanılır.
+      tags:
+        - Cek
+  /api/Efaturaayari/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EfaturaayariFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EfaturaayariFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EfaturaayariFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EfaturaayariFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: E-fatura Ayarlarını Listele
+      description: >-
+        Veritabanındaki tüm e-fatura ayarlarını getirir. Bu işlem,
+        kullanıcıların tüm e-fatura ayar bilgilerini listelemelerini sağlar.
+      tags:
+        - Efatura Ayarı
+  /api/Efaturaayari/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: E-fatura Ayarı Listele ID ile 
+      description: >-
+        Belirtilen ID'ye sahip e-fatura ayarını getirir. Bu işlem, belirli bir
+        e-fatura ayar bilgisini görüntülemek için kullanılır.
+      tags:
+        - Efatura Ayarı
   /api/Efaturaayari/add:
     post:
       requestBody:
@@ -5699,7 +5744,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: E-fatura Ayarı Ekleme
+      summary: E-fatura Ayar Ekle
       description: >-
         Yeni bir e-fatura ayarı ekler. Bu işlem, sisteme yeni e-fatura ayar
         bilgileri eklemek için kullanılır.
@@ -5732,134 +5777,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: E-fatura Ayarı Aralığı Ekleme
+      summary: E-fatura Ayar Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla e-fatura ayarı ekler. Bu işlem, toplu
         e-fatura ayar bilgileri eklemek için kullanılır.
-      tags:
-        - Efatura Ayarı
-  /api/Efaturaayari/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Efaturaayari'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Efaturaayari'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Efaturaayari'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Efaturaayari'
-      responses:
-        '200':
-          description: Success
-      summary: E-fatura Ayarı Silme
-      description: >-
-        Belirtilen ID'ye sahip e-fatura ayarını siler. Bu işlem, kullanıcıların
-        belirli e-fatura ayar bilgilerini sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Efatura Ayarı
-  /api/Efaturaayari/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile E-fatura Ayarı Silme
-      description: >-
-        Belirtilen ID'ye sahip e-fatura ayarını siler. Bu işlem, belirli bir
-        e-fatura ayar bilgisinin sistemden kaldırılmasını sağlar.
-      tags:
-        - Efatura Ayarı
-  /api/Efaturaayari/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Efaturaayari'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Efaturaayari'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Efaturaayari'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Efaturaayari'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu E-fatura Ayarı Silme
-      description: >-
-        Belirtilen aralıkta bulunan e-fatura ayarlarını toplu olarak siler. Bu
-        işlem, birden fazla e-fatura ayar bilgisinin aynı anda kaldırılması
-        gerektiğinde kullanılır.
-      tags:
-        - Efatura Ayarı
-  /api/Efaturaayari/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/EfaturaayariFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/EfaturaayariFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/EfaturaayariFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/EfaturaayariFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm E-fatura Ayarlarını Getir
-      description: >-
-        Veritabanındaki tüm e-fatura ayarlarını getirir. Bu işlem,
-        kullanıcıların tüm e-fatura ayar bilgilerini listelemelerini sağlar.
-      tags:
-        - Efatura Ayarı
-  /api/Efaturaayari/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile E-fatura Ayarı Getir
-      description: >-
-        Belirtilen ID'ye sahip e-fatura ayarını getirir. Bu işlem, belirli bir
-        e-fatura ayar bilgisini görüntülemek için kullanılır.
       tags:
         - Efatura Ayarı
   /api/Efaturaayari/update:
@@ -5914,13 +5835,137 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu E-fatura Ayarı Güncelleme
+      summary: E-fatura Ayarı Güncelle Toplu 
       description: >-
         Belirtilen aralıkta bulunan e-fatura ayarlarını toplu olarak günceller.
         Bu işlem, birden fazla e-fatura ayar bilgisinin aynı anda güncellenmesi
         gerektiğinde kullanılır.
       tags:
         - Efatura Ayarı
+  /api/Efaturaayari/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Efaturaayari'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Efaturaayari'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Efaturaayari'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Efaturaayari'
+      responses:
+        '200':
+          description: Success
+      summary: E-fatura Ayar Sil
+      description: >-
+        Belirtilen ID'ye sahip e-fatura ayarını siler. Bu işlem, kullanıcıların
+        belirli e-fatura ayar bilgilerini sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Efatura Ayarı
+  /api/Efaturaayari/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: E-fatura Ayar Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip e-fatura ayarını siler. Bu işlem, belirli bir
+        e-fatura ayar bilgisinin sistemden kaldırılmasını sağlar.
+      tags:
+        - Efatura Ayarı
+  /api/Efaturaayari/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Efaturaayari'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Efaturaayari'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Efaturaayari'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Efaturaayari'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: E-fatura Ayar Sil Toplu 
+      description: >-
+        Belirtilen aralıkta bulunan e-fatura ayarlarını toplu olarak siler. Bu
+        işlem, birden fazla e-fatura ayar bilgisinin aynı anda kaldırılması
+        gerektiğinde kullanılır.
+      tags:
+        - Efatura Ayarı
+  /api/Eticaretayarlar/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EticaretayarlarFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EticaretayarlarFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EticaretayarlarFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EticaretayarlarFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: E-ticaret Ayarlarını Listele
+      description: >-
+        Veritabanındaki tüm e-ticaret ayarlarını getirir. Bu işlem,
+        kullanıcıların tüm e-ticaret ayar bilgilerini listelemelerini sağlar.
+      tags:
+        - Eticaret Ayarlar
+  /api/Eticaretayarlar/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: E-ticaret Ayar Listele ID ile 
+      description: >-
+        Belirtilen ID'ye sahip e-ticaret ayarını getirir. Bu işlem, belirli bir
+        e-ticaret ayar bilgisini görüntülemek için kullanılır.
+      tags:
+        - Eticaret Ayarlar
   /api/Eticaretayarlar/add:
     post:
       requestBody:
@@ -5940,7 +5985,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: E-ticaret Ayarları Ekleme
+      summary: E-ticaret Ayar Ekle
       description: >-
         Yeni bir e-ticaret ayarı ekler. Bu işlem, sisteme yeni e-ticaret ayar
         bilgileri eklemek için kullanılır.
@@ -5973,135 +6018,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: E-ticaret Ayarları Aralığı Ekleme
+      summary: E-ticaret Ayar Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla e-ticaret ayarı ekler. Bu işlem, toplu
         e-ticaret ayar bilgileri eklemek için kullanılır.
-      tags:
-        - Eticaret Ayarlar
-  /api/Eticaretayarlar/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Eticaretayarlar'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Eticaretayarlar'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Eticaretayarlar'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Eticaretayarlar'
-      responses:
-        '200':
-          description: Success
-      summary: E-ticaret Ayarları Silme
-      description: >-
-        Belirtilen ID'ye sahip e-ticaret ayarını siler. Bu işlem, kullanıcıların
-        belirli e-ticaret ayar bilgilerini sistemden kaldırmalarına olanak
-        tanır.
-      tags:
-        - Eticaret Ayarlar
-  /api/Eticaretayarlar/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile E-ticaret Ayarları Silme
-      description: >-
-        Belirtilen ID'ye sahip e-ticaret ayarını siler. Bu işlem, belirli bir
-        e-ticaret ayar bilgisinin sistemden kaldırılmasını sağlar.
-      tags:
-        - Eticaret Ayarlar
-  /api/Eticaretayarlar/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Eticaretayarlar'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Eticaretayarlar'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Eticaretayarlar'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Eticaretayarlar'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu E-ticaret Ayarları Silme
-      description: >-
-        Belirtilen aralıkta bulunan e-ticaret ayarlarını toplu olarak siler. Bu
-        işlem, birden fazla e-ticaret ayar bilgisinin aynı anda kaldırılması
-        gerektiğinde kullanılır.
-      tags:
-        - Eticaret Ayarlar
-  /api/Eticaretayarlar/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/EticaretayarlarFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/EticaretayarlarFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/EticaretayarlarFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/EticaretayarlarFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm E-ticaret Ayarlarını Getir
-      description: >-
-        Veritabanındaki tüm e-ticaret ayarlarını getirir. Bu işlem,
-        kullanıcıların tüm e-ticaret ayar bilgilerini listelemelerini sağlar.
-      tags:
-        - Eticaret Ayarlar
-  /api/Eticaretayarlar/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile E-ticaret Ayarları Getir
-      description: >-
-        Belirtilen ID'ye sahip e-ticaret ayarını getirir. Bu işlem, belirli bir
-        e-ticaret ayar bilgisini görüntülemek için kullanılır.
       tags:
         - Eticaret Ayarlar
   /api/Eticaretayarlar/update:
@@ -6123,7 +6043,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: E-ticaret Ayarları Güncelle
+      summary: E-ticaret Ayar Güncelle
       description: >-
         Belirtilen ID'ye sahip e-ticaret ayarını günceller. Bu işlem, mevcut bir
         e-ticaret ayar bilgisindeki bilgileri güncellemek için kullanılır.
@@ -6156,13 +6076,138 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu E-ticaret Ayarları Güncelleme
+      summary: E-ticaret Ayar Güncelle Toplu 
       description: >-
         Belirtilen aralıkta bulunan e-ticaret ayarlarını toplu olarak günceller.
         Bu işlem, birden fazla e-ticaret ayar bilgisinin aynı anda güncellenmesi
         gerektiğinde kullanılır.
       tags:
         - Eticaret Ayarlar
+  /api/Eticaretayarlar/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Eticaretayarlar'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Eticaretayarlar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Eticaretayarlar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Eticaretayarlar'
+      responses:
+        '200':
+          description: Success
+      summary: E-ticaret Ayar Sil
+      description: >-
+        Belirtilen ID'ye sahip e-ticaret ayarını siler. Bu işlem, kullanıcıların
+        belirli e-ticaret ayar bilgilerini sistemden kaldırmalarına olanak
+        tanır.
+      tags:
+        - Eticaret Ayarlar
+  /api/Eticaretayarlar/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: E-ticaret Ayar Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip e-ticaret ayarını siler. Bu işlem, belirli bir
+        e-ticaret ayar bilgisinin sistemden kaldırılmasını sağlar.
+      tags:
+        - Eticaret Ayarlar
+  /api/Eticaretayarlar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Eticaretayarlar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Eticaretayarlar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Eticaretayarlar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Eticaretayarlar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: E-ticaret Ayar Sil Toplu 
+      description: >-
+        Belirtilen aralıkta bulunan e-ticaret ayarlarını toplu olarak siler. Bu
+        işlem, birden fazla e-ticaret ayar bilgisinin aynı anda kaldırılması
+        gerektiğinde kullanılır.
+      tags:
+        - Eticaret Ayarlar
+  /api/FatHammeIsl/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FatHammaddeIslFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FatHammaddeIslFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FatHammaddeIslFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FatHammaddeIslFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: FatHammeIsl Kayıtlarını Listele
+      description: >-
+        Veritabanındaki tüm FatHammeIsl kayıtlarını getirir. Bu işlem,
+        kullanıcıların tüm FatHammeIsl bilgilerini listelemelerini sağlar.
+      tags:
+        - FatHammeIsl
+  /api/FatHammeIsl/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary:  FatHammeIsl Kayıt Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip FatHammeIsl kaydını getirir. Bu işlem, belirli
+        bir FatHammeIsl bilgisini görüntülemek için kullanılır.
+      tags:
+        - FatHammeIsl
   /api/FatHammeIsl/add:
     post:
       requestBody:
@@ -6182,7 +6227,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: FatHammeIsl Ekleme
+      summary: FatHammeIsl Kayıt Ekle
       description: >-
         Yeni bir FatHammeIsl kaydı ekler. Bu işlem, sisteme yeni FatHammeIsl
         bilgileri eklemek için kullanılır.
@@ -6215,135 +6260,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: FatHammeIsl Aralığı Ekleme
+      summary: FatHammeIsl Kayıt Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla FatHammeIsl kaydı ekler. Bu işlem,
         toplu FatHammeIsl bilgileri eklemek için kullanılır.
-      tags:
-        - FatHammeIsl
-  /api/FatHammeIsl/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FatHammaddeIsl'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FatHammaddeIsl'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FatHammaddeIsl'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FatHammaddeIsl'
-      responses:
-        '200':
-          description: Success
-      summary: FatHammeIsl Silme
-      description: >-
-        Belirtilen ID'ye sahip FatHammeIsl kaydını siler. Bu işlem,
-        kullanıcıların belirli FatHammeIsl bilgilerini sistemden kaldırmalarına
-        olanak tanır.
-      tags:
-        - FatHammeIsl
-  /api/FatHammeIsl/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile FatHammeIsl Silme
-      description: >-
-        Belirtilen ID'ye sahip FatHammeIsl kaydını siler. Bu işlem, belirli bir
-        FatHammeIsl bilgisinin sistemden kaldırılmasını sağlar.
-      tags:
-        - FatHammeIsl
-  /api/FatHammeIsl/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FatHammaddeIsl'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FatHammaddeIsl'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FatHammaddeIsl'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FatHammaddeIsl'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu FatHammeIsl Silme
-      description: >-
-        Belirtilen aralıkta bulunan FatHammeIsl kayıtlarını toplu olarak siler.
-        Bu işlem, birden fazla FatHammeIsl bilgisinin aynı anda kaldırılması
-        gerektiğinde kullanılır.
-      tags:
-        - FatHammeIsl
-  /api/FatHammeIsl/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FatHammaddeIslFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FatHammaddeIslFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FatHammaddeIslFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FatHammaddeIslFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm FatHammeIsl Kayıtlarını Getir
-      description: >-
-        Veritabanındaki tüm FatHammeIsl kayıtlarını getirir. Bu işlem,
-        kullanıcıların tüm FatHammeIsl bilgilerini listelemelerini sağlar.
-      tags:
-        - FatHammeIsl
-  /api/FatHammeIsl/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile FatHammeIsl Getir
-      description: >-
-        Belirtilen ID'ye sahip FatHammeIsl kaydını getirir. Bu işlem, belirli
-        bir FatHammeIsl bilgisini görüntülemek için kullanılır.
       tags:
         - FatHammeIsl
   /api/FatHammeIsl/update:
@@ -6365,7 +6285,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: FatHammeIsl Güncelle
+      summary: FatHammeIsl Kayıt Güncelle
       description: >-
         Belirtilen ID'ye sahip FatHammeIsl kaydını günceller. Bu işlem, mevcut
         bir FatHammeIsl bilgisindeki bilgileri güncellemek için kullanılır.
@@ -6398,13 +6318,138 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu FatHammeIsl Güncelleme
+      summary: FatHammeIsl Kayıt Güncelleme Toplu
       description: >-
         Belirtilen aralıkta bulunan FatHammeIsl kayıtlarını toplu olarak
         günceller. Bu işlem, birden fazla FatHammeIsl bilgisinin aynı anda
         güncellenmesi gerektiğinde kullanılır.
       tags:
         - FatHammeIsl
+  /api/FatHammeIsl/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FatHammaddeIsl'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FatHammaddeIsl'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FatHammaddeIsl'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FatHammaddeIsl'
+      responses:
+        '200':
+          description: Success
+      summary: FatHammeIsl Kayıt Sil
+      description: >-
+        Belirtilen ID'ye sahip FatHammeIsl kaydını siler. Bu işlem,
+        kullanıcıların belirli FatHammeIsl bilgilerini sistemden kaldırmalarına
+        olanak tanır.
+      tags:
+        - FatHammeIsl
+  /api/FatHammeIsl/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: FatHammeIsl Kayıt Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip FatHammeIsl kaydını siler. Bu işlem, belirli bir
+        FatHammeIsl bilgisinin sistemden kaldırılmasını sağlar.
+      tags:
+        - FatHammeIsl
+  /api/FatHammeIsl/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FatHammaddeIsl'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FatHammaddeIsl'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FatHammaddeIsl'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FatHammaddeIsl'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: FatHammeIsl Kayıt Sil Toplu 
+      description: >-
+        Belirtilen aralıkta bulunan FatHammeIsl kayıtlarını toplu olarak siler.
+        Bu işlem, birden fazla FatHammeIsl bilgisinin aynı anda kaldırılması
+        gerektiğinde kullanılır.
+      tags:
+        - FatHammeIsl
+  /api/FatIsl/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FatIslFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FatIslFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FatIslFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FatIslFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: FatIsl Kayıtlarını Listele
+      description: >-
+        Veritabanındaki tüm FatIsl kayıtlarını getirir. Bu işlem, kullanıcıların
+        tüm FatIsl bilgilerini listelemelerini sağlar.
+      tags:
+        - FatIsl
+  /api/FatIsl/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: FatIsl Kayıt Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip FatIsl kaydını getirir. Bu işlem, belirli bir
+        FatIsl bilgisini görüntülemek için kullanılır.
+      tags:
+        - FatIsl
   /api/FatIsl/add:
     post:
       requestBody:
@@ -6424,7 +6469,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: FatIsl Ekleme
+      summary: FatIsl Kayıt Ekle
       description: >-
         Yeni bir FatIsl kaydı ekler. Bu işlem, sisteme yeni FatIsl bilgileri
         eklemek için kullanılır.
@@ -6457,134 +6502,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: FatIsl Aralığı Ekleme
+      summary: FatIsl Kayıt Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla FatIsl kaydı ekler. Bu işlem, toplu
         FatIsl bilgileri eklemek için kullanılır.
-      tags:
-        - FatIsl
-  /api/FatIsl/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FatIsl'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FatIsl'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FatIsl'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FatIsl'
-      responses:
-        '200':
-          description: Success
-      summary: FatIsl Silme
-      description: >-
-        Belirtilen ID'ye sahip FatIsl kaydını siler. Bu işlem, kullanıcıların
-        belirli FatIsl bilgilerini sistemden kaldırmalarına olanak tanır.
-      tags:
-        - FatIsl
-  /api/FatIsl/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile FatIsl Silme
-      description: >-
-        Belirtilen ID'ye sahip FatIsl kaydını siler. Bu işlem, belirli bir
-        FatIsl bilgisinin sistemden kaldırılmasını sağlar.
-      tags:
-        - FatIsl
-  /api/FatIsl/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FatIsl'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FatIsl'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FatIsl'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FatIsl'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu FatIsl Silme
-      description: >-
-        Belirtilen aralıkta bulunan FatIsl kayıtlarını toplu olarak siler. Bu
-        işlem, birden fazla FatIsl bilgisinin aynı anda kaldırılması
-        gerektiğinde kullanılır.
-      tags:
-        - FatIsl
-  /api/FatIsl/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FatIslFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FatIslFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FatIslFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FatIslFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm FatIsl Kayıtlarını Getir
-      description: >-
-        Veritabanındaki tüm FatIsl kayıtlarını getirir. Bu işlem, kullanıcıların
-        tüm FatIsl bilgilerini listelemelerini sağlar.
-      tags:
-        - FatIsl
-  /api/FatIsl/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile FatIsl Getir
-      description: >-
-        Belirtilen ID'ye sahip FatIsl kaydını getirir. Bu işlem, belirli bir
-        FatIsl bilgisini görüntülemek için kullanılır.
       tags:
         - FatIsl
   /api/FatIsl/update:
@@ -6606,7 +6527,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: FatIsl Güncelle
+      summary: FatIsl Kayıt Güncelle
       description: >-
         Belirtilen ID'ye sahip FatIsl kaydını günceller. Bu işlem, mevcut bir
         FatIsl bilgisindeki bilgileri güncellemek için kullanılır.
@@ -6639,13 +6560,137 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu FatIsl Güncelleme
+      summary: FatIsl Kayıt Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan FatIsl kayıtlarını toplu olarak günceller.
         Bu işlem, birden fazla FatIsl bilgisinin aynı anda güncellenmesi
         gerektiğinde kullanılır.
       tags:
         - FatIsl
+  /api/FatIsl/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FatIsl'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FatIsl'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FatIsl'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FatIsl'
+      responses:
+        '200':
+          description: Success
+      summary: FatIsl Kayıt Silme
+      description: >-
+        Belirtilen ID'ye sahip FatIsl kaydını siler. Bu işlem, kullanıcıların
+        belirli FatIsl bilgilerini sistemden kaldırmalarına olanak tanır.
+      tags:
+        - FatIsl
+  /api/FatIsl/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: FatIsl Kayıt Silme ID ile 
+      description: >-
+        Belirtilen ID'ye sahip FatIsl kaydını siler. Bu işlem, belirli bir
+        FatIsl bilgisinin sistemden kaldırılmasını sağlar.
+      tags:
+        - FatIsl
+  /api/FatIsl/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FatIsl'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FatIsl'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FatIsl'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FatIsl'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: FatIsl Kayıt Silme Toplu
+      description: >-
+        Belirtilen aralıkta bulunan FatIsl kayıtlarını toplu olarak siler. Bu
+        işlem, birden fazla FatIsl bilgisinin aynı anda kaldırılması
+        gerektiğinde kullanılır.
+      tags:
+        - FatIsl
+  /api/FatIslEtic/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FatIslEticFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FatIslEticFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FatIslEticFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FatIslEticFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: FatIslEtic Kayıtlarını Listele
+      description: >-
+        Veritabanındaki tüm FatIslEtic kayıtlarını getirir. Bu işlem,
+        kullanıcıların tüm FatIslEtic bilgilerini listelemelerini sağlar.
+      tags:
+        - FatIslEtic
+  /api/FatIslEtic/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: FatIslEtic Kayıt Listele ID ile 
+      description: >-
+        Belirtilen ID'ye sahip FatIslEtic kaydını getirir. Bu işlem, belirli bir
+        FatIslEtic bilgisini görüntülemek için kullanılır.
+      tags:
+        - FatIslEtic
   /api/FatIslEtic/add:
     post:
       requestBody:
@@ -6665,7 +6710,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: FatIslEtic Ekleme
+      summary: FatIslEtic Kayıt Ekle
       description: >-
         Yeni bir FatIslEtic kaydı ekler. Bu işlem, sisteme yeni FatIslEtic
         bilgileri eklemek için kullanılır.
@@ -6698,135 +6743,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: FatIslEtic Aralığı Ekleme
+      summary: FatIslEtic Kayıt Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla FatIslEtic kaydı ekler. Bu işlem, toplu
         FatIslEtic bilgileri eklemek için kullanılır.
-      tags:
-        - FatIslEtic
-  /api/FatIslEtic/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FatIslEtic'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FatIslEtic'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FatIslEtic'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FatIslEtic'
-      responses:
-        '200':
-          description: Success
-      summary: FatIslEtic Silme
-      description: >-
-        Belirtilen ID'ye sahip FatIslEtic kaydını siler. Bu işlem,
-        kullanıcıların belirli FatIslEtic bilgilerini sistemden kaldırmalarına
-        olanak tanır.
-      tags:
-        - FatIslEtic
-  /api/FatIslEtic/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile FatIslEtic Silme
-      description: >-
-        Belirtilen ID'ye sahip FatIslEtic kaydını siler. Bu işlem, belirli bir
-        FatIslEtic bilgisinin sistemden kaldırılmasını sağlar.
-      tags:
-        - FatIslEtic
-  /api/FatIslEtic/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FatIslEtic'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FatIslEtic'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FatIslEtic'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/FatIslEtic'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu FatIslEtic Silme
-      description: >-
-        Belirtilen aralıkta bulunan FatIslEtic kayıtlarını toplu olarak siler.
-        Bu işlem, birden fazla FatIslEtic bilgisinin aynı anda kaldırılması
-        gerektiğinde kullanılır.
-      tags:
-        - FatIslEtic
-  /api/FatIslEtic/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FatIslEticFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FatIslEticFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FatIslEticFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FatIslEticFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm FatIslEtic Kayıtlarını Getir
-      description: >-
-        Veritabanındaki tüm FatIslEtic kayıtlarını getirir. Bu işlem,
-        kullanıcıların tüm FatIslEtic bilgilerini listelemelerini sağlar.
-      tags:
-        - FatIslEtic
-  /api/FatIslEtic/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile FatIslEtic Getir
-      description: >-
-        Belirtilen ID'ye sahip FatIslEtic kaydını getirir. Bu işlem, belirli bir
-        FatIslEtic bilgisini görüntülemek için kullanılır.
       tags:
         - FatIslEtic
   /api/FatIslEtic/update:
@@ -6848,7 +6768,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: FatIslEtic Güncelle
+      summary: FatIslEtic Kayıt Güncelle
       description: >-
         Belirtilen ID'ye sahip FatIslEtic kaydını günceller. Bu işlem, mevcut
         bir FatIslEtic bilgisindeki bilgileri güncellemek için kullanılır.
@@ -6881,64 +6801,40 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu FatIslEtic Güncelleme
+      summary: FatIslEtic Kayıt Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan FatIslEtic kayıtlarını toplu olarak
         günceller. Bu işlem, birden fazla FatIslEtic bilgisinin aynı anda
         güncellenmesi gerektiğinde kullanılır.
       tags:
         - FatIslEtic
-  /api/Fatura/Add:
+  /api/FatIslEtic/delete:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Fatura'
+              $ref: '#/components/schemas/FatIslEtic'
           application/json:
             schema:
-              $ref: '#/components/schemas/Fatura'
+              $ref: '#/components/schemas/FatIslEtic'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/Fatura'
+              $ref: '#/components/schemas/FatIslEtic'
           text/json:
             schema:
-              $ref: '#/components/schemas/Fatura'
+              $ref: '#/components/schemas/FatIslEtic'
       responses:
         '200':
           description: Success
-      summary: Fatura Ekleme
+      summary: FatIslEtic Kayıt Silme
       description: >-
-        Sisteme yeni bir Fatura ekler. Bu işlem, belirtilen Fatura bilgilerini kaydeder ve başarılı olduğunu belirtir.
+        Belirtilen ID'ye sahip FatIslEtic kaydını siler. Bu işlem,
+        kullanıcıların belirli FatIslEtic bilgilerini sistemden kaldırmalarına
+        olanak tanır.
       tags:
-        - Fatura İşlemleri
-  /api/Fatura/ControlDelete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Fatura'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Fatura'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Fatura'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Fatura'
-      responses:
-        '200':
-          description: Success
-      summary: Fatura Kontrol Silme
-      description: >-
-        Belirtilen ID'ye sahip Fatura kaydını silmek için kontrol işlemi yapar.
-        Bu işlem, belirli bir Fatura kaydının sistemden kaldırılması gerekip
-        gerekmediğini kontrol eder.
-      tags:
-        - Fatura İşlemleri
-  /api/Fatura/ControlDeleteById:
+        - FatIslEtic
+  /api/FatIslEtic/deletebyid:
     delete:
       parameters:
         - explode: true
@@ -6952,10 +6848,115 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Fatura Silme
+      summary: FatIslEtic Kayıt Silme ID ile 
       description: >-
-        Belirtilen ID'ye sahip Fatura kaydını siler. Bu işlem, belirli bir
-        Fatura bilgisinin sistemden kaldırılmasını sağlar.
+        Belirtilen ID'ye sahip FatIslEtic kaydını siler. Bu işlem, belirli bir
+        FatIslEtic bilgisinin sistemden kaldırılmasını sağlar.
+      tags:
+        - FatIslEtic
+  /api/FatIslEtic/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FatIslEtic'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FatIslEtic'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FatIslEtic'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/FatIslEtic'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: FatIslEtic Kayıt Silme Toplu 
+      description: >-
+        Belirtilen aralıkta bulunan FatIslEtic kayıtlarını toplu olarak siler.
+        Bu işlem, birden fazla FatIslEtic bilgisinin aynı anda kaldırılması
+        gerektiğinde kullanılır.
+      tags:
+        - FatIslEtic
+  /api/Fatura/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FaturaFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaturaFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FaturaFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FaturaFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Kayıtlarını Listele
+      description: >-
+        Veritabanındaki tüm Fatura kayıtlarını getirir. Bu işlem, kullanıcıların
+        tüm Fatura bilgilerini listelemelerini sağlar.
+      tags:
+        - Fatura İşlemleri
+  /api/Fatura/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Kayıt Listele ID ile 
+      description: >-
+        Belirtilen ID'ye sahip Fatura kaydını getirir. Bu işlem, belirli bir
+        Fatura bilgisini görüntülemek için kullanılır.
+      tags:
+        - Fatura İşlemleri
+  /api/Fatura/getevrakno:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FaturaFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaturaFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FaturaFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FaturaFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Evrak Numarası Listele
+      description: >-
+        Belirtilen evrak numarasına sahip Fatura kaydını getirir. Bu işlem,
+        belirli bir evrak numarasıyla ilişkili Fatura bilgisini görüntülemek
+        için kullanılır.
       tags:
         - Fatura İşlemleri
   /api/Fatura/GetByIdAll:
@@ -6972,7 +6973,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Tüm Kayıtlarını Getir (ID ile)
+      summary: Fatura Kayıtlarını Listele (ID ile)
       description: >-
         Belirtilen ID'ye sahip tüm Fatura kayıtlarını getirir. Bu işlem, belirli
         bir Fatura bilgisiyle ilişkili tüm verileri görüntülemek için
@@ -6998,38 +6999,13 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Listesini Getir
+      summary: Fatura Kayıtlarını Listele
       description: >-
         Sistemdeki tüm Fatura kayıtlarını getirir. Bu işlem, kullanıcıların tüm
         Fatura bilgilerini listelemelerini sağlar.
       tags:
         - Fatura İşlemleri
-  /api/Fatura/SatisBilgileriRapor:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FaturaFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FaturaFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FaturaFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FaturaFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Fatura Satış Bilgileri Raporu
-      description: >-
-        Satış bilgilerini içeren Fatura raporunu oluşturur. Bu işlem, satış
-        verilerini içeren ayrıntılı bir rapor hazırlamak için kullanılır.
-      tags:
-        - Fatura İşlemleri
-  /api/Fatura/Update:
+  /api/Fatura/Add:
     post:
       requestBody:
         content:
@@ -7048,10 +7024,9 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Güncelleme
+      summary: Fatura Ekle
       description: >-
-        Belirtilen ID'ye sahip Fatura kaydını günceller. Bu işlem, mevcut bir
-        Fatura bilgisindeki bilgileri güncellemek için kullanılır.
+        Sisteme yeni bir Fatura ekler. Bu işlem, belirtilen Fatura bilgilerini kaydeder ve başarılı olduğunu belirtir.
       tags:
         - Fatura İşlemleri
   /api/Fatura/addrange:
@@ -7081,13 +7056,13 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Aralığı Ekleme
+      summary: Fatura Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla Fatura kaydı ekler. Bu işlem, toplu
         Fatura bilgileri eklemek için kullanılır.
       tags:
         - Fatura İşlemleri
-  /api/Fatura/delete:
+  /api/Fatura/Update:
     post:
       requestBody:
         content:
@@ -7106,135 +7081,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Silme
+      summary: Fatura Güncelle
       description: >-
-        Belirtilen ID'ye sahip Fatura kaydını siler. Bu işlem, kullanıcıların
-        belirli Fatura bilgilerini sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Fatura İşlemleri
-  /api/Fatura/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Fatura Silme
-      description: >-
-        Belirtilen ID'ye sahip Fatura kaydını siler. Bu işlem, belirli bir
-        Fatura bilgisinin sistemden kaldırılmasını sağlar.
-      tags:
-        - Fatura İşlemleri
-  /api/Fatura/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Fatura'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Fatura'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Fatura'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Fatura'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Fatura Silme
-      description: >-
-        Belirtilen aralıkta bulunan Fatura kayıtlarını toplu olarak siler. Bu
-        işlem, birden fazla Fatura bilgisinin aynı anda kaldırılması
-        gerektiğinde kullanılır.
-      tags:
-        - Fatura İşlemleri
-  /api/Fatura/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FaturaFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FaturaFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FaturaFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FaturaFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Fatura Kayıtlarını Getir
-      description: >-
-        Veritabanındaki tüm Fatura kayıtlarını getirir. Bu işlem, kullanıcıların
-        tüm Fatura bilgilerini listelemelerini sağlar.
-      tags:
-        - Fatura İşlemleri
-  /api/Fatura/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Fatura Getir
-      description: >-
-        Belirtilen ID'ye sahip Fatura kaydını getirir. Bu işlem, belirli bir
-        Fatura bilgisini görüntülemek için kullanılır.
-      tags:
-        - Fatura İşlemleri
-  /api/Fatura/getevrakno:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FaturaFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FaturaFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FaturaFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FaturaFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Fatura Evrak Numarası Getir
-      description: >-
-        Belirtilen evrak numarasına sahip Fatura kaydını getirir. Bu işlem,
-        belirli bir evrak numarasıyla ilişkili Fatura bilgisini görüntülemek
-        için kullanılır.
+        Belirtilen ID'ye sahip Fatura kaydını günceller. Bu işlem, mevcut bir
+        Fatura bilgisindeki bilgileri güncellemek için kullanılır.
       tags:
         - Fatura İşlemleri
   /api/Fatura/update:
@@ -7256,7 +7106,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Fatura Güncelleme
+      summary: Fatura Güncelle
       description: >-
         Belirtilen ID'ye sahip Fatura kaydını günceller. Bu işlem, mevcut bir
         Fatura bilgisindeki bilgileri güncellemek için kullanılır.
@@ -7289,11 +7139,161 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Fatura Güncelleme
+      summary: Fatura Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan Fatura kayıtlarını toplu olarak günceller.
         Bu işlem, birden fazla Fatura bilgisinin aynı anda güncellenmesi
         gerektiğinde kullanılır.
+      tags:
+        - Fatura İşlemleri
+  /api/Fatura/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Fatura'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Fatura'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Fatura'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Fatura'
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Sil
+      description: >-
+        Belirtilen ID'ye sahip Fatura kaydını siler. Bu işlem, kullanıcıların
+        belirli Fatura bilgilerini sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Fatura İşlemleri
+  /api/Fatura/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip Fatura kaydını siler. Bu işlem, belirli bir
+        Fatura bilgisinin sistemden kaldırılmasını sağlar.
+      tags:
+        - Fatura İşlemleri
+  /api/Fatura/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Fatura'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Fatura'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Fatura'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Fatura'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Sil Toplu 
+      description: >-
+        Belirtilen aralıkta bulunan Fatura kayıtlarını toplu olarak siler. Bu
+        işlem, birden fazla Fatura bilgisinin aynı anda kaldırılması
+        gerektiğinde kullanılır.
+      tags:
+        - Fatura İşlemleri
+  /api/Fatura/ControlDelete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Fatura'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Fatura'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Fatura'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Fatura'
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Sil Kontrol
+      description: >-
+        Belirtilen ID'ye sahip Fatura kaydını silmek için kontrol işlemi yapar.
+        Bu işlem, belirli bir Fatura kaydının sistemden kaldırılması gerekip
+        gerekmediğini kontrol eder.
+      tags:
+        - Fatura İşlemleri
+  /api/Fatura/ControlDeleteById:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Sil Kontrol  ID ile 
+      description: >-
+        Belirtilen ID'ye sahip Fatura kaydını siler. Bu işlem, belirli bir
+        Fatura bilgisinin sistemden kaldırılmasını sağlar.
+      tags:
+        - Fatura İşlemleri
+  /api/Fatura/SatisBilgileriRapor:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FaturaFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaturaFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/FaturaFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FaturaFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Fatura Satış Bilgileri Raporu
+      description: >-
+        Satış bilgilerini içeren Fatura raporunu oluşturur. Bu işlem, satış
+        verilerini içeren ayrıntılı bir rapor hazırlamak için kullanılır.
       tags:
         - Fatura İşlemleri
   /api/FaturaAciklamalari/add:
