@@ -163,7 +163,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Ajanda Güncelle
+      summary: Ajanda Güncelle Toplu
       description: >-
         Birden fazla ajanda kaydını aynı anda günceller. Bu işlem, toplu
         düzenlemeler yapmak gerektiğinde kullanılır.
@@ -245,6 +245,51 @@ paths:
         kullanılır.
       tags:
         - Ajanda İşlemleri
+  /api/AjandaDosya/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AjandaDosyaFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AjandaDosyaFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AjandaDosyaFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AjandaDosyaFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Ajanda Dosyalarını Listele
+      description: >-
+        Veritabanındaki tüm ajanda dosyalarını getirir. Bu işlem, kullanıcıların
+        tüm dosyaları listelemelerini sağlar.
+      tags:
+        - Ajanda Dosya İşlemleri
+  /api/AjandaDosya/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Ajanda Dosya Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip ajanda dosyasını getirir. Bu işlem, belirli bir
+        ajanda dosyasını görüntülemek için kullanılır.
+      tags:
+        - Ajanda Dosya İşlemleri
   /api/AjandaDosya/add:
     post:
       requestBody:
@@ -264,7 +309,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Dosyası Ekleme
+      summary: Ajanda Dosya Ekleme
       description: >-
         Yeni bir ajanda dosyası ekler. Bu işlem, kullanıcıların ajandalarına
         dosya eklemelerini sağlar.
@@ -297,134 +342,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Dosyası Aralığı Ekleme
+      summary: Ajanda Dosya Ekleme Toplu
       description: >-
         Belirtilen aralıkta birden fazla ajanda dosyası ekler. Bu işlem, toplu
         dosya eklemeleri yapmak için kullanılır.
-      tags:
-        - Ajanda Dosya İşlemleri
-  /api/AjandaDosya/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/AjandaDosya'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AjandaDosya'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/AjandaDosya'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/AjandaDosya'
-      responses:
-        '200':
-          description: Success
-      summary: Ajanda Dosyası Silme
-      description: >-
-        Belirtilen ID'ye sahip ajanda dosyasını siler. Bu işlem, kullanıcıların
-        belirli bir ajanda dosyasını kaldırmalarına olanak tanır.
-      tags:
-        - Ajanda Dosya İşlemleri
-  /api/AjandaDosya/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Ajanda Dosyası Silme
-      description: >-
-        Belirtilen ID'ye sahip ajanda dosyasını siler. Bu işlem, belirli bir
-        dosyanın kaldırılmasını sağlar.
-      tags:
-        - Ajanda Dosya İşlemleri
-  /api/AjandaDosya/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/AjandaDosya'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/AjandaDosya'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/AjandaDosya'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/AjandaDosya'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Ajanda Dosyası Silme
-      description: >-
-        Belirtilen aralıkta bulunan ajanda dosyalarını toplu olarak siler. Bu
-        işlem, birden fazla dosyanın aynı anda temizlenmesi gerektiğinde
-        kullanılır.
-      tags:
-        - Ajanda Dosya İşlemleri
-  /api/AjandaDosya/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/AjandaDosyaFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AjandaDosyaFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/AjandaDosyaFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/AjandaDosyaFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Ajanda Dosyalarını Getir
-      description: >-
-        Veritabanındaki tüm ajanda dosyalarını getirir. Bu işlem, kullanıcıların
-        tüm dosyaları listelemelerini sağlar.
-      tags:
-        - Ajanda Dosya İşlemleri
-  /api/AjandaDosya/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Ajanda Dosyası Getir
-      description: >-
-        Belirtilen ID'ye sahip ajanda dosyasını getirir. Bu işlem, belirli bir
-        ajanda dosyasını görüntülemek için kullanılır.
       tags:
         - Ajanda Dosya İşlemleri
   /api/AjandaDosya/update:
@@ -446,7 +367,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Dosyası Güncelle
+      summary: Ajanda Dosya Güncelle
       description: >-
         Belirtilen ID'ye sahip ajanda dosyasını günceller. Bu işlem, mevcut bir
         ajanda dosyasındaki bilgileri güncellemek için kullanılır.
@@ -479,10 +400,89 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Dosyası Aralığı Güncelleme
+      summary: Ajanda Dosya Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan ajanda dosyalarını toplu olarak günceller.
         Bu işlem, birden fazla dosyanın aynı anda güncellenmesi gerektiğinde
+        kullanılır.
+      tags:
+        - Ajanda Dosya İşlemleri
+  /api/AjandaDosya/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AjandaDosya'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AjandaDosya'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AjandaDosya'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AjandaDosya'
+      responses:
+        '200':
+          description: Success
+      summary: Ajanda Dosya Silme
+      description: >-
+        Belirtilen ID'ye sahip ajanda dosyasını siler. Bu işlem, kullanıcıların
+        belirli bir ajanda dosyasını kaldırmalarına olanak tanır.
+      tags:
+        - Ajanda Dosya İşlemleri
+  /api/AjandaDosya/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Ajanda Dosya Silme ID ile
+      description: >-
+        Belirtilen ID'ye sahip ajanda dosyasını siler. Bu işlem, belirli bir
+        dosyanın kaldırılmasını sağlar.
+      tags:
+        - Ajanda Dosya İşlemleri
+  /api/AjandaDosya/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/AjandaDosya'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/AjandaDosya'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/AjandaDosya'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/AjandaDosya'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Ajanda Dosya Silme Toplu
+      description: >-
+        Belirtilen aralıkta bulunan ajanda dosyalarını toplu olarak siler. Bu
+        işlem, birden fazla dosyanın aynı anda temizlenmesi gerektiğinde
         kullanılır.
       tags:
         - Ajanda Dosya İşlemleri
