@@ -21135,7 +21135,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POST /api/Utsayar/add
+      summary: Utsayar Ekle
       description: >-
         Sisteme yeni bir Utsayar nesnesi ekler. Bu işlem, belirtilen Utsayar
         bilgilerini kaydeder ve başarılı olduğunu belirtir.
@@ -21168,7 +21168,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POST /api/Utsayar/addrange
+      summary: Toplu Utsayar Ekle
       description: >-
         Birden fazla Utsayar nesnesini topluca ekler. Bu işlem, çok sayıda Utsayar
         bilgisini aynı anda kaydeder ve başarılı olduğunu belirtir.
@@ -21193,7 +21193,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POST /api/Utsayar/delete
+      summary: Utsayar Silme
       description: >-
         Belirtilen Utsayar nesnesini sistemden siler. Bu işlem, mevcut bir Utsayar
         bilgisini kaldırır ve başarılı olduğunu belirtir.
@@ -21213,7 +21213,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: DELETE /api/Utsayar/deletebyid
+      summary: Utsayar Silme ID İle
       description: >-
         Belirtilen ID'ye sahip Utsayar nesnesini sistemden siler. Bu işlem,
         belirli bir Utsayar bilgisini kaldırır ve başarılı olduğunu belirtir.
@@ -21246,7 +21246,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POST /api/Utsayar/deleterange
+      summary: Utsayar Silme Toplu
       description: >-
         Belirtilen aralıkta bulunan Utsayar nesnelerini topluca siler. Bu işlem,
         birden fazla Utsayar bilgisini aynı anda kaldırır ve başarılı olduğunu
@@ -21272,7 +21272,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POST /api/Utsayar/getall
+      summary: Tüm Utsayar Bilgilerini Listele
       description: >-
         Sistemdeki tüm Utsayar nesnelerini getirir. Bu işlem, mevcut tüm Utsayar
         bilgilerini listeler ve başarılı olduğunu belirtir.
@@ -21292,7 +21292,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: GET /api/Utsayar/getbyid
+      summary: Utsayar Bilgilerini Getir ID İle
       description: >-
         Belirtilen ID'ye sahip Utsayar nesnesini getirir. Bu işlem, belirli bir
         Utsayar bilgisini getirir ve başarılı olduğunu belirtir.
@@ -21317,7 +21317,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: PUT /api/Utsayar/update
+      summary: Utsayar Bilgisini Güncelle
       description: >-
         Mevcut bir Utsayar nesnesini günceller. Bu işlem, belirtilen Utsayar
         bilgisini günceller ve başarılı olduğunu belirtir.
@@ -21350,7 +21350,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: PUT /api/Utsayar/updaterange
+      summary: Toplu Utsayar Bilgisi Güncelle
       description: >-
         Birden fazla Utsayar nesnesini topluca günceller. Bu işlem, çok sayıda
         Utsayar bilgisini aynı anda günceller ve başarılı olduğunu belirtir.
@@ -21375,7 +21375,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POST /api/Utslog/add
+      summary: Utslog Ekle
       description: >-
         Sisteme yeni bir Utslog nesnesi ekler. Bu işlem, belirtilen Utslog
         bilgilerini kaydeder ve başarılı olduğunu belirtir.
@@ -21408,7 +21408,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POST /api/Utslog/addrange
+      summary: Toplu Utslog Ekle
       description: >-
         Birden fazla Utslog nesnesini topluca ekler. Bu işlem, çok sayıda Utslog
         bilgisini aynı anda kaydeder ve başarılı olduğunu belirtir.
@@ -21433,7 +21433,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POST /api/Utslog/delete
+      summary: Utslog Sil
       description: >-
         Belirtilen Utslog nesnesini sistemden siler. Bu işlem, mevcut bir Utslog
         bilgisini kaldırır ve başarılı olduğunu belirtir.
@@ -21453,7 +21453,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: DELETE /api/Utslog/deletebyid
+      summary: Utslog Sil ID İle
       description: >-
         Belirtilen ID'ye sahip Utslog nesnesini sistemden siler. Bu işlem, belirli
         bir Utslog bilgisini kaldırır ve başarılı olduğunu belirtir.
@@ -21486,7 +21486,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POST /api/Utslog/deleterange
+      summary: Toplu Utslog Sil
       description: >-
         Belirtilen aralıkta bulunan Utslog nesnelerini topluca siler. Bu işlem,
         birden fazla Utslog bilgisini aynı anda kaldırır ve başarılı olduğunu
@@ -21512,7 +21512,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POST /api/Utslog/getall
+      summary: Utslogları Listele
       description: >-
         Sistemdeki tüm Utslog nesnelerini getirir. Bu işlem, mevcut tüm Utslog
         bilgilerini listeler ve başarılı olduğunu belirtir.
@@ -21532,7 +21532,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: GET /api/Utslog/getbyid
+      summary: Utslog Listele ID ile
       description: >-
         Belirtilen ID'ye sahip Utslog nesnesini getirir. Bu işlem, belirli bir
         Utslog bilgisini getirir ve başarılı olduğunu belirtir.
@@ -21557,7 +21557,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: PUT /api/Utslog/update
+      summary: Utslog Güncelle
       description: >-
         Mevcut bir Utslog nesnesini günceller. Bu işlem, belirtilen Utslog
         bilgisini günceller ve başarılı olduğunu belirtir.
@@ -21590,7 +21590,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: PUT /api/Utslog/updaterange
+      summary: Utslog Güncelle Toplu
       description: >-
         Birden fazla Utslog nesnesini topluca günceller. Bu işlem, çok sayıda
         Utslog bilgisini aynı anda günceller ve başarılı olduğunu belirtir.
