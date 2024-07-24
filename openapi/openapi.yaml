@@ -72,7 +72,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Ekleme
+      summary: Ajanda Ekle
       description: >-
         Yeni bir ajanda kaydı ekler. Bu işlem, kullanıcıların ajandalarına yeni
         etkinlikler veya notlar eklemelerini sağlar.
@@ -105,7 +105,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Toplu Ekleme
+      summary: Ajanda Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla ajanda kaydı ekler. Bu işlem, toplu
         ajanda eklemeleri yapmak için kullanılır.
@@ -188,7 +188,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Silme
+      summary: Ajanda Sil
       description: >-
         Ajanda silmek için kullanılır. Bu işlem, kullanıcıların belirli bir
         ajanda kaydını kaldırmalarına olanak tanır.
@@ -208,7 +208,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Silme
+      summary: Ajanda Sil ID ile
       tags:
         - Ajanda İşlemleri
   /api/Ajanda/deleterange:
@@ -238,7 +238,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Silme Toplu
+      summary: Ajanda Sil Toplu
       description: >-
         Belirtilen aralıkta bulunan ajanda kayıtlarını toplu olarak siler. Bu
         işlem, birden fazla kaydın aynı anda temizlenmesi gerektiğinde
@@ -309,7 +309,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Dosya Ekleme
+      summary: Ajanda Dosya Ekle
       description: >-
         Yeni bir ajanda dosyası ekler. Bu işlem, kullanıcıların ajandalarına
         dosya eklemelerini sağlar.
@@ -342,7 +342,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Dosya Ekleme Toplu
+      summary: Ajanda Dosya Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla ajanda dosyası ekler. Bu işlem, toplu
         dosya eklemeleri yapmak için kullanılır.
@@ -426,7 +426,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Dosya Silme
+      summary: Ajanda Dosya Sil
       description: >-
         Belirtilen ID'ye sahip ajanda dosyasını siler. Bu işlem, kullanıcıların
         belirli bir ajanda dosyasını kaldırmalarına olanak tanır.
@@ -446,7 +446,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Dosya Silme ID ile
+      summary: Ajanda Dosya Sil ID ile
       description: >-
         Belirtilen ID'ye sahip ajanda dosyasını siler. Bu işlem, belirli bir
         dosyanın kaldırılmasını sağlar.
@@ -479,7 +479,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Dosya Silme Toplu
+      summary: Ajanda Dosya Sil Toplu
       description: >-
         Belirtilen aralıkta bulunan ajanda dosyalarını toplu olarak siler. Bu
         işlem, birden fazla dosyanın aynı anda temizlenmesi gerektiğinde
@@ -667,7 +667,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Not Silme
+      summary: Ajanda Not Sil
       description: >-
         Belirtilen ID'ye sahip ajanda notunu siler. Bu işlem, kullanıcıların
         belirli bir ajanda notunu kaldırmalarına olanak tanır.
@@ -687,7 +687,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Not Silme ID ile
+      summary: Ajanda Not Sil ID ile
       description: >-
         Belirtilen ID'ye sahip ajanda notunu siler. Bu işlem, belirli bir notun
         kaldırılmasını sağlar.
@@ -727,6 +727,51 @@ paths:
         kullanılır.
       tags:
         - Ajanda Not
+  /api/ApiKullanici/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApiKullaniciFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiKullaniciFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ApiKullaniciFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApiKullaniciFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Api Kullanıcıları Listele
+      description: >-
+        Veritabanındaki tüm ApiKullanıcıları getirir. Bu işlem, tüm
+        kullanıcıları listelemek için kullanılır.
+      tags:
+        - Api Kullanıcı
+  /api/ApiKullanici/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Api Kullanıcı Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip ApiKullanıcıyı getirir. Bu işlem, belirli bir
+        kullanıcıyı görüntülemek için kullanılır.
+      tags:
+        - Api Kullanıcı
   /api/ApiKullanici/add:
     post:
       requestBody:
@@ -746,12 +791,12 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ApiKullanıcı Ekleme
+      summary: Api Kullanıcı Ekle
       description: >-
         Yeni bir ApiKullanıcı ekler. Bu işlem, sistemde yeni kullanıcılar
         oluşturmak için kullanılır.
       tags:
-        - Api Kullanici
+        - Api Kullanıcı
   /api/ApiKullanici/addrange:
     post:
       requestBody:
@@ -779,135 +824,12 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ApiKullanıcı Aralığı Ekleme
+      summary: Api Kullanıcı Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla ApiKullanıcı ekler. Bu işlem, toplu
         kullanıcı eklemeleri yapmak için kullanılır.
       tags:
-        - Api Kullanici
-  /api/ApiKullanici/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ApiKullanici'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ApiKullanici'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/ApiKullanici'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ApiKullanici'
-      responses:
-        '200':
-          description: Success
-      summary: ApiKullanıcı Silme
-      description: >-
-        Belirtilen ID'ye sahip ApiKullanıcıyı siler. Bu işlem, kullanıcıları
-        sistemden kaldırmak için kullanılır.
-      tags:
-        - Api Kullanici
-  /api/ApiKullanici/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile ApiKullanıcı Silme
-      description: >-
-        Belirtilen ID'ye sahip ApiKullanıcıyı siler. Bu işlem, belirli bir
-        kullanıcıyı sistemden kaldırmak için kullanılır.
-      tags:
-        - Api Kullanici
-  /api/ApiKullanici/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/ApiKullanici'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/ApiKullanici'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/ApiKullanici'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/ApiKullanici'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu ApiKullanıcı Silme
-      description: >-
-        Belirtilen aralıkta bulunan ApiKullanıcıları toplu olarak siler. Bu
-        işlem, birden fazla kullanıcıyı aynı anda kaldırmak için kullanılır.
-      tags:
-        - Api Kullanici
-  /api/ApiKullanici/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ApiKullaniciFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ApiKullaniciFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/ApiKullaniciFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ApiKullaniciFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm ApiKullanıcıları Getir
-      description: >-
-        Veritabanındaki tüm ApiKullanıcıları getirir. Bu işlem, tüm
-        kullanıcıları listelemek için kullanılır.
-      tags:
-        - Api Kullanici
-  /api/ApiKullanici/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile ApiKullanıcı Getir
-      description: >-
-        Belirtilen ID'ye sahip ApiKullanıcıyı getirir. Bu işlem, belirli bir
-        kullanıcıyı görüntülemek için kullanılır.
-      tags:
-        - Api Kullanici
+        - Api Kullanıcı
   /api/ApiKullanici/update:
     put:
       requestBody:
@@ -927,12 +849,12 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ApiKullanıcı Güncelle
+      summary: Api Kullanıcı Güncelle
       description: >-
         Belirtilen ID'ye sahip ApiKullanıcıyı günceller. Bu işlem, mevcut bir
         kullanıcının bilgilerini güncellemek için kullanılır.
       tags:
-        - Api Kullanici
+        - Api Kullanıcı
   /api/ApiKullanici/updaterange:
     put:
       requestBody:
@@ -960,13 +882,91 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu ApiKullanıcı Güncelleme
+      summary: Api Kullanıcı Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan ApiKullanıcıları toplu olarak günceller. Bu
         işlem, birden fazla kullanıcının aynı anda güncellenmesi gerektiğinde
         kullanılır.
       tags:
-        - Api Kullanici
+        - Api Kullanıcı
+  /api/ApiKullanici/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApiKullanici'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiKullanici'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ApiKullanici'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApiKullanici'
+      responses:
+        '200':
+          description: Success
+      summary: Api Kullanıcı Sil
+      description: >-
+        Belirtilen ID'ye sahip ApiKullanıcıyı siler. Bu işlem, kullanıcıları
+        sistemden kaldırmak için kullanılır.
+      tags:
+        - Api Kullanıcı
+  /api/ApiKullanici/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Api Kullanıcı Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip ApiKullanıcıyı siler. Bu işlem, belirli bir
+        kullanıcıyı sistemden kaldırmak için kullanılır.
+      tags:
+        - Api Kullanıcı
+  /api/ApiKullanici/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/ApiKullanici'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/ApiKullanici'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/ApiKullanici'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/ApiKullanici'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Api Kullanıcı Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan ApiKullanıcıları toplu olarak siler. Bu
+        işlem, birden fazla kullanıcıyı aynı anda kaldırmak için kullanılır.
+      tags:
+        - Api Kullanıcı
   /api/Auth/GirisYap:
     post:
       requestBody:
@@ -1110,6 +1110,51 @@ paths:
         iletir.
       tags:
         - Auth
+  /api/Ayar/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AyarFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AyarFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AyarFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AyarFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Ayarları Listele
+      description: >-
+        Veritabanındaki tüm ayarları getirir. Bu işlem, kullanıcıların tüm
+        ayarları listelemelerini sağlar.
+      tags:
+        - Ayar
+  /api/Ayar/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Ayar Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip ayarı getirir. Bu işlem, belirli bir ayarı
+        görüntülemek için kullanılır.
+      tags:
+        - Ayar
   /api/Ayar/add:
     post:
       requestBody:
@@ -1129,7 +1174,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ayar Ekleme
+      summary: Ayar Ekle
       description: >-
         Yeni bir ayar ekler. Bu işlem, sistemde yeni ayarlar oluşturmak için
         kullanılır.
@@ -1162,133 +1207,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ayar Aralığı Ekleme
+      summary: Ayar Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla ayar ekler. Bu işlem, toplu ayar
         eklemeleri yapmak için kullanılır.
-      tags:
-        - Ayar
-  /api/Ayar/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Ayar'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Ayar'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Ayar'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Ayar'
-      responses:
-        '200':
-          description: Success
-      summary: Ayar Silme
-      description: >-
-        Belirtilen ID'ye sahip ayarı siler. Bu işlem, kullanıcıların belirli
-        ayarları sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Ayar
-  /api/Ayar/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Ayar Silme
-      description: >-
-        Belirtilen ID'ye sahip ayarı siler. Bu işlem, belirli bir ayarın
-        sistemden kaldırılmasını sağlar.
-      tags:
-        - Ayar
-  /api/Ayar/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Ayar'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Ayar'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Ayar'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Ayar'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Ayar Silme
-      description: >-
-        Belirtilen aralıkta bulunan ayarları toplu olarak siler. Bu işlem,
-        birden fazla ayarın aynı anda temizlenmesi gerektiğinde kullanılır.
-      tags:
-        - Ayar
-  /api/Ayar/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/AyarFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AyarFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/AyarFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/AyarFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Ayarları Getir
-      description: >-
-        Veritabanındaki tüm ayarları getirir. Bu işlem, kullanıcıların tüm
-        ayarları listelemelerini sağlar.
-      tags:
-        - Ayar
-  /api/Ayar/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Ayar Getir
-      description: >-
-        Belirtilen ID'ye sahip ayarı getirir. Bu işlem, belirli bir ayarı
-        görüntülemek için kullanılır.
       tags:
         - Ayar
   /api/Ayar/update:
@@ -1343,12 +1265,135 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Ayar Güncelleme
+      summary: Ayar Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan ayarları toplu olarak günceller. Bu işlem,
         birden fazla ayarın aynı anda güncellenmesi gerektiğinde kullanılır.
       tags:
         - Ayar
+  /api/Ayar/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Ayar'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ayar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Ayar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Ayar'
+      responses:
+        '200':
+          description: Success
+      summary: Ayar Sil
+      description: >-
+        Belirtilen ID'ye sahip ayarı siler. Bu işlem, kullanıcıların belirli
+        ayarları sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Ayar
+  /api/Ayar/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Ayar Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip ayarı siler. Bu işlem, belirli bir ayarın
+        sistemden kaldırılmasını sağlar.
+      tags:
+        - Ayar
+  /api/Ayar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Ayar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Ayar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Ayar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Ayar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Ayar Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan ayarları toplu olarak siler. Bu işlem,
+        birden fazla ayarın aynı anda temizlenmesi gerektiğinde kullanılır.
+      tags:
+        - Ayar
+  /api/Ayarekmodul/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AyarekmodulFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AyarekmodulFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AyarekmodulFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AyarekmodulFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Ayar Ek Modüllerini Listele
+      description: >-
+        Veritabanındaki tüm ayar ek modüllerini getirir. Bu işlem,
+        kullanıcıların tüm modülleri listelemelerini sağlar.
+      tags:
+        - Ayar Ek Modül
+  /api/Ayarekmodul/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Ayar Ek Modül Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip ayar ek modülünü getirir. Bu işlem, belirli bir
+        modülü görüntülemek için kullanılır.
+      tags:
+        - Ayar Ek Modül
   /api/Ayarekmodul/add:
     post:
       requestBody:
@@ -1368,7 +1413,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ayar Ek Modül Ekleme
+      summary: Ayar Ek Modül Ekle
       description: >-
         Yeni bir ayar ek modülü ekler. Bu işlem, sistemde yeni modüller
         oluşturmak için kullanılır.
@@ -1401,134 +1446,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ayar Ek Modül Aralığı Ekleme
+      summary: Ayar Ek Modül Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla ayar ek modülü ekler. Bu işlem, toplu
         modül eklemeleri yapmak için kullanılır.
-      tags:
-        - Ayar Ek Modül
-  /api/Ayarekmodul/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Ayarekmodul'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Ayarekmodul'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Ayarekmodul'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Ayarekmodul'
-      responses:
-        '200':
-          description: Success
-      summary: Ayar Ek Modül Silme
-      description: >-
-        Belirtilen ID'ye sahip ayar ek modülünü siler. Bu işlem, kullanıcıların
-        belirli modülleri sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Ayar Ek Modül
-  /api/Ayarekmodul/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Ayar Ek Modül Silme
-      description: >-
-        Belirtilen ID'ye sahip ayar ek modülünü siler. Bu işlem, belirli bir
-        modülün sistemden kaldırılmasını sağlar.
-      tags:
-        - Ayar Ek Modül
-  /api/Ayarekmodul/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Ayarekmodul'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Ayarekmodul'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Ayarekmodul'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Ayarekmodul'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Ayar Ek Modül Silme
-      description: >-
-        Belirtilen aralıkta bulunan ayar ek modüllerini toplu olarak siler. Bu
-        işlem, birden fazla modülün aynı anda temizlenmesi gerektiğinde
-        kullanılır.
-      tags:
-        - Ayar Ek Modül
-  /api/Ayarekmodul/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/AyarekmodulFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AyarekmodulFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/AyarekmodulFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/AyarekmodulFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Ayar Ek Modüllerini Getir
-      description: >-
-        Veritabanındaki tüm ayar ek modüllerini getirir. Bu işlem,
-        kullanıcıların tüm modülleri listelemelerini sağlar.
-      tags:
-        - Ayar Ek Modül
-  /api/Ayarekmodul/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Ayar Ek Modül Getir
-      description: >-
-        Belirtilen ID'ye sahip ayar ek modülünü getirir. Bu işlem, belirli bir
-        modülü görüntülemek için kullanılır.
       tags:
         - Ayar Ek Modül
   /api/Ayarekmodul/update:
@@ -1583,39 +1504,39 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Ayar Ek Modüllerini Güncelleme
+      summary: Ayar Ek Modüllerini Güncelle
       description: >-
         Belirtilen aralıkta bulunan ayar ek modüllerini toplu olarak günceller.
         Bu işlem, birden fazla modülün aynı anda güncellenmesi gerektiğinde
         kullanılır.
       tags:
         - Ayar Ek Modül
-  /api/Banka/ControlDelete:
+  /api/Ayarekmodul/delete:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Banka'
+              $ref: '#/components/schemas/Ayarekmodul'
           application/json:
             schema:
-              $ref: '#/components/schemas/Banka'
+              $ref: '#/components/schemas/Ayarekmodul'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/Banka'
+              $ref: '#/components/schemas/Ayarekmodul'
           text/json:
             schema:
-              $ref: '#/components/schemas/Banka'
+              $ref: '#/components/schemas/Ayarekmodul'
       responses:
         '200':
           description: Success
-      summary: Banka Kontrol Silme
+      summary: Ayar Ek Modül Sil
       description: >-
-        Belirtilen kriterlere göre banka kayıtlarını siler. Bu işlem, belirli
-        bankaların sistemden kaldırılması için kullanılır.
+        Belirtilen ID'ye sahip ayar ek modülünü siler. Bu işlem, kullanıcıların
+        belirli modülleri sistemden kaldırmalarına olanak tanır.
       tags:
-        - Banka
-  /api/Banka/ControlDeleteById:
+        - Ayar Ek Modül
+  /api/Ayarekmodul/deletebyid:
     delete:
       parameters:
         - explode: true
@@ -1629,13 +1550,47 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Banka Kontrol Silme
+      summary: Ayar Ek Modül Sil ID ile
       description: >-
-        Belirtilen ID'ye sahip banka kaydını siler. Bu işlem, belirli bir
-        bankanın sistemden kaldırılmasını sağlar.
+        Belirtilen ID'ye sahip ayar ek modülünü siler. Bu işlem, belirli bir
+        modülün sistemden kaldırılmasını sağlar.
       tags:
-        - Banka
-  /api/Banka/GetListWithBakiye:
+        - Ayar Ek Modül
+  /api/Ayarekmodul/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Ayarekmodul'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Ayarekmodul'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Ayarekmodul'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Ayarekmodul'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Ayar Ek Modül Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan ayar ek modüllerini toplu olarak siler. Bu
+        işlem, birden fazla modülün aynı anda temizlenmesi gerektiğinde
+        kullanılır.
+      tags:
+        - Ayar Ek Modül
+  /api/Banka/getall:
     post:
       requestBody:
         content:
@@ -1654,11 +1609,30 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Banka Listeleme ve Bakiye Getirme
+      summary: Banka Kayıtlarını Listele
       description: >-
-        Banka hesaplarını ve bu hesapların bakiye bilgilerini getirir. Bu işlem,
-        kullanıcıların banka hesaplarını ve bakiyelerini görüntülemelerini
-        sağlar.
+        Veritabanındaki tüm banka kayıtlarını getirir. Bu işlem, kullanıcıların
+        tüm bankaları listelemelerini sağlar.
+      tags:
+        - Banka
+  /api/Banka/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Banka Kayıt Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip banka kaydını getirir. Bu işlem, belirli bir
+        bankayı görüntülemek için kullanılır.
       tags:
         - Banka
   /api/Banka/add:
@@ -1680,7 +1654,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Banka Ekleme
+      summary: Banka Kayıt Ekle
       description: >-
         Yeni bir banka kaydı ekler. Bu işlem, sisteme yeni banka bilgileri
         eklemek için kullanılır.
@@ -1713,134 +1687,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Banka Aralığı Ekleme
+      summary: Banka Kayıt Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla banka kaydı ekler. Bu işlem, toplu
         banka eklemeleri yapmak için kullanılır.
-      tags:
-        - Banka
-  /api/Banka/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Banka'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Banka'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Banka'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Banka'
-      responses:
-        '200':
-          description: Success
-      summary: Banka Silme
-      description: >-
-        Belirtilen ID'ye sahip banka kaydını siler. Bu işlem, kullanıcıların
-        belirli bir banka kaydını sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Banka
-  /api/Banka/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Banka Silme
-      description: >-
-        Belirtilen ID'ye sahip banka kaydını siler. Bu işlem, belirli bir
-        bankanın sistemden kaldırılmasını sağlar.
-      tags:
-        - Banka
-  /api/Banka/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Banka'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Banka'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Banka'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Banka'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Banka Silme
-      description: >-
-        Belirtilen aralıkta bulunan banka kayıtlarını toplu olarak siler. Bu
-        işlem, birden fazla bankanın aynı anda kaldırılması gerektiğinde
-        kullanılır.
-      tags:
-        - Banka
-  /api/Banka/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/BankaFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BankaFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/BankaFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/BankaFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Banka Kayıtlarını Getir
-      description: >-
-        Veritabanındaki tüm banka kayıtlarını getirir. Bu işlem, kullanıcıların
-        tüm bankaları listelemelerini sağlar.
-      tags:
-        - Banka
-  /api/Banka/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Banka Getir
-      description: >-
-        Belirtilen ID'ye sahip banka kaydını getirir. Bu işlem, belirli bir
-        bankayı görüntülemek için kullanılır.
       tags:
         - Banka
   /api/Banka/update:
@@ -1862,7 +1712,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Banka Güncelle
+      summary: Banka Kayıt Güncelle
       description: >-
         Belirtilen ID'ye sahip banka kaydını günceller. Bu işlem, mevcut bir
         bankadaki bilgileri güncellemek için kullanılır.
@@ -1895,11 +1745,161 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Banka Güncelleme
+      summary: Banka Kayıt Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan banka kayıtlarını toplu olarak günceller. Bu
         işlem, birden fazla bankanın aynı anda güncellenmesi gerektiğinde
         kullanılır.
+      tags:
+        - Banka
+  /api/Banka/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Banka'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Banka'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Banka'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Banka'
+      responses:
+        '200':
+          description: Success
+      summary: Banka Sil
+      description: >-
+        Belirtilen ID'ye sahip banka kaydını siler. Bu işlem, kullanıcıların
+        belirli bir banka kaydını sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Banka
+  /api/Banka/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Banka Kayıt Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip banka kaydını siler. Bu işlem, belirli bir
+        bankanın sistemden kaldırılmasını sağlar.
+      tags:
+        - Banka
+  /api/Banka/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Banka'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Banka'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Banka'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Banka'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Banka Kayıt Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan banka kayıtlarını toplu olarak siler. Bu
+        işlem, birden fazla bankanın aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - Banka
+  /api/Banka/ControlDelete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Banka'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Banka'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Banka'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Banka'
+      responses:
+        '200':
+          description: Success
+      summary: Banka Kayıt Kontrol Sil
+      description: >-
+        Belirtilen kriterlere göre banka kayıtlarını siler. Bu işlem, belirli
+        bankaların sistemden kaldırılması için kullanılır.
+      tags:
+        - Banka
+  /api/Banka/ControlDeleteById:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Banka Kayıt Kontrol Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip banka kaydını siler. Bu işlem, belirli bir
+        bankanın sistemden kaldırılmasını sağlar.
+      tags:
+        - Banka
+  /api/Banka/GetListWithBakiye:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BankaFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankaFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BankaFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BankaFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Banka ve Bakiye Listele
+      description: >-
+        Banka hesaplarını ve bu hesapların bakiye bilgilerini getirir. Bu işlem,
+        kullanıcıların banka hesaplarını ve bakiyelerini görüntülemelerini
+        sağlar.
       tags:
         - Banka
   /api/BankaIsl/BankaIslBorcAlacakBakiye:
