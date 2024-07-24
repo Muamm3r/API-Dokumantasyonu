@@ -1635,6 +1635,32 @@ paths:
         bankayı görüntülemek için kullanılır.
       tags:
         - Banka
+  /api/Banka/GetListWithBakiye:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BankaFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankaFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BankaFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BankaFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Banka ve Bakiye Listele
+      description: >-
+        Banka hesaplarını ve bu hesapların bakiye bilgilerini getirir. Bu işlem,
+        kullanıcıların banka hesaplarını ve bakiyelerini görüntülemelerini
+        sağlar.
+      tags:
+        - Banka
   /api/Banka/add:
     post:
       requestBody:
@@ -1876,33 +1902,7 @@ paths:
         bankanın sistemden kaldırılmasını sağlar.
       tags:
         - Banka
-  /api/Banka/GetListWithBakiye:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/BankaFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BankaFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/BankaFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/BankaFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Banka ve Bakiye Listele
-      description: >-
-        Banka hesaplarını ve bu hesapların bakiye bilgilerini getirir. Bu işlem,
-        kullanıcıların banka hesaplarını ve bakiyelerini görüntülemelerini
-        sağlar.
-      tags:
-        - Banka
-  /api/BankaIsl/BankaIslBorcAlacakBakiye:
+  /api/BankaIsl/getall:
     post:
       requestBody:
         content:
@@ -1921,35 +1921,30 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Banka İşlem Borç/Alacak Bakiye Getirme
+      summary: Banka İşlemlerini Listele
       description: >-
-        Banka işlemlerinin borç ve alacak bakiyelerini getirir. Bu işlem,
-        bankadaki borç ve alacak durumunu incelemek için kullanılır.
+        Veritabanındaki tüm banka işlemlerini getirir. Bu işlem, kullanıcıların
+        tüm banka işlemlerini listelemelerini sağlar.
       tags:
         - BankaIsl
-  /api/BankaIsl/BankaIslemYap:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/BankaIsl'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BankaIsl'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/BankaIsl'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/BankaIsl'
+  /api/BankaIsl/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
       responses:
         '200':
           description: Success
-      summary: Banka İşlemi Yapma
+      summary: Banka İşlemi Listele ID ile
       description: >-
-        Banka üzerinde bir işlem gerçekleştirir. Bu işlem, banka hesapları
-        arasında para transferi veya diğer işlemleri yönetmek için kullanılır.
+        Belirtilen ID'ye sahip banka işlemini getirir. Bu işlem, belirli bir
+        işlemi görüntülemek için kullanılır.
       tags:
         - BankaIsl
   /api/BankaIsl/GetListAll:
@@ -1971,7 +1966,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Tüm Banka İşlemlerini Listeleme
+      summary: Banka İşlemlerini Listele
       description: >-
         Veritabanındaki tüm banka işlemlerini listeler. Bu işlem, tüm banka
         işlemlerinin dökümünü almak için kullanılır.
@@ -1996,7 +1991,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Tüm Banka İşlemlerini ve Bakiyelerini Getirme
+      summary: Banka İşlemlerini ve Bakiyelerini Listele
       description: >-
         Banka işlemlerini ve ilgili bakiyeleri getirir. Bu işlem, işlemlerle
         birlikte bakiye bilgilerini de gösterir.
@@ -2021,11 +2016,36 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Banka İşlemlerini ve Bakiyelerini Getirme
+      summary: Banka İşlemi ve Bakiye Listele
       description: >-
         Belirtilen banka işlemlerini ve ilgili bakiyeleri getirir. Bu işlem,
         belirli işlemlerle ilişkili bakiye bilgilerini görüntülemek için
         kullanılır.
+      tags:
+        - BankaIsl
+  /api/BankaIsl/BankaIslBorcAlacakBakiye:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BankaIslFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankaIslFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BankaIslFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BankaIslFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Banka İşlem Borç/Alacak Bakiye Listeleme
+      description: >-
+        Banka işlemlerinin borç ve alacak bakiyelerini getirir. Bu işlem,
+        bankadaki borç ve alacak durumunu incelemek için kullanılır.
       tags:
         - BankaIsl
   /api/BankaIsl/add:
@@ -2047,7 +2067,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Banka İşlemi Ekleme
+      summary: Banka İşlemi Ekle
       description: >-
         Yeni bir banka işlemi ekler. Bu işlem, sisteme yeni banka işlemleri
         eklemek için kullanılır.
@@ -2080,133 +2100,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Banka İşlemi Aralığı Ekleme
+      summary: Banka İşlemi Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla banka işlemi ekler. Bu işlem, toplu
         banka işlemleri eklemek için kullanılır.
-      tags:
-        - BankaIsl
-  /api/BankaIsl/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/BankaIsl'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BankaIsl'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/BankaIsl'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/BankaIsl'
-      responses:
-        '200':
-          description: Success
-      summary: Banka İşlemi Silme
-      description: >-
-        Belirtilen ID'ye sahip banka işlemini siler. Bu işlem, belirli bir banka
-        işlemini sistemden kaldırmak için kullanılır.
-      tags:
-        - BankaIsl
-  /api/BankaIsl/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Banka İşlemi Silme
-      description: >-
-        Belirtilen ID'ye sahip banka işlemini siler. Bu işlem, belirli bir
-        işlemin sistemden kaldırılmasını sağlar.
-      tags:
-        - BankaIsl
-  /api/BankaIsl/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/BankaIsl'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/BankaIsl'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/BankaIsl'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/BankaIsl'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Banka İşlemi Silme
-      description: >-
-        Belirtilen aralıkta bulunan banka işlemlerini toplu olarak siler. Bu
-        işlem, birden fazla işlemi aynı anda kaldırmak için kullanılır.
-      tags:
-        - BankaIsl
-  /api/BankaIsl/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/BankaIslFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BankaIslFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/BankaIslFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/BankaIslFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Banka İşlemlerini Getir
-      description: >-
-        Veritabanındaki tüm banka işlemlerini getirir. Bu işlem, kullanıcıların
-        tüm banka işlemlerini listelemelerini sağlar.
-      tags:
-        - BankaIsl
-  /api/BankaIsl/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Banka İşlemi Getir
-      description: >-
-        Belirtilen ID'ye sahip banka işlemini getirir. Bu işlem, belirli bir
-        işlemi görüntülemek için kullanılır.
       tags:
         - BankaIsl
   /api/BankaIsl/update:
@@ -2261,13 +2158,161 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Banka İşlemi Güncelleme
+      summary: Banka İşlemi Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan banka işlemlerini toplu olarak günceller. Bu
         işlem, birden fazla bankanın aynı anda güncellenmesi gerektiğinde
         kullanılır.
       tags:
         - BankaIsl
+  /api/BankaIsl/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BankaIsl'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankaIsl'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BankaIsl'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BankaIsl'
+      responses:
+        '200':
+          description: Success
+      summary: Banka İşlemi Sil
+      description: >-
+        Belirtilen ID'ye sahip banka işlemini siler. Bu işlem, belirli bir banka
+        işlemini sistemden kaldırmak için kullanılır.
+      tags:
+        - BankaIsl
+  /api/BankaIsl/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Banka İşlemi Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip banka işlemini siler. Bu işlem, belirli bir
+        işlemin sistemden kaldırılmasını sağlar.
+      tags:
+        - BankaIsl
+  /api/BankaIsl/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/BankaIsl'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/BankaIsl'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/BankaIsl'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/BankaIsl'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Banka İşlemi Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan banka işlemlerini toplu olarak siler. Bu
+        işlem, birden fazla işlemi aynı anda kaldırmak için kullanılır.
+      tags:
+        - BankaIsl
+  /api/BankaIsl/BankaIslemYap:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BankaIsl'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankaIsl'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BankaIsl'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BankaIsl'
+      responses:
+        '200':
+          description: Success
+      summary: Banka İşlemi Yap
+      description: >-
+        Banka üzerinde bir işlem gerçekleştirir. Bu işlem, banka hesapları
+        arasında para transferi veya diğer işlemleri yönetmek için kullanılır.
+      tags:
+        - BankaIsl
+  /api/BankaKullanicisifre/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BankaKullanicisifreFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankaKullanicisifreFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BankaKullanicisifreFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BankaKullanicisifreFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Banka Kullanıcı Şifrelerini Listele
+      description: >-
+        Veritabanındaki tüm banka kullanıcı şifrelerini getirir. Bu işlem,
+        kullanıcıların tüm şifreleri listelemelerini sağlar.
+      tags:
+        - Banka Kullanici Şifre İşlemleri
+  /api/BankaKullanicisifre/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Banka Kullanıcı Şifre Listele ID ile 
+      description: >-
+        Belirtilen ID'ye sahip banka kullanıcı şifresini getirir. Bu işlem,
+        belirli bir şifreyi görüntülemek için kullanılır.
+      tags:
+        - Banka Kullanici Şifre İşlemleri
   /api/BankaKullanicisifre/add:
     post:
       requestBody:
@@ -2287,7 +2332,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Banka Kullanıcı Şifresi Ekleme
+      summary: Banka Kullanıcı Şifre Ekle
       description: >-
         Yeni bir banka kullanıcı şifresi ekler. Bu işlem, sistemde yeni
         kullanıcı şifreleri oluşturmak için kullanılır.
@@ -2320,134 +2365,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Banka Kullanıcı Şifresi Aralığı Ekleme
+      summary: Banka Kullanıcı Şifre Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla banka kullanıcı şifresi ekler. Bu
         işlem, toplu kullanıcı şifreleri eklemek için kullanılır.
-      tags:
-        - Banka Kullanici Şifre İşlemleri
-  /api/BankaKullanicisifre/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/BankaKullanicisifre'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BankaKullanicisifre'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/BankaKullanicisifre'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/BankaKullanicisifre'
-      responses:
-        '200':
-          description: Success
-      summary: Banka Kullanıcı Şifresi Silme
-      description: >-
-        Belirtilen ID'ye sahip banka kullanıcı şifresini siler. Bu işlem,
-        kullanıcıların belirli şifreleri sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Banka Kullanici Şifre İşlemleri
-  /api/BankaKullanicisifre/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Banka Kullanıcı Şifresi Silme
-      description: >-
-        Belirtilen ID'ye sahip banka kullanıcı şifresini siler. Bu işlem,
-        belirli bir şifrenin sistemden kaldırılmasını sağlar.
-      tags:
-        - Banka Kullanici Şifre İşlemleri
-  /api/BankaKullanicisifre/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/BankaKullanicisifre'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/BankaKullanicisifre'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/BankaKullanicisifre'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/BankaKullanicisifre'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Banka Kullanıcı Şifresi Silme
-      description: >-
-        Belirtilen aralıkta bulunan banka kullanıcı şifrelerini toplu olarak
-        siler. Bu işlem, birden fazla şifrenin aynı anda kaldırılması
-        gerektiğinde kullanılır.
-      tags:
-        - Banka Kullanici Şifre İşlemleri
-  /api/BankaKullanicisifre/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/BankaKullanicisifreFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BankaKullanicisifreFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/BankaKullanicisifreFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/BankaKullanicisifreFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Banka Kullanıcı Şifrelerini Getir
-      description: >-
-        Veritabanındaki tüm banka kullanıcı şifrelerini getirir. Bu işlem,
-        kullanıcıların tüm şifreleri listelemelerini sağlar.
-      tags:
-        - Banka Kullanici Şifre İşlemleri
-  /api/BankaKullanicisifre/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Banka Kullanıcı Şifresi Getir
-      description: >-
-        Belirtilen ID'ye sahip banka kullanıcı şifresini getirir. Bu işlem,
-        belirli bir şifreyi görüntülemek için kullanılır.
       tags:
         - Banka Kullanici Şifre İşlemleri
   /api/BankaKullanicisifre/update:
@@ -2469,7 +2390,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Banka Kullanıcı Şifresi Güncelle
+      summary: Banka Kullanıcı Şifre Güncelle
       description: >-
         Belirtilen ID'ye sahip banka kullanıcı şifresini günceller. Bu işlem,
         mevcut bir şifrede yapılan değişiklikleri güncellemek için kullanılır.
@@ -2502,10 +2423,89 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Banka Kullanıcı Şifrelerini Güncelleme
+      summary: Banka Kullanıcı Şifre Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan banka kullanıcı şifrelerini toplu olarak
         günceller. Bu işlem, birden fazla şifrenin aynı anda güncellenmesi
+        gerektiğinde kullanılır.
+      tags:
+        - Banka Kullanici Şifre İşlemleri
+  /api/BankaKullanicisifre/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BankaKullanicisifre'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankaKullanicisifre'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BankaKullanicisifre'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BankaKullanicisifre'
+      responses:
+        '200':
+          description: Success
+      summary: Banka Kullanıcı Şifre Sil
+      description: >-
+        Belirtilen ID'ye sahip banka kullanıcı şifresini siler. Bu işlem,
+        kullanıcıların belirli şifreleri sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Banka Kullanici Şifre İşlemleri
+  /api/BankaKullanicisifre/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Banka Kullanıcı Şifre Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip banka kullanıcı şifresini siler. Bu işlem,
+        belirli bir şifrenin sistemden kaldırılmasını sağlar.
+      tags:
+        - Banka Kullanici Şifre İşlemleri
+  /api/BankaKullanicisifre/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/BankaKullanicisifre'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/BankaKullanicisifre'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/BankaKullanicisifre'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/BankaKullanicisifre'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Banka Kullanıcı Şifre Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan banka kullanıcı şifrelerini toplu olarak
+        siler. Bu işlem, birden fazla şifrenin aynı anda kaldırılması
         gerektiğinde kullanılır.
       tags:
         - Banka Kullanici Şifre İşlemleri
