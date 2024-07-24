@@ -8,6 +8,51 @@ servers:
 security:
   - Bearer: []
 paths:
+  /api/Ajanda/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AjandaFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AjandaFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AjandaFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AjandaFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Ajandaları Listele
+      description: >-
+        Veritabanındaki tüm ajanda kayıtlarını getirir. Bu işlem, kullanıcıların
+        tüm ajanda kayıtlarını listelemelerini sağlar.
+      tags:
+        - Ajanda İşlemleri
+  /api/Ajanda/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Ajanda Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip ajanda kaydını getirir. Bu işlem, belirli bir
+        ajanda kaydını görüntülemek için kullanılır.
+      tags:
+        - Ajanda İşlemleri
   /api/Ajanda/add:
     post:
       requestBody:
@@ -60,10 +105,68 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Ajanda Aralığı Ekleme
+      summary: Ajanda Toplu Ekleme
       description: >-
         Belirtilen aralıkta birden fazla ajanda kaydı ekler. Bu işlem, toplu
         ajanda eklemeleri yapmak için kullanılır.
+      tags:
+        - Ajanda İşlemleri
+  /api/Ajanda/update:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Ajanda'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ajanda'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Ajanda'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Ajanda'
+      responses:
+        '200':
+          description: Success
+      summary: Ajanda Güncelle
+      description: >-
+        Belirtilen ID'ye sahip ajanda kaydını günceller. Bu işlem, mevcut bir
+        ajanda kaydındaki bilgileri güncellemek için kullanılır.
+      tags:
+        - Ajanda İşlemleri
+  /api/Ajanda/updaterange:
+    put:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Ajanda'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Ajanda'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Ajanda'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Ajanda'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Toplu Ajanda Güncelle
+      description: >-
+        Birden fazla ajanda kaydını aynı anda günceller. Bu işlem, toplu
+        düzenlemeler yapmak gerektiğinde kullanılır.
       tags:
         - Ajanda İşlemleri
   /api/Ajanda/delete:
@@ -135,114 +238,11 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Ajanda Silme
+      summary: Ajanda Silme Toplu
       description: >-
         Belirtilen aralıkta bulunan ajanda kayıtlarını toplu olarak siler. Bu
         işlem, birden fazla kaydın aynı anda temizlenmesi gerektiğinde
         kullanılır.
-      tags:
-        - Ajanda İşlemleri
-  /api/Ajanda/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/AjandaFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AjandaFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/AjandaFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/AjandaFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Ajandaları Getir
-      description: >-
-        Veritabanındaki tüm ajanda kayıtlarını getirir. Bu işlem, kullanıcıların
-        tüm ajanda kayıtlarını listelemelerini sağlar.
-      tags:
-        - Ajanda İşlemleri
-  /api/Ajanda/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Ajanda Getir
-      description: >-
-        Belirtilen ID'ye sahip ajanda kaydını getirir. Bu işlem, belirli bir
-        ajanda kaydını görüntülemek için kullanılır.
-      tags:
-        - Ajanda İşlemleri
-  /api/Ajanda/update:
-    put:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Ajanda'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Ajanda'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Ajanda'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Ajanda'
-      responses:
-        '200':
-          description: Success
-      summary: Ajanda Güncelle
-      description: >-
-        Belirtilen ID'ye sahip ajanda kaydını günceller. Bu işlem, mevcut bir
-        ajanda kaydındaki bilgileri güncellemek için kullanılır.
-      tags:
-        - Ajanda İşlemleri
-  /api/Ajanda/updaterange:
-    put:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Ajanda'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Ajanda'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Ajanda'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Ajanda'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Ajanda Güncelleme
-      description: >-
-        Birden fazla ajanda kaydını aynı anda günceller. Bu işlem, toplu
-        düzenlemeler yapmak gerektiğinde kullanılır.
       tags:
         - Ajanda İşlemleri
   /api/AjandaDosya/add:
