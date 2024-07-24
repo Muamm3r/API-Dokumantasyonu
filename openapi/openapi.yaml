@@ -2509,6 +2509,51 @@ paths:
         gerektiğinde kullanılır.
       tags:
         - Banka Kullanici Şifre İşlemleri
+  /api/Bodrotablo/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BodrotabloFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BodrotabloFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BodrotabloFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BodrotabloFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Tablolarını Listele
+      description: >-
+        Veritabanındaki tüm bordro tablolarını getirir. Bu işlem, kullanıcıların
+        tüm bordro kayıtlarını listelemelerini sağlar.
+      tags:
+        - Bodro Tablo
+  /api/Bodrotablo/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Tablo Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip bordro tablosunu getirir. Bu işlem, belirli bir
+        bordro kaydını görüntülemek için kullanılır.
+      tags:
+        - Bodro Tablo
   /api/Bodrotablo/add:
     post:
       requestBody:
@@ -2528,7 +2573,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Bordro Tablosu Ekleme
+      summary: Bordro Tablo Ekle
       description: >-
         Yeni bir bordro tablosu ekler. Bu işlem, sisteme yeni bordro kayıtları
         eklemek için kullanılır.
@@ -2561,134 +2606,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Bordro Tablosu Aralığı Ekleme
+      summary: Bordro Tablo Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla bordro tablosu ekler. Bu işlem, toplu
         bordro eklemeleri yapmak için kullanılır.
-      tags:
-        - Bodro Tablo
-  /api/Bodrotablo/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Bodrotablo'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Bodrotablo'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Bodrotablo'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Bodrotablo'
-      responses:
-        '200':
-          description: Success
-      summary: Bordro Tablosu Silme
-      description: >-
-        Belirtilen ID'ye sahip bordro tablosunu siler. Bu işlem, kullanıcıların
-        belirli bordro tablolarını sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Bodro Tablo
-  /api/Bodrotablo/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Bordro Tablosu Silme
-      description: >-
-        Belirtilen ID'ye sahip bordro tablosunu siler. Bu işlem, belirli bir
-        bordro kaydının sistemden kaldırılmasını sağlar.
-      tags:
-        - Bodro Tablo
-  /api/Bodrotablo/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Bodrotablo'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Bodrotablo'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Bodrotablo'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Bodrotablo'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Bordro Tablosu Silme
-      description: >-
-        Belirtilen aralıkta bulunan bordro tablolarını toplu olarak siler. Bu
-        işlem, birden fazla bordro kaydının aynı anda kaldırılması gerektiğinde
-        kullanılır.
-      tags:
-        - Bodro Tablo
-  /api/Bodrotablo/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/BodrotabloFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BodrotabloFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/BodrotabloFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/BodrotabloFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Bordro Tablolarını Getir
-      description: >-
-        Veritabanındaki tüm bordro tablolarını getirir. Bu işlem, kullanıcıların
-        tüm bordro kayıtlarını listelemelerini sağlar.
-      tags:
-        - Bodro Tablo
-  /api/Bodrotablo/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Bordro Tablosu Getir
-      description: >-
-        Belirtilen ID'ye sahip bordro tablosunu getirir. Bu işlem, belirli bir
-        bordro kaydını görüntülemek için kullanılır.
       tags:
         - Bodro Tablo
   /api/Bodrotablo/update:
@@ -2710,7 +2631,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Bordro Tablosu Güncelle
+      summary: Bordro Tablo Güncelle
       description: >-
         Belirtilen ID'ye sahip bordro tablosunu günceller. Bu işlem, mevcut bir
         bordro kaydındaki bilgileri güncellemek için kullanılır.
@@ -2743,13 +2664,137 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Bordro Tablosu Güncelleme
+      summary: Bordro Tablo Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan bordro tablolarını toplu olarak günceller.
         Bu işlem, birden fazla bordro kaydının aynı anda güncellenmesi
         gerektiğinde kullanılır.
       tags:
         - Bodro Tablo
+  /api/Bodrotablo/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Bodrotablo'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Bodrotablo'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Bodrotablo'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Bodrotablo'
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Tablo Sil
+      description: >-
+        Belirtilen ID'ye sahip bordro tablosunu siler. Bu işlem, kullanıcıların
+        belirli bordro tablolarını sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Bodro Tablo
+  /api/Bodrotablo/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Tablo Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip bordro tablosunu siler. Bu işlem, belirli bir
+        bordro kaydının sistemden kaldırılmasını sağlar.
+      tags:
+        - Bodro Tablo
+  /api/Bodrotablo/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Bodrotablo'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Bodrotablo'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Bodrotablo'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Bodrotablo'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Tablo Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan bordro tablolarını toplu olarak siler. Bu
+        işlem, birden fazla bordro kaydının aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - Bodro Tablo
+  /api/Bordroayar/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BordroayarFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BordroayarFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BordroayarFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BordroayarFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Ayarlarını Listele
+      description: >-
+        Veritabanındaki tüm bordro ayarlarını getirir. Bu işlem, kullanıcıların
+        tüm bordro ayarlarını listelemelerini sağlar.
+      tags:
+        - Bordro Ayar
+  /api/Bordroayar/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Ayar Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip bordro ayarını getirir. Bu işlem, belirli bir
+        bordro ayarını görüntülemek için kullanılır.
+      tags:
+        - Bordro Ayar
   /api/Bordroayar/add:
     post:
       requestBody:
@@ -2769,7 +2814,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Bordro Ayarı Ekleme
+      summary: Bordro Ayar Ekle
       description: >-
         Yeni bir bordro ayarı ekler. Bu işlem, sisteme yeni bordro ayarları
         eklemek için kullanılır.
@@ -2802,134 +2847,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Bordro Ayarı Aralığı Ekleme
+      summary: Bordro Ayar Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla bordro ayarı ekler. Bu işlem, toplu
         bordro ayarları eklemek için kullanılır.
-      tags:
-        - Bordro Ayar
-  /api/Bordroayar/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Bordroayar'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Bordroayar'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Bordroayar'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Bordroayar'
-      responses:
-        '200':
-          description: Success
-      summary: Bordro Ayarı Silme
-      description: >-
-        Belirtilen ID'ye sahip bordro ayarını siler. Bu işlem, kullanıcıların
-        belirli bordro ayarlarını sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Bordro Ayar
-  /api/Bordroayar/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Bordro Ayarı Silme
-      description: >-
-        Belirtilen ID'ye sahip bordro ayarını siler. Bu işlem, belirli bir
-        bordro ayarının sistemden kaldırılmasını sağlar.
-      tags:
-        - Bordro Ayar
-  /api/Bordroayar/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Bordroayar'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Bordroayar'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Bordroayar'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Bordroayar'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Bordro Ayarı Silme
-      description: >-
-        Belirtilen aralıkta bulunan bordro ayarlarını toplu olarak siler. Bu
-        işlem, birden fazla bordro ayarının aynı anda kaldırılması gerektiğinde
-        kullanılır.
-      tags:
-        - Bordro Ayar
-  /api/Bordroayar/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/BordroayarFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BordroayarFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/BordroayarFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/BordroayarFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Bordro Ayarlarını Getir
-      description: >-
-        Veritabanındaki tüm bordro ayarlarını getirir. Bu işlem, kullanıcıların
-        tüm bordro ayarlarını listelemelerini sağlar.
-      tags:
-        - Bordro Ayar
-  /api/Bordroayar/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Bordro Ayarı Getir
-      description: >-
-        Belirtilen ID'ye sahip bordro ayarını getirir. Bu işlem, belirli bir
-        bordro ayarını görüntülemek için kullanılır.
       tags:
         - Bordro Ayar
   /api/Bordroayar/update:
@@ -2951,7 +2872,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Bordro Ayarı Güncelle
+      summary: Bordro Ayar Güncelle
       description: >-
         Belirtilen ID'ye sahip bordro ayarını günceller. Bu işlem, mevcut bir
         bordro ayarındaki bilgileri güncellemek için kullanılır.
@@ -2984,13 +2905,137 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Bordro Ayarlarını Güncelleme
+      summary: Bordro Ayar Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan bordro ayarlarını toplu olarak günceller. Bu
         işlem, birden fazla bordro ayarının aynı anda güncellenmesi gerektiğinde
         kullanılır.
       tags:
         - Bordro Ayar
+  /api/Bordroayar/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Bordroayar'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Bordroayar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Bordroayar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Bordroayar'
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Ayar Sil
+      description: >-
+        Belirtilen ID'ye sahip bordro ayarını siler. Bu işlem, kullanıcıların
+        belirli bordro ayarlarını sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Bordro Ayar
+  /api/Bordroayar/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Ayar Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip bordro ayarını siler. Bu işlem, belirli bir
+        bordro ayarının sistemden kaldırılmasını sağlar.
+      tags:
+        - Bordro Ayar
+  /api/Bordroayar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Bordroayar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Bordroayar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Bordroayar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Bordroayar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Ayar Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan bordro ayarlarını toplu olarak siler. Bu
+        işlem, birden fazla bordro ayarının aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - Bordro Ayar
+  /api/Bordrovergidilimayar/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BordrovergidilimayarFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BordrovergidilimayarFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BordrovergidilimayarFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BordrovergidilimayarFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Vergi Dilimi Ayarlarını Listele
+      description: >-
+        Veritabanındaki tüm bordro vergi dilimi ayarlarını getirir. Bu işlem,
+        kullanıcıların tüm vergi dilimi ayarlarını listelemelerini sağlar.
+      tags:
+        - Bordro Vergi Dilim Ayar
+  /api/Bordrovergidilimayar/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Vergi Dilim Ayar Listele ID ile 
+      description: >-
+        Belirtilen ID'ye sahip bordro vergi dilimi ayarını getirir. Bu işlem,
+        belirli bir vergi dilimi ayarını görüntülemek için kullanılır.
+      tags:
+        - Bordro Vergi Dilim Ayar
   /api/Bordrovergidilimayar/add:
     post:
       requestBody:
@@ -3010,7 +3055,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Bordro Vergi Dilimi Ayarı Ekleme
+      summary: Bordro Vergi Dilim Ayar Ekle
       description: >-
         Yeni bir bordro vergi dilimi ayarı ekler. Bu işlem, sisteme yeni vergi
         dilimi ayarları eklemek için kullanılır.
@@ -3043,135 +3088,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Bordro Vergi Dilimi Ayarı Aralığı Ekleme
+      summary: Bordro Vergi Dilim Ayar Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla bordro vergi dilimi ayarı ekler. Bu
         işlem, toplu vergi dilimi ayarları eklemek için kullanılır.
-      tags:
-        - Bordro Vergi Dilim Ayar
-  /api/Bordrovergidilimayar/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Bordrovergidilimayar'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Bordrovergidilimayar'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Bordrovergidilimayar'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Bordrovergidilimayar'
-      responses:
-        '200':
-          description: Success
-      summary: Bordro Vergi Dilimi Ayarı Silme
-      description: >-
-        Belirtilen ID'ye sahip bordro vergi dilimi ayarını siler. Bu işlem,
-        kullanıcıların belirli vergi dilimi ayarlarını sistemden kaldırmalarına
-        olanak tanır.
-      tags:
-        - Bordro Vergi Dilim Ayar
-  /api/Bordrovergidilimayar/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Bordro Vergi Dilimi Ayarı Silme
-      description: >-
-        Belirtilen ID'ye sahip bordro vergi dilimi ayarını siler. Bu işlem,
-        belirli bir vergi dilimi ayarının sistemden kaldırılmasını sağlar.
-      tags:
-        - Bordro Vergi Dilim Ayar
-  /api/Bordrovergidilimayar/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Bordrovergidilimayar'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Bordrovergidilimayar'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Bordrovergidilimayar'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Bordrovergidilimayar'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Bordro Vergi Dilimi Ayarı Silme
-      description: >-
-        Belirtilen aralıkta bulunan bordro vergi dilimi ayarlarını toplu olarak
-        siler. Bu işlem, birden fazla vergi dilimi ayarının aynı anda
-        kaldırılması gerektiğinde kullanılır.
-      tags:
-        - Bordro Vergi Dilim Ayar
-  /api/Bordrovergidilimayar/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/BordrovergidilimayarFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BordrovergidilimayarFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/BordrovergidilimayarFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/BordrovergidilimayarFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Bordro Vergi Dilimi Ayarlarını Getir
-      description: >-
-        Veritabanındaki tüm bordro vergi dilimi ayarlarını getirir. Bu işlem,
-        kullanıcıların tüm vergi dilimi ayarlarını listelemelerini sağlar.
-      tags:
-        - Bordro Vergi Dilim Ayar
-  /api/Bordrovergidilimayar/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Bordro Vergi Dilimi Ayarı Getir
-      description: >-
-        Belirtilen ID'ye sahip bordro vergi dilimi ayarını getirir. Bu işlem,
-        belirli bir vergi dilimi ayarını görüntülemek için kullanılır.
       tags:
         - Bordro Vergi Dilim Ayar
   /api/Bordrovergidilimayar/update:
@@ -3193,7 +3113,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Bordro Vergi Dilimi Ayarı Güncelle
+      summary: Bordro Vergi Dilim Ayar Güncelle
       description: >-
         Belirtilen ID'ye sahip bordro vergi dilimi ayarını günceller. Bu işlem,
         mevcut bir vergi dilimi ayarındaki bilgileri güncellemek için
@@ -3227,13 +3147,138 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Bordro Vergi Dilimi Ayarlarını Güncelleme
+      summary: Bordro Vergi Dilim Ayar Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan bordro vergi dilimi ayarlarını toplu olarak
         günceller. Bu işlem, birden fazla vergi dilimi ayarının aynı anda
         güncellenmesi gerektiğinde kullanılır.
       tags:
         - Bordro Vergi Dilim Ayar
+  /api/Bordrovergidilimayar/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Bordrovergidilimayar'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Bordrovergidilimayar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Bordrovergidilimayar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Bordrovergidilimayar'
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Vergi Dilim Ayar Sil
+      description: >-
+        Belirtilen ID'ye sahip bordro vergi dilimi ayarını siler. Bu işlem,
+        kullanıcıların belirli vergi dilimi ayarlarını sistemden kaldırmalarına
+        olanak tanır.
+      tags:
+        - Bordro Vergi Dilim Ayar
+  /api/Bordrovergidilimayar/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Vergi Dilim Ayar Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip bordro vergi dilimi ayarını siler. Bu işlem,
+        belirli bir vergi dilimi ayarının sistemden kaldırılmasını sağlar.
+      tags:
+        - Bordro Vergi Dilim Ayar
+  /api/Bordrovergidilimayar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Bordrovergidilimayar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Bordrovergidilimayar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Bordrovergidilimayar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Bordrovergidilimayar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Bordro Vergi Dilim Ayar Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan bordro vergi dilimi ayarlarını toplu olarak
+        siler. Bu işlem, birden fazla vergi dilimi ayarının aynı anda
+        kaldırılması gerektiğinde kullanılır.
+      tags:
+        - Bordro Vergi Dilim Ayar
+  /api/CariAdresler/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariAdreslerFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariAdreslerFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariAdreslerFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariAdreslerFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Adresleri Listele
+      description: >-
+        Veritabanındaki tüm cari adresleri getirir. Bu işlem, kullanıcıların tüm
+        müşteri adreslerini listelemelerini sağlar.
+      tags:
+        - Cari Adresler
+  /api/CariAdresler/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Adres Listele ID ile 
+      description: >-
+        Belirtilen ID'ye sahip cari adresi getirir. Bu işlem, belirli bir
+        müşteri adresini görüntülemek için kullanılır.
+      tags:
+        - Cari Adresler
   /api/CariAdresler/add:
     post:
       requestBody:
@@ -3253,7 +3298,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Adres Ekleme
+      summary: Cari Adres Ekle
       description: >-
         Yeni bir cari adres ekler. Bu işlem, sisteme yeni müşteri adresleri
         eklemek için kullanılır.
@@ -3286,134 +3331,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Adres Aralığı Ekleme
+      summary: Cari Adres Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla cari adres ekler. Bu işlem, toplu
         müşteri adresleri eklemek için kullanılır.
-      tags:
-        - Cari Adresler
-  /api/CariAdresler/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariAdresler'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariAdresler'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariAdresler'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariAdresler'
-      responses:
-        '200':
-          description: Success
-      summary: Cari Adres Silme
-      description: >-
-        Belirtilen ID'ye sahip cari adresi siler. Bu işlem, kullanıcıların
-        belirli müşteri adreslerini sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Cari Adresler
-  /api/CariAdresler/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Adres Silme
-      description: >-
-        Belirtilen ID'ye sahip cari adresi siler. Bu işlem, belirli bir müşteri
-        adresinin sistemden kaldırılmasını sağlar.
-      tags:
-        - Cari Adresler
-  /api/CariAdresler/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariAdresler'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariAdresler'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariAdresler'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariAdresler'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Cari Adres Silme
-      description: >-
-        Belirtilen aralıkta bulunan cari adresleri toplu olarak siler. Bu işlem,
-        birden fazla müşteri adresinin aynı anda kaldırılması gerektiğinde
-        kullanılır.
-      tags:
-        - Cari Adresler
-  /api/CariAdresler/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariAdreslerFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariAdreslerFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariAdreslerFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariAdreslerFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Cari Adresleri Getir
-      description: >-
-        Veritabanındaki tüm cari adresleri getirir. Bu işlem, kullanıcıların tüm
-        müşteri adreslerini listelemelerini sağlar.
-      tags:
-        - Cari Adresler
-  /api/CariAdresler/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Adres Getir
-      description: >-
-        Belirtilen ID'ye sahip cari adresi getirir. Bu işlem, belirli bir
-        müşteri adresini görüntülemek için kullanılır.
       tags:
         - Cari Adresler
   /api/CariAdresler/update:
@@ -3468,13 +3389,137 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Cari Adres Güncelleme
+      summary: Cari Adres Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan cari adresleri toplu olarak günceller. Bu
         işlem, birden fazla müşteri adresinin aynı anda güncellenmesi
         gerektiğinde kullanılır.
       tags:
         - Cari Adresler
+  /api/CariAdresler/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariAdresler'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariAdresler'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariAdresler'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariAdresler'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Adres Sil
+      description: >-
+        Belirtilen ID'ye sahip cari adresi siler. Bu işlem, kullanıcıların
+        belirli müşteri adreslerini sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Cari Adresler
+  /api/CariAdresler/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Adres Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip cari adresi siler. Bu işlem, belirli bir müşteri
+        adresinin sistemden kaldırılmasını sağlar.
+      tags:
+        - Cari Adresler
+  /api/CariAdresler/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariAdresler'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariAdresler'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariAdresler'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariAdresler'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Cari Adres Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan cari adresleri toplu olarak siler. Bu işlem,
+        birden fazla müşteri adresinin aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - Cari Adresler
+  /api/CariBanka/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariBankaFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariBankaFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariBankaFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariBankaFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Banka Bilgilerini Listele
+      description: >-
+        Veritabanındaki tüm cari banka bilgilerini getirir. Bu işlem,
+        kullanıcıların tüm müşteri banka bilgilerini listelemelerini sağlar.
+      tags:
+        - Cari Banka
+  /api/CariBanka/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Banka Bilgi Listele ID ile 
+      description: >-
+        Belirtilen ID'ye sahip cari banka bilgisini getirir. Bu işlem, belirli
+        bir müşteri banka bilgisini görüntülemek için kullanılır.
+      tags:
+        - Cari Banka
   /api/CariBanka/add:
     post:
       requestBody:
@@ -3494,7 +3539,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Banka Ekleme
+      summary: Cari Banka Ekle
       description: >-
         Yeni bir cari banka ekler. Bu işlem, sisteme yeni müşteri banka
         bilgileri eklemek için kullanılır.
@@ -3527,135 +3572,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Banka Aralığı Ekleme
+      summary: Cari Banka Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla cari banka ekler. Bu işlem, toplu
         müşteri banka bilgileri eklemek için kullanılır.
-      tags:
-        - Cari Banka
-  /api/CariBanka/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariBanka'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariBanka'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariBanka'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariBanka'
-      responses:
-        '200':
-          description: Success
-      summary: Cari Banka Silme
-      description: >-
-        Belirtilen ID'ye sahip cari banka bilgisini siler. Bu işlem,
-        kullanıcıların belirli müşteri banka bilgilerini sistemden
-        kaldırmalarına olanak tanır.
-      tags:
-        - Cari Banka
-  /api/CariBanka/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Banka Silme
-      description: >-
-        Belirtilen ID'ye sahip cari banka bilgisini siler. Bu işlem, belirli bir
-        müşteri banka bilgisinin sistemden kaldırılmasını sağlar.
-      tags:
-        - Cari Banka
-  /api/CariBanka/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariBanka'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariBanka'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariBanka'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariBanka'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Cari Banka Silme
-      description: >-
-        Belirtilen aralıkta bulunan cari banka bilgilerini toplu olarak siler.
-        Bu işlem, birden fazla müşteri banka bilgisinin aynı anda kaldırılması
-        gerektiğinde kullanılır.
-      tags:
-        - Cari Banka
-  /api/CariBanka/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariBankaFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariBankaFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariBankaFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariBankaFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Cari Banka Bilgilerini Getir
-      description: >-
-        Veritabanındaki tüm cari banka bilgilerini getirir. Bu işlem,
-        kullanıcıların tüm müşteri banka bilgilerini listelemelerini sağlar.
-      tags:
-        - Cari Banka
-  /api/CariBanka/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Banka Bilgisi Getir
-      description: >-
-        Belirtilen ID'ye sahip cari banka bilgisini getirir. Bu işlem, belirli
-        bir müşteri banka bilgisini görüntülemek için kullanılır.
       tags:
         - Cari Banka
   /api/CariBanka/update:
@@ -3677,7 +3597,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Banka Bilgisi Güncelle
+      summary: Cari Banka Bilgi Güncelle
       description: >-
         Belirtilen ID'ye sahip cari banka bilgisini günceller. Bu işlem, mevcut
         bir müşteri banka bilgisindeki bilgileri güncellemek için kullanılır.
@@ -3710,13 +3630,138 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Cari Banka Bilgilerini Güncelleme
+      summary: Cari Banka Bilgilerini Güncelle
       description: >-
         Belirtilen aralıkta bulunan cari banka bilgilerini toplu olarak
         günceller. Bu işlem, birden fazla müşteri banka bilgisinin aynı anda
         güncellenmesi gerektiğinde kullanılır.
       tags:
         - Cari Banka
+  /api/CariBanka/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariBanka'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariBanka'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariBanka'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariBanka'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Banka Sil
+      description: >-
+        Belirtilen ID'ye sahip cari banka bilgisini siler. Bu işlem,
+        kullanıcıların belirli müşteri banka bilgilerini sistemden
+        kaldırmalarına olanak tanır.
+      tags:
+        - Cari Banka
+  /api/CariBanka/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Banka Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip cari banka bilgisini siler. Bu işlem, belirli bir
+        müşteri banka bilgisinin sistemden kaldırılmasını sağlar.
+      tags:
+        - Cari Banka
+  /api/CariBanka/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariBanka'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariBanka'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariBanka'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariBanka'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Cari Banka Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan cari banka bilgilerini toplu olarak siler.
+        Bu işlem, birden fazla müşteri banka bilgisinin aynı anda kaldırılması
+        gerektiğinde kullanılır.
+      tags:
+        - Cari Banka
+  /api/CariGrup/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariGrupFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariGrupFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariGrupFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariGrupFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Grupları Listele
+      description: >-
+        Veritabanındaki tüm cari grupları getirir. Bu işlem, kullanıcıların tüm
+        müşteri gruplarını listelemelerini sağlar.
+      tags:
+        - Cari Grup
+  /api/CariGrup/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Grup Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip cari grubu getirir. Bu işlem, belirli bir müşteri
+        grubunu görüntülemek için kullanılır.
+      tags:
+        - Cari Grup
   /api/CariGrup/add:
     post:
       requestBody:
@@ -3736,7 +3781,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Grup Ekleme
+      summary: Cari Grup Ekle
       description: >-
         Yeni bir cari grup ekler. Bu işlem, sisteme yeni müşteri grupları
         eklemek için kullanılır.
@@ -3769,134 +3814,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Grup Aralığı Ekleme
+      summary: Cari Grup Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla cari grup ekler. Bu işlem, toplu
         müşteri grupları eklemek için kullanılır.
-      tags:
-        - Cari Grup
-  /api/CariGrup/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariGrup'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariGrup'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariGrup'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariGrup'
-      responses:
-        '200':
-          description: Success
-      summary: Cari Grup Silme
-      description: >-
-        Belirtilen ID'ye sahip cari grubu siler. Bu işlem, kullanıcıların
-        belirli müşteri gruplarını sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Cari Grup
-  /api/CariGrup/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Grup Silme
-      description: >-
-        Belirtilen ID'ye sahip cari grubu siler. Bu işlem, belirli bir müşteri
-        grubunun sistemden kaldırılmasını sağlar.
-      tags:
-        - Cari Grup
-  /api/CariGrup/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariGrup'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariGrup'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariGrup'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariGrup'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Cari Grup Silme
-      description: >-
-        Belirtilen aralıkta bulunan cari grupları toplu olarak siler. Bu işlem,
-        birden fazla müşteri grubunun aynı anda kaldırılması gerektiğinde
-        kullanılır.
-      tags:
-        - Cari Grup
-  /api/CariGrup/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariGrupFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariGrupFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariGrupFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariGrupFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Cari Grupları Getir
-      description: >-
-        Veritabanındaki tüm cari grupları getirir. Bu işlem, kullanıcıların tüm
-        müşteri gruplarını listelemelerini sağlar.
-      tags:
-        - Cari Grup
-  /api/CariGrup/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Grup Getir
-      description: >-
-        Belirtilen ID'ye sahip cari grubu getirir. Bu işlem, belirli bir müşteri
-        grubunu görüntülemek için kullanılır.
       tags:
         - Cari Grup
   /api/CariGrup/update:
@@ -3951,13 +3872,137 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Cari Grupları Güncelleme
+      summary: Cari Grup Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan cari grupları toplu olarak günceller. Bu
         işlem, birden fazla müşteri grubunun aynı anda güncellenmesi
         gerektiğinde kullanılır.
       tags:
         - Cari Grup
+  /api/CariGrup/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariGrup'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariGrup'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariGrup'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariGrup'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Grup Sil
+      description: >-
+        Belirtilen ID'ye sahip cari grubu siler. Bu işlem, kullanıcıların
+        belirli müşteri gruplarını sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Cari Grup
+  /api/CariGrup/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Grup Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip cari grubu siler. Bu işlem, belirli bir müşteri
+        grubunun sistemden kaldırılmasını sağlar.
+      tags:
+        - Cari Grup
+  /api/CariGrup/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariGrup'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariGrup'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariGrup'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariGrup'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Cari Grup Sil Toplu 
+      description: >-
+        Belirtilen aralıkta bulunan cari grupları toplu olarak siler. Bu işlem,
+        birden fazla müşteri grubunun aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - Cari Grup
+  /api/CariIsl/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariIslFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariIslFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariIslFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariIslFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Cari İşlemleri Listele
+      description: >-
+        Veritabanındaki tüm cari işlemleri getirir. Bu işlem, kullanıcıların tüm
+        müşteri işlemlerini listelemelerini sağlar.
+      tags:
+        - CariIsl
+  /api/CariIsl/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari İşlem Listele ID ile 
+      description: >-
+        Belirtilen ID'ye sahip cari işlemi getirir. Bu işlem, belirli bir
+        müşteri işlemini görüntülemek için kullanılır.
+      tags:
+        - CariIsl
   /api/CariIsl/CariIslemBorcAlacakBakiye:
     post:
       requestBody:
@@ -3977,60 +4022,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari İşlem Borç Alacak Bakiye
+      summary: Cari İşlem Borç/Alacak Bakiye Listele
       description: >-
         Cari işlemler için borç, alacak ve bakiye bilgilerini getirir. Bu işlem,
         müşterilerin finansal durumunu görüntülemek için kullanılır.
-      tags:
-        - CariIsl
-  /api/CariIsl/CariIslemRapor:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariIslFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariIslFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariIslFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariIslFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Cari İşlem Raporu
-      description: >-
-        Cari işlemler için detaylı bir rapor oluşturur. Bu işlem, müşteri
-        işlemlerinin analiz edilmesi için kullanılır.
-      tags:
-        - CariIsl
-  /api/CariIsl/CariIslemYap:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariIsl'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariIsl'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariIsl'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariIsl'
-      responses:
-        '200':
-          description: Success
-      summary: Cari İşlem Yapma
-      description: >-
-        Yeni bir cari işlem gerçekleştirir. Bu işlem, sisteme yeni müşteri
-        işlemleri eklemek için kullanılır.
       tags:
         - CariIsl
   /api/CariIsl/GetListAll:
@@ -4052,7 +4047,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Tüm Cari İşlemleri Listele
+      summary: Cari İşlemleri Listele
       description: >-
         Veritabanındaki tüm cari işlemleri listeler. Bu işlem, kullanıcıların
         tüm müşteri işlemlerini görüntülemelerini sağlar.
@@ -4077,7 +4072,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Bakiye ile Tüm Cari İşlemleri Listele
+      summary: Cari İşlemleri ve Bakiteleri Listele
       description: >-
         Cari işlemleri bakiye bilgileri ile birlikte listeler. Bu işlem,
         müşterilerin bakiye durumlarını incelemek için kullanılır.
@@ -4102,7 +4097,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Bakiye ile Cari İşlemleri Listele
+      summary: Cari İşlem ve Bakiye Listele
       description: >-
         Belirtilen kriterlere göre cari işlemleri bakiye bilgileri ile birlikte
         listeler. Bu işlem, belirli müşteri işlemlerini bakiye durumları ile
@@ -4128,7 +4123,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari İşlem Ekleme
+      summary: Cari İşlem Ekle
       description: >-
         Yeni bir cari işlem ekler. Bu işlem, sisteme yeni müşteri işlemleri
         eklemek için kullanılır.
@@ -4161,134 +4156,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari İşlem Aralığı Ekleme
+      summary: Cari İşlem Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla cari işlem ekler. Bu işlem, toplu
         müşteri işlemleri eklemek için kullanılır.
-      tags:
-        - CariIsl
-  /api/CariIsl/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariIsl'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariIsl'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariIsl'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariIsl'
-      responses:
-        '200':
-          description: Success
-      summary: Cari İşlem Silme
-      description: >-
-        Belirtilen ID'ye sahip cari işlemi siler. Bu işlem, kullanıcıların
-        belirli müşteri işlemlerini sistemden kaldırmalarına olanak tanır.
-      tags:
-        - CariIsl
-  /api/CariIsl/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari İşlem Silme
-      description: >-
-        Belirtilen ID'ye sahip cari işlemi siler. Bu işlem, belirli bir müşteri
-        işleminin sistemden kaldırılmasını sağlar.
-      tags:
-        - CariIsl
-  /api/CariIsl/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariIsl'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariIsl'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariIsl'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariIsl'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Cari İşlem Silme
-      description: >-
-        Belirtilen aralıkta bulunan cari işlemleri toplu olarak siler. Bu işlem,
-        birden fazla müşteri işleminin aynı anda kaldırılması gerektiğinde
-        kullanılır.
-      tags:
-        - CariIsl
-  /api/CariIsl/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariIslFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariIslFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariIslFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariIslFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Cari İşlemleri Getir
-      description: >-
-        Veritabanındaki tüm cari işlemleri getirir. Bu işlem, kullanıcıların tüm
-        müşteri işlemlerini listelemelerini sağlar.
-      tags:
-        - CariIsl
-  /api/CariIsl/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari İşlem Getir
-      description: >-
-        Belirtilen ID'ye sahip cari işlemi getirir. Bu işlem, belirli bir
-        müşteri işlemini görüntülemek için kullanılır.
       tags:
         - CariIsl
   /api/CariIsl/update:
@@ -4343,89 +4214,39 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Cari İşlemleri Güncelleme
+      summary: Cari İşlem Güncelle Toplu 
       description: >-
         Belirtilen aralıkta bulunan cari işlemleri toplu olarak günceller. Bu
         işlem, birden fazla müşteri işleminin aynı anda güncellenmesi
         gerektiğinde kullanılır.
       tags:
         - CariIsl
-  /api/CariKart/CariEkstre:
+  /api/CariIsl/delete:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
-              $ref: '#/components/schemas/CariKartFilterHelper'
+              $ref: '#/components/schemas/CariIsl'
           application/json:
             schema:
-              $ref: '#/components/schemas/CariKartFilterHelper'
+              $ref: '#/components/schemas/CariIsl'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/CariKartFilterHelper'
+              $ref: '#/components/schemas/CariIsl'
           text/json:
             schema:
-              $ref: '#/components/schemas/CariKartFilterHelper'
+              $ref: '#/components/schemas/CariIsl'
       responses:
         '200':
           description: Success
-      summary: Cari Ekstre
+      summary: Cari İşlem Sil
       description: >-
-        Cari ekstre oluşturur. Bu işlem, müşterilerin hesap özetlerini
-        görüntülemek için kullanılır.
+        Belirtilen ID'ye sahip cari işlemi siler. Bu işlem, kullanıcıların
+        belirli müşteri işlemlerini sistemden kaldırmalarına olanak tanır.
       tags:
-        - Cari Kart İşlemleri
-  /api/CariKart/CariRapor:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariKartFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariKartFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariKartFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariKartFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Cari Rapor
-      description: >-
-        Cari rapor oluşturur. Bu işlem, müşterilerin finansal durumunu analiz
-        etmek için kullanılır.
-      tags:
-        - Cari Kart İşlemleri
-  /api/CariKart/ControlDelete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariKart'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariKart'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariKart'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariKart'
-      responses:
-        '200':
-          description: Success
-      summary: Cari Kart Silme Kontrolü
-      description: >-
-        Cari kart silme işlemi öncesinde kontrol yapar. Bu işlem, silme işlemi
-        öncesinde gerekli kontrollerin yapılmasını sağlar.
-      tags:
-        - Cari Kart İşlemleri
-  /api/CariKart/ControlDeleteById:
+        - CariIsl
+  /api/CariIsl/deletebyid:
     delete:
       parameters:
         - explode: true
@@ -4439,11 +4260,139 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Cari Kart Silme Kontrolü
+      summary: Cari İşlem Sil ID ile
       description: >-
-        Belirtilen ID'ye sahip cari kartın silinmesi öncesinde kontrol yapar. Bu
-        işlem, belirli bir cari kartın silinmesi öncesinde gerekli kontrollerin
-        yapılmasını sağlar.
+        Belirtilen ID'ye sahip cari işlemi siler. Bu işlem, belirli bir müşteri
+        işleminin sistemden kaldırılmasını sağlar.
+      tags:
+        - CariIsl
+  /api/CariIsl/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariIsl'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariIsl'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariIsl'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariIsl'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Cari İşlem Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan cari işlemleri toplu olarak siler. Bu işlem,
+        birden fazla müşteri işleminin aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - CariIsl
+  /api/CariIsl/CariIslemYap:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariIsl'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariIsl'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariIsl'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariIsl'
+      responses:
+        '200':
+          description: Success
+      summary: Cari İşlem Yap
+      description: >-
+        Yeni bir cari işlem gerçekleştirir. Bu işlem, sisteme yeni müşteri
+        işlemleri eklemek için kullanılır.
+      tags:
+        - CariIsl
+  /api/CariIsl/CariIslemRapor:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariIslFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariIslFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariIslFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariIslFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Cari İşlem Rapor
+      description: >-
+        Cari işlemler için detaylı bir rapor oluşturur. Bu işlem, müşteri
+        işlemlerinin analiz edilmesi için kullanılır.
+      tags:
+        - CariIsl
+  /api/CariKart/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariKartFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariKartFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariKartFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariKartFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kartları Listele
+      description: >-
+        Veritabanındaki tüm cari kartları getirir. Bu işlem, kullanıcıların tüm
+        müşteri kartlarını listelemelerini sağlar.
+      tags:
+        - Cari Kart İşlemleri
+  /api/CariKart/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kart Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip cari kartı getirir. Bu işlem, belirli bir müşteri
+        kartını görüntülemek için kullanılır.
       tags:
         - Cari Kart İşlemleri
   /api/CariKart/GetListWithBakiye:
@@ -4465,7 +4414,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Bakiye ile Cari Kart Listele
+      summary: Cari Kart ve Bakiye Listele
       description: >-
         Cari kartları bakiye bilgileri ile birlikte listeler. Bu işlem,
         müşterilerin bakiye durumlarını incelemek için kullanılır.
@@ -4490,7 +4439,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Kart Ekleme
+      summary: Cari Kart Ekle
       description: >-
         Yeni bir cari kart ekler. Bu işlem, sisteme yeni müşteri kartları
         eklemek için kullanılır.
@@ -4523,134 +4472,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Kart Aralığı Ekleme
+      summary: Cari Kart Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla cari kart ekler. Bu işlem, toplu
         müşteri kartları eklemek için kullanılır.
-      tags:
-        - Cari Kart İşlemleri
-  /api/CariKart/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariKart'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariKart'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariKart'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariKart'
-      responses:
-        '200':
-          description: Success
-      summary: Cari Kart Silme
-      description: >-
-        Belirtilen ID'ye sahip cari kartı siler. Bu işlem, kullanıcıların
-        belirli müşteri kartlarını sistemden kaldırmalarına olanak tanır.
-      tags:
-        - Cari Kart İşlemleri
-  /api/CariKart/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Kart Silme
-      description: >-
-        Belirtilen ID'ye sahip cari kartı siler. Bu işlem, belirli bir müşteri
-        kartının sistemden kaldırılmasını sağlar.
-      tags:
-        - Cari Kart İşlemleri
-  /api/CariKart/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariKart'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariKart'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariKart'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariKart'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Cari Kart Silme
-      description: >-
-        Belirtilen aralıkta bulunan cari kartları toplu olarak siler. Bu işlem,
-        birden fazla müşteri kartının aynı anda kaldırılması gerektiğinde
-        kullanılır.
-      tags:
-        - Cari Kart İşlemleri
-  /api/CariKart/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariKartFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariKartFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariKartFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariKartFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Cari Kartları Getir
-      description: >-
-        Veritabanındaki tüm cari kartları getirir. Bu işlem, kullanıcıların tüm
-        müşteri kartlarını listelemelerini sağlar.
-      tags:
-        - Cari Kart İşlemleri
-  /api/CariKart/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Kart Getir
-      description: >-
-        Belirtilen ID'ye sahip cari kartı getirir. Bu işlem, belirli bir müşteri
-        kartını görüntülemek için kullanılır.
       tags:
         - Cari Kart İşlemleri
   /api/CariKart/update:
@@ -4705,13 +4530,235 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Cari Kart Güncelleme
+      summary: Cari Kart Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan cari kartları toplu olarak günceller. Bu
         işlem, birden fazla müşteri kartının aynı anda güncellenmesi
         gerektiğinde kullanılır.
       tags:
         - Cari Kart İşlemleri
+  /api/CariKart/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariKart'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariKart'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariKart'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariKart'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kart Sil
+      description: >-
+        Belirtilen ID'ye sahip cari kartı siler. Bu işlem, kullanıcıların
+        belirli müşteri kartlarını sistemden kaldırmalarına olanak tanır.
+      tags:
+        - Cari Kart İşlemleri
+  /api/CariKart/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kart Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip cari kartı siler. Bu işlem, belirli bir müşteri
+        kartının sistemden kaldırılmasını sağlar.
+      tags:
+        - Cari Kart İşlemleri
+  /api/CariKart/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariKart'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariKart'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariKart'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariKart'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kart Sil Toplu 
+      description: >-
+        Belirtilen aralıkta bulunan cari kartları toplu olarak siler. Bu işlem,
+        birden fazla müşteri kartının aynı anda kaldırılması gerektiğinde
+        kullanılır.
+      tags:
+        - Cari Kart İşlemleri
+  /api/CariKart/ControlDelete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariKart'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariKart'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariKart'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariKart'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kart Sil Kontrol
+      description: >-
+        Cari kart silme işlemi öncesinde kontrol yapar. Bu işlem, silme işlemi
+        öncesinde gerekli kontrollerin yapılmasını sağlar.
+      tags:
+        - Cari Kart İşlemleri
+  /api/CariKart/ControlDeleteById:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kart Sil Kontrol ID ile
+      description: >-
+        Belirtilen ID'ye sahip cari kartın silinmesi öncesinde kontrol yapar. Bu
+        işlem, belirli bir cari kartın silinmesi öncesinde gerekli kontrollerin
+        yapılmasını sağlar.
+      tags:
+        - Cari Kart İşlemleri
+  /api/CariKart/CariEkstre:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariKartFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariKartFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariKartFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariKartFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Ekstre
+      description: >-
+        Cari ekstre oluşturur. Bu işlem, müşterilerin hesap özetlerini
+        görüntülemek için kullanılır.
+      tags:
+        - Cari Kart İşlemleri
+  /api/CariKart/CariRapor:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariKartFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariKartFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariKartFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariKartFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Rapor
+      description: >-
+        Cari rapor oluşturur. Bu işlem, müşterilerin finansal durumunu analiz
+        etmek için kullanılır.
+      tags:
+        - Cari Kart İşlemleri
+  /api/CariKartEticaret/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariKartEticaretFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariKartEticaretFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariKartEticaretFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariKartEticaretFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kart E-ticaret Bilgilerini Listele
+      description: >-
+        Veritabanındaki tüm cari kart e-ticaret bilgilerini getirir. Bu işlem,
+        kullanıcıların tüm e-ticaret müşteri kart bilgilerini listelemelerini
+        sağlar.
+      tags:
+        - Cari Kart Eticaret
+  /api/CariKartEticaret/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kart E-ticaret Bilgi Listele ID ile 
+      description: >-
+        Belirtilen ID'ye sahip cari kart e-ticaret bilgisini getirir. Bu işlem,
+        belirli bir e-ticaret müşteri kart bilgisini görüntülemek için
+        kullanılır.
+      tags:
+        - Cari Kart Eticaret
   /api/CariKartEticaret/add:
     post:
       requestBody:
@@ -4731,7 +4778,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Kart E-ticaret Ekleme
+      summary: Cari Kart E-ticaret Ekle
       description: >-
         Yeni bir cari kart e-ticaret bilgisi ekler. Bu işlem, e-ticaret
         işlemleri için müşteri kart bilgileri eklemek için kullanılır.
@@ -4764,138 +4811,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Cari Kart E-ticaret Aralığı Ekleme
+      summary: Cari Kart E-ticaret Ekle Toplu
       description: >-
         Belirtilen aralıkta birden fazla cari kart e-ticaret bilgisi ekler. Bu
         işlem, toplu e-ticaret müşteri kart bilgileri eklemek için kullanılır.
-      tags:
-        - Cari Kart Eticaret
-  /api/CariKartEticaret/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariKartEticaret'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariKartEticaret'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariKartEticaret'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariKartEticaret'
-      responses:
-        '200':
-          description: Success
-      summary: Cari Kart E-ticaret Silme
-      description: >-
-        Belirtilen ID'ye sahip cari kart e-ticaret bilgisini siler. Bu işlem,
-        kullanıcıların belirli e-ticaret müşteri kart bilgilerini sistemden
-        kaldırmalarına olanak tanır.
-      tags:
-        - Cari Kart Eticaret
-  /api/CariKartEticaret/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Kart E-ticaret Silme
-      description: >-
-        Belirtilen ID'ye sahip cari kart e-ticaret bilgisini siler. Bu işlem,
-        belirli bir e-ticaret müşteri kart bilgisinin sistemden kaldırılmasını
-        sağlar.
-      tags:
-        - Cari Kart Eticaret
-  /api/CariKartEticaret/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariKartEticaret'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariKartEticaret'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariKartEticaret'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/CariKartEticaret'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Cari Kart E-ticaret Silme
-      description: >-
-        Belirtilen aralıkta bulunan cari kart e-ticaret bilgilerini toplu olarak
-        siler. Bu işlem, birden fazla e-ticaret müşteri kart bilgisinin aynı
-        anda kaldırılması gerektiğinde kullanılır.
-      tags:
-        - Cari Kart Eticaret
-  /api/CariKartEticaret/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CariKartEticaretFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CariKartEticaretFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CariKartEticaretFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CariKartEticaretFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Cari Kart E-ticaret Bilgilerini Getir
-      description: >-
-        Veritabanındaki tüm cari kart e-ticaret bilgilerini getirir. Bu işlem,
-        kullanıcıların tüm e-ticaret müşteri kart bilgilerini listelemelerini
-        sağlar.
-      tags:
-        - Cari Kart Eticaret
-  /api/CariKartEticaret/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Cari Kart E-ticaret Bilgisi Getir
-      description: >-
-        Belirtilen ID'ye sahip cari kart e-ticaret bilgisini getirir. Bu işlem,
-        belirli bir e-ticaret müşteri kart bilgisini görüntülemek için
-        kullanılır.
       tags:
         - Cari Kart Eticaret
   /api/CariKartEticaret/update:
@@ -4951,11 +4870,92 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Cari Kart E-ticaret Güncelleme
+      summary: Cari Kart E-ticaret Güncelle Toplu 
       description: >-
         Belirtilen aralıkta bulunan cari kart e-ticaret bilgilerini toplu olarak
         günceller. Bu işlem, birden fazla e-ticaret müşteri kart bilgisinin aynı
         anda güncellenmesi gerektiğinde kullanılır.
+      tags:
+        - Cari Kart Eticaret
+  /api/CariKartEticaret/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CariKartEticaret'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CariKartEticaret'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CariKartEticaret'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CariKartEticaret'
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kart E-ticaret Sil
+      description: >-
+        Belirtilen ID'ye sahip cari kart e-ticaret bilgisini siler. Bu işlem,
+        kullanıcıların belirli e-ticaret müşteri kart bilgilerini sistemden
+        kaldırmalarına olanak tanır.
+      tags:
+        - Cari Kart Eticaret
+  /api/CariKartEticaret/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kart E-ticaret Sil ID ile 
+      description: >-
+        Belirtilen ID'ye sahip cari kart e-ticaret bilgisini siler. Bu işlem,
+        belirli bir e-ticaret müşteri kart bilgisinin sistemden kaldırılmasını
+        sağlar.
+      tags:
+        - Cari Kart Eticaret
+  /api/CariKartEticaret/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariKartEticaret'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariKartEticaret'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariKartEticaret'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/CariKartEticaret'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Cari Kart E-ticaret Sil Toplu 
+      description: >-
+        Belirtilen aralıkta bulunan cari kart e-ticaret bilgilerini toplu olarak
+        siler. Bu işlem, birden fazla e-ticaret müşteri kart bilgisinin aynı
+        anda kaldırılması gerektiğinde kullanılır.
       tags:
         - Cari Kart Eticaret
   /api/CariKodlar/add:
