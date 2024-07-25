@@ -9786,37 +9786,37 @@ paths:
         kaldırılması gerektiğinde kullanılır.
       tags:
         - Hızlı Satış Buton Ayarları
-  /api/Kasalar/ControlDelete:
+  /api/Kasalar/getall:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Kasalar'
+              $ref: '#/components/schemas/KasalarFilterHelper'
           application/json:
             schema:
-              $ref: '#/components/schemas/Kasalar'
+              $ref: '#/components/schemas/KasalarFilterHelper'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/Kasalar'
+              $ref: '#/components/schemas/KasalarFilterHelper'
           text/json:
             schema:
-              $ref: '#/components/schemas/Kasalar'
+              $ref: '#/components/schemas/KasalarFilterHelper'
       responses:
         '200':
           description: Success
-      summary: Kasayı Kontrol Et ve Sil
+      summary: Kasaları Listele
       description: >-
-        Belirtilen kasa kaydını kontrol eder ve siler. Bu işlem, kasaların varlık
-        durumu kontrol edilerek, gerekiyorsa sistemden kaldırılmasını sağlar.
+        Sistemdeki tüm kasa kayıtlarını getirir. Bu işlem, kasa kayıtlarının
+        listelenmesi ve detaylarının görüntülenmesi için kullanılır.
       tags:
         - Kasalar
-  /api/Kasalar/ControlDeleteById:
-    delete:
+  /api/Kasalar/getbyid:
+    get:
       parameters:
         - explode: true
           in: query
-          name: entityId
+          name: id
           required: false
           schema:
             format: int32
@@ -9825,11 +9825,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Kasayı Kontrol Et ve Sil
+      summary: Kasa Listele ID ile
       description: >-
-        Belirtilen ID'ye sahip kasa kaydını kontrol eder ve siler. Bu işlem,
-        belirli bir kasanın varlık durumu kontrol edilerek sistemden
-        kaldırılmasını sağlar.
+        Belirtilen ID'ye sahip kasa kaydını getirir. Bu işlem, belirli bir kasa
+        kaydının detaylarının görüntülenmesi için kullanılır.
       tags:
         - Kasalar
   /api/Kasalar/GetListWithBakiye:
@@ -9851,7 +9850,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Kasalar ve Bakiye Listele
+      summary: Kasa ve Bakiye Listele
       description: >-
         Kasaları ve bunların bakiye bilgilerini listeler. Bu işlem, kasa
         kayıtlarının ve her bir kasanın mevcut bakiye durumunun görüntülenmesi
@@ -9910,133 +9909,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Kasa Ekle
+      summary: Kasa Ekle Toplu
       description: >-
         Birden fazla kasa kaydını toplu olarak ekler. Bu işlem, çok sayıda kasa
         kaydının aynı anda sisteme eklenmesini sağlar.
-      tags:
-        - Kasalar
-  /api/Kasalar/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Kasalar'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Kasalar'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Kasalar'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Kasalar'
-      responses:
-        '200':
-          description: Success
-      summary: Kasa Sil
-      description: >-
-        Belirtilen kasa kaydını sistemden siler. Bu işlem, mevcut bir kasa
-        kaydının kaldırılmasını sağlar.
-      tags:
-        - Kasalar
-  /api/Kasalar/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Kasa Sil
-      description: >-
-        Belirtilen ID'ye sahip kasa kaydını sistemden siler. Bu işlem, belirli bir
-        kasa kaydının kaldırılmasını sağlar.
-      tags:
-        - Kasalar
-  /api/Kasalar/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Kasalar'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Kasalar'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Kasalar'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Kasalar'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Kasa Sil
-      description: >-
-        Belirtilen aralıkta bulunan kasa kayıtlarını toplu olarak siler. Bu işlem,
-        birden fazla kasa kaydının aynı anda kaldırılmasını sağlar.
-      tags:
-        - Kasalar
-  /api/Kasalar/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/KasalarFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/KasalarFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/KasalarFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/KasalarFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Tüm Kasaları Getir
-      description: >-
-        Sistemdeki tüm kasa kayıtlarını getirir. Bu işlem, kasa kayıtlarının
-        listelenmesi ve detaylarının görüntülenmesi için kullanılır.
-      tags:
-        - Kasalar
-  /api/Kasalar/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Kasa Getir
-      description: >-
-        Belirtilen ID'ye sahip kasa kaydını getirir. Bu işlem, belirli bir kasa
-        kaydının detaylarının görüntülenmesi için kullanılır.
       tags:
         - Kasalar
   /api/Kasalar/update:
@@ -10091,12 +9967,181 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Kasa Güncelle
+      summary: Kasa Güncelle Toplu
       description: >-
         Belirtilen aralıkta bulunan kasa kayıtlarını toplu olarak günceller. Bu
         işlem, birden fazla kasa kaydının aynı anda güncellenmesini sağlar.
       tags:
         - Kasalar
+  /api/Kasalar/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Kasalar'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Kasalar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Kasalar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Kasalar'
+      responses:
+        '200':
+          description: Success
+      summary: Kasa Sil
+      description: >-
+        Belirtilen kasa kaydını sistemden siler. Bu işlem, mevcut bir kasa
+        kaydının kaldırılmasını sağlar.
+      tags:
+        - Kasalar
+  /api/Kasalar/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Kasa Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip kasa kaydını sistemden siler. Bu işlem, belirli bir
+        kasa kaydının kaldırılmasını sağlar.
+      tags:
+        - Kasalar
+  /api/Kasalar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Kasalar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Kasalar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Kasalar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Kasalar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Kasa Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan kasa kayıtlarını toplu olarak siler. Bu işlem,
+        birden fazla kasa kaydının aynı anda kaldırılmasını sağlar.
+      tags:
+        - Kasalar
+  /api/Kasalar/ControlDelete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Kasalar'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Kasalar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Kasalar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Kasalar'
+      responses:
+        '200':
+          description: Success
+      summary: Kasa Kontrol Et ve Sil
+      description: >-
+        Belirtilen kasa kaydını kontrol eder ve siler. Bu işlem, kasaların varlık
+        durumu kontrol edilerek, gerekiyorsa sistemden kaldırılmasını sağlar.
+      tags:
+        - Kasalar
+  /api/Kasalar/ControlDeleteById:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Kasa Kontrol Et ve Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip kasa kaydını kontrol eder ve siler. Bu işlem,
+        belirli bir kasanın varlık durumu kontrol edilerek sistemden
+        kaldırılmasını sağlar.
+      tags:
+        - Kasalar
+  /api/KasalarIsl/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/KasalarIslFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KasalarIslFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/KasalarIslFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/KasalarIslFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Kasa İşlemlerini Listele
+      description: >-
+        Tüm kasa işlem kayıtlarını getirir. Bu işlem, belirli filtrelere göre tüm
+        kasa işlemlerinin görüntülenmesini sağlar.
+      tags:
+        - KasalarIsl
+  /api/KasalarIsl/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Kasa İşlem Listele ID ile 
+      description: >-
+        Belirtilen ID'ye sahip kasa işlem kaydını getirir. Bu işlem, belirli bir
+        kasa işlem kaydının detaylarını görüntülemenizi sağlar.
+      tags:
+        - KasalarIsl
   /api/KasalarIsl/GetListAll:
     post:
       requestBody:
@@ -10116,7 +10161,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Kasalar İşlem Listele
+      summary: Kasa İşlemlerini Listele
       description: >-
         Sistemdeki tüm kasa işlem kayıtlarını listeler. Bu işlem, kullanıcıların
         kasa işlemlerinin detaylarını görmesini sağlar.
@@ -10141,7 +10186,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Kasalar İşlem ve Bakiye Listele
+      summary: Kasa İşlem ve Bakiye Listele
       description: >-
         Tüm kasa işlem kayıtlarını ve her bir işlemin bakiye bilgisini listeler.
         Bu işlem, kasa işlemleri ve bakiye durumunun birlikte görüntülenmesini
@@ -10167,7 +10212,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Kasalar İşlem Listele ve Bakiye Görüntüle
+      summary: Kasa İşlem Listele ve Bakiye Görüntüle
       description: >-
         Kasalar işlemlerini ve her bir kasanın bakiye bilgisini listeler. Bu
         işlem, belirli bir tarih aralığı veya filtreye göre işlemler ve bakiye
@@ -10200,31 +10245,6 @@ paths:
         hesaplanmasını sağlar.
       tags:
         - KasalarIsl
-  /api/KasalarIsl/KasaIslemYap:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/KasalarIsl'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/KasalarIsl'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/KasalarIsl'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/KasalarIsl'
-      responses:
-        '200':
-          description: Success
-      summary: Kasa İşlemi Yap
-      description: >-
-        Yeni bir kasa işlemi oluşturur. Bu işlem, belirli bir kasa üzerinde işlem
-        gerçekleştirerek sistemde yeni bir kayıt oluşturur.
-      tags:
-        - KasalarIsl
   /api/KasalarIsl/add:
     post:
       requestBody:
@@ -10244,7 +10264,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Kasa İşlemi Ekle
+      summary: Kasa İşlem Ekle
       description: >-
         Yeni bir kasa işlemi ekler. Bu işlem, sistemde yeni bir kasa işlem
         kaydının oluşturulmasını sağlar.
@@ -10277,133 +10297,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Kasa İşlemi Ekle
+      summary: Kasa İşlem Ekle Toplu 
       description: >-
         Birden fazla kasa işlem kaydını toplu olarak ekler. Bu işlem, çok sayıda
         kasa işleminin aynı anda sisteme eklenmesini sağlar.
-      tags:
-        - KasalarIsl
-  /api/KasalarIsl/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/KasalarIsl'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/KasalarIsl'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/KasalarIsl'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/KasalarIsl'
-      responses:
-        '200':
-          description: Success
-      summary: Kasa İşlemi Sil
-      description: >-
-        Belirtilen kasa işlem kaydını sistemden siler. Bu işlem, mevcut bir kasa
-        işlem kaydının kaldırılmasını sağlar.
-      tags:
-        - KasalarIsl
-  /api/KasalarIsl/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Kasa İşlemi Sil
-      description: >-
-        Belirtilen ID'ye sahip kasa işlem kaydını sistemden siler. Bu işlem,
-        belirli bir kasa işlem kaydının kaldırılmasını sağlar.
-      tags:
-        - KasalarIsl
-  /api/KasalarIsl/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/KasalarIsl'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/KasalarIsl'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/KasalarIsl'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/KasalarIsl'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Kasa İşlemi Sil
-      description: >-
-        Belirtilen aralıkta bulunan kasa işlem kayıtlarını toplu olarak siler. Bu
-        işlem, birden fazla kasa işlem kaydının aynı anda kaldırılmasını sağlar.
-      tags:
-        - KasalarIsl
-  /api/KasalarIsl/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/KasalarIslFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/KasalarIslFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/KasalarIslFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/KasalarIslFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Kasa İşlemi Listele
-      description: >-
-        Tüm kasa işlem kayıtlarını getirir. Bu işlem, belirli filtrelere göre tüm
-        kasa işlemlerinin görüntülenmesini sağlar.
-      tags:
-        - KasalarIsl
-  /api/KasalarIsl/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Kasa İşlemi Getir
-      description: >-
-        Belirtilen ID'ye sahip kasa işlem kaydını getirir. Bu işlem, belirli bir
-        kasa işlem kaydının detaylarını görüntülemenizi sağlar.
       tags:
         - KasalarIsl
   /api/KasalarIsl/update:
@@ -10425,7 +10322,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Kasa İşlemi Güncelle
+      summary: Kasa İşlem Güncelle
       description: >-
         Belirtilen kasa işlem kaydını günceller. Bu işlem, mevcut bir kasa işlem
         kaydının bilgilerini değiştirmenizi sağlar.
@@ -10458,96 +10355,63 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Kasa İşlemi Güncelle
+      summary: Kasa İşlem Güncelle Toplu
       description: >-
         Birden fazla kasa işlem kaydını toplu olarak günceller. Bu işlem, çok
         sayıda kasa işleminin aynı anda güncellenmesini sağlar.
       tags:
         - KasalarIsl
-  /api/KullaniciIslemler/add:
+  /api/KasalarIsl/KasaIslemYap:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
-              $ref: '#/components/schemas/KullaniciIslemler'
+              $ref: '#/components/schemas/KasalarIsl'
           application/json:
             schema:
-              $ref: '#/components/schemas/KullaniciIslemler'
+              $ref: '#/components/schemas/KasalarIsl'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/KullaniciIslemler'
+              $ref: '#/components/schemas/KasalarIsl'
           text/json:
             schema:
-              $ref: '#/components/schemas/KullaniciIslemler'
+              $ref: '#/components/schemas/KasalarIsl'
       responses:
         '200':
           description: Success
-      summary: Kullanıcı İşlemi Ekle
+      summary: Kasa İşlem Yap
       description: >-
-        Yeni bir kullanıcı işlemi kaydeder. Bu işlem, sistemde yeni bir kullanıcı
-        işlem kaydının oluşturulmasını sağlar.
+        Yeni bir kasa işlemi oluşturur. Bu işlem, belirli bir kasa üzerinde işlem
+        gerçekleştirerek sistemde yeni bir kayıt oluşturur.
       tags:
-        - Kullanıcı İşlemleri
-  /api/KullaniciIslemler/addrange:
+        - KasalarIsl
+  /api/KasalarIsl/delete:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
-              items:
-                $ref: '#/components/schemas/KullaniciIslemler'
-              type: array
+              $ref: '#/components/schemas/KasalarIsl'
           application/json:
             schema:
-              items:
-                $ref: '#/components/schemas/KullaniciIslemler'
-              type: array
+              $ref: '#/components/schemas/KasalarIsl'
           application/json-patch+json:
             schema:
-              items:
-                $ref: '#/components/schemas/KullaniciIslemler'
-              type: array
+              $ref: '#/components/schemas/KasalarIsl'
           text/json:
             schema:
-              items:
-                $ref: '#/components/schemas/KullaniciIslemler'
-              type: array
+              $ref: '#/components/schemas/KasalarIsl'
       responses:
         '200':
           description: Success
-      summary: Toplu Kullanıcı İşlemi Ekle
+      summary: Kasa İşlem Sil
       description: >-
-        Birden fazla kullanıcı işlem kaydını topluca ekler. Bu işlem, çok sayıda
-        kullanıcı işleminin aynı anda sisteme eklenmesini sağlar.
+        Belirtilen kasa işlem kaydını sistemden siler. Bu işlem, mevcut bir kasa
+        işlem kaydının kaldırılmasını sağlar.
       tags:
-        - Kullanıcı İşlemleri
-  /api/KullaniciIslemler/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/KullaniciIslemler'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/KullaniciIslemler'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/KullaniciIslemler'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/KullaniciIslemler'
-      responses:
-        '200':
-          description: Success
-      summary: Kullanıcı İşlemi Sil
-      description: >-
-        Belirtilen kullanıcı işlem kaydını sistemden siler. Bu işlem, mevcut bir
-        kullanıcı işlem kaydının kaldırılmasını sağlar.
-      tags:
-        - Kullanıcı İşlemleri
-  /api/KullaniciIslemler/deletebyid:
+        - KasalarIsl
+  /api/KasalarIsl/deletebyid:
     delete:
       parameters:
         - explode: true
@@ -10561,46 +10425,45 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Kullanıcı İşlemi Sil
+      summary: Kasa İşlem Sil ID ile 
       description: >-
-        Belirtilen ID'ye sahip kullanıcı işlem kaydını sistemden siler. Bu işlem,
-        belirli bir kullanıcı işlem kaydının kaldırılmasını sağlar.
+        Belirtilen ID'ye sahip kasa işlem kaydını sistemden siler. Bu işlem,
+        belirli bir kasa işlem kaydının kaldırılmasını sağlar.
       tags:
-        - Kullanıcı İşlemleri
-  /api/KullaniciIslemler/deleterange:
+        - KasalarIsl
+  /api/KasalarIsl/deleterange:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
               items:
-                $ref: '#/components/schemas/KullaniciIslemler'
+                $ref: '#/components/schemas/KasalarIsl'
               type: array
           application/json:
             schema:
               items:
-                $ref: '#/components/schemas/KullaniciIslemler'
+                $ref: '#/components/schemas/KasalarIsl'
               type: array
           application/json-patch+json:
             schema:
               items:
-                $ref: '#/components/schemas/KullaniciIslemler'
+                $ref: '#/components/schemas/KasalarIsl'
               type: array
           text/json:
             schema:
               items:
-                $ref: '#/components/schemas/KullaniciIslemler'
+                $ref: '#/components/schemas/KasalarIsl'
               type: array
       responses:
         '200':
           description: Success
-      summary: Toplu Kullanıcı İşlemi Sil
+      summary: Kasa İşlem Sil Toplu
       description: >-
-        Belirtilen aralıkta bulunan kullanıcı işlem kayıtlarını topluca siler. Bu
-        işlem, birden fazla kullanıcı işlem kaydının aynı anda kaldırılmasını
-        sağlar.
+        Belirtilen aralıkta bulunan kasa işlem kayıtlarını toplu olarak siler. Bu
+        işlem, birden fazla kasa işlem kaydının aynı anda kaldırılmasını sağlar.
       tags:
-        - Kullanıcı İşlemleri
+        - KasalarIsl
   /api/KullaniciIslemler/getall:
     post:
       requestBody:
@@ -10640,10 +10503,68 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Kullanıcı İşlemi Getir
+      summary: Kullanıcı İşlem Listele ID ile
       description: >-
         Belirtilen ID'ye sahip kullanıcı işlem kaydını getirir. Bu işlem, belirli
         bir kullanıcı işlem kaydının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Kullanıcı İşlemleri
+  /api/KullaniciIslemler/add:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/KullaniciIslemler'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KullaniciIslemler'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/KullaniciIslemler'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/KullaniciIslemler'
+      responses:
+        '200':
+          description: Success
+      summary: Kullanıcı İşlem Ekle
+      description: >-
+        Yeni bir kullanıcı işlemi kaydeder. Bu işlem, sistemde yeni bir kullanıcı
+        işlem kaydının oluşturulmasını sağlar.
+      tags:
+        - Kullanıcı İşlemleri
+  /api/KullaniciIslemler/addrange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/KullaniciIslemler'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/KullaniciIslemler'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/KullaniciIslemler'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/KullaniciIslemler'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Kullanıcı İşlem Ekle Toplu
+      description: >-
+        Birden fazla kullanıcı işlem kaydını topluca ekler. Bu işlem, çok sayıda
+        kullanıcı işleminin aynı anda sisteme eklenmesini sağlar.
       tags:
         - Kullanıcı İşlemleri
   /api/KullaniciIslemler/update:
@@ -10665,7 +10586,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Kullanıcı İşlemi Güncelle
+      summary: Kullanıcı İşlem Güncelle
       description: >-
         Belirtilen kullanıcı işlem kaydını günceller. Bu işlem, mevcut bir
         kullanıcı işlem kaydının bilgilerini değiştirmenizi sağlar.
@@ -10698,96 +10619,38 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Kullanıcı İşlemi Güncelle
+      summary: Kullanıcı İşlem Güncelle Toplu
       description: >-
         Birden fazla kullanıcı işlem kaydını topluca günceller. Bu işlem, çok
         sayıda kullanıcı işleminin aynı anda güncellenmesini sağlar.
       tags:
         - Kullanıcı İşlemleri
-  /api/Kurlar/add:
+  /api/KullaniciIslemler/delete:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Kurlar'
+              $ref: '#/components/schemas/KullaniciIslemler'
           application/json:
             schema:
-              $ref: '#/components/schemas/Kurlar'
+              $ref: '#/components/schemas/KullaniciIslemler'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/Kurlar'
+              $ref: '#/components/schemas/KullaniciIslemler'
           text/json:
             schema:
-              $ref: '#/components/schemas/Kurlar'
+              $ref: '#/components/schemas/KullaniciIslemler'
       responses:
         '200':
           description: Success
-      summary: Döviz Kuru Ekle
+      summary: Kullanıcı İşlem Sil
       description: >-
-        Yeni bir döviz kuru kaydeder. Bu işlem, sistemde yeni bir döviz kuru
-        kaydının oluşturulmasını sağlar.
+        Belirtilen kullanıcı işlem kaydını sistemden siler. Bu işlem, mevcut bir
+        kullanıcı işlem kaydının kaldırılmasını sağlar.
       tags:
-        - Kurlar
-  /api/Kurlar/addrange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Kurlar'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Kurlar'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Kurlar'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Kurlar'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Döviz Kuru Ekle
-      description: >-
-        Birden fazla döviz kuru kaydını topluca ekler. Bu işlem, çok sayıda döviz
-        kurunun aynı anda sisteme eklenmesini sağlar.
-      tags:
-        - Kurlar
-  /api/Kurlar/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Kurlar'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Kurlar'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Kurlar'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Kurlar'
-      responses:
-        '200':
-          description: Success
-      summary: Döviz Kuru Sil
-      description: >-
-        Belirtilen döviz kuru kaydını sistemden siler. Bu işlem, mevcut bir döviz
-        kuru kaydının kaldırılmasını sağlar.
-      tags:
-        - Kurlar
-  /api/Kurlar/deletebyid:
+        - Kullanıcı İşlemleri
+  /api/KullaniciIslemler/deletebyid:
     delete:
       parameters:
         - explode: true
@@ -10801,45 +10664,46 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Döviz Kuru Sil
+      summary: Kullanıcı İşlem Sil ID ile
       description: >-
-        Belirtilen ID'ye sahip döviz kuru kaydını sistemden siler. Bu işlem,
-        belirli bir döviz kuru kaydının kaldırılmasını sağlar.
+        Belirtilen ID'ye sahip kullanıcı işlem kaydını sistemden siler. Bu işlem,
+        belirli bir kullanıcı işlem kaydının kaldırılmasını sağlar.
       tags:
-        - Kurlar
-  /api/Kurlar/deleterange:
+        - Kullanıcı İşlemleri
+  /api/KullaniciIslemler/deleterange:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
               items:
-                $ref: '#/components/schemas/Kurlar'
+                $ref: '#/components/schemas/KullaniciIslemler'
               type: array
           application/json:
             schema:
               items:
-                $ref: '#/components/schemas/Kurlar'
+                $ref: '#/components/schemas/KullaniciIslemler'
               type: array
           application/json-patch+json:
             schema:
               items:
-                $ref: '#/components/schemas/Kurlar'
+                $ref: '#/components/schemas/KullaniciIslemler'
               type: array
           text/json:
             schema:
               items:
-                $ref: '#/components/schemas/Kurlar'
+                $ref: '#/components/schemas/KullaniciIslemler'
               type: array
       responses:
         '200':
           description: Success
-      summary: Toplu Döviz Kuru Sil
+      summary: Kullanıcı İşlem Sil Toplu
       description: >-
-        Belirtilen aralıkta bulunan döviz kuru kayıtlarını topluca siler. Bu
-        işlem, birden fazla döviz kuru kaydının aynı anda kaldırılmasını sağlar.
+        Belirtilen aralıkta bulunan kullanıcı işlem kayıtlarını topluca siler. Bu
+        işlem, birden fazla kullanıcı işlem kaydının aynı anda kaldırılmasını
+        sağlar.
       tags:
-        - Kurlar
+        - Kullanıcı İşlemleri
   /api/Kurlar/getall:
     post:
       requestBody:
@@ -10879,10 +10743,68 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Döviz Kuru Getir
+      summary: Döviz Kuru Listele ID ile
       description: >-
         Belirtilen ID'ye sahip döviz kuru kaydını getirir. Bu işlem, belirli bir
         döviz kuru kaydının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Kurlar
+  /api/Kurlar/add:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Kurlar'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Kurlar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Kurlar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Kurlar'
+      responses:
+        '200':
+          description: Success
+      summary: Döviz Kur Ekle
+      description: >-
+        Yeni bir döviz kuru kaydeder. Bu işlem, sistemde yeni bir döviz kuru
+        kaydının oluşturulmasını sağlar.
+      tags:
+        - Kurlar
+  /api/Kurlar/addrange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Kurlar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Kurlar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Kurlar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Kurlar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Döviz Kur Ekle Toplu
+      description: >-
+        Birden fazla döviz kuru kaydını topluca ekler. Bu işlem, çok sayıda döviz
+        kurunun aynı anda sisteme eklenmesini sağlar.
       tags:
         - Kurlar
   /api/Kurlar/update:
@@ -10937,96 +10859,38 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Döviz Kuru Güncelle
+      summary: Döviz Kuru Güncelle Toplu
       description: >-
         Birden fazla döviz kuru kaydını topluca günceller. Bu işlem, çok sayıda
         döviz kurunun aynı anda güncellenmesini sağlar.
       tags:
         - Kurlar
-  /api/Mailayari/add:
+  /api/Kurlar/delete:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Mailayari'
+              $ref: '#/components/schemas/Kurlar'
           application/json:
             schema:
-              $ref: '#/components/schemas/Mailayari'
+              $ref: '#/components/schemas/Kurlar'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/Mailayari'
+              $ref: '#/components/schemas/Kurlar'
           text/json:
             schema:
-              $ref: '#/components/schemas/Mailayari'
+              $ref: '#/components/schemas/Kurlar'
       responses:
         '200':
           description: Success
-      summary: Mail Ayarı Ekle
+      summary: Döviz Kur Sil
       description: >-
-        Yeni bir mail ayarı kaydeder. Bu işlem, sistemde yeni bir mail ayarının
-        oluşturulmasını sağlar.
+        Belirtilen döviz kuru kaydını sistemden siler. Bu işlem, mevcut bir döviz
+        kuru kaydının kaldırılmasını sağlar.
       tags:
-        - Mail Ayarı
-  /api/Mailayari/addrange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mailayari'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mailayari'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mailayari'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mailayari'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Mail Ayarı Ekle
-      description: >-
-        Birden fazla mail ayarını topluca ekler. Bu işlem, çok sayıda mail
-        ayarının aynı anda sisteme eklenmesini sağlar.
-      tags:
-        - Mail Ayarı
-  /api/Mailayari/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Mailayari'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Mailayari'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Mailayari'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Mailayari'
-      responses:
-        '200':
-          description: Success
-      summary: Mail Ayarı Sil
-      description: >-
-        Belirtilen mail ayarını sistemden siler. Bu işlem, mevcut bir mail ayarı
-        kaydının kaldırılmasını sağlar.
-      tags:
-        - Mail Ayarı
-  /api/Mailayari/deletebyid:
+        - Kurlar
+  /api/Kurlar/deletebyid:
     delete:
       parameters:
         - explode: true
@@ -11040,45 +10904,45 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Mail Ayarı Sil
+      summary: Döviz Kur Sil ID ile
       description: >-
-        Belirtilen ID'ye sahip mail ayarını sistemden siler. Bu işlem, belirli bir
-        mail ayarı kaydının kaldırılmasını sağlar.
+        Belirtilen ID'ye sahip döviz kuru kaydını sistemden siler. Bu işlem,
+        belirli bir döviz kuru kaydının kaldırılmasını sağlar.
       tags:
-        - Mail Ayarı
-  /api/Mailayari/deleterange:
+        - Kurlar
+  /api/Kurlar/deleterange:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
               items:
-                $ref: '#/components/schemas/Mailayari'
+                $ref: '#/components/schemas/Kurlar'
               type: array
           application/json:
             schema:
               items:
-                $ref: '#/components/schemas/Mailayari'
+                $ref: '#/components/schemas/Kurlar'
               type: array
           application/json-patch+json:
             schema:
               items:
-                $ref: '#/components/schemas/Mailayari'
+                $ref: '#/components/schemas/Kurlar'
               type: array
           text/json:
             schema:
               items:
-                $ref: '#/components/schemas/Mailayari'
+                $ref: '#/components/schemas/Kurlar'
               type: array
       responses:
         '200':
           description: Success
-      summary: Toplu Mail Ayarı Sil
+      summary: Döviz Kur Sil Toplu
       description: >-
-        Belirtilen aralıkta bulunan mail ayarlarını topluca siler. Bu işlem,
-        birden fazla mail ayarının aynı anda kaldırılmasını sağlar.
+        Belirtilen aralıkta bulunan döviz kuru kayıtlarını topluca siler. Bu
+        işlem, birden fazla döviz kuru kaydının aynı anda kaldırılmasını sağlar.
       tags:
-        - Mail Ayarı
+        - Kurlar
   /api/Mailayari/getall:
     post:
       requestBody:
@@ -11118,10 +10982,68 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Mail Ayarı Getir
+      summary: Mail Ayar Listele ID ile
       description: >-
         Belirtilen ID'ye sahip mail ayarını getirir. Bu işlem, belirli bir mail
         ayarı kaydının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Mail Ayarı
+  /api/Mailayari/add:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Mailayari'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mailayari'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Mailayari'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Mailayari'
+      responses:
+        '200':
+          description: Success
+      summary: Mail Ayar Ekle
+      description: >-
+        Yeni bir mail ayarı kaydeder. Bu işlem, sistemde yeni bir mail ayarının
+        oluşturulmasını sağlar.
+      tags:
+        - Mail Ayarı
+  /api/Mailayari/addrange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mailayari'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mailayari'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mailayari'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mailayari'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Mail Ayar Ekle Toplu
+      description: >-
+        Birden fazla mail ayarını topluca ekler. Bu işlem, çok sayıda mail
+        ayarının aynı anda sisteme eklenmesini sağlar.
       tags:
         - Mail Ayarı
   /api/Mailayari/update:
@@ -11143,7 +11065,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Mail Ayarı Güncelle
+      summary: Mail Ayar Güncelle
       description: >-
         Belirtilen mail ayarını günceller. Bu işlem, mevcut bir mail ayarı
         kaydının bilgilerini değiştirmenizi sağlar.
@@ -11176,96 +11098,38 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Mail Ayarı Güncelle
+      summary: Mail Ayar Güncelle Toplu
       description: >-
         Birden fazla mail ayarını topluca günceller. Bu işlem, çok sayıda mail
         ayarının aynı anda güncellenmesini sağlar.
       tags:
         - Mail Ayarı
-  /api/Mokaayarlar/add:
+  /api/Mailayari/delete:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Mokaayarlar'
+              $ref: '#/components/schemas/Mailayari'
           application/json:
             schema:
-              $ref: '#/components/schemas/Mokaayarlar'
+              $ref: '#/components/schemas/Mailayari'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/Mokaayarlar'
+              $ref: '#/components/schemas/Mailayari'
           text/json:
             schema:
-              $ref: '#/components/schemas/Mokaayarlar'
+              $ref: '#/components/schemas/Mailayari'
       responses:
         '200':
           description: Success
-      summary: Moka Ayarı Ekle
+      summary: Mail Ayar Sil
       description: >-
-        Yeni bir Moka ayarı kaydeder. Bu işlem, sistemde yeni bir Moka ayarının
-        oluşturulmasını sağlar.
-      tags:
-        - Moka Ayarlar
-  /api/Mokaayarlar/addrange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokaayarlar'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokaayarlar'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokaayarlar'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokaayarlar'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Moka Ayarı Ekle
-      description: >-
-        Birden fazla Moka ayarını topluca ekler. Bu işlem, çok sayıda Moka
-        ayarının aynı anda sisteme eklenmesini sağlar.
-      tags:
-        - Moka Ayarlar
-  /api/Mokaayarlar/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Mokaayarlar'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Mokaayarlar'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Mokaayarlar'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Mokaayarlar'
-      responses:
-        '200':
-          description: Success
-      summary: Moka Ayarı Sil
-      description: >-
-        Belirtilen Moka ayarını sistemden siler. Bu işlem, mevcut bir Moka ayarı
+        Belirtilen mail ayarını sistemden siler. Bu işlem, mevcut bir mail ayarı
         kaydının kaldırılmasını sağlar.
       tags:
-        - Moka Ayarlar
-  /api/Mokaayarlar/deletebyid:
+        - Mail Ayarı
+  /api/Mailayari/deletebyid:
     delete:
       parameters:
         - explode: true
@@ -11279,45 +11143,45 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Moka Ayarı Sil
+      summary: Mail Ayar Sil ID ile
       description: >-
-        Belirtilen ID'ye sahip Moka ayarını sistemden siler. Bu işlem, belirli bir
-        Moka ayarı kaydının kaldırılmasını sağlar.
+        Belirtilen ID'ye sahip mail ayarını sistemden siler. Bu işlem, belirli bir
+        mail ayarı kaydının kaldırılmasını sağlar.
       tags:
-        - Moka Ayarlar
-  /api/Mokaayarlar/deleterange:
+        - Mail Ayarı
+  /api/Mailayari/deleterange:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
               items:
-                $ref: '#/components/schemas/Mokaayarlar'
+                $ref: '#/components/schemas/Mailayari'
               type: array
           application/json:
             schema:
               items:
-                $ref: '#/components/schemas/Mokaayarlar'
+                $ref: '#/components/schemas/Mailayari'
               type: array
           application/json-patch+json:
             schema:
               items:
-                $ref: '#/components/schemas/Mokaayarlar'
+                $ref: '#/components/schemas/Mailayari'
               type: array
           text/json:
             schema:
               items:
-                $ref: '#/components/schemas/Mokaayarlar'
+                $ref: '#/components/schemas/Mailayari'
               type: array
       responses:
         '200':
           description: Success
-      summary: Toplu Moka Ayarı Sil
+      summary: Mail Ayar Sil Toplu
       description: >-
-        Belirtilen aralıkta bulunan Moka ayarlarını topluca siler. Bu işlem,
-        birden fazla Moka ayarının aynı anda kaldırılmasını sağlar.
+        Belirtilen aralıkta bulunan mail ayarlarını topluca siler. Bu işlem,
+        birden fazla mail ayarının aynı anda kaldırılmasını sağlar.
       tags:
-        - Moka Ayarlar
+        - Mail Ayarı
   /api/Mokaayarlar/getall:
     post:
       requestBody:
@@ -11357,10 +11221,68 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Moka Ayarı Getir
+      summary: Moka Ayar Listele ID ile
       description: >-
         Belirtilen ID'ye sahip Moka ayarını getirir. Bu işlem, belirli bir Moka
         ayarı kaydının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Moka Ayarlar
+  /api/Mokaayarlar/add:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Mokaayarlar'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mokaayarlar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Mokaayarlar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Mokaayarlar'
+      responses:
+        '200':
+          description: Success
+      summary: Moka Ayar Ekle
+      description: >-
+        Yeni bir Moka ayarı kaydeder. Bu işlem, sistemde yeni bir Moka ayarının
+        oluşturulmasını sağlar.
+      tags:
+        - Moka Ayarlar
+  /api/Mokaayarlar/addrange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaayarlar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaayarlar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaayarlar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaayarlar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Moka Ayar Ekle Toplu
+      description: >-
+        Birden fazla Moka ayarını topluca ekler. Bu işlem, çok sayıda Moka
+        ayarının aynı anda sisteme eklenmesini sağlar.
       tags:
         - Moka Ayarlar
   /api/Mokaayarlar/update:
@@ -11382,7 +11304,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Moka Ayarı Güncelle
+      summary: Moka Ayar Güncelle
       description: >-
         Belirtilen Moka ayarını günceller. Bu işlem, mevcut bir Moka ayarı
         kaydının bilgilerini değiştirmenizi sağlar.
@@ -11415,12 +11337,135 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Moka Ayarı Güncelle
+      summary: Moka Ayar Güncelle Toplu
       description: >-
         Birden fazla Moka ayarını topluca günceller. Bu işlem, çok sayıda Moka
         ayarının aynı anda güncellenmesini sağlar.
       tags:
         - Moka Ayarlar
+  /api/Mokaayarlar/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Mokaayarlar'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mokaayarlar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Mokaayarlar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Mokaayarlar'
+      responses:
+        '200':
+          description: Success
+      summary: Moka Ayar Sil
+      description: >-
+        Belirtilen Moka ayarını sistemden siler. Bu işlem, mevcut bir Moka ayarı
+        kaydının kaldırılmasını sağlar.
+      tags:
+        - Moka Ayarlar
+  /api/Mokaayarlar/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Moka Ayar Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip Moka ayarını sistemden siler. Bu işlem, belirli bir
+        Moka ayarı kaydının kaldırılmasını sağlar.
+      tags:
+        - Moka Ayarlar
+  /api/Mokaayarlar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaayarlar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaayarlar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaayarlar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaayarlar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Moka Ayar Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan Moka ayarlarını topluca siler. Bu işlem,
+        birden fazla Moka ayarının aynı anda kaldırılmasını sağlar.
+      tags:
+        - Moka Ayarlar
+  /api/Mokaiade/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/MokaiadeFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MokaiadeFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/MokaiadeFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/MokaiadeFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Moka İade Listele
+      description: >-
+        Sistemdeki tüm Moka iade kayıtlarını getirir. Bu işlem, tüm Moka iade
+        kayıtlarının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Moka İade
+  /api/Mokaiade/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Moka İade Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip Moka iade kaydını getirir. Bu işlem, belirli bir
+        Moka iade kaydının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Moka İade
   /api/Mokaiade/add:
     post:
       requestBody:
@@ -11473,133 +11518,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Moka İade Ekle
+      summary: Moka İade Ekle Toplu
       description: >-
         Birden fazla Moka iade kaydını topluca ekler. Bu işlem, çok sayıda Moka
         iade kaydının aynı anda sisteme eklenmesini sağlar.
-      tags:
-        - Moka İade
-  /api/Mokaiade/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Mokaiade'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Mokaiade'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Mokaiade'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Mokaiade'
-      responses:
-        '200':
-          description: Success
-      summary: Moka İade Sil
-      description: >-
-        Belirtilen Moka iade kaydını sistemden siler. Bu işlem, mevcut bir Moka
-        iade kaydının kaldırılmasını sağlar.
-      tags:
-        - Moka İade
-  /api/Mokaiade/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Moka İade Sil
-      description: >-
-        Belirtilen ID'ye sahip Moka iade kaydını sistemden siler. Bu işlem,
-        belirli bir Moka iade kaydının kaldırılmasını sağlar.
-      tags:
-        - Moka İade
-  /api/Mokaiade/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokaiade'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokaiade'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokaiade'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokaiade'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Moka İade Sil
-      description: >-
-        Belirtilen aralıkta bulunan Moka iade kayıtlarını topluca siler. Bu işlem,
-        birden fazla Moka iade kaydının aynı anda kaldırılmasını sağlar.
-      tags:
-        - Moka İade
-  /api/Mokaiade/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/MokaiadeFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/MokaiadeFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/MokaiadeFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/MokaiadeFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Moka İade Listele
-      description: >-
-        Sistemdeki tüm Moka iade kayıtlarını getirir. Bu işlem, tüm Moka iade
-        kayıtlarının detaylarını görüntülemenizi sağlar.
-      tags:
-        - Moka İade
-  /api/Mokaiade/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Moka İade Getir
-      description: >-
-        Belirtilen ID'ye sahip Moka iade kaydını getirir. Bu işlem, belirli bir
-        Moka iade kaydının detaylarını görüntülemenizi sağlar.
       tags:
         - Moka İade
   /api/Mokaiade/update:
@@ -11654,12 +11576,135 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Moka İade Güncelle
+      summary: Moka İade Güncelle Toplu
       description: >-
         Birden fazla Moka iade kaydını topluca günceller. Bu işlem, çok sayıda
         Moka iade kaydının aynı anda güncellenmesini sağlar.
       tags:
         - Moka İade
+  /api/Mokaiade/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Mokaiade'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mokaiade'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Mokaiade'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Mokaiade'
+      responses:
+        '200':
+          description: Success
+      summary: Moka İade Sil
+      description: >-
+        Belirtilen Moka iade kaydını sistemden siler. Bu işlem, mevcut bir Moka
+        iade kaydının kaldırılmasını sağlar.
+      tags:
+        - Moka İade
+  /api/Mokaiade/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Moka İade Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip Moka iade kaydını sistemden siler. Bu işlem,
+        belirli bir Moka iade kaydının kaldırılmasını sağlar.
+      tags:
+        - Moka İade
+  /api/Mokaiade/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaiade'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaiade'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaiade'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaiade'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Moka İade Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan Moka iade kayıtlarını topluca siler. Bu işlem,
+        birden fazla Moka iade kaydının aynı anda kaldırılmasını sağlar.
+      tags:
+        - Moka İade
+  /api/Mokaisllog/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/MokaisllogFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MokaisllogFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/MokaisllogFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/MokaisllogFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Mokaisllog Listele
+      description: >-
+        Sistemdeki tüm Mokaisllog kayıtlarını getirir. Bu işlem, tüm Mokaisllog
+        kayıtlarının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Mokaisllog
+  /api/Mokaisllog/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Mokaisllog Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip Mokaisllog kaydını getirir. Bu işlem, belirli bir
+        Mokaisllog kaydının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Mokaisllog
   /api/Mokaisllog/add:
     post:
       requestBody:
@@ -11712,133 +11757,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Mokaisllog Ekle
+      summary: Mokaisllog Ekle Toplu
       description: >-
         Birden fazla Mokaisllog kaydını topluca ekler. Bu işlem, çok sayıda
         Mokaisllog kaydının aynı anda sisteme eklenmesini sağlar.
-      tags:
-        - Mokaisllog
-  /api/Mokaisllog/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Mokaisllog'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Mokaisllog'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Mokaisllog'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Mokaisllog'
-      responses:
-        '200':
-          description: Success
-      summary: Mokaisllog Sil
-      description: >-
-        Belirtilen Mokaisllog kaydını sistemden siler. Bu işlem, mevcut bir
-        Mokaisllog kaydının kaldırılmasını sağlar.
-      tags:
-        - Mokaisllog
-  /api/Mokaisllog/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Mokaisllog Sil
-      description: >-
-        Belirtilen ID'ye sahip Mokaisllog kaydını sistemden siler. Bu işlem,
-        belirli bir Mokaisllog kaydının kaldırılmasını sağlar.
-      tags:
-        - Mokaisllog
-  /api/Mokaisllog/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokaisllog'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokaisllog'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokaisllog'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokaisllog'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Mokaisllog Sil
-      description: >-
-        Belirtilen aralıkta bulunan Mokaisllog kayıtlarını topluca siler. Bu
-        işlem, birden fazla Mokaisllog kaydının aynı anda kaldırılmasını sağlar.
-      tags:
-        - Mokaisllog
-  /api/Mokaisllog/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/MokaisllogFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/MokaisllogFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/MokaisllogFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/MokaisllogFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Mokaisllog Listele
-      description: >-
-        Sistemdeki tüm Mokaisllog kayıtlarını getirir. Bu işlem, tüm Mokaisllog
-        kayıtlarının detaylarını görüntülemenizi sağlar.
-      tags:
-        - Mokaisllog
-  /api/Mokaisllog/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Mokaisllog Getir
-      description: >-
-        Belirtilen ID'ye sahip Mokaisllog kaydını getirir. Bu işlem, belirli bir
-        Mokaisllog kaydının detaylarını görüntülemenizi sağlar.
       tags:
         - Mokaisllog
   /api/Mokaisllog/update:
@@ -11893,12 +11815,135 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Mokaisllog Güncelle
+      summary: Mokaisllog Güncelle Toplu
       description: >-
         Birden fazla Mokaisllog kaydını topluca günceller. Bu işlem, çok sayıda
         Mokaisllog kaydının aynı anda güncellenmesini sağlar.
       tags:
         - Mokaisllog
+  /api/Mokaisllog/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Mokaisllog'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mokaisllog'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Mokaisllog'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Mokaisllog'
+      responses:
+        '200':
+          description: Success
+      summary: Mokaisllog Sil
+      description: >-
+        Belirtilen Mokaisllog kaydını sistemden siler. Bu işlem, mevcut bir
+        Mokaisllog kaydının kaldırılmasını sağlar.
+      tags:
+        - Mokaisllog
+  /api/Mokaisllog/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Mokaisllog Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip Mokaisllog kaydını sistemden siler. Bu işlem,
+        belirli bir Mokaisllog kaydının kaldırılmasını sağlar.
+      tags:
+        - Mokaisllog
+  /api/Mokaisllog/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaisllog'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaisllog'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaisllog'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokaisllog'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Mokaisllog Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan Mokaisllog kayıtlarını topluca siler. Bu
+        işlem, birden fazla Mokaisllog kaydının aynı anda kaldırılmasını sağlar.
+      tags:
+        - Mokaisllog
+  /api/Mokalog/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/MokalogFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MokalogFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/MokalogFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/MokalogFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Mokalog Listele
+      description: >-
+        Sistemdeki tüm Mokalog kayıtlarını getirir. Bu işlem, tüm Mokalog
+        kayıtlarının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Moka Log
+  /api/Mokalog/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Mokalog Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip Mokalog kaydını getirir. Bu işlem, belirli bir
+        Mokalog kaydının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Moka Log
   /api/Mokalog/add:
     post:
       requestBody:
@@ -11951,133 +11996,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Mokalog Ekle
+      summary: Mokalog Ekle Toplu
       description: >-
         Birden fazla Mokalog kaydını topluca ekler. Bu işlem, çok sayıda Mokalog
         kaydının aynı anda sisteme eklenmesini sağlar.
-      tags:
-        - Moka Log
-  /api/Mokalog/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Mokalog'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Mokalog'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Mokalog'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Mokalog'
-      responses:
-        '200':
-          description: Success
-      summary: Mokalog Sil
-      description: >-
-        Belirtilen Mokalog kaydını sistemden siler. Bu işlem, mevcut bir Mokalog
-        kaydının kaldırılmasını sağlar.
-      tags:
-        - Moka Log
-  /api/Mokalog/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Mokalog Sil
-      description: >-
-        Belirtilen ID'ye sahip Mokalog kaydını sistemden siler. Bu işlem, belirli
-        bir Mokalog kaydının kaldırılmasını sağlar.
-      tags:
-        - Moka Log
-  /api/Mokalog/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokalog'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokalog'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokalog'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Mokalog'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Mokalog Sil
-      description: >-
-        Belirtilen aralıkta bulunan Mokalog kayıtlarını topluca siler. Bu işlem,
-        birden fazla Mokalog kaydının aynı anda kaldırılmasını sağlar.
-      tags:
-        - Moka Log
-  /api/Mokalog/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/MokalogFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/MokalogFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/MokalogFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/MokalogFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Mokalog Listele
-      description: >-
-        Sistemdeki tüm Mokalog kayıtlarını getirir. Bu işlem, tüm Mokalog
-        kayıtlarının detaylarını görüntülemenizi sağlar.
-      tags:
-        - Moka Log
-  /api/Mokalog/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Mokalog Getir
-      description: >-
-        Belirtilen ID'ye sahip Mokalog kaydını getirir. Bu işlem, belirli bir
-        Mokalog kaydının detaylarını görüntülemenizi sağlar.
       tags:
         - Moka Log
   /api/Mokalog/update:
@@ -12132,12 +12054,135 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Mokalog Güncelle
+      summary: Mokalog Güncelle Toplu
       description: >-
         Birden fazla Mokalog kaydını topluca günceller. Bu işlem, çok sayıda
         Mokalog kaydının aynı anda güncellenmesini sağlar.
       tags:
         - Moka Log
+  /api/Mokalog/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Mokalog'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mokalog'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Mokalog'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Mokalog'
+      responses:
+        '200':
+          description: Success
+      summary: Mokalog Sil
+      description: >-
+        Belirtilen Mokalog kaydını sistemden siler. Bu işlem, mevcut bir Mokalog
+        kaydının kaldırılmasını sağlar.
+      tags:
+        - Moka Log
+  /api/Mokalog/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Mokalog Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip Mokalog kaydını sistemden siler. Bu işlem, belirli
+        bir Mokalog kaydının kaldırılmasını sağlar.
+      tags:
+        - Moka Log
+  /api/Mokalog/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokalog'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokalog'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokalog'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Mokalog'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Mokalog Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan Mokalog kayıtlarını topluca siler. Bu işlem,
+        birden fazla Mokalog kaydının aynı anda kaldırılmasını sağlar.
+      tags:
+        - Moka Log
+  /api/Personel/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PersonelFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonelFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PersonelFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PersonelFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Personel Listele
+      description: >-
+        Sistemdeki tüm Personel kayıtlarını getirir. Bu işlem, tüm Personel
+        kayıtlarının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Personel İşlemleri
+  /api/Personel/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Personel Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip Personel kaydını getirir. Bu işlem, belirli bir
+        Personel kaydının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Personel İşlemleri
   /api/Personel/add:
     post:
       requestBody:
@@ -12190,133 +12235,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Personel Ekle
+      summary: Personel Ekle Toplu
       description: >-
         Birden fazla Personel kaydını topluca ekler. Bu işlem, çok sayıda Personel
         kaydının aynı anda sisteme eklenmesini sağlar.
-      tags:
-        - Personel İşlemleri
-  /api/Personel/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Personel'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Personel'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Personel'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Personel'
-      responses:
-        '200':
-          description: Success
-      summary: Personel Sil
-      description: >-
-        Belirtilen Personel kaydını sistemden siler. Bu işlem, mevcut bir Personel
-        kaydının kaldırılmasını sağlar.
-      tags:
-        - Personel İşlemleri
-  /api/Personel/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Personel Sil
-      description: >-
-        Belirtilen ID'ye sahip Personel kaydını sistemden siler. Bu işlem, belirli
-        bir Personel kaydının kaldırılmasını sağlar.
-      tags:
-        - Personel İşlemleri
-  /api/Personel/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Personel'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Personel'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Personel'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Personel'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Personel Sil
-      description: >-
-        Belirtilen aralıkta bulunan Personel kayıtlarını topluca siler. Bu işlem,
-        birden fazla Personel kaydının aynı anda kaldırılmasını sağlar.
-      tags:
-        - Personel İşlemleri
-  /api/Personel/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/PersonelFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PersonelFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/PersonelFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/PersonelFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Personel Listele
-      description: >-
-        Sistemdeki tüm Personel kayıtlarını getirir. Bu işlem, tüm Personel
-        kayıtlarının detaylarını görüntülemenizi sağlar.
-      tags:
-        - Personel İşlemleri
-  /api/Personel/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Personel Getir
-      description: >-
-        Belirtilen ID'ye sahip Personel kaydını getirir. Bu işlem, belirli bir
-        Personel kaydının detaylarını görüntülemenizi sağlar.
       tags:
         - Personel İşlemleri
   /api/Personel/update:
@@ -12371,12 +12293,135 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Personel Güncelle
+      summary: Personel Güncelle Toplu
       description: >-
         Birden fazla Personel kaydını topluca günceller. Bu işlem, çok sayıda
         Personel kaydının aynı anda güncellenmesini sağlar.
       tags:
         - Personel İşlemleri
+  /api/Personel/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Personel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Personel'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Personel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Personel'
+      responses:
+        '200':
+          description: Success
+      summary: Personel Sil
+      description: >-
+        Belirtilen Personel kaydını sistemden siler. Bu işlem, mevcut bir Personel
+        kaydının kaldırılmasını sağlar.
+      tags:
+        - Personel İşlemleri
+  /api/Personel/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Personel Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip Personel kaydını sistemden siler. Bu işlem, belirli
+        bir Personel kaydının kaldırılmasını sağlar.
+      tags:
+        - Personel İşlemleri
+  /api/Personel/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Personel'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Personel'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Personel'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Personel'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Personel Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan Personel kayıtlarını topluca siler. Bu işlem,
+        birden fazla Personel kaydının aynı anda kaldırılmasını sağlar.
+      tags:
+        - Personel İşlemleri
+  /api/Personelizinler/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PersonelizinlerFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonelizinlerFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PersonelizinlerFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PersonelizinlerFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Personel İzinlerini Listele
+      description: >-
+        Sistemdeki tüm Personel izni kayıtlarını getirir. Bu işlem, tüm Personel
+        izinlerinin detaylarını görüntülemenizi sağlar.
+      tags:
+        - Personel İzinler
+  /api/Personelizinler/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Personel İzni Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip Personel izni kaydını getirir. Bu işlem, belirli
+        bir Personel izni kaydının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Personel İzinler
   /api/Personelizinler/add:
     post:
       requestBody:
@@ -12429,134 +12474,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Personel İzni Ekle
+      summary: Personel İzni Ekle Toplu
       description: >-
         Birden fazla Personel izni kaydını topluca ekler. Bu işlem, çok sayıda
         Personel izni kaydının aynı anda sisteme eklenmesini sağlar.
-      tags:
-        - Personel İzinler
-  /api/Personelizinler/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Personelizinler'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Personelizinler'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Personelizinler'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Personelizinler'
-      responses:
-        '200':
-          description: Success
-      summary: Personel İzni Sil
-      description: >-
-        Belirtilen Personel izni kaydını sistemden siler. Bu işlem, mevcut bir
-        Personel izni kaydının kaldırılmasını sağlar.
-      tags:
-        - Personel İzinler
-  /api/Personelizinler/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Personel İzni Sil
-      description: >-
-        Belirtilen ID'ye sahip Personel izni kaydını sistemden siler. Bu işlem,
-        belirli bir Personel izni kaydının kaldırılmasını sağlar.
-      tags:
-        - Personel İzinler
-  /api/Personelizinler/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Personelizinler'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Personelizinler'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Personelizinler'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Personelizinler'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Personel İzni Sil
-      description: >-
-        Belirtilen aralıkta bulunan Personel izni kayıtlarını topluca siler. Bu
-        işlem, birden fazla Personel izni kaydının aynı anda kaldırılmasını
-        sağlar.
-      tags:
-        - Personel İzinler
-  /api/Personelizinler/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/PersonelizinlerFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PersonelizinlerFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/PersonelizinlerFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/PersonelizinlerFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Personel İzinlerini Listele
-      description: >-
-        Sistemdeki tüm Personel izni kayıtlarını getirir. Bu işlem, tüm Personel
-        izinlerinin detaylarını görüntülemenizi sağlar.
-      tags:
-        - Personel İzinler
-  /api/Personelizinler/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Personel İzni Getir
-      description: >-
-        Belirtilen ID'ye sahip Personel izni kaydını getirir. Bu işlem, belirli
-        bir Personel izni kaydının detaylarını görüntülemenizi sağlar.
       tags:
         - Personel İzinler
   /api/Personelizinler/update:
@@ -12611,96 +12532,38 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Personel İzni Güncelle
+      summary: Personel İzni Güncelle Toplu
       description: >-
         Birden fazla Personel izni kaydını topluca günceller. Bu işlem, çok sayıda
         Personel izni kaydının aynı anda güncellenmesini sağlar.
       tags:
         - Personel İzinler
-  /api/Personelnot/add:
+  /api/Personelizinler/delete:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Personelnot'
+              $ref: '#/components/schemas/Personelizinler'
           application/json:
             schema:
-              $ref: '#/components/schemas/Personelnot'
+              $ref: '#/components/schemas/Personelizinler'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/Personelnot'
+              $ref: '#/components/schemas/Personelizinler'
           text/json:
             schema:
-              $ref: '#/components/schemas/Personelnot'
+              $ref: '#/components/schemas/Personelizinler'
       responses:
         '200':
           description: Success
-      summary: Personel Notu Ekle
+      summary: Personel İzni Sil
       description: >-
-        Sisteme yeni bir Personel notu kaydı ekler. Bu işlem, sistemde yeni bir
-        Personel notu kaydının oluşturulmasını sağlar.
+        Belirtilen Personel izni kaydını sistemden siler. Bu işlem, mevcut bir
+        Personel izni kaydının kaldırılmasını sağlar.
       tags:
-        - Personel Not
-  /api/Personelnot/addrange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Personelnot'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Personelnot'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Personelnot'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Personelnot'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Personel Notu Ekle
-      description: >-
-        Birden fazla Personel notu kaydını topluca ekler. Bu işlem, çok sayıda
-        Personel notu kaydının aynı anda sisteme eklenmesini sağlar.
-      tags:
-        - Personel Not
-  /api/Personelnot/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Personelnot'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Personelnot'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Personelnot'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Personelnot'
-      responses:
-        '200':
-          description: Success
-      summary: Personel Notu Sil
-      description: >-
-        Belirtilen Personel notu kaydını sistemden siler. Bu işlem, mevcut bir
-        Personel notu kaydının kaldırılmasını sağlar.
-      tags:
-        - Personel Not
-  /api/Personelnot/deletebyid:
+        - Personel İzinler
+  /api/Personelizinler/deletebyid:
     delete:
       parameters:
         - explode: true
@@ -12714,46 +12577,46 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Personel Notunu Sil
+      summary: Personel İzni Sil ID ile
       description: >-
-        Belirtilen ID'ye sahip Personel notu kaydını sistemden siler. Bu işlem,
-        belirli bir Personel notu kaydının kaldırılmasını sağlar.
+        Belirtilen ID'ye sahip Personel izni kaydını sistemden siler. Bu işlem,
+        belirli bir Personel izni kaydının kaldırılmasını sağlar.
       tags:
-        - Personel Not
-  /api/Personelnot/deleterange:
+        - Personel İzinler
+  /api/Personelizinler/deleterange:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
               items:
-                $ref: '#/components/schemas/Personelnot'
+                $ref: '#/components/schemas/Personelizinler'
               type: array
           application/json:
             schema:
               items:
-                $ref: '#/components/schemas/Personelnot'
+                $ref: '#/components/schemas/Personelizinler'
               type: array
           application/json-patch+json:
             schema:
               items:
-                $ref: '#/components/schemas/Personelnot'
+                $ref: '#/components/schemas/Personelizinler'
               type: array
           text/json:
             schema:
               items:
-                $ref: '#/components/schemas/Personelnot'
+                $ref: '#/components/schemas/Personelizinler'
               type: array
       responses:
         '200':
           description: Success
-      summary: Toplu Personel Notu Sil
+      summary: Personel İzni Sil Toplu
       description: >-
-        Belirtilen aralıkta bulunan Personel notu kayıtlarını topluca siler. Bu
-        işlem, birden fazla Personel notu kaydının aynı anda kaldırılmasını
+        Belirtilen aralıkta bulunan Personel izni kayıtlarını topluca siler. Bu
+        işlem, birden fazla Personel izni kaydının aynı anda kaldırılmasını
         sağlar.
       tags:
-        - Personel Not
+        - Personel İzinler
   /api/Personelnot/getall:
     post:
       requestBody:
@@ -12793,10 +12656,68 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile Personel Notunu Getir
+      summary: Personel Not Listele ID ile
       description: >-
         Belirtilen ID'ye sahip Personel notu kaydını getirir. Bu işlem, belirli
         bir Personel notu kaydının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Personel Not
+  /api/Personelnot/add:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Personelnot'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Personelnot'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Personelnot'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Personelnot'
+      responses:
+        '200':
+          description: Success
+      summary: Personel Not Ekle
+      description: >-
+        Sisteme yeni bir Personel notu kaydı ekler. Bu işlem, sistemde yeni bir
+        Personel notu kaydının oluşturulmasını sağlar.
+      tags:
+        - Personel Not
+  /api/Personelnot/addrange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Personelnot'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Personelnot'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Personelnot'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Personelnot'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Personel Not Ekle Toplu
+      description: >-
+        Birden fazla Personel notu kaydını topluca ekler. Bu işlem, çok sayıda
+        Personel notu kaydının aynı anda sisteme eklenmesini sağlar.
       tags:
         - Personel Not
   /api/Personelnot/update:
@@ -12818,7 +12739,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Personel Notunu Güncelle
+      summary: Personel Notun Güncelle
       description: >-
         Belirtilen Personel notu kaydını günceller. Bu işlem, mevcut bir Personel
         notu kaydının bilgilerini değiştirmenizi sağlar.
@@ -12851,38 +12772,38 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Personel Notunu Güncelle
+      summary: Personel Notun Güncelle Toplu
       description: >-
         Birden fazla Personel notu kaydını topluca günceller. Bu işlem, çok sayıda
         Personel notu kaydının aynı anda güncellenmesini sağlar.
       tags:
         - Personel Not
-  /api/Pos/AddPos:
+  /api/Personelnot/delete:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Pos'
+              $ref: '#/components/schemas/Personelnot'
           application/json:
             schema:
-              $ref: '#/components/schemas/Pos'
+              $ref: '#/components/schemas/Personelnot'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/Pos'
+              $ref: '#/components/schemas/Personelnot'
           text/json:
             schema:
-              $ref: '#/components/schemas/Pos'
+              $ref: '#/components/schemas/Personelnot'
       responses:
         '200':
           description: Success
-      summary: Yeni POS Ekle
+      summary: Personel Not Sil
       description: >-
-        Sisteme yeni bir POS (Point of Sale) kaydı ekler. Bu işlem, sistemde yeni
-        bir POS kaydının oluşturulmasını sağlar.
+        Belirtilen Personel notu kaydını sistemden siler. Bu işlem, mevcut bir
+        Personel notu kaydının kaldırılmasını sağlar.
       tags:
-        - Pos İşlemleri
-  /api/Pos/ControlDeleteById:
+        - Personel Not
+  /api/Personelnot/deletebyid:
     delete:
       parameters:
         - explode: true
@@ -12896,29 +12817,89 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile POS Silme Kontrolü
+      summary: Personel Notun Sil ID ile
       description: >-
-        Belirtilen ID'ye sahip POS kaydını silmek için kontrol yapar. Bu işlem,
-        belirli bir POS kaydının silinip silinmeyeceğini kontrol eder.
+        Belirtilen ID'ye sahip Personel notu kaydını sistemden siler. Bu işlem,
+        belirli bir Personel notu kaydının kaldırılmasını sağlar.
+      tags:
+        - Personel Not
+  /api/Personelnot/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Personelnot'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Personelnot'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Personelnot'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Personelnot'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Personel Not Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan Personel notu kayıtlarını topluca siler. Bu
+        işlem, birden fazla Personel notu kaydının aynı anda kaldırılmasını
+        sağlar.
+      tags:
+        - Personel Not
+  /api/Pos/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PosFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PosFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PosFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PosFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: POS'ları Listele
+      description: >-
+        Sistemdeki tüm POS kayıtlarını getirir. Bu işlem, tüm POS'ların
+        detaylarını görüntülemenizi sağlar.
       tags:
         - Pos İşlemleri
-  /api/Pos/DeletePos:
-    delete:
+  /api/Pos/getbyid:
+    get:
       parameters:
         - explode: true
           in: query
           name: id
-          required: true
+          required: false
           schema:
-            type: string
+            format: int32
+            type: integer
           style: form
       responses:
         '200':
           description: Success
-      summary: POS Sil
+      summary: POS Listele ID ile
       description: >-
-        Belirtilen ID'ye sahip POS kaydını sistemden siler. Bu işlem, mevcut bir
-        POS kaydının kaldırılmasını sağlar.
+        Belirtilen ID'ye sahip POS kaydını getirir. Bu işlem, belirli bir POS
+        kaydının detaylarını görüntülemenizi sağlar.
       tags:
         - Pos İşlemleri
   /api/Pos/GetListPos:
@@ -12946,7 +12927,7 @@ paths:
         işlem, POS'ların filtreleme kriterlerine göre görüntülenmesini sağlar.
       tags:
         - Pos İşlemleri
-  /api/Pos/UpdatePos:
+  /api/Pos/AddPos:
     post:
       requestBody:
         content:
@@ -12965,10 +12946,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POS Güncelle
+      summary: POS Ekle Yeni
       description: >-
-        Belirtilen POS kaydını günceller. Bu işlem, mevcut bir POS kaydının
-        bilgilerini değiştirmenizi sağlar.
+        Sisteme yeni bir POS (Point of Sale) kaydı ekler. Bu işlem, sistemde yeni
+        bir POS kaydının oluşturulmasını sağlar.
       tags:
         - Pos İşlemleri
   /api/Pos/add:
@@ -13023,13 +13004,13 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu POS Ekle
+      summary: POS Ekle Toplu
       description: >-
         Birden fazla POS kaydını topluca ekler. Bu işlem, çok sayıda POS kaydının
         aynı anda sisteme eklenmesini sağlar.
       tags:
         - Pos İşlemleri
-  /api/Pos/delete:
+  /api/Pos/UpdatePos:
     post:
       requestBody:
         content:
@@ -13048,108 +13029,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POS Sil
+      summary: POS Güncelle
       description: >-
-        Belirtilen POS kaydını sistemden siler. Bu işlem, mevcut bir POS kaydının
-        kaldırılmasını sağlar.
-      tags:
-        - Pos İşlemleri
-  /api/Pos/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile POS Sil
-      description: >-
-        Belirtilen ID'ye sahip POS kaydını sistemden siler. Bu işlem, belirli bir
-        POS kaydının kaldırılmasını sağlar.
-      tags:
-        - Pos İşlemleri
-  /api/Pos/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Pos'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Pos'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Pos'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Pos'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu POS Sil
-      description: >-
-        Belirtilen aralıkta bulunan POS kayıtlarını topluca siler. Bu işlem,
-        birden fazla POS kaydının aynı anda kaldırılmasını sağlar.
-      tags:
-        - Pos İşlemleri
-  /api/Pos/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/PosFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PosFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/PosFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/PosFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: POS'ları Listele
-      description: >-
-        Sistemdeki tüm POS kayıtlarını getirir. Bu işlem, tüm POS'ların
-        detaylarını görüntülemenizi sağlar.
-      tags:
-        - Pos İşlemleri
-  /api/Pos/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile POS Getir
-      description: >-
-        Belirtilen ID'ye sahip POS kaydını getirir. Bu işlem, belirli bir POS
-        kaydının detaylarını görüntülemenizi sağlar.
+        Belirtilen POS kaydını günceller. Bu işlem, mevcut bir POS kaydının
+        bilgilerini değiştirmenizi sağlar.
       tags:
         - Pos İşlemleri
   /api/Pos/update:
@@ -13204,96 +13087,13 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu POS Güncelle
+      summary: POS Güncelle Toplu
       description: >-
         Birden fazla POS kaydını topluca günceller. Bu işlem, çok sayıda POS
         kaydının aynı anda güncellenmesini sağlar.
       tags:
         - Pos İşlemleri
-  /api/Posislemdetay/add:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Posislemdetay'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Posislemdetay'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Posislemdetay'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Posislemdetay'
-      responses:
-        '200':
-          description: Success
-      summary: POS İşlem Detayını Ekle
-      description: >-
-        Sisteme yeni bir POS işlem detay kaydı ekler. Bu işlem, bir POS işlemiyle
-        ilgili detay bilgilerini sisteme kaydeder.
-      tags:
-        - Pos İşlem Detay
-  /api/Posislemdetay/addrange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Posislemdetay'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Posislemdetay'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Posislemdetay'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Posislemdetay'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu POS İşlem Detayı Ekle
-      description: >-
-        Birden fazla POS işlem detayını topluca ekler. Bu işlem, çok sayıda POS
-        işlem detayının aynı anda sisteme eklenmesini sağlar.
-      tags:
-        - Pos İşlem Detay
-  /api/Posislemdetay/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Posislemdetay'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Posislemdetay'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Posislemdetay'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Posislemdetay'
-      responses:
-        '200':
-          description: Success
-      summary: POS İşlem Detayı Sil
-      description: >-
-        Belirtilen POS işlem detayını sistemden siler. Bu işlem, mevcut bir POS
-        işlem detayının kaldırılmasını sağlar.
-      tags:
-        - Pos İşlem Detay
-  /api/Posislemdetay/deletebyid:
+  /api/Pos/ControlDeleteById:
     delete:
       parameters:
         - explode: true
@@ -13307,45 +13107,109 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile POS İşlem Detayı Sil
+      summary: POS Silme Kontrolü ID ile
       description: >-
-        Belirtilen ID'ye sahip POS işlem detayını sistemden siler. Bu işlem,
-        belirli bir POS işlem detayının kaldırılmasını sağlar.
+        Belirtilen ID'ye sahip POS kaydını silmek için kontrol yapar. Bu işlem,
+        belirli bir POS kaydının silinip silinmeyeceğini kontrol eder.
       tags:
-        - Pos İşlem Detay
-  /api/Posislemdetay/deleterange:
+        - Pos İşlemleri
+  /api/Pos/DeletePos:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: true
+          schema:
+            type: string
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: POS Sil
+      description: >-
+        Belirtilen ID'ye sahip POS kaydını sistemden siler. Bu işlem, mevcut bir
+        POS kaydının kaldırılmasını sağlar.
+      tags:
+        - Pos İşlemleri
+  /api/Pos/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Pos'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pos'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Pos'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Pos'
+      responses:
+        '200':
+          description: Success
+      summary: POS Sil
+      description: >-
+        Belirtilen POS kaydını sistemden siler. Bu işlem, mevcut bir POS kaydının
+        kaldırılmasını sağlar.
+      tags:
+        - Pos İşlemleri
+  /api/Pos/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: POS Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip POS kaydını sistemden siler. Bu işlem, belirli bir
+        POS kaydının kaldırılmasını sağlar.
+      tags:
+        - Pos İşlemleri
+  /api/Pos/deleterange:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
               items:
-                $ref: '#/components/schemas/Posislemdetay'
+                $ref: '#/components/schemas/Pos'
               type: array
           application/json:
             schema:
               items:
-                $ref: '#/components/schemas/Posislemdetay'
+                $ref: '#/components/schemas/Pos'
               type: array
           application/json-patch+json:
             schema:
               items:
-                $ref: '#/components/schemas/Posislemdetay'
+                $ref: '#/components/schemas/Pos'
               type: array
           text/json:
             schema:
               items:
-                $ref: '#/components/schemas/Posislemdetay'
+                $ref: '#/components/schemas/Pos'
               type: array
       responses:
         '200':
           description: Success
-      summary: Toplu POS İşlem Detayı Sil
+      summary: POS Sil Toplu
       description: >-
-        Belirtilen aralıkta bulunan POS işlem detaylarını topluca siler. Bu işlem,
-        birden fazla POS işlem detayının aynı anda kaldırılmasını sağlar.
+        Belirtilen aralıkta bulunan POS kayıtlarını topluca siler. Bu işlem,
+        birden fazla POS kaydının aynı anda kaldırılmasını sağlar.
       tags:
-        - Pos İşlem Detay
+        - Pos İşlemleri
   /api/Posislemdetay/getall:
     post:
       requestBody:
@@ -13386,10 +13250,68 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile POS İşlem Detayı Getir
+      summary:  POS İşlem Detay Listele ID ile
       description: >-
         Belirtilen ID'ye sahip POS işlem detayını getirir. Bu işlem, belirli bir
         POS işlem detayının detaylarını görüntülemenizi sağlar.
+      tags:
+        - Pos İşlem Detay
+  /api/Posislemdetay/add:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Posislemdetay'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Posislemdetay'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Posislemdetay'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Posislemdetay'
+      responses:
+        '200':
+          description: Success
+      summary: POS İşlem Detay Ekle
+      description: >-
+        Sisteme yeni bir POS işlem detay kaydı ekler. Bu işlem, bir POS işlemiyle
+        ilgili detay bilgilerini sisteme kaydeder.
+      tags:
+        - Pos İşlem Detay
+  /api/Posislemdetay/addrange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Posislemdetay'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Posislemdetay'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Posislemdetay'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Posislemdetay'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: POS İşlem Detay Ekle Toplu
+      description: >-
+        Birden fazla POS işlem detayını topluca ekler. Bu işlem, çok sayıda POS
+        işlem detayının aynı anda sisteme eklenmesini sağlar.
       tags:
         - Pos İşlem Detay
   /api/Posislemdetay/update:
@@ -13411,7 +13333,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POS İşlem Detayı Güncelle
+      summary: POS İşlem Detay Güncelle
       description: >-
         Belirtilen POS işlem detayını günceller. Bu işlem, mevcut bir POS işlem
         detayının bilgilerini değiştirmenizi sağlar.
@@ -13444,98 +13366,38 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu POS İşlem Detayı Güncelle
+      summary: POS İşlem Detay Güncelle Toplu
       description: >-
         Birden fazla POS işlem detayını topluca günceller. Bu işlem, çok sayıda
         POS işlem detayının aynı anda güncellenmesini sağlar.
       tags:
         - Pos İşlem Detay
-  /api/Posmakinebilgileri/add:
+  /api/Posislemdetay/delete:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Posmakinebilgileri'
+              $ref: '#/components/schemas/Posislemdetay'
           application/json:
             schema:
-              $ref: '#/components/schemas/Posmakinebilgileri'
+              $ref: '#/components/schemas/Posislemdetay'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/Posmakinebilgileri'
+              $ref: '#/components/schemas/Posislemdetay'
           text/json:
             schema:
-              $ref: '#/components/schemas/Posmakinebilgileri'
+              $ref: '#/components/schemas/Posislemdetay'
       responses:
         '200':
           description: Success
-      summary: POS Makine Bilgilerini Ekle
+      summary: POS İşlem Detay Sil
       description: >-
-        Sisteme yeni bir POS makine bilgisi ekler. Bu işlem, bir POS makinesinin
-        detay bilgilerini sisteme kaydeder ve işlemin başarılı olduğunu belirtir.
+        Belirtilen POS işlem detayını sistemden siler. Bu işlem, mevcut bir POS
+        işlem detayının kaldırılmasını sağlar.
       tags:
-        - Pos Makine Bilgileri
-  /api/Posmakinebilgileri/addrange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Posmakinebilgileri'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Posmakinebilgileri'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Posmakinebilgileri'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Posmakinebilgileri'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu POS Makine Bilgisi Ekle
-      description: >-
-        Birden fazla POS makine bilgisini topluca ekler. Bu işlem, çok sayıda POS
-        makine bilgisinin aynı anda sisteme eklenmesini sağlar ve işlemin başarılı
-        olduğunu belirtir.
-      tags:
-        - Pos Makine Bilgileri
-  /api/Posmakinebilgileri/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Posmakinebilgileri'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Posmakinebilgileri'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Posmakinebilgileri'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Posmakinebilgileri'
-      responses:
-        '200':
-          description: Success
-      summary: POS Makine Bilgisi Sil
-      description: >-
-        Belirtilen POS makine bilgisini sistemden siler. Bu işlem, mevcut bir POS
-        makine bilgisinin kaldırılmasını sağlar ve işlemin başarılı olduğunu
-        belirtir.
-      tags:
-        - Pos Makine Bilgileri
-  /api/Posmakinebilgileri/deletebyid:
+        - Pos İşlem Detay
+  /api/Posislemdetay/deletebyid:
     delete:
       parameters:
         - explode: true
@@ -13549,47 +13411,45 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile POS Makine Bilgisi Sil
+      summary: POS İşlem Detay Sil ID ile
       description: >-
-        Belirtilen ID'ye sahip POS makine bilgisini sistemden siler. Bu işlem,
-        belirli bir POS makine bilgisinin kaldırılmasını sağlar ve işlemin
-        başarılı olduğunu belirtir.
+        Belirtilen ID'ye sahip POS işlem detayını sistemden siler. Bu işlem,
+        belirli bir POS işlem detayının kaldırılmasını sağlar.
       tags:
-        - Pos Makine Bilgileri
-  /api/Posmakinebilgileri/deleterange:
+        - Pos İşlem Detay
+  /api/Posislemdetay/deleterange:
     post:
       requestBody:
         content:
           application/*+json:
             schema:
               items:
-                $ref: '#/components/schemas/Posmakinebilgileri'
+                $ref: '#/components/schemas/Posislemdetay'
               type: array
           application/json:
             schema:
               items:
-                $ref: '#/components/schemas/Posmakinebilgileri'
+                $ref: '#/components/schemas/Posislemdetay'
               type: array
           application/json-patch+json:
             schema:
               items:
-                $ref: '#/components/schemas/Posmakinebilgileri'
+                $ref: '#/components/schemas/Posislemdetay'
               type: array
           text/json:
             schema:
               items:
-                $ref: '#/components/schemas/Posmakinebilgileri'
+                $ref: '#/components/schemas/Posislemdetay'
               type: array
       responses:
         '200':
           description: Success
-      summary: Toplu POS Makine Bilgisi Sil
+      summary: POS İşlem Detay Sil Toplu
       description: >-
-        Belirtilen aralıkta bulunan POS makine bilgilerini topluca siler. Bu
-        işlem, birden fazla POS makine bilgisinin aynı anda kaldırılmasını sağlar
-        ve işlemin başarılı olduğunu belirtir.
+        Belirtilen aralıkta bulunan POS işlem detaylarını topluca siler. Bu işlem,
+        birden fazla POS işlem detayının aynı anda kaldırılmasını sağlar.
       tags:
-        - Pos Makine Bilgileri
+        - Pos İşlem Detay
   /api/Posmakinebilgileri/getall:
     post:
       requestBody:
@@ -13630,11 +13490,70 @@ paths:
       responses:
         '200':
           description: Success
-      summary: ID ile POS Makine Bilgisi Getir
+      summary: POS Makine Bilgi Listele ID ile
       description: >-
         Belirtilen ID'ye sahip POS makine bilgisini getirir. Bu işlem, belirli bir
         POS makine bilgisinin detaylarını görüntülemenizi sağlar ve işlemin
         başarılı olduğunu belirtir.
+      tags:
+        - Pos Makine Bilgileri
+  /api/Posmakinebilgileri/add:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Posmakinebilgileri'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Posmakinebilgileri'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Posmakinebilgileri'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Posmakinebilgileri'
+      responses:
+        '200':
+          description: Success
+      summary: POS Makine Bilgi Ekle
+      description: >-
+        Sisteme yeni bir POS makine bilgisi ekler. Bu işlem, bir POS makinesinin
+        detay bilgilerini sisteme kaydeder ve işlemin başarılı olduğunu belirtir.
+      tags:
+        - Pos Makine Bilgileri
+  /api/Posmakinebilgileri/addrange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Posmakinebilgileri'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Posmakinebilgileri'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Posmakinebilgileri'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Posmakinebilgileri'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: POS Makine Bilgi Ekle Toplu
+      description: >-
+        Birden fazla POS makine bilgisini topluca ekler. Bu işlem, çok sayıda POS
+        makine bilgisinin aynı anda sisteme eklenmesini sağlar ve işlemin başarılı
+        olduğunu belirtir.
       tags:
         - Pos Makine Bilgileri
   /api/Posmakinebilgileri/update:
@@ -13656,7 +13575,7 @@ paths:
       responses:
         '200':
           description: Success
-      summary: POS Makine Bilgisi Güncelle
+      summary: POS Makine Bilgi Güncelle
       description: >-
         Belirtilen POS makine bilgisini günceller. Bu işlem, mevcut bir POS makine
         bilgisinin bilgilerini değiştirmenizi sağlar ve işlemin başarılı olduğunu
@@ -13690,13 +13609,141 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu POS Makine Bilgisi Güncelle
+      summary: POS Makine Bilgi Güncelle Toplu
       description: >-
         Birden fazla POS makine bilgisini topluca günceller. Bu işlem, çok sayıda
         POS makine bilgisinin aynı anda güncellenmesini sağlar ve işlemin başarılı
         olduğunu belirtir.
       tags:
         - Pos Makine Bilgileri
+  /api/Posmakinebilgileri/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Posmakinebilgileri'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Posmakinebilgileri'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Posmakinebilgileri'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Posmakinebilgileri'
+      responses:
+        '200':
+          description: Success
+      summary: POS Makine Bilgi Sil
+      description: >-
+        Belirtilen POS makine bilgisini sistemden siler. Bu işlem, mevcut bir POS
+        makine bilgisinin kaldırılmasını sağlar ve işlemin başarılı olduğunu
+        belirtir.
+      tags:
+        - Pos Makine Bilgileri
+  /api/Posmakinebilgileri/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: POS Makine Bilgi Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip POS makine bilgisini sistemden siler. Bu işlem,
+        belirli bir POS makine bilgisinin kaldırılmasını sağlar ve işlemin
+        başarılı olduğunu belirtir.
+      tags:
+        - Pos Makine Bilgileri
+  /api/Posmakinebilgileri/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Posmakinebilgileri'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Posmakinebilgileri'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Posmakinebilgileri'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Posmakinebilgileri'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: POS Makine Bilgi Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan POS makine bilgilerini topluca siler. Bu
+        işlem, birden fazla POS makine bilgisinin aynı anda kaldırılmasını sağlar
+        ve işlemin başarılı olduğunu belirtir.
+      tags:
+        - Pos Makine Bilgileri
+  /api/Raporlar/getall:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RaporlarFilterHelper'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RaporlarFilterHelper'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/RaporlarFilterHelper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RaporlarFilterHelper'
+      responses:
+        '200':
+          description: Success
+      summary: Raporları Listele
+      description: >-
+        Sistemdeki raporları belirli filtreler kullanarak listeler. Bu işlem,
+        raporların filtreleme kriterlerine göre görüntülenmesini sağlar ve işlemin
+        başarılı olduğunu belirtir.
+      tags:
+        - Raporlar
+  /api/Raporlar/getbyid:
+    get:
+      parameters:
+        - explode: true
+          in: query
+          name: id
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Rapor Listele ID ile
+      description: >-
+        Belirtilen ID'ye sahip raporu getirir. Bu işlem, belirli bir rapor
+        bilgisinin detaylarını görüntülemenizi sağlar ve işlemin başarılı olduğunu
+        belirtir.
+      tags:
+        - Raporlar
   /api/Raporlar/add:
     post:
       requestBody:
@@ -13749,136 +13796,10 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Rapor Ekle
+      summary: Rapor Ekle Toplu
       description: >-
         Birden fazla raporu topluca ekler. Bu işlem, çok sayıda rapor bilgisinin
         aynı anda sisteme eklenmesini sağlar ve işlemin başarılı olduğunu
-        belirtir.
-      tags:
-        - Raporlar
-  /api/Raporlar/delete:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Raporlar'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Raporlar'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/Raporlar'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Raporlar'
-      responses:
-        '200':
-          description: Success
-      summary: Rapor Sil
-      description: >-
-        Belirtilen raporu sistemden siler. Bu işlem, mevcut bir rapor bilgisinin
-        kaldırılmasını sağlar ve işlemin başarılı olduğunu belirtir.
-      tags:
-        - Raporlar
-  /api/Raporlar/deletebyid:
-    delete:
-      parameters:
-        - explode: true
-          in: query
-          name: entityId
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Rapor Sil
-      description: >-
-        Belirtilen ID'ye sahip raporu sistemden siler. Bu işlem, belirli bir rapor
-        bilgisinin kaldırılmasını sağlar ve işlemin başarılı olduğunu belirtir.
-      tags:
-        - Raporlar
-  /api/Raporlar/deleterange:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Raporlar'
-              type: array
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Raporlar'
-              type: array
-          application/json-patch+json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Raporlar'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Raporlar'
-              type: array
-      responses:
-        '200':
-          description: Success
-      summary: Toplu Rapor Sil
-      description: >-
-        Belirtilen aralıkta bulunan raporları topluca siler. Bu işlem, birden
-        fazla rapor bilgisinin aynı anda kaldırılmasını sağlar ve işlemin başarılı
-        olduğunu belirtir.
-      tags:
-        - Raporlar
-  /api/Raporlar/getall:
-    post:
-      requestBody:
-        content:
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/RaporlarFilterHelper'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RaporlarFilterHelper'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/RaporlarFilterHelper'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/RaporlarFilterHelper'
-      responses:
-        '200':
-          description: Success
-      summary: Raporları Listele
-      description: >-
-        Sistemdeki raporları belirli filtreler kullanarak listeler. Bu işlem,
-        raporların filtreleme kriterlerine göre görüntülenmesini sağlar ve işlemin
-        başarılı olduğunu belirtir.
-      tags:
-        - Raporlar
-  /api/Raporlar/getbyid:
-    get:
-      parameters:
-        - explode: true
-          in: query
-          name: id
-          required: false
-          schema:
-            format: int32
-            type: integer
-          style: form
-      responses:
-        '200':
-          description: Success
-      summary: ID ile Rapor Getir
-      description: >-
-        Belirtilen ID'ye sahip raporu getirir. Bu işlem, belirli bir rapor
-        bilgisinin detaylarını görüntülemenizi sağlar ve işlemin başarılı olduğunu
         belirtir.
       tags:
         - Raporlar
@@ -13935,11 +13856,90 @@ paths:
       responses:
         '200':
           description: Success
-      summary: Toplu Rapor Güncelle
+      summary: Rapor Güncelle Toplu
       description: >-
         Birden fazla raporu topluca günceller. Bu işlem, çok sayıda rapor
         bilgisinin aynı anda güncellenmesini sağlar ve işlemin başarılı olduğunu
         belirtir.
+      tags:
+        - Raporlar
+  /api/Raporlar/delete:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Raporlar'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Raporlar'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Raporlar'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Raporlar'
+      responses:
+        '200':
+          description: Success
+      summary: Rapor Sil
+      description: >-
+        Belirtilen raporu sistemden siler. Bu işlem, mevcut bir rapor bilgisinin
+        kaldırılmasını sağlar ve işlemin başarılı olduğunu belirtir.
+      tags:
+        - Raporlar
+  /api/Raporlar/deletebyid:
+    delete:
+      parameters:
+        - explode: true
+          in: query
+          name: entityId
+          required: false
+          schema:
+            format: int32
+            type: integer
+          style: form
+      responses:
+        '200':
+          description: Success
+      summary: Rapor Sil ID ile
+      description: >-
+        Belirtilen ID'ye sahip raporu sistemden siler. Bu işlem, belirli bir rapor
+        bilgisinin kaldırılmasını sağlar ve işlemin başarılı olduğunu belirtir.
+      tags:
+        - Raporlar
+  /api/Raporlar/deleterange:
+    post:
+      requestBody:
+        content:
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Raporlar'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Raporlar'
+              type: array
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Raporlar'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Raporlar'
+              type: array
+      responses:
+        '200':
+          description: Success
+      summary: Rapor Sil Toplu
+      description: >-
+        Belirtilen aralıkta bulunan raporları topluca siler. Bu işlem, birden
+        fazla rapor bilgisinin aynı anda kaldırılmasını sağlar ve işlemin başarılı
+        olduğunu belirtir.
       tags:
         - Raporlar
   /api/Sanalsantralayar/add:
