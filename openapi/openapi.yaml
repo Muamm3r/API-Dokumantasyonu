@@ -28628,7 +28628,7 @@ components:
           nullable: true
           type: string
         id:
-          description: 
+          description: Notun id'si.
           format: int32
           type: integer
         personid:
@@ -29042,19 +29042,19 @@ components:
       additionalProperties: false
       properties:
         anaFormBekleme:
-          description: 
+          description: Ana form bekleme süresi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         comPort:
-          description: 
+          description: Seri port bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         hizliSatisFormBekleme:
-          description: 
+          description: Hızlı satış formu bekleme süresi.
           maxLength: 255
           minLength: 0
           nullable: true
