@@ -4,7 +4,7 @@ info:
   version: v1
 servers:
   - description: SwaggerHub API Auto Mocking
-    url: 'https://apiv3.bilsoft.com'
+    url: https://apiv3.bilsoft.com
 security:
   - Bearer: []
 paths:
@@ -28,9 +28,7 @@ paths:
         '200':
           description: Success
       summary: Ajandaları Listele
-      description: >-
-        Veritabanındaki tüm ajanda kayıtlarını getirir. Bu işlem, kullanıcıların
-        tüm ajanda kayıtlarını listelemelerini sağlar.
+      description: Veritabanındaki tüm ajanda kayıtlarını getirir. Bu işlem, kullanıcıların tüm ajanda kayıtlarını listelemelerini sağlar.
       tags:
         - Ajanda İşlemleri
   /api/Ajanda/getbyid:
@@ -23554,8 +23552,8 @@ components:
           minLength: 0
           nullable: true
           type: string
-        faturaIl: Fatura il bilgisi.
-          description: 
+        faturaIl: 
+          description: Fatura il bilgisi.
           maxLength: 50
           minLength: 0
           nullable: true
@@ -28233,7 +28231,7 @@ components:
           nullable: true
           type: string
         pDogumyeri:
-          description: description: Kişinin doğum yeri.
+          description: Kişinin doğum yeri.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -33168,13 +33166,13 @@ components:
           nullable: true
           type: string
         tel:
-          description: tel açıklaması.
+          description: 
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tevkifatOran:
-          description: tevkifatOran açıklaması.
+          description: 
           maxLength: 255
           minLength: 0
           nullable: true
@@ -33184,7 +33182,7 @@ components:
           nullable: true
           type: number
         ticaretsicilno:
-          description: ticaretsicilno açıklaması.
+          description: 
           maxLength: 255
           minLength: 0
           nullable: true
@@ -33200,25 +33198,25 @@ components:
           nullable: true
           type: string
         vd:
-          description: vd açıklaması.
+          description: 
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         vn:
-          description: vn açıklaması.
+          description: 
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         yazi:
-          description: yazi açıklaması.
+          description: 
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         yetkili:
-          description: yetkili açıklaması.
+          description: 
           maxLength: 255
           minLength: 0
           nullable: true
