@@ -21602,9 +21602,7 @@ components:
       additionalProperties: false
       properties:
         aciklama:
-          description: aciklama açıklaması.
-          maxLength: 255
-          minLength: 0
+          description: Açıklama.
           nullable: true
           type: string
         adSoyad:
@@ -21639,12 +21637,13 @@ components:
           nullable: true
           type: string
         tel:
-          description: tel açıklaması.
+          description: Tel açıklaması.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         userId:
+          description: Kullanıcının benzersiz kimlik numarası.
           format: int32
           nullable: true
           type: integer
@@ -21653,23 +21652,24 @@ components:
       additionalProperties: false
       properties:
         ajandaId:
+          description: Ajandadaki öğenin benzersiz kimlik numarası.        
           format: int32
           nullable: true
           type: integer
         dosyaAdi:
-          description: dosyaAdi açıklaması.
+          description: Dosyanın adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         dosyaYolu:
-          description: dosyaYolu açıklaması.
+          description: Dosyanın saklandığı yol.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         id:
-          description: Benzersiz kimlik numarası.
+          description: Ajanda dosyasının benzersiz kimlik numarası.
           format: int32
           type: integer
       type: object
@@ -22082,7 +22082,7 @@ components:
           format: int32
           type: integer
         yedek:
-          description: yedek açıklaması.
+          description: Yedek açıklaması.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -22288,14 +22288,17 @@ components:
           nullable: true
           type: string
         bankaId:
+          description: Bankanın benzersiz kimlik numarası.
           format: int32
           nullable: true
           type: integer
         cariId:
+          description: Cari hesabın benzersiz kimlik numarası.
           format: int32
           nullable: true
           type: integer
         cekId:
+          description: Çekin benzersiz kimlik numarası.
           format: int32
           nullable: true
           type: integer
@@ -22645,47 +22648,48 @@ components:
           nullable: true
           type: string
         kumuleVergiMatrahi:
-          description: kumuleVergiMatrahi açıklaması.
+          description: Kümülatif vergi matrahı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         netUcret:
-          description: netUcret açıklaması.
+          description:  Net ücret.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         odemeDurum:
-          description: odemeDurum açıklaması.
+          description: Ödeme durumu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ortGelirVergOran:
-          description: ortGelirVergOran açıklaması.
+          description: Ortalama gelir vergi oranı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         personid:
+          description: Personelin benzersiz kimlik numarası.
           format: int32
           nullable: true
           type: integer
         prim:
-          description: prim açıklaması.
+          description: Prim ödemesi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sgkKesinti:
-          description: sgkKesinti açıklaması.
+          description: SGK kesintisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sgkMatrah:
-          description: sgkMatrah açıklaması.
+          description: SGK matrahı.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -22697,7 +22701,7 @@ components:
           nullable: true
           type: string
         vergiMatrahi:
-          description: vergiMatrahi açıklaması.
+          description: Vergi matrahı.          
           maxLength: 255
           minLength: 0
           nullable: true
@@ -22871,43 +22875,43 @@ components:
           format: int32
           type: integer
         vergiDilimi1Oran:
-          description: vergiDilimi1Oran açıklaması.
+          description: Vergi dilimi 1 oranı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         vergiDilimi1Tutar:
-          description: vergiDilimi1Tutar açıklaması.
+          description: Vergi dilimi 1 tutarı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         vergiDilimi2Oran:
-          description: vergiDilimi2Oran açıklaması.
+          description: Vergi dilimi 2 oranı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         vergiDilimi2Tutar:
-          description: vergiDilimi2Tutar açıklaması.
+          description: Vergi dilimi 2 tutarı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         vergiDilimi3Oran:
-          description: vergiDilimi3Oran açıklaması.
+          description: Vergi dilimi 3 oranı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         vergiDilimi3Tutar:
-          description: vergiDilimi3Tutar açıklaması.
+          description: Vergi dilimi 3 tutarı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         vergiDilimiAsimOran:
-          description: vergiDilimiAsimOran açıklaması.
+          description: Vergi dilimi aşım oranı.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -22984,6 +22988,7 @@ components:
       additionalProperties: false
       properties:
         cariId:
+          description: Cari hesabın benzersiz kimlik numarası.
           format: int32
           nullable: true
           type: integer
@@ -22998,49 +23003,49 @@ components:
           format: int32
           type: integer
         il:
-          description: il açıklaması.
+          description: İl bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ilce:
-          description: ilce açıklaması.
+          description: İlçe bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         mail:
-          description: mail açıklaması.
+          description: E-posta adresi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         postaKodu:
-          description: postaKodu açıklaması.
+          description: Posta kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sevkAdres:
-          description: sevkAdres açıklaması.
+          description: Sevk adresi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tel:
-          description: tel açıklaması.
+          description: Telefon numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ulke:
-          description: ulke açıklaması.
+          description: Ülke bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         yetkili:
-          description: yetkili açıklaması.
+          description: Yetkili kişinin adı.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -23239,7 +23244,7 @@ components:
       additionalProperties: false
       properties:
         grup:
-          description: grup açıklaması.
+          description: Grup bilgisi.
           maxLength: 50
           minLength: 0
           nullable: true
@@ -23332,45 +23337,50 @@ components:
       additionalProperties: false
       properties:
         aciklama:
-          description: aciklama açıklaması.
+          description: Açıklama.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         alacak:
+          description: Alacak tutarı.
           format: double
           nullable: true
           type: number
         banka:
-          description: banka açıklaması.
+          description: Banka bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         bankaIslId:
+          description: Banka işlemi kimlik numarası.
           format: int32
           nullable: true
           type: integer
         borc:
+          description: Borç tutarı.
           format: double
           nullable: true
           type: number
         cariId:
+          description: Cari hesabın benzersiz kimlik numarası.
           format: int32
           nullable: true
           type: integer
         cariIslemResimYolu:
-          description: cariIslemResimYolu açıklaması.
+          description: Cari işlem resminin yolu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         cekId:
+          description: Çek kimlik numarası.
           format: int32
           nullable: true
           type: integer
         evrakNo:
-          description: evrakNo açıklaması.
+          description: Evrak numarası.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -23518,13 +23528,13 @@ components:
           nullable: true
           type: string
         cariKod:
-          description: cariKod açıklaması.
+          description: Cari kod.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         cariN11Id:
-          description: cariN11Id açıklaması.
+          description: Cari N11 kimlik numarası.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -23539,41 +23549,42 @@ components:
           nullable: true
           type: string
         faturaAdres:
-          description: faturaAdres açıklaması.
+          description: Fatura adresi. 
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
-        faturaIl:
-          description: faturaIl açıklaması.
+        faturaIl: Fatura il bilgisi.
+          description: 
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         faturaIlce:
-          description: faturaIlce açıklaması.
+          description: Fatura ilçe bilgisi.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         faturaUlke:
-          description: faturaUlke açıklaması.
+          description: Fatura ülke bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         faturaUnvan:
+          description:  Fatura unvanı.
           maxLength: 255
           minLength: 0
           type: string
         fax:
-          description: fax açıklaması.
+          description: Faks numarası.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         grup:
-          description: grup açıklaması.
+          description: Grup bilgisi.
           maxLength: 50
           minLength: 0
           nullable: true
@@ -23589,47 +23600,48 @@ components:
           nullable: true
           type: string
         mail:
-          description: mail açıklaması.
+          description: E-posta adresi.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         personelMi:
+          description: Personel olup olmadığını belirten kimlik numarası.
           format: int32
           nullable: true
           type: integer
         postakodu:
-          description: postakodu açıklaması.
+          description:  Posta kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         resimYolu:
-          description: resimYolu açıklaması.
+          description: Resim yolu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         riskIslemi:
-          description: riskIslemi açıklaması.
+          description: Risk işlemi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         riskLimiti:
-          description: riskLimiti açıklaması.
+          description: Risk limiti.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         seciliPketiketi:
-          description: seciliPketiketi açıklaması.
+          description: Seçili paket etiketi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sevkAdresi:
-          description: sevkAdresi açıklaması.
+          description: Sevk adresi.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -23641,47 +23653,48 @@ components:
           nullable: true
           type: string
         tel:
-          description: tel açıklaması.
+          description: Telefon numarası.
           maxLength: 150
           minLength: 0
           nullable: true
           type: string
         ticaretsicilno:
-          description: ticaretsicilno açıklaması.
+          description: Ticaret sicil numarası.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         varsayilanKasa:
-          description: varsayilanKasa açıklaması.
+          description: Varsayılan kasa.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         varsayilanVadeGunu:
+          description: Varsayılan vade günü.
           format: int32
           nullable: true
           type: integer
         vergiDairesi:
-          description: vergiDairesi açıklaması.
+          description: Vergi dairesi.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         vergiNo:
-          description: vergiNo açıklaması.
+          description: Vergi numarası.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         webAdresi:
-          description: webAdresi açıklaması.
+          description: Web adresi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         yetkili:
-          description: yetkili açıklaması.
+          description: Yetkili kişinin adı.
           maxLength: 50
           minLength: 0
           nullable: true
@@ -23693,11 +23706,12 @@ components:
       additionalProperties: false
       properties:
         cariId:
+          description: Cari hesabın benzersiz kimlik numarası.  
           format: int32
           nullable: true
           type: integer
         eticaretBilgi:
-          description: eticaretBilgi açıklaması.
+          description: E-ticaret bilgisi.
           maxLength: 100
           minLength: 0
           nullable: true
@@ -23845,11 +23859,12 @@ components:
       additionalProperties: false
       properties:
         cariId:
+          description: Cari hesabın benzersiz kimlik numarası.
           format: int32
           nullable: true
           type: integer
         deger:
-          description: deger açıklaması.
+          description: Değer.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -23859,7 +23874,7 @@ components:
           format: int32
           type: integer
         kod:
-          description: kod açıklaması.
+          description: Kod.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -24038,10 +24053,11 @@ components:
       additionalProperties: false
       properties:
         aciklama:
+          description: Açıklama.
           nullable: true
           type: string
         asilBorclu:
-          description: asilBorclu açıklaması.
+          description: Asıl borçlu.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -24063,41 +24079,42 @@ components:
           nullable: true
           type: string
         cariId:
+          description:  Cari hesabın benzersiz kimlik numarası.
           format: int32
           nullable: true
           type: integer
         cekDurumu:
-          description: cekDurumu açıklaması.
+          description: Çekin durumu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         cekNo:
-          description: cekNo açıklaması.
+          description: Çek numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         cekResimYolu:
-          description: cekResimYolu açıklaması.
+          description: Çek resminin yolu.
           maxLength: 500
           minLength: 0
           nullable: true
           type: string
         cekTuru:
-          description: cekTuru açıklaması.
+          description: Çek türü.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         cekiAlan:
-          description: cekiAlan açıklaması.
+          description: Çeki alan kişinin adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         evrakTuru:
-          description: evrakTuru açıklaması.
+          description: Evrak türü.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -24211,10 +24228,12 @@ components:
       additionalProperties: false
       properties:
         pageNumber:
+          description: Verilen sayfa numarası, dökümandaki belirli bir sayfayı belirtir.
           format: int32
           nullable: true
           type: integer
         pageSize:
+          description: Bir sayfada gösterilecek öğe sayısını tanımlar.
           format: int32
           nullable: true
           type: integer
@@ -24223,24 +24242,25 @@ components:
       additionalProperties: false
       properties:
         earsivSeriBaslik:
-          description: earsivSeriBaslik açıklaması.
+          description: E-arşiv belgesinin seri başlığını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         efaturaSeriBaslik:
-          description: efaturaSeriBaslik açıklaması.
+          description: E-fatura belgesinin seri başlığını tanımlar.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         entegrasyonTur:
-          description: entegrasyonTur açıklaması.
+          description: Entegrasyon türünü belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         gelenStokKaydet:
+          description: Gelen stok bilgilerini kaydetmek için kullanılan bir boolean değerdir.
           nullable: true
           type: boolean
         id:
@@ -24254,45 +24274,49 @@ components:
           nullable: true
           type: string
         mustahsilServisurl:
-          description: mustahsilServisurl açıklaması.
+          description: Mustahsil servisine erişim URL'sini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         seciliGbetiketi:
-          description: seciliGbetiketi açıklaması.
+          description: Seçilen GBE (Genel Belge Etiketi) başlığını tanımlar.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         servisurl:
-          description: servisurl açıklaması.
+          description: Genel servis URL'sini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sifre:
-          description: sifre açıklaması.
+          description: Kullanıcı şifresini temsil eder.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         subeAdi:
-          description: Şube adı.
+          description: Şubenin adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         xsltEarsiv:
+          description: E-arşiv verileri için XSLT dönüşüm şablonunu tanımlar.
           nullable: true
           type: string
         xsltEfatura:
+          description: E-fatura verileri için XSLT dönüşüm şablonunu belirtir.
           nullable: true
           type: string
         xsltEirsaliye:
+          description: E-irsaliye verileri için XSLT dönüşüm şablonunu tanımlar.
           nullable: true
           type: string
         xsltEmustahsil:
+          description: Emustahsil verileri için XSLT dönüşüm şablonunu belirtir.
           nullable: true
           type: string
       type: object
@@ -24366,8 +24390,8 @@ components:
     Eticaretayarlar:
       additionalProperties: false
       properties:
-        entegrasyonTur:
-          description: entegrasyonTur açıklaması.
+        entegrasyonTur: 
+          description: Entegrasyon türünü belirtir.
           maxLength: 50
           minLength: 0
           nullable: true
@@ -24383,7 +24407,7 @@ components:
           nullable: true
           type: string
         sifre:
-          description: sifre açıklaması.
+          description: Kullanıcı şifresini belirtir.
           maxLength: 50
           minLength: 0
           nullable: true
@@ -24476,12 +24500,13 @@ components:
           nullable: true
           type: string
         birim:
-          description: birim açıklaması.
+          description: Öğe birimini belirtir, en fazla 255 karakter uzunluğunda olabilir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         fatHammaddeIslId:
+          description: Hammadde işleme işlemi için kullanılan tamsayı ID'sini belirtir.
           format: int32
           nullable: true
           type: integer
@@ -24491,7 +24516,7 @@ components:
           nullable: true
           type: integer
         faturaUnvan:
-          description: faturaUnvan açıklaması.
+          description: Faturanın başlık unvanını belirtir, en fazla 255 karakter uzunluğunda olabilir.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -24507,20 +24532,23 @@ components:
           nullable: true
           type: string
         miktar:
+          description: Satın alınan malın miktarını belirtir.
           format: double
           nullable: true
           type: number
         sFiyat:
+          description: Satın alınan malın satıcı fiyatını belirtir.
           format: double
           nullable: true
           type: number
         stokGrup:
-          description: stokGrup açıklaması.
+          description: Stok grubunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokHammaddeId:
+          description: Stokta bulunan hammaddeye ait tamsayı ID'sini belirtir.
           format: int32
           nullable: true
           type: integer
@@ -24530,7 +24558,7 @@ components:
           nullable: true
           type: integer
         stokKodu:
-          description: stokKodu açıklaması.
+          description: Stok kodu.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -24618,30 +24646,31 @@ components:
       additionalProperties: false
       properties:
         ad:
-          description: ad açıklaması.
+          description: Öğenin adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         aliciUrunKodu:
-          description: aliciUrunKodu açıklaması.
+          description: Alıcının ürün kodunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         barkod:
-          description: Barkod bilgisi.
+          description: Ürüne ait barkod numarasını belirtir.
           maxLength: 300
           minLength: 0
           nullable: true
           type: string
         birim:
-          description: birim açıklaması.
+          description: Öğe birimini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         brfiyat:
+          description: Birimin fiyatını belirtir.
           format: double
           minimum: 0
           nullable: true
@@ -24655,30 +24684,31 @@ components:
           format: int32
           type: integer
         gonderilmeSekliAdi:
-          description: gonderilmeSekliAdi açıklaması.
+          description: Gönderilme şeklinin adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         gonderilmeSekliKodu:
-          description: gonderilmeSekliKodu açıklaması.
+          description: Gönderilme şeklinin kodunu belirtir.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         gtipNo:
-          description: gtipNo açıklaması.
+          description: Gtip (Gıda Takip) numarasını belirtir.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         gtopfiyat:
+          description: Gtip fiyatını belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
           type: number
         gumrukTakipNo:
-          description: gumrukTakipNo açıklaması.
+          description: Gümrük takip numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -24688,80 +24718,90 @@ components:
           format: int32
           type: integer
         iskontoOran:
+          description: İskonto oranını belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
           type: number
         iskontoOran2:
+          description: İkinci iskonto oranını belirtir.
           format: double
           nullable: true
           type: number
         iskontoOran3:
+          description: Üçüncü iskonto oranını belirtir.
           format: double
           nullable: true
           type: number
         iskontoTutar:
+          description: İskonto tutarını belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
           type: number
-        iskontoTutar2:
+        iskontoTutar2: 
+          description: İkinci iskonto tutarını belirtir.
           format: double
           nullable: true
           type: number
         iskontoTutar3:
+          description: Üçüncü iskonto tutarını belirtir.
           format: double
           nullable: true
           type: number
         kapAdedi:
+          description: Kap sayısını belirtir.
           format: double
           nullable: true
           type: number
         kapCinsiAdi:
-          description: kapCinsiAdi açıklaması.
+          description: Kap cinsinin adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kapCinsiKodu:
-          description: kapCinsiKodu açıklaması.
+          description: Kap cinsinin kodunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kapNumarasi:
-          description: kapNumarasi açıklaması.
+          description: Kap numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kdvDahil:
+          description: KDV'nin dahil olup olmadığını belirtir.
           maxLength: 255
           minLength: 0
           type: string
         kdvDurum:
-          description: kdvDurum açıklaması.
+          description: KDV durumunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kdvMuafiyetAdi:
+          description: KDV muafiyet adını belirtir.
           nullable: true
           type: string
         kdvMuafiyetKodu:
-          description: kdvMuafiyetKodu açıklaması.
+          description: KDV muafiyet kodunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kdvOran:
-          description: kdvOran açıklaması.
+          description: KDV oranını belirtir, 0 veya daha büyük bir değeri olabilir.
           maxLength: 50
           minLength: 0
           minimum: 0
           nullable: true
           type: string
         kdvTutar:
+          description: KDV tutarını belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
@@ -24773,194 +24813,202 @@ components:
           nullable: true
           type: string
         kunyeNo:
-          description: kunyeNo açıklaması.
+          description: Kunye numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         lotId:
+          description: Lot ID'sini belirtir.
           format: int32
           type: integer
         malSahibi:
-          description: malSahibi açıklaması.
+          description: Mal sahibinin adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         malSahibiVknTckn:
-          description: malSahibiVknTckn açıklaması.
+          description: Mal sahibinin VKN veya TCKN numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         maliyet:
+          description: Maliyet değerini belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
           type: number
         miktar:
-          description: miktar açıklaması.
+          description: Miktarı belirtir, 0 veya daha büyük bir değeri olabilir.
           maxLength: 50
           minLength: 0
           minimum: 0
           nullable: true
           type: string
         oivAdi:
-          description: oivAdi açıklaması.
+          description: OIV (Özel İhtisas Vergisi) adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         oivDahil:
-          description: oivDahil açıklaması.
+          description: OIV'nin dahil olup olmadığını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         oivKodu:
-          description: oivKodu açıklaması.
+          description: OIV kodunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         oivOran:
-          description: oivOran açıklaması.
+          description: OIV oranını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         oivTutar:
+          description: OIV tutarını belirtir.
           format: double
           nullable: true
           type: number
         otvAdi:
-          description: otvAdi açıklaması.
+          description: OTV (Özel Tüketim Vergisi) adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         otvDahil:
+          description: OTV'nin dahil olup olmadığını belirtir.
           maxLength: 255
           minLength: 0
           type: string
         otvKodu:
-          description: otvKodu açıklaması.
+          description: OTV kodunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         otvOran:
+          description: OTV oranını belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
           type: number
         otvTutar:
+          description: OTV tutarını belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
           type: number
         resimYolu:
-          description: resimYolu açıklaması.
+          description: Resmin dosya yolunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         saticiUrunKodu:
-          description: saticiUrunKodu açıklaması.
+          description: Satıcının ürün kodunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         seriNo:
-          description: seriNo açıklaması.
+          description: Seri numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokId:
-          description: Stok kimlik numarası.
+          description: Stok ID'sini belirtir.
           format: int32
           type: integer
         stokOzelKod1:
-          description: stokOzelKod1 açıklaması.
+          description: Stok özel kodunun birinci kısmını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokOzelKod2:
-          description: stokOzelKod2 açıklaması.
+          description: Stok özel kodunun ikinci kısmını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokOzelKod3:
-          description: stokOzelKod3 açıklaması.
+          description: Stok özel kodunun üçüncü kısmını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokOzelKod4:
-          description: stokOzelKod4 açıklaması.
+          description: Stok özel kodunun dördüncü kısmını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokRafi:
-          description: stokRafi açıklaması.
+          description: Stok rafını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         subeAdi:
-          description: Şube adı.
+          description: Şubenin adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         teslimSartiAdi:
-          description: teslimSartiAdi açıklaması.
+          description: Teslimat şartlarının adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         teslimSartiKodu:
-          description: teslimSartiKodu açıklaması.
+          description: Teslimat şartlarının kodunu belirtir.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         tevkifatAdi:
-          description: tevkifatAdi açıklaması.
+          description: Tevkifat adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tevkifatKodu:
-          description: tevkifatKodu açıklaması.
+          description: Tevkifat kodunu belirtir.
           maxLength: 255
           minLength: 0
           minimum: 0
           nullable: true
           type: string
         tevkifatOran:
-          description: tevkifatOran açıklaması.
+          description: Tevkifat oranını belirtir.
           maxLength: 255
           minLength: 0
           minimum: 0
           nullable: true
           type: string
-        tevkifatTutar:
+        tevkifatTutar: 
+          description: Tevkifat tutarını belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
           type: number
         topfiyat:
+          description: Toplam fiyatı belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
           type: number
         urunKodu:
-          description: urunKodu açıklaması.
+          description: Ürünün kodunu belirtir.
           maxLength: 500
           minLength: 0
           nullable: true
@@ -24983,16 +25031,18 @@ components:
           nullable: true
           type: string
         entegrasyonTur:
-          description: entegrasyonTur açıklaması.
+          description: Entegrasyon türünü belirtir.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         fatIslId:
+          description: Fatura işleme ID'sini belirtir.
           format: int32
           nullable: true
           type: integer
         guncellenenMiktar:
+          description: Güncellenen miktarı belirtir.
           format: double
           nullable: true
           type: number
@@ -25001,23 +25051,24 @@ components:
           format: int32
           type: integer
         mesaj:
-          description: mesaj açıklaması.
+          description: Mesaj içeriğini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         oncekiMiktar:
+          description: Önceki miktarı belirtir.
           format: double
           nullable: true
           type: number
         productCode:
-          description: productCode açıklaması.
+          description: Ürünün kodunu belirtir.
           maxLength: 20
           minLength: 0
           nullable: true
           type: string
         productId:
-          description: productId açıklaması.
+          description: Ürünün ID'sini belirtir.
           maxLength: 20
           minLength: 0
           nullable: true
@@ -25028,6 +25079,7 @@ components:
           nullable: true
           type: integer
         urunMiktar:
+          description: Ürünün miktarını belirtir.
           format: double
           nullable: true
           type: number
@@ -25170,39 +25222,41 @@ components:
       additionalProperties: false
       properties:
         aciklama:
-          description: aciklama açıklaması.
+          description: Açıklama metnini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         adres:
-          description: Kullanıcının ikamet adresi.
+          description: Adres bilgisini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         alinan:
+          description: Alınan miktarı belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
           type: number
         cariGrup:
-          description: cariGrup açıklaması.
+          description: Cari grubun adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         cariId:
+          description: Cari ID'sini belirtir.
           format: int32
           type: integer
         cariKod:
-          description: cariKod açıklaması.
+          description: Cari kodunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         cariMail:
-          description: cariMail açıklaması.
+          description: Cari e-posta adresini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -25214,71 +25268,75 @@ components:
           nullable: true
           type: string
         dokumanNo:
-          description: dokumanNo açıklaması.
+          description: Doküman numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         eFaturaDurum:
-          description: eFaturaDurum açıklaması.
+          description: E-faturanın durumunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         eFaturaMailGonderildiMi:
+          description: E-faturanın e-posta ile gönderilip gönderilmediğini belirtir.
           nullable: true
           type: boolean
         eFaturaNo:
-          description: eFaturaNo açıklaması.
+          description: E-fatura numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         eFaturaSenaryo:
-          description: eFaturaSenaryo açıklaması.
+          description: E-fatura senaryosunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         eFaturaSenaryoTipi:
-          description: eFaturaSenaryoTipi açıklaması.
+          description: E-fatura senaryo tipini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         eFaturaTipi:
-          description: eFaturaTipi açıklaması.
+          description:  E-faturanın tipini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         evrakNo:
-          description: evrakNo açıklaması.
+          description: Evrak numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         fatTarih:
+          description: Fatura tarihini belirtir.
           format: date-time
           nullable: true
           type: string
         faturaResimYolu:
-          description: faturaResimYolu açıklaması.
+          description: Faturanın resim dosyasının yolunu belirtir.
           maxLength: 500
           minLength: 0
           nullable: true
           type: string
         faturaTuru:
-          description: faturaTuru açıklaması.
+          description: Faturanın türünü belirtir.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         fisno:
+          description: Fiş numarasını belirtir.
           format: int32
           nullable: true
           type: integer
         gtoplam:
+          description: Genel toplam tutarı belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
@@ -25288,104 +25346,114 @@ components:
           format: int32
           type: integer
         il:
-          description: il açıklaması.
+          description: Faturanın ait olduğu il numarasını belirtir.
           maxLength: 500
           minLength: 0
           nullable: true
           type: string
         ilce:
-          description: ilce açıklaması.
+          description: Faturanın ait olduğu ilçe numarasını belirtir.
           maxLength: 500
           minLength: 0
           nullable: true
           type: string
         irsaliyeFaturalandi:
+          description: İrsaliyeye ait fatura olup olmadığını belirtir.
           nullable: true
           type: boolean
         irsaliyeNo:
-          description: irsaliyeNo açıklaması.
+          description: İrsaliye numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         irsaliyeTarihi:
+          description: İrsaliye tarihini belirtir.
           format: date-time
           nullable: true
           type: string
         iskonto:
+          description: İskonto oranını belirtir, 0 veya daha büyük bir değeri olabilir.  
           format: double
           minimum: 0
           nullable: true
           type: number
         kdv:
+          description: Katma değer vergisi tutarını belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
           type: number
         kullaniciAdi:
-          description: Kullanıcı adı.
+          description: Kullanıcı adını belirtir.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         maliyet:
+          description: Maliyet tutarını belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
           type: number
         mukellefAdi:
-          description: mukellefAdi açıklaması.
+          description: Mükellef kişinin adını belirtir
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         mukellefKodu:
-          description: mukellefKodu açıklaması.
+          description: Mükellef kodunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         odemeSekli:
-          description: Ödeme şekli.
+          description:  Ödeme şekli bilgisini belirtir.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         odenen:
+          description: Ödenen miktarı belirtir, 0 veya daha büyük bir değeri olabilir.
           format: double
           minimum: 0
           nullable: true
           type: number
         oivTutar:
+          description: Özel İletişim Vergisi (OİV) tutarını belirtir.
           format: double
           nullable: true
           type: number
         otvTutar:
+          description: Özel Tüketim Vergisi (OTV) tutarını belirtir.
           format: double
           nullable: true
           type: number
         ozelAlan1:
-          description: ozelAlan1 açıklaması.
+          description: Özel alan 1 bilgilerini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ozelAlan2:
-          description: ozelAlan2 açıklaması.
+          description: Özel alan 2 bilgilerini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         periyotBaslangic:
+          description: Periyodun başlangıç tarihini belirtir.
           format: date-time
           nullable: true
           type: string
         periyotBitis:
+          description: Periyodun bitiş tarihini belirtir.
           format: date-time
           nullable: true
           type: string
         postakodu:
-          description: postakodu açıklaması.
+          description: Posta kodunu belirtir. 
           maxLength: 255
           minLength: 0
           nullable: true
@@ -25397,54 +25465,64 @@ components:
           nullable: true
           type: string
         sevkAdresi:
-          description: sevkAdresi açıklaması.
+          description: Sevk adresini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sevkTarih:
+          description: Sevk tarihini belirtir.
           format: date-time
           nullable: true
           type: string
         siparisNo:
-          description: siparisNo açıklaması.
+          description: Sipariş numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         siparisTarihi:
+          description: Sipariş tarihini belirtir.
           format: date-time
           nullable: true
           type: string
         stopajOran1:
+          description: İlk stopaj oranını belirtir.
           format: double
           nullable: true
           type: number
         stopajOran2:
+          description: İkinci stopaj oranını belirtir.
           format: double
           nullable: true
           type: number
         stopajOran3:
+          description: Üçüncü stopaj oranını belirtir.
           format: double
           nullable: true
           type: number
         stopajOran4:
+          description: Dördüncü stopaj oranını belirtir.
           format: double
           nullable: true
           type: number
         stopajtutar1:
+          description: İlk stopaj tutarını belirtir.
           format: double
           nullable: true
           type: number
         stopajtutar2:
+          description: İkinci stopaj tutarını belirtir.
           format: double
           nullable: true
           type: number
         stopajtutar3:
+          description: Üçüncü stopaj tutarını belirtir.
           format: double
           nullable: true
           type: number
         stopajtutar4:
+          description: Dördüncü stopaj tutarını belirtir.
           format: double
           nullable: true
           type: number
@@ -25455,64 +25533,66 @@ components:
           nullable: true
           type: string
         tel:
-          description: tel açıklaması.
+          description: Telefon numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tevkifatOran:
-          description: tevkifatOran açıklaması.
+          description: Tevkifat oranını belirtir.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         tevkifatTutar:
+          description: Tevkifat tutarını belirtir.
           format: double
           nullable: true
           type: number
         ticaretsicilno:
-          description: ticaretsicilno açıklaması.
+          description: Ticaret sicil numarasını belirtir.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         toplam:
+          description: Toplam tutarı belirtir.
           format: double
           minimum: 0
           nullable: true
           type: number
         ulke:
-          description: ulke açıklaması.
+          description: Ülke bilgisini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         unvan:
-          description: Unvan veya başlık.
+          description: Ünvanı belirtir.
           maxLength: 250
           minLength: 0
           nullable: true
           type: string
         vd:
-          description: vd açıklaması.
+          description: Vergi dairesini belirtir.
           maxLength: 500
           minLength: 0
           nullable: true
           type: string
         vn:
-          description: vn açıklaması.
+          description: Vergi numarasını belirtir.
           maxLength: 500
           minLength: 0
           nullable: true
           type: string
         yazi:
-          description: yazi açıklaması.
+          description: Ekstra açıklama veya notları belirtir.
           maxLength: 500
           minLength: 0
           nullable: true
           type: string
         yetkili:
-          description: yetkili açıklaması.
+          description: Yetkili kişiyi belirtir.
           maxLength: 500
           minLength: 0
           nullable: true
@@ -25524,10 +25604,11 @@ components:
       additionalProperties: false
       properties:
         aciklama:
+          description: Faturaya ilişkin ek açıklamaları belirtir.
           nullable: true
           type: string
         baslik:
-          description: baslik açıklaması.
+          description: Açıklamanın başlığını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -25687,7 +25768,7 @@ components:
       additionalProperties: false
       properties:
         deger:
-          description: deger açıklaması.
+          description: Kodu veya değerini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -25702,18 +25783,19 @@ components:
           format: int32
           type: integer
         kod:
-          description: kod açıklaması.
+          description: Kodu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tabloAdi:
-          description: tabloAdi açıklaması.
+          description:  Tablo adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tabloId:
+          description: Tablo ID'sini belirtir.
           format: int32
           nullable: true
           type: integer
@@ -25804,46 +25886,47 @@ components:
           format: int32
           type: integer
         il:
-          description: il açıklaması.
+          description: Fatura adresinin ili.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ilce:
-          description: ilce açıklaması.
+          description: Fatura adresinin ilçesi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         mail:
-          description: mail açıklaması.
+          description: Kullanıcının e-posta adresi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         postaKodu:
-          description: postaKodu açıklaması.
+          description: Fatura adresinin posta kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sevkAdres:
+          description: Fatura teslim adresi.
           nullable: true
           type: string
         tel:
-          description: tel açıklaması.
+          description: Kullanıcının telefon numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ulke:
-          description: ulke açıklaması.
+          description: Fatura adresinin ülkesi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         yetkili:
-          description: yetkili açıklaması.
+          description: Fatura yetkilisi.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -25926,13 +26009,13 @@ components:
           nullable: true
           type: string
         binaNo:
-          description: binaNo açıklaması.
+          description: Bina numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         caddeSokakBulvar:
-          description: caddeSokakBulvar açıklaması.
+          description: Cadde, sokak veya bulvar adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -25944,7 +26027,7 @@ components:
           nullable: true
           type: string
         donem:
-          description: donem açıklaması.
+          description: Dönem bilgisini belirtir.
           maxLength: 50
           minLength: 0
           nullable: true
@@ -25956,103 +26039,103 @@ components:
           nullable: true
           type: string
         fax:
-          description: fax açıklaması.
+          description: Faks numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ilce:
-          description: ilce açıklaması.
+          description:  İlçeyi belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kapiNo:
-          description: kapiNo açıklaması.
+          description: Kapı numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kullaniciAdi:
-          description: Kullanıcı adı.
+          description: Kullanıcı adını belirtir.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         kullaniciTipi:
-          description: kullaniciTipi açıklaması.
+          description: Kullanıcı türünü belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         mersisNo:
-          description: mersisNo açıklaması.
+          description: MERSİS numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sabitTel:
-          description: sabitTel açıklaması.
+          description: Sabit telefon numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sehir:
-          description: sehir açıklaması.
+          description: Şehri belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sektor:
-          description: sektor açıklaması.
+          description: Sektörü belirtir. 
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sirketAdres:
-          description: sirketAdres açıklaması.
+          description: Şirket adresini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sirketUnvan:
-          description: sirketUnvan açıklaması.
+          description:  Şirket unvanını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         subeAdi:
-          description: Şube adı.
+          description: Şube adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ticaretSicilNo:
-          description: ticaretSicilNo açıklaması.
+          description: Ticaret sicil numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ulke:
-          description: ulke açıklaması.
+          description: Ülkeyi belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         vergiDairesi:
-          description: vergiDairesi açıklaması.
+          description: Vergi dairesini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         vergiNo:
-          description: vergiNo açıklaması.
+          description: Vergi numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         webSitesi:
-          description: webSitesi açıklaması.
+          description: Web sitesinin adresini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -26129,7 +26212,7 @@ components:
       additionalProperties: false
       properties:
         deger:
-          description: deger açıklaması.
+          description: Firma kodlarına ait değerlerin tanımlandığı alan.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -26139,7 +26222,7 @@ components:
           format: int32
           type: integer
         kod:
-          description: kod açıklaması.
+          description: Kod. 
           maxLength: 255
           minLength: 0
           nullable: true
@@ -26216,9 +26299,11 @@ components:
       additionalProperties: false
       properties:
         ayarAdi:
+          description: Ayar adını belirtir.
           nullable: true
           type: string
         ayarDeger:
+          description: Ayar değerini belirtir.
           nullable: true
           type: string
         id:
@@ -26226,6 +26311,7 @@ components:
           format: int32
           type: integer
         kullaniciId:
+          description: Kullanıcı kimliği.
           format: int32
           nullable: true
           type: integer
@@ -26301,37 +26387,37 @@ components:
       additionalProperties: false
       properties:
         aboneNo:
-          description: aboneNo açıklaması.
+          description: Abone numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         giderAciklama:
-          description: giderAciklama açıklaması.
+          description: Gider açıklamasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         giderAdi:
-          description: giderAdi açıklaması.
+          description: Gider adını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         giderKategori:
-          description: giderKategori açıklaması.
+          description: Gider kategorisini belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         giderKodu:
-          description: giderKodu açıklaması.
+          description: Gider kodunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         giderTuru:
-          description: giderTuru açıklaması.
+          description: Gider türünü belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -26424,19 +26510,22 @@ components:
       additionalProperties: false
       properties:
         aciklama:
+          description: İşlem açıklamasını belirtir.
           nullable: true
           type: string
         bankaIslId:
+          description: Banka işlem ID'sini belirtir.
           format: int32
           nullable: true
           type: integer
         evrakNo:
-          description: evrakNo açıklaması.
+          description: Evrak numarasını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         giderId:
+          description: Gider ID'sini belirtir.
           format: int32
           nullable: true
           type: integer
@@ -26455,7 +26544,7 @@ components:
           nullable: true
           type: string
         odemeDurumu:
-          description: odemeDurumu açıklaması.
+          description: Ödemenin durumunu belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -26564,9 +26653,11 @@ components:
           nullable: true
           type: string
         kullaniciSifre:
+          description: Kullanıcının şifresi. 
           nullable: true
           type: string
         vergiNumarasi:
+          description: Kullanıcının vergi numarası. 
           nullable: true
           type: string
       type: object
@@ -26574,28 +26665,35 @@ components:
       additionalProperties: false
       properties:
         apiKullaniciAdi:
+          description: API erişimi için kullanılan kullanıcı adı.
           nullable: true
           type: string
         apiKullaniciSifre:
+          description: API erişimi için kullanılan şifre.
           nullable: true
           type: string
         donemYil:
+          description: İlgili dönem yılı (örneğin, 2024).
           nullable: true
           type: string
         kullaniciAdi:
-          description: Kullanıcı adı.
+          description: Sisteme giriş yapmak için kullanılan kullanıcı adı.
           nullable: true
           type: string
         kullaniciSifre:
+          description: Sisteme giriş yapmak için kullanılan şifre.
           nullable: true
           type: string
         subeAd:
+          description: Kullanıcının bağlı olduğu şube adı.
           nullable: true
           type: string
         vergiNumarasi:
+          description: Kullanıcının vergi numarası.
           nullable: true
           type: string
         veritabaniAd:
+          description: Kullanıcının erişim sağladığı veritabanı adı.
           nullable: true
           type: string
       type: object
@@ -26603,42 +26701,47 @@ components:
       additionalProperties: false
       properties:
         ayniStokAyniSatirEkleHizli:
-          description: ayniStokAyniSatirEkleHizli açıklaması.
+          description: Aynı stok için aynı satırı hızlı ekleme seçeneği.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         bilgiFisiCiktiAl:
+          description: Bilgi fişi çıktısı alma seçeneği. 
           nullable: true
           type: boolean
         bilgiFisiYaziciAdi:
-          description: bilgiFisiYaziciAdi açıklaması.
+          description: Bilgi fişlerini yazdırmak için kullanılan yazıcının adı. 
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         bilgiFisiYaziciSayisi:
+          description: Bilgi fişlerini yazdırmak için kullanılan yazıcının sayısı.
           format: int32
           nullable: true
           type: integer
         depoId:
-          description: Depo kimlik numarası.
+          description: Stokların bulunduğu depo ID'si. 
           format: int32
           nullable: true
           type: integer
         ekranKlavyesiAktifMi:
+          description: Ekran klavyesinin aktif olup olmadığı. 
           nullable: true
           type: boolean
         faturaCiktiAl:
+          description: Fatura çıktısı alma seçeneği. 
           nullable: true
           type: boolean
         faturaYaziciAdi:
-          description: faturaYaziciAdi açıklaması.
+          description: Faturaları yazdırmak için kullanılan yazıcının adı. 
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         faturaYaziciSayisi:
+          description: Faturaları yazdırmak için kullanılan yazıcının sayısı. 
           format: int32
           nullable: true
           type: integer
@@ -26647,15 +26750,17 @@ components:
           format: int32
           type: integer
         makbuzCiktiAl:
+          description: Makbuz çıktısı alma seçeneği. Bu ayar aktifse, makbuzların fiziksel olarak yazdırılmasını sağlar.
           nullable: true
           type: boolean
         makbuzYaziciAdi:
-          description: makbuzYaziciAdi açıklaması.
+          description: Makbuzları yazdırmak için kullanılan yazıcının adı. Bu, makbuz çıktılarının hangi yazıcıdan alındığını belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         makbuzYaziciSayisi:
+          description: Makbuzları yazdırmak için kullanılan yazıcıların sayısı. Bu, makbuzların kaç adet yazıcıdan çıktığını gösterir.
           format: int32
           nullable: true
           type: integer
@@ -26666,18 +26771,22 @@ components:
           nullable: true
           type: string
         userId:
+          description: Kullanıcıyı tanımlayan benzersiz ID.
           format: int32
           nullable: true
           type: integer
         varsayilanBankaId:
+          description: Varsayılan banka hesabının ID'si.
           format: int32
           nullable: true
           type: integer
         varsayilanCariId:
+          description: Varsayılan cari hesabın ID'si.
           format: int32
           nullable: true
           type: integer
         varsayilanKasaId:
+          description: Varsayılan kasa hesabının ID'si.
           format: int32
           nullable: true
           type: integer
@@ -26753,28 +26862,29 @@ components:
       additionalProperties: false
       properties:
         butonName:
-          description: butonName açıklaması.
+          description: Butonun adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         id:
-          description: Benzersiz kimlik numarası.
+          description: Butonun benzersiz ID'si.
           format: int32
           type: integer
         stokAdi:
-          description: stokAdi açıklaması.
+          description: Stok ürününün adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokBarkod:
-          description: stokBarkod açıklaması.
+          description: Stok ürününün barkodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokFiyat:
+          description: Stok ürününün fiyatı.
           format: double
           nullable: true
           type: number
@@ -26784,6 +26894,7 @@ components:
           nullable: true
           type: integer
         stokResim:
+          description: Stok ürününün resmi.
           nullable: true
           type: string
         subeAdi:
@@ -26864,6 +26975,7 @@ components:
       additionalProperties: false
       properties:
         aciklama:
+          description: Kasanın açıklaması.
           maxLength: 255
           minLength: 0
           type: string
@@ -26963,34 +27075,39 @@ components:
       additionalProperties: false
       properties:
         aciklama:
-          description: aciklama açıklaması.
+          description: Kasalar İşlemine ait açıklama.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         bankaIslId:
+          description: Banka işlem ID'si.
           format: int32
           nullable: true
           type: integer
         cariId:
+          description: Cari hesap ID'si.
           format: int32
           nullable: true
           type: integer
         cariIslId:
+          description: Cari işlem ID'si.
           format: int32
           nullable: true
           type: integer
         cekId:
+          description: Çek ID'si.
           format: int32
           nullable: true
           type: integer
         evrakNo:
-          description: evrakNo açıklaması.
+          description: Evrak numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         faturaId:
+          description: Fatura ID'si.
           format: int32
           nullable: true
           type: integer
@@ -27273,25 +27390,25 @@ components:
       additionalProperties: false
       properties:
         dolarAlis:
-          description: dolarAlis açıklaması.
+          description: Dolar alış kuru.
           maxLength: 30
           minLength: 0
           nullable: true
           type: string
         dolarSatis:
-          description: dolarSatis açıklaması.
+          description: Dolar satış kuru.
           maxLength: 30
           minLength: 0
           nullable: true
           type: string
         euroAlis:
-          description: euroAlis açıklaması.
+          description: Euro alış kuru.
           maxLength: 30
           minLength: 0
           nullable: true
           type: string
         euroSatis:
-          description: euroSatis açıklaması.
+          description: Euro satış kuru.
           maxLength: 30
           minLength: 0
           nullable: true
@@ -27379,17 +27496,21 @@ components:
       additionalProperties: false
       properties:
         altyapi:
+          description: Altyapı kullanımı aktif mi.
           nullable: true
           type: boolean
         emailAdresi:
+          description: Gönderici e-posta adresi.
           maxLength: 255
           minLength: 0
           type: string
         emailSunucusu:
+          description: E-posta sunucusu adresi.
           maxLength: 255
           minLength: 0
           type: string
         gorunenAd:
+          description: E-postalarda görünen ad.
           maxLength: 255
           minLength: 0
           type: string
@@ -27403,16 +27524,20 @@ components:
           minLength: 0
           type: string
         otomatikGonder:
+          description: E-postaların otomatik gönderimi aktif mi.
           type: boolean
         port:
+          description: E-posta sunucusunun bağlantı portu.
           maxLength: 255
           minLength: 0
           type: string
         sifre:
+          description: E-posta sunucusu için şifre.
           maxLength: 255
           minLength: 0
           type: string
         sslaktifMi:
+          description: SSL bağlantısı aktif mi.
           type: boolean
         subeAdi:
           description: Şube adı.
@@ -27499,28 +27624,29 @@ components:
       additionalProperties: false
       properties:
         apiAnahtar:
+          description: API erişimi için kullanılan anahtar.
           nullable: true
           type: string
         apiSifre:
-          description: apiSifre açıklaması.
+          description: API erişimi için gereken şifre.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         bilsoftApiId:
-          description: bilsoftApiId açıklaması.
+          description: Bilsoft API'si için tanımlanmış benzersiz kimlik.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         bilsoftApiSifre:
-          description: bilsoftApiSifre açıklaması.
+          description: Bilsoft API'sine erişim için gerekli olan şifre.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         dealerCode:
-          description: dealerCode açıklaması.
+          description: Bayi kodu veya tanımlayıcısı.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -27601,56 +27727,60 @@ components:
       additionalProperties: false
       properties:
         dealerPaymentId:
-          description: dealerPaymentId açıklaması.
+          description: Ödeme işlemi için bayi tarafından kullanılan benzersiz kimlik.
           maxLength: 45
           minLength: 0
           nullable: true
           type: string
         id:
-          description: Benzersiz kimlik numarası.
+          description: Kayıt için benzersiz tanımlayıcı.
           format: int32
           type: integer
         otherTrxCode:
+          description: Diğer işlem kodu veya referansı.
           nullable: true
           type: string
         paymentDate:
-          description: paymentDate açıklaması.
+          description: Ödemenin yapıldığı tarih.
           maxLength: 400
           minLength: 0
           nullable: true
           type: string
         refundBool:
+          description: İade işlemi olup olmadığını belirten bayrak.
           nullable: true
           type: boolean
         refundCode:
-          description: refundCode açıklaması.
+          description: İade işlemine ait kod veya referans.
           maxLength: 400
           minLength: 0
           nullable: true
           type: string
         refundDate:
-          description: refundDate açıklaması.
+          description: İade işleminin gerçekleştiği tarih.
           maxLength: 400
           minLength: 0
           nullable: true
           type: string
         refundMessage:
-          description: refundMessage açıklaması.
+          description: İade işlemiyle ilgili mesaj veya açıklama.
           maxLength: 400
           minLength: 0
           nullable: true
           type: string
         refundMokaId:
-          description: refundMokaId açıklaması.
+          description: Moka tarafından verilen iade kimliği.
           maxLength: 45
           minLength: 0
           nullable: true
           type: string
         totalAmount:
+          description: İşlem tutarı.
           format: double
           nullable: true
           type: number
         totalRefundAmount:
+          description: Toplam iade edilen tutar.
           format: double
           nullable: true
           type: number
@@ -27726,14 +27856,17 @@ components:
       additionalProperties: false
       properties:
         amount:
+          description: İşlem tutarını ifade eder.
           format: double
           nullable: true
           type: number
         dealerPaymentId:
+          description: Bayi ödeme işlemi için benzersiz kimlik.
           format: int32
           nullable: true
           type: integer
         dealerPaymentTrxId:
+          description: Bayi ödeme işlemi için işlem kimliği.
           format: int32
           nullable: true
           type: integer
@@ -27744,7 +27877,7 @@ components:
           nullable: true
           type: string
         firmaNo:
-          description: firmaNo açıklaması.
+          description: Firmaya atanmış benzersiz numara.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -27756,11 +27889,12 @@ components:
           nullable: true
           type: string
         paymentReason:
+          description: Ödemenin neden yapıldığını belirten kod.
           format: int32
           nullable: true
           type: integer
         resultMessage:
-          description: resultMessage açıklaması.
+          description: İşlem sonucuyla ilgili mesaj veya açıklama.
           maxLength: 75
           minLength: 0
           nullable: true
@@ -27772,29 +27906,33 @@ components:
           nullable: true
           type: string
         trxCode:
+          description: İşlem kodu veya referansı.
           nullable: true
           type: string
         trxDate:
-          description: trxDate açıklaması.
+          description: İşlemin gerçekleştirildiği tarih.
           maxLength: 75
           minLength: 0
           nullable: true
           type: string
         trxStatus:
+          description: İşlemin durumunu belirten kod.
           format: int32
           nullable: true
           type: integer
         trxType:
+          description: İşlemin türünü belirten kod.
           format: int32
           nullable: true
           type: integer
         virtualPosOrderId:
-          description: virtualPosOrderId açıklaması.
+          description: Sanal POS üzerinden yapılan işlemin sipariş numarası.
           maxLength: 75
           minLength: 0
           nullable: true
           type: string
         voidRefundReason:
+          description: İptal veya iade işleminin nedenini belirten kod.
           format: int32
           nullable: true
           type: integer
@@ -27870,47 +28008,54 @@ components:
       additionalProperties: false
       properties:
         amount:
+          description: İşlem tutarını ifade eder.
           format: double
           nullable: true
           type: number
         cardHolderFullName:
-          description: cardHolderFullName açıklaması.
+          description:  Kart sahibinin tam adı.
           maxLength: 75
           minLength: 0
           nullable: true
           type: string
         cardNumberFirstSix:
+          description: Kart numarasının ilk altı hanesi.
           format: int32
           nullable: true
           type: integer
         cardNumberLastFour:
+          description: Kart numarasının son dört hanesi.
           format: int32
           nullable: true
           type: integer
         currencyCode:
-          description: currencyCode açıklaması.
+          description: İşlemin para birimi kodu.
           maxLength: 75
           minLength: 0
           nullable: true
           type: string
         dealerCommissionAmount:
+          description: Bayi komisyon tutarı.
           format: double
           nullable: true
           type: number
         dealerPaymentId:
+          description: Bayi ödeme işlemi için benzersiz kimlik.
           format: int32
           nullable: true
           type: integer
         firmaNo:
+          description: Firmaya atanmış benzersiz numara.
           format: int32
           nullable: true
           type: integer
         installmentNumber:
+          description: Taksit sayısı.
           format: int32
           nullable: true
           type: integer
         isThreeD:
-          description: isThreeD açıklaması.
+          description: İşlemin 3D Secure olup olmadığını belirtir.
           maxLength: 45
           minLength: 0
           nullable: true
@@ -27922,38 +28067,40 @@ components:
           nullable: true
           type: string
         listItemCount:
-          description: listItemCount açıklaması.
+          description: Listede yer alan öğe sayısı.
           maxLength: 45
           minLength: 0
           nullable: true
           type: string
         otherTrxCode:
+          description: Diğer işlem kodu veya referansı.
           nullable: true
           type: string
         paymentDate:
-          description: paymentDate açıklaması.
+          description: Ödemenin yapıldığı tarih.
           maxLength: 75
           minLength: 0
           nullable: true
           type: string
         paymentStatus:
-          description: paymentStatus açıklaması.
+          description: Ödeme durumunu ifade eder.
           maxLength: 45
           minLength: 0
           nullable: true
           type: string
         refAmount:
+          description: İade edilen tutar.
           format: double
           nullable: true
           type: number
         subeAdi:
-          description: Şube adı.
+          description: Şubenin adı.
           maxLength: 45
           minLength: 0
           nullable: true
           type: string
         trxStatus:
-          description: trxStatus açıklaması.
+          description: İşlemin durumunu ifade eder.
           maxLength: 45
           minLength: 0
           nullable: true
@@ -28034,215 +28181,219 @@ components:
           format: int32
           type: integer
         pAd:
-          description: pAd açıklaması.
+          description: Kişinin adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pAileAilebilgi1:
-          description: pAileAilebilgi1 açıklaması.
+          description: Kişinin ailesine ait birinci bilgi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pAileAilebilgi2:
-          description: pAileAilebilgi2 açıklaması.
+          description:  Kişinin ailesine ait ikinci bilgi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pAileAilebilgi3:
-          description: pAileAilebilgi3 açıklaması.
+          description: Kişinin ailesine ait üçüncü bilgi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pAileCocuksayisi:
-          description: pAileCocuksayisi açıklaması.
+          description: Kişinin çocuk sayısı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pAileMedenihal:
-          description: pAileMedenihal açıklaması.
+          description: Kişinin medeni hali.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pCariId:
+          description: Cari hesabın kimliği.
           format: int32
           nullable: true
           type: integer
         pCinsiyet:
-          description: pCinsiyet açıklaması.
+          description: Kişinin cinsiyeti.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pDogumtarih:
+          description: Kişinin doğum tarihi.
           format: date-time
           nullable: true
           type: string
         pDogumyeri:
-          description: pDogumyeri açıklaması.
+          description: description: Kişinin doğum yeri.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pGorev:
-          description: pGorev açıklaması.
+          description: Kişinin görevi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pId:
-          description: pId açıklaması.
+          description: Kişinin kimlik numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIletisimCeptel:
-          description: pIletisimCeptel açıklaması.
+          description: Kişinin cep telefonu numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIletisimDigertel:
-          description: pIletisimDigertel açıklaması.
+          description: Kişinin diğer telefon numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIletisimEposta:
-          description: pIletisimEposta açıklaması.
+          description: Kişinin e-posta adresi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIletisimEvadres:
-          description: pIletisimEvadres açıklaması.
+          description: Kişinin ev adresi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIletisimEvtel:
-          description: pIletisimEvtel açıklaması.
+          description: Kişinin ev telefonu numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIsCalismabirim:
-          description: pIsCalismabirim açıklaması.
+          description: Kişinin çalıştığı birim.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIsCalismadurum:
-          description: pIsCalismadurum açıklaması.
+          description: Kişinin çalışma durumu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIsCikistarih:
+          description: Kişinin işten çıkış tarihi.
           format: date-time
           nullable: true
           type: string
         pIsEhliyetcinsi:
-          description: pIsEhliyetcinsi açıklaması.
+          description: Kişinin sahip olduğu ehliyet türü.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIsEhliyetcinsi2:
-          description: pIsEhliyetcinsi2 açıklaması.
+          description: Kişinin sahip olduğu ikinci ehliyet türü.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIsEhliyetnumaras:
-          description: pIsEhliyetnumaras açıklaması.
+          description: Kişinin ehliyet numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIsEhliyetnumaras2:
-          description: pIsEhliyetnumaras2 açıklaması.
+          description: Kişinin ikinci ehliyet numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIsEmekli:
-          description: pIsEmekli açıklaması.
+          description: Kişinin emeklilik durumu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIsGiristarih:
+          description: Kişinin işe giriş tarihi.
           format: date-time
           nullable: true
           type: string
         pIsIsyerisicilno:
-          description: pIsIsyerisicilno açıklaması.
+          description: Kişinin iş yeri sicil numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pIsSigortasicilno:
-          description: pIsSigortasicilno açıklaması.
+          description: Kişinin sigorta sicil numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pMaliBanka:
-          description: pMaliBanka açıklaması.
+          description: Kişinin maaş aldığı banka.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pMaliHesapno:
-          description: pMaliHesapno açıklaması.
+          description: Kişinin banka hesap numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pMaliIban:
-          description: pMaliIban açıklaması.
+          description: Kişinin IBAN numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pMaliMaas:
-          description: pMaliMaas açıklaması.
+          description: Kişinin maaş miktarı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pMaliSube:
-          description: pMaliSube açıklaması.
+          description: Kişinin bankası şube adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pResmi:
-          description: pResmi açıklaması.
+          description: Kişinin resmi belgeleri.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pSoyad:
-          description: pSoyad açıklaması.
+          description: Kişinin soyadı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pTc:
-          description: pTc açıklaması.
+          description: Kişinin T.C. kimlik numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         pUyruk:
-          description: pUyruk açıklaması.
+          description: Kişinin uyruğu.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -28329,67 +28480,72 @@ components:
           format: int32
           type: integer
         isbasisaat:
-          description: isbasisaat açıklaması.
+          description: İşe başlama saati.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         isbastarihtarih:
+          description: İşe başlama tarih ve saati.
           format: date-time
           nullable: true
           type: string
         izinAdres:
+          description: İzin sırasında geçici adres.
           nullable: true
           type: string
         izinTel:
-          description: izinTel açıklaması.
+          description:  İzin sırasında iletişim için telefon numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         izinaciklama:
+          description: İzin ile ilgili açıklamalar.
           nullable: true
           type: string
         izinbaslamasaat:
-          description: izinbaslamasaat açıklaması.
+          description: İzin başlangıç saati.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         izinbastarih:
+          description: İzin başlangıç tarih ve saati.
           format: date-time
           nullable: true
           type: string
         izinbitissaat:
-          description: izinbitissaat açıklaması.
+          description: İzin bitiş saati.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         izinbittarih:
+          description: İzin bitiş tarih ve saati.
           format: date-time
           nullable: true
           type: string
         izinsuresi:
-          description: izinsuresi açıklaması.
+          description: İzin süresinin açıklaması veya nedeni.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         izinturu:
-          description: izinturu açıklaması.
+          description: İzin türü (örneğin, yıllık izin, hastalık izni vb.).
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         personelid:
-          description: personelid açıklaması.
+          description: Personelin benzersiz kimlik numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         subeAdi:
-          description: Şube adı.
+          description: İzin ile ilgili şube adı.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -28465,18 +28621,20 @@ components:
     Personelnot:
       additionalProperties: false
       properties:
-        baslik:
+        baslik: 
+          description: Notun başlığı.
           nullable: true
           type: string
         icerik:
+          description: Notun içeriği.
           nullable: true
           type: string
         id:
-          description: Benzersiz kimlik numarası.
+          description: 
           format: int32
           type: integer
         personid:
-          description: personid açıklaması.
+          description: Notun benzersiz kimlik numarası.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -28564,13 +28722,13 @@ components:
       additionalProperties: false
       properties:
         apiPosTur:
-          description: apiPosTur açıklaması.
+          description: POS cihazının türünü belirtir.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         deviceKey:
-          description: deviceKey açıklaması.
+          description: POS cihazının benzersiz anahtarını temsil eder.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -28586,19 +28744,19 @@ components:
           nullable: true
           type: string
         merchantKey:
-          description: merchantKey açıklaması.
+          description: Ticari işlemler için kullanılan benzersiz anahtar. 
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         secretKey:
-          description: secretKey açıklaması.
+          description: Güvenlik amacıyla kullanılan gizli anahtar.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sifre:
-          description: sifre açıklaması.
+          description: Hesap veya sistem şifresi.
           maxLength: 50
           minLength: 0
           nullable: true
@@ -28610,7 +28768,7 @@ components:
           nullable: true
           type: string
         userId:
-          description: userId açıklaması.
+          description: Kullanıcının benzersiz kimlik numarası.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -28693,37 +28851,37 @@ components:
           nullable: true
           type: string
         amonth:
-          description: amonth açıklaması.
+          description: Kartın son kullanma ayı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         authCode:
-          description: authCode açıklaması.
+          description: İşlemin yetkilendirildiğini gösteren onay kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         batchNum:
-          description: batchNum açıklaması.
+          description: İşlem grubunun veya topluluğunun numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         cardNum:
-          description: cardNum açıklaması.
+          description: Kartın numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         cardType:
-          description: cardType açıklaması.
+          description: Kartın türü (örneğin, kredi kartı, banka kartı).
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         comPort:
-          description: comPort açıklaması.
+          description: Kart okuyucunun bağlı olduğu iletişim portu.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -28738,53 +28896,54 @@ components:
           format: int32
           type: integer
         installmentCnt:
-          description: installmentCnt açıklaması.
+          description: Taksit sayısı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         issuerId:
-          description: issuerId açıklaması.
+          description: Kartı veren kuruluşun benzersiz kimlik numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         merchanId:
-          description: merchanId açıklaması.
+          description: Satıcıya ait benzersiz kimlik numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         odemeTuru:
-          description: odemeTuru açıklaması.
+          description: Ödeme türü (örneğin, peşin, taksitli).
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         posMakineBilgilerId:
+          description: POS makinesi bilgileri için benzersiz kimlik numarası.
           format: int32
           nullable: true
           type: integer
         processType:
-          description: processType açıklaması.
+          description: İşlem türü (örneğin, satış, iade).
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         referenceNumber:
-          description: referenceNumber açıklaması.
+          description:  İşlem referans numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         responceCode:
-          description: responceCode açıklaması.
+          description: İşlem yanıt kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stanNum:
-          description: stanNum açıklaması.
+          description: Satıcı terminal numarası.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -28796,19 +28955,19 @@ components:
           nullable: true
           type: string
         terminalId:
-          description: terminalId açıklaması.
+          description: POS terminalinin benzersiz kimlik numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tranDate:
-          description: tranDate açıklaması.
-          maxLength: 255
+          description: İşlemin yapıldığı tarih.
+          maxLength: 255 
           minLength: 0
           nullable: true
           type: string
         tranTime:
-          description: tranTime açıklaması.
+          description: İşlemin yapıldığı saat.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -28885,19 +29044,19 @@ components:
       additionalProperties: false
       properties:
         anaFormBekleme:
-          description: anaFormBekleme açıklaması.
+          description: 
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         comPort:
-          description: comPort açıklaması.
+          description: 
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         hizliSatisFormBekleme:
-          description: hizliSatisFormBekleme açıklaması.
+          description: 
           maxLength: 255
           minLength: 0
           nullable: true
@@ -28907,47 +29066,48 @@ components:
           format: int32
           type: integer
         ipAdres:
-          description: ipAdres açıklaması.
+          description: Cihazın bağlı olduğu IP adresi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kasiyerAd:
-          description: kasiyerAd açıklaması.
+          description: Kasiyerin adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kasiyerSifre:
-          description: kasiyerSifre açıklaması.
+          description: Kasiyerin giriş şifresi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kopyaSayisi:
-          description: kopyaSayisi açıklaması.
+          description: Belge veya raporun kopya sayısı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kullaniciId:
+          description: Kullanıcının benzersiz kimlik numarası.
           format: int32
           nullable: true
           type: integer
         otomatikBaglantiFormBekleme:
-          description: otomatikBaglantiFormBekleme açıklaması.
+          description: Otomatik bağlantı formunun bekleme süresi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         seriNo:
-          description: seriNo açıklaması.
+          description: Cihazın veya ürünün seri numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         serverPort:
-          description: serverPort açıklaması.
+          description: Sunucunun dinlediği port numarası.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -28959,7 +29119,7 @@ components:
           nullable: true
           type: string
         verifoneFormBekleme:
-          description: verifoneFormBekleme açıklaması.
+          description: Verifone cihazının form bekleme süresi.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -29036,12 +29196,13 @@ components:
       additionalProperties: false
       properties:
         adi:
-          description: adi açıklaması.
+          description: Kişinin veya nesnenin adı.
           maxLength: 30
           minLength: 0
           nullable: true
           type: string
         frx:
+          description: FRX formatında bir dosya veya veri; genellikle raporlar ve belgeler için kullanılır.
           nullable: true
           type: string
         id:
@@ -29120,7 +29281,7 @@ components:
       additionalProperties: false
       properties:
         apiCode:
-          description: apiCode açıklaması.
+          description: API erişimi için kullanılan kod.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -29130,13 +29291,13 @@ components:
           format: int32
           type: integer
         link:
-          description: link açıklaması.
+          description: Sanal santral ile ilgili bağlantı URL'si.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         telefonNo:
-          description: telefonNo açıklaması.
+          description: İletişim telefonu numarası.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -29617,25 +29778,25 @@ components:
           nullable: true
           type: string
         kullaniciNo:
-          description: kullaniciNo açıklaması.
+          description: Kullanıcının benzersiz numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         niyazi123:
-          description: niyazi123 açıklaması.
+          description: Belirtilen `niyazi123` değerini içeren özel bir alan; özel durumlar için kullanılır.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         smsBaslik:
-          description: smsBaslik açıklaması.
+          description: SMS mesajının başlığı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         smsLink:
-          description: smsLink açıklaması.
+          description: SMS içinde yer alan bağlantı URL'si.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -29733,13 +29894,13 @@ components:
           nullable: true
           type: string
         soforAd:
-          description: soforAd açıklaması.
+          description: Şoförün adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         soforSoyad:
-          description: soforSoyad açıklaması.
+          description: Şoförün soyadı.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -29832,13 +29993,13 @@ components:
           nullable: true
           type: number
         ad:
-          description: ad açıklaması.
+          description: Kişinin veya nesnenin adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         aliciUrunKodu:
-          description: aliciUrunKodu açıklaması.
+          description: Alıcıya ait ürünün benzersiz kodu.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -29850,13 +30011,13 @@ components:
           nullable: true
           type: string
         birim:
-          description: birim açıklaması.
+          description: Ürünün ölçü birimi (örneğin, adet, kilogram).
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         grup:
-          description: grup açıklaması.
+          description: Ürünün ait olduğu kategori veya grup.
           maxLength: 150
           minLength: 0
           nullable: true
@@ -29866,19 +30027,19 @@ components:
           format: int32
           type: integer
         kdvDahil:
-          description: kdvDahil açıklaması.
+          description: KDV'nin fiyatın içinde olup olmadığını belirten bilgi.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         kdvOran:
-          description: kdvOran açıklaması.
+          description: KDV oranını belirten bilgi (örneğin, %18).
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         kod:
-          description: kod açıklaması.
+          description: Ürünün benzersiz kodu veya referans numarası.
           maxLength: 150
           minLength: 0
           nullable: true
@@ -29890,83 +30051,84 @@ components:
           nullable: true
           type: string
         oivDahil:
-          description: oivDahil açıklaması.
+          description: Özel İhtisas Vergisi'nin (OIV) fiyatın içine dahil olup olmadığını belirten bilgi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         oivOran:
-          description: oivOran açıklaması.
+          description: Özel İhtisas Vergisi'nin (OIV) oranını belirten bilgi (örneğin, %10).
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         otvDahil:
-          description: otvDahil açıklaması.
+          description: Özel Tüketim Vergisi'nin (OTV) fiyatın içine dahil olup olmadığını belirten bilgi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         otvOran:
-          description: otvOran açıklaması.
+          description: Özel Tüketim Vergisi'nin (OTV) oranını belirten bilgi (örneğin, %20).
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         resimYolu:
-          description: resimYolu açıklaması.
+          description: Ürünün resminin bulunduğu yol veya URL.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sFiyat:
+          description: Ürünün satış fiyatını belirten bilgi.
           format: double
           nullable: true
           type: number
         saticiUrunKodu:
-          description: saticiUrunKodu açıklaması.
+          description: Satıcının ürünü tanımlamak için kullandığı kod veya referans numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         seriNo:
-          description: seriNo açıklaması.
+          description:  Ürünün seri numarası, ürünün benzersizliğini tanımlar.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokN11Id:
-          description: stokN11Id açıklaması.
+          description: Stok ürününün N11 e-ticaret platformundaki benzersiz kimlik numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokOzelKod1:
-          description: stokOzelKod1 açıklaması.
+          description: Ürünün stok özel kodu 1, belirli bir kategori veya grup için özelleştirilmiş kod.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokOzelKod2:
-          description: stokOzelKod2 açıklaması.
+          description: Ürünün stok özel kodu 2, ikinci bir özelleştirilmiş kod.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokOzelKod3:
-          description: stokOzelKod3 açıklaması.
+          description: Ürünün stok özel kodu 3, üçüncü bir özelleştirilmiş kod.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokOzelKod4:
-          description: stokOzelKod4 açıklaması.
+          description: Ürünün stok özel kodu 4, dördüncü bir özelleştirilmiş kod.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokRafi:
-          description: stokRafi açıklaması.
+          description: Ürünün yer aldığı raf veya depo yeri bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -30178,13 +30340,13 @@ components:
           format: int32
           type: integer
         productCode:
-          description: productCode açıklaması.
+          description: Ürünün kodu, genellikle ürünün benzersizliğini tanımlamak için kullanılır. Bu kod, ürünün kategorisini veya türünü belirten kısa ve anlamlı bir dizi olabilir.
           maxLength: 20
           minLength: 0
           nullable: true
           type: string
         productId:
-          description: productId açıklaması.
+          description: Ürünün benzersiz kimlik numarası. Bu, ürünün sistemdeki diğer ürünlerden ayırt edilmesini sağlayan bir tanımlayıcıdır. Genellikle veri tabanlarında veya envanter sistemlerinde kullanılır.
           maxLength: 20
           minLength: 0
           nullable: true
@@ -30429,12 +30591,13 @@ components:
       additionalProperties: false
       properties:
         aciklama:
-          description: aciklama açıklaması.
+          description: Açıklama.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         adet:
+          description: Ürün veya öğe miktarını belirtir. Bu, bir envanterde mevcut olan, sipariş edilen veya kullanılan ürün sayısını ifade eder. Bu alan genellikle sayısal değerler içerir ve miktar ölçümleri için kullanılır.
           format: double
           nullable: true
           type: number
@@ -30523,13 +30686,13 @@ components:
       additionalProperties: false
       properties:
         aciklama:
-          description: aciklama açıklaması.
+          description: Ürün hakkında açıklama metni.
           maxLength: 500
           minLength: 0
           nullable: true
           type: string
         adet:
-          description: adet açıklaması.
+          description: Stoktaki ürün adedini belirten değer.
           maxLength: 50
           minLength: 0
           nullable: true
@@ -30545,6 +30708,7 @@ components:
           nullable: true
           type: integer
         hedefdepoId:
+          description: Ürünün hedef depolama alanını belirten kimlik numarası.
           format: int32
           nullable: true
           type: integer
@@ -30559,6 +30723,7 @@ components:
           nullable: true
           type: string
         lotId:
+          description: Ürünün lot numarasını belirten kimlik numarası.
           format: int32
           nullable: true
           type: integer
@@ -30585,7 +30750,7 @@ components:
           nullable: true
           type: string
         tur:
-          description: tur açıklaması.
+          description: Tür bilgisi.
           maxLength: 50
           minLength: 0
           nullable: true
@@ -30662,14 +30827,16 @@ components:
       additionalProperties: false
       properties:
         aFiyat:
+          description: Ürünün satış fiyatı.
           format: double
           minimum: 0
           type: number
         aciklama:
+          description: Ürün fiyatı hakkında açıklama metni.
           nullable: true
           type: string
         grup:
-          description: grup açıklaması.
+          description: Ürün fiyatı ile ilgili grup bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -30685,10 +30852,12 @@ components:
           nullable: true
           type: string
         sFiyat:
+          description: Ürünün özel satış fiyatı.
           format: double
           minimum: 0
           type: number
         sirano:
+          description: Fiyatın sırasını belirten kimlik numarası.
           format: int32
           type: integer
         stokId:
@@ -30778,11 +30947,12 @@ components:
       additionalProperties: false
       properties:
         aciklama:
+          description: Ürün lotu hakkında açıklama metni.
           maxLength: 255
           minLength: 0
           type: string
         belgeNumarasi:
-          description: belgeNumarasi açıklaması.
+          description: Ürünün belge numarasını belirten değer.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -30792,36 +30962,37 @@ components:
           format: int32
           type: integer
         izNumarasi:
-          description: izNumarasi açıklaması.
+          description: Ürünün iz numarasını belirten değer.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kayitNumarasi:
-          description: kayitNumarasi açıklaması.
+          description: Ürünün kayıt numarasını belirten değer.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kurumNumarasi:
-          description: kurumNumarasi açıklaması.
+          description: Ürünün kurum numarasını belirten değer.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         lotNumarasi:
-          description: lotNumarasi açıklaması.
+          description: Ürünün lot numarasını belirten değer.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         seriNumarasi:
-          description: seriNumarasi açıklaması.
+          description: Ürünün seri numarasını belirten değer.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sonKullanmaTarihi:
+          description: Ürünün son kullanma tarihini belirten değer.
           format: date-time
           nullable: true
           type: string
@@ -30842,15 +31013,17 @@ components:
           nullable: true
           type: string
         uretimTarihi:
+          description: Ürünün üretim tarihini belirten değer.
           format: date-time
           nullable: true
           type: string
         uretimZamani:
+          description: Ürünün üretim zamanını belirten değer.
           format: date-time
           nullable: true
           type: string
-        urunNumarasi:
-          description: urunNumarasi açıklaması.
+        urunNumarasi: 
+          description: Ürünün numarasını belirten değer.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -30938,15 +31111,17 @@ components:
           format: int32
           type: integer
         miktar:
+          description: Ürünün miktarını belirten değer.
           maxLength: 255
           minLength: 0
           type: string
         paketAd:
+          description: Paketin adını belirten değer.
           maxLength: 500
           minLength: 0
           type: string
         stokBarkod:
-          description: stokBarkod açıklaması.
+          description: Ürünün stok barkodunu belirten değer.
           maxLength: 500
           minLength: 0
           nullable: true
@@ -31114,21 +31289,23 @@ components:
       additionalProperties: false
       properties:
         aciklama:
-          description: aciklama açıklaması.
+          description: Açıklama
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         cariId:
+          description: Cari hesabın kimlik numarası.
           format: int32
           nullable: true
           type: integer
         cariIslId:
+          description: Cari işlem kimlik numarası.
           format: int32
           nullable: true
           type: integer
         cariUnvan:
-          description: cariUnvan açıklaması.
+          description: Cari hesabın unvanı.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -31138,18 +31315,22 @@ components:
           format: int32
           type: integer
         ilkOdemeTarihi:
+          description: İlk ödemenin yapılacağı tarih.
           format: date-time
           nullable: true
           type: string
         islemTarihi:
+          description: İşlemin gerçekleştiği tarih.
           format: date-time
           nullable: true
           type: string
         islemTutari:
+          description: İşlemin toplam tutarı.
           format: double
           nullable: true
           type: number
         kalanTutar:
+          description: İşlem sonrası kalan tutar.
           format: double
           nullable: true
           type: number
@@ -31166,26 +31347,29 @@ components:
           nullable: true
           type: string
         tahsilat:
+          description: Tahsil edilen tutar.
           format: double
           nullable: true
           type: number
         tahsilatEdilen:
+          description: Tahsilat işlemi sonrası tahsil edilen toplam tutar.
           format: double
           nullable: true
           type: number
-        taksitPeriyodu:
-          description: taksitPeriyodu açıklaması.
+        taksitPeriyodu: 
+          description: Taksit periyodunu belirten değer.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         taksitSayisi:
-          description: taksitSayisi açıklaması.
+          description: Toplam taksit sayısını belirten değer.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         taksitTuru:
+          description: Taksit türünü belirten değer.
           nullable: true
           type: boolean
       type: object
@@ -31260,7 +31444,7 @@ components:
       additionalProperties: false
       properties:
         aciklama:
-          description: aciklama açıklaması.
+          description: Açıklama.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -31302,6 +31486,7 @@ components:
           nullable: true
           type: string
         tahsilat:
+          description: Tahsil edilen tutar.
           format: double
           nullable: true
           type: number
@@ -31311,10 +31496,12 @@ components:
           nullable: true
           type: integer
         taksitTutari:
+          description: Her bir taksit için ödenecek tutar.
           format: double
           nullable: true
           type: number
         vadeTarihi:
+          description: Taksitin vade tarihi.
           format: date-time
           nullable: true
           type: string
@@ -31397,27 +31584,29 @@ components:
           nullable: true
           type: string
         alinan:
+          description: Alınan tutar.
           format: double
           minimum: 0
           nullable: true
           type: number
         cariGrup:
-          description: cariGrup açıklaması.
+          description: Cari hesabın ait olduğu grup.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         cariId:
+          description: Cari hesabın kimlik numarası.
           format: int32
           type: integer
         cariKod:
-          description: cariKod açıklaması.
+          description: Cari hesabın kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         cariMail:
-          description: cariMail açıklaması.
+          description: Cari hesabın e-posta adresi.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -31429,66 +31618,73 @@ components:
           nullable: true
           type: string
         dokumanNo:
-          description: dokumanNo açıklaması.
+          description: Döküman numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         donusenFaturaId:
+          description: Dönüştürülen faturanın kimlik numarası.
           format: int32
           nullable: true
           type: integer
         donuseninId:
+          description: Dönüştürülenin kimlik numarası.
           format: int32
           nullable: true
           type: integer
         donusturuleninId:
+          description: Dönüştürülenin kimlik numarası.
           format: int32
           nullable: true
           type: integer
         evrakNo:
-          description: evrakNo açıklaması.
+          description: Evrak numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         fisno:
+          description: Fiş numarası.
           format: int32
           nullable: true
           type: integer
         gtoplam:
+          description: Genel toplam.
           format: double
           minimum: 0
           nullable: true
           type: number
         id:
-          description: Benzersiz kimlik numarası.
+          description: Kimlik numarası.
           format: int32
           type: integer
         il:
-          description: il açıklaması.
+          description:  İl bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ilce:
-          description: ilce açıklaması.
+          description: İlçe bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         iskonto:
+          description: İskonto tutarı.
           format: double
           minimum: 0
           nullable: true
           type: number
         islemDurum:
-          description: islemDurum açıklaması.
+          description: İşlem durumu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kdv:
+          description: Katma Değer Vergisi (KDV) tutarı.
           format: double
           minimum: 0
           nullable: true
@@ -31500,18 +31696,19 @@ components:
           nullable: true
           type: string
         maliyet:
+          description: Maliyet tutarı.
           format: double
           minimum: 0
           nullable: true
           type: number
         mukellefAdi:
-          description: mukellefAdi açıklaması.
+          description: Mükellef adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
-        mukellefKodu:
-          description: mukellefKodu açıklaması.
+        mukellefKodu: 
+          description: Mükellef kodu.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -31523,54 +31720,59 @@ components:
           nullable: true
           type: string
         odenen:
+          description: Ödenen tutar.
           format: double
           minimum: 0
           nullable: true
           type: number
         oivTutar:
+          description: Özel İletişim Vergisi (ÖİV) tutarı.
           format: double
           minimum: 0
           nullable: true
           type: number
         otvTutar:
+          description: Özel Tüketim Vergisi (ÖTV) tutarı.
           format: double
           minimum: 0
           nullable: true
           type: number
         ozelAlan1:
-          description: ozelAlan1 açıklaması.
+          description: Özel alan 1.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ozelAlan2:
-          description: ozelAlan2 açıklaması.
+          description: Özel alan 2.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ozelAlan3:
-          description: ozelAlan3 açıklaması.
+          description: Özel alan 3.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ozelAlan4:
-          description: ozelAlan4 açıklaması.
+          description: Özel alan 4.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         periyotBaslangic:
+          description: Periyot başlangıç tarihi.
           format: date-time
           nullable: true
           type: string
         periyotBitis:
+          description: Periyot bitiş tarihi.
           format: date-time
           nullable: true
           type: string
         postakodu:
-          description: postakodu açıklaması.
+          description: Posta kodu.
           maxLength: 50
           minLength: 0
           nullable: true
@@ -31582,48 +31784,58 @@ components:
           nullable: true
           type: string
         sevkAdresi:
+          description: Sevk adresi.
           nullable: true
           type: string
         sevkTarih:
+          description: Sevk tarihi.
           format: date-time
           nullable: true
           type: string
         stopajOran1:
+          description: Stopaj oranı 1.
           format: double
           minimum: 0
           nullable: true
           type: number
         stopajOran2:
+          description: Stopaj oranı 2.
           format: double
           minimum: 0
           nullable: true
           type: number
         stopajOran3:
+          description: Stopaj oranı 3.
           format: double
           minimum: 0
           nullable: true
           type: number
         stopajOran4:
+          description: Stopaj oranı 4.
           format: double
           minimum: 0
           nullable: true
           type: number
         stopajtutar1:
+          description: Stopaj tutarı 1.
           format: double
           minimum: 0
           nullable: true
           type: number
         stopajtutar2:
+          description: Stopaj tutarı 2.
           format: double
           minimum: 0
           nullable: true
           type: number
         stopajtutar3:
+          description: Stopaj tutarı 3.
           format: double
           minimum: 0
           nullable: true
           type: number
         stopajtutar4:
+          description: Stopaj tutarı 4.
           format: double
           minimum: 0
           nullable: true
@@ -31635,82 +31847,85 @@ components:
           nullable: true
           type: string
         teksipDurum:
-          description: teksipDurum açıklaması.
+          description: Teklif veya sipariş durumu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         teksipTarih:
+          description: Teklif veya sipariş tarihi.
           format: date-time
           nullable: true
           type: string
         teksipTuru:
-          description: teksipTuru açıklaması.
+          description: Teklif veya sipariş türü.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tel:
-          description: tel açıklaması.
+          description: Telefon numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tevkifatOran:
-          description: tevkifatOran açıklaması.
+          description: Tevkifat oranı.
           maxLength: 20
           minLength: 0
           minimum: 0
           nullable: true
           type: string
         tevkifatTutar:
+          description: Tevkifat tutarı.
           format: double
           minimum: 0
           nullable: true
           type: number
         ticaretsicilno:
-          description: ticaretsicilno açıklaması.
+          description: Ticaret sicil numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         toplam:
+          description: Toplam tutar.
           format: double
           minimum: 0
           nullable: true
           type: number
         ulke:
-          description: ulke açıklaması.
+          description: Ülke bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         unvan:
-          description: Unvan veya başlık.
+          description: Unvan bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         vd:
-          description: vd açıklaması.
+          description: Vergi dairesi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         vn:
-          description: vn açıklaması.
+          description:  Vergi numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         yazi:
-          description: yazi açıklaması.
+          description:  Yazı alanı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         yetkili:
-          description: yetkili açıklaması.
+          description: Yetkili kişi bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -31722,9 +31937,10 @@ components:
       additionalProperties: false
       properties:
         aciklama:
+          description: Açıklama metni.
           type: string
         baslik:
-          description: baslik açıklaması.
+          description: Başlık bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -31979,14 +32195,16 @@ components:
     TeklifsiparisIsl:
       additionalProperties: false
       properties:
-        aciklama:
+        aciklama: 
+          description: Detaylı açıklama.
           nullable: true
           type: string
         ad:
+          description: Ürün veya hizmet adı.
           nullable: true
           type: string
         aliciUrunKodu:
-          description: aliciUrunKodu açıklaması.
+          description: Alıcı tarafından verilen ürün kodu.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -31998,12 +32216,13 @@ components:
           nullable: true
           type: string
         birim:
-          description: birim açıklaması.
+          description: Ürün birimi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
-        brfiyat:
+        brfiyat: 
+          description: Birim fiyatı.
           format: double
           minimum: 0
           nullable: true
@@ -32012,31 +32231,32 @@ components:
           description: Depo kimlik numarası.
           format: int32
           type: integer
-        gonderilmeSekliAdi:
-          description: gonderilmeSekliAdi açıklaması.
+        gonderilmeSekliAdi: 
+          description: Gönderilme şekli adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         gonderilmeSekliKodu:
-          description: gonderilmeSekliKodu açıklaması.
+          description: Gönderilme şekli kodu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         gtipNo:
-          description: gtipNo açıklaması.
+          description: GTİP numarası.
           maxLength: 50
           minLength: 0
           nullable: true
           type: string
         gtopfiyat:
+          description: Genel toplam fiyat.
           format: double
           minimum: 0
           nullable: true
           type: number
         gumrukTakipNo:
-          description: gumrukTakipNo açıklaması.
+          description: Gümrük takip numarası.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -32046,89 +32266,97 @@ components:
           format: int32
           type: integer
         iskontoOran:
+          description: İskonto oranı.
           format: double
           minimum: 0
           nullable: true
           type: number
         iskontoOran2:
+          description: İskonto oranı 2.
           format: double
           minimum: 0
           nullable: true
           type: number
         iskontoOran3:
+          description: İskonto oranı3.
           format: double
           minimum: 0
           nullable: true
           type: number
         iskontoTutar:
+          description: İskonto tutarı.
           format: double
           minimum: 0
           nullable: true
           type: number
         iskontoTutar2:
+          description: İskonto tutarı 2.
           format: double
           minimum: 0
           nullable: true
           type: number
         iskontoTutar3:
+          description: İskonto tutarı 4.
           format: double
           minimum: 0
           nullable: true
           type: number
         kapAdedi:
+          description: Kap adedi.
           format: double
           nullable: true
           type: number
         kapCinsiAdi:
-          description: kapCinsiAdi açıklaması.
+          description: Kap türü adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kapCinsiKodu:
-          description: kapCinsiKodu açıklaması.
+          description: Kap türü kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kapNumarasi:
-          description: kapNumarasi açıklaması.
+          description: Kap numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kdvDahil:
-          description: kdvDahil açıklaması.
+          description: KDV dahil durumu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kdvDurum:
-          description: kdvDurum açıklaması.
+          description: KDV durumu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kdvMuafiyetAdi:
-          description: kdvMuafiyetAdi açıklaması.
+          description: KDV muafiyet adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kdvMuafiyetKodu:
-          description: kdvMuafiyetKodu açıklaması.
+          description: KDV muafiyet kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kdvOran:
-          description: kdvOran açıklaması.
+          description: KDV oranı.
           maxLength: 255
           minLength: 0
           minimum: 0
           nullable: true
           type: string
         kdvTutar:
+          description: KDV tutarı.
           format: double
           minimum: 0
           nullable: true
@@ -32140,107 +32368,113 @@ components:
           nullable: true
           type: string
         kunyeNo:
-          description: kunyeNo açıklaması.
+          description: Künye numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         lotId:
+          description: Lot kimlik numarası.
           format: int32
           type: integer
         malSahibi:
-          description: malSahibi açıklaması.
+          description: Mal sahibi adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         malSahibiVknTckn:
-          description: malSahibiVknTckn açıklaması.
+          description: Mal sahibinin VKN veya TCKN numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         maliyet:
+          description: Maliyet bilgisi.
           format: double
           minimum: 0
           nullable: true
           type: number
         miktar:
-          description: miktar açıklaması.
+          description:  Miktar bilgisi.
           maxLength: 255
           minLength: 0
           minimum: 0
           nullable: true
           type: string
         oivAdi:
-          description: oivAdi açıklaması.
+          description: OIV adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         oivDahil:
-          description: oivDahil açıklaması.
+          description: OIV dahil durumu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         oivKodu:
-          description: oivKodu açıklaması.
+          description: OIV kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         oivOran:
-          description: oivOran açıklaması.
+          description: OIV oranı.
           maxLength: 255
           minLength: 0
           minimum: 0
           nullable: true
           type: string
         oivTutar:
+          description: OIV tutarı.
           format: double
           minimum: 0
           nullable: true
           type: number
         otvAdi:
-          description: otvAdi açıklaması.
+          description: OTV adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         otvDahil:
-          description: otvDahil açıklaması.
+          description: OTV dahil durumu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         otvKodu:
-          description: otvKodu açıklaması.
+          description: OTV kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         otvOran:
+          description: OTV oranı.
           format: double
           minimum: 0
           nullable: true
           type: number
         otvTutar:
+          description: OTV tutarı.
           format: double
           minimum: 0
           nullable: true
           type: number
         resimYolu:
+          description: Ürünün resim yolu.
           nullable: true
           type: string
         saticiUrunKodu:
-          description: saticiUrunKodu açıklaması.
+          description: Satıcı tarafından verilen ürün kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         seriNo:
-          description: seriNo açıklaması.
+          description: Ürünün seri numarası.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -32251,31 +32485,31 @@ components:
           minLength: 0
           type: string
         stokOzelKod1:
-          description: stokOzelKod1 açıklaması.
+          description: Stok için özel kod 1.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokOzelKod2:
-          description: stokOzelKod2 açıklaması.
+          description: Stok için özel kod 2.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokOzelKod3:
-          description: stokOzelKod3 açıklaması.
+          description: Stok için özel kod 3.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokOzelKod4:
-          description: stokOzelKod4 açıklaması.
+          description: Stok için özel kod 4.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stokRafi:
-          description: stokRafi açıklaması.
+          description: Stok rafa kodu veya açıklaması.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -32287,56 +32521,59 @@ components:
           nullable: true
           type: string
         teksipId:
+          description: Teşvik id'si.
           format: int32
           nullable: true
           type: integer
         teslimSartiAdi:
-          description: teslimSartiAdi açıklaması.
+          description: Teslim şartı adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         teslimSartiKodu:
-          description: teslimSartiKodu açıklaması.
+          description: Teslim şartı kodu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         tevkifatAdi:
-          description: tevkifatAdi açıklaması.
+          description: Tevkifat adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tevkifatKodu:
-          description: tevkifatKodu açıklaması.
+          description: Tevkifat kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tevkifatOran:
-          description: tevkifatOran açıklaması.
+          description: Tevkifat oranı.
           maxLength: 255
           minLength: 0
           minimum: 0
           nullable: true
           type: string
         tevkifatTutar:
-          description: tevkifatTutar açıklaması.
+          description: Tevkifat tutarı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         topfiyat:
+          description: Toplam fiyat.
           format: double
           minimum: 0
           nullable: true
           type: number
         urunAciklama:
+          description: Ürün açıklaması.
           nullable: true
           type: string
         urunKodu:
-          description: urunKodu açıklaması.
+          description: Ürün kodu.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -32421,7 +32658,7 @@ components:
           format: int32
           type: integer
         tevkifatOran1:
-          description: tevkifatOran1 açıklaması.
+          description: Tevkifat oranı 1.
           maxLength: 50
           minLength: 0
           nullable: true
@@ -32498,7 +32735,7 @@ components:
       additionalProperties: false
       properties:
         ad:
-          description: ad açıklaması.
+          description: Ürünün adı.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -32508,19 +32745,19 @@ components:
           nullable: true
           type: string
         birim:
-          description: birim açıklaması.
+          description: Ürün birimi (örneğin, adet, kg).
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         brfiyat:
-          description: brfiyat açıklaması.
+          description: Birim fiyat bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         comPort:
-          description: comPort açıklaması.
+          description: İletişim portu bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -32536,6 +32773,7 @@ components:
           nullable: true
           type: integer
         gtopfiyat:
+          description: Toplam fiyat bilgisi.
           format: double
           nullable: true
           type: number
@@ -32544,72 +32782,79 @@ components:
           format: int32
           type: integer
         iskontoOran:
+          description: İskonto oranı.
           format: double
           nullable: true
           type: number
         iskontoTutar:
+          description: İskonto tutarı.
           format: double
           nullable: true
           type: number
         kdvMuafiyetAdi:
-          description: kdvMuafiyetAdi açıklaması.
+          description: KDV muafiyetinin adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kdvMuafiyetKodu:
-          description: kdvMuafiyetKodu açıklaması.
+          description: KDV muafiyetinin kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kdvOran:
+          description: KDV oranı.
           format: int32
           nullable: true
           type: integer
         kdvTutar:
+          description: KDV tutarı.
           format: double
           nullable: true
           type: number
         makineId:
-          description: makineId açıklaması.
+          description: Makine kimlik numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         makineIp:
-          description: makineIp açıklaması.
+          description: Makinenin IP adresi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         maliyet:
+          description: Ürünün maliyeti.
           format: int32
           nullable: true
           type: integer
         miktar:
-          description: miktar açıklaması.
+          description: Ürün miktarı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         otvAdi:
-          description: otvAdi açıklaması.
+          description: Özel Tüketim Vergisi (ÖTV) adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         otvKodu:
-          description: otvKodu açıklaması.
+          description: ÖTV kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         otvOran:
+          description: ÖTV oranı.
           format: int32
           nullable: true
           type: integer
         otvTutar:
+          description: ÖTV tutarı.
           format: double
           nullable: true
           type: number
@@ -32625,33 +32870,35 @@ components:
           nullable: true
           type: string
         tevkifatAdi:
-          description: tevkifatAdi açıklaması.
+          description: Tevkifatın adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tevkifatKodu:
-          description: tevkifatKodu açıklaması.
+          description: Tevkifatın kodu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tevkifatOran:
-          description: tevkifatOran açıklaması.
+          description: Tevkifat oranı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tevkifatTutar:
+          description: Tevkifat tutarı.
           format: double
           nullable: true
           type: number
         topfiyat:
+          description: Toplam fiyat.
           format: double
           nullable: true
           type: number
         urunKodu:
-          description: urunKodu açıklaması.
+          description: Ürün kodu.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -32728,7 +32975,7 @@ components:
       additionalProperties: false
       properties:
         aciklama:
-          description: aciklama açıklaması.
+          description: Açıklama.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -32740,14 +32987,17 @@ components:
           nullable: true
           type: string
         alinan:
+          description: Alınan miktar.
           format: double
           nullable: true
           type: number
         cariId:
+          description: Cari kimlik numarası.
           format: int32
           nullable: true
           type: integer
         cariKod:
+          description: Cari kodu.
           nullable: true
           type: string
         cep:
@@ -32757,71 +33007,75 @@ components:
           nullable: true
           type: string
         comPort:
-          description: comPort açıklaması.
+          description: Seri port bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         eFaturaDurum:
-          description: eFaturaDurum açıklaması.
+          description: E-fatura durumunu belirten bilgi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         eFaturaMailGonderildiMi:
+          description: E-fatura e-posta olarak gönderildi mi. 
           nullable: true
           type: boolean
         eFaturaNo:
-          description: eFaturaNo açıklaması.
+          description: E-faturanın numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         eFaturaSenaryo:
-          description: eFaturaSenaryo açıklaması.
+          description: E-fatura senaryo bilgisi. 
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         eFaturaSenaryoTipi:
-          description: eFaturaSenaryoTipi açıklaması.
+          description: E-fatura senaryo tipi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         eFaturaTipi:
-          description: eFaturaTipi açıklaması.
+          description: E-fatura türü.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         evrakNo:
-          description: evrakNo açıklaması.
+          description: Evrak numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         fatTarih:
+          description: Fatura tarihi.
           format: date-time
           nullable: true
           type: string
         faturaResimYolu:
-          description: faturaResimYolu açıklaması.
+          description: Fatura resminin yolu.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         faturaTuru:
-          description: faturaTuru açıklaması.
+          description: Fatura türü.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         fisno:
+          description: Fiş numarası.
           format: int32
           nullable: true
           type: integer
         gtoplam:
+          description: Genel toplam tutar.
           format: double
           nullable: true
           type: number
@@ -32830,38 +33084,41 @@ components:
           format: int32
           type: integer
         il:
-          description: il açıklaması.
+          description: İl adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ilce:
-          description: ilce açıklaması.
+          description: İlçe adı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         iskonto:
+          description: İskonto tutarı.
           format: double
           nullable: true
           type: number
         kdv:
+          description: Katma değer vergisi tutarı.
           format: double
           nullable: true
           type: number
         makineId:
-          description: makineId açıklaması.
+          description: Makine kimlik numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         makineIp:
-          description: makineIp açıklaması.
+          description: Makinenin IP adresi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         maliyet:
+          description: Maliyet tutarı.
           format: double
           nullable: true
           type: number
@@ -32872,15 +33129,17 @@ components:
           nullable: true
           type: string
         odenen:
+          description: Ödenen tutar.
           format: double
           nullable: true
           type: number
         otvTutar:
+          description: Özel Tüketim Vergisi (OTV) tutarı.
           format: double
           nullable: true
           type: number
         postakodu:
-          description: postakodu açıklaması.
+          description: Posta kodu.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -32892,12 +33151,13 @@ components:
           nullable: true
           type: string
         sevkAdresi:
-          description: sevkAdresi açıklaması.
+          description: Sevk adresi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sevkTarih:
+          description: Sevk tarihi.
           format: date-time
           nullable: true
           type: string
