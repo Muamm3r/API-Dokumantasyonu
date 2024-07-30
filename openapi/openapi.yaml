@@ -33166,57 +33166,59 @@ components:
           nullable: true
           type: string
         tel:
-          description: 
+          description: Kullanıcının telefon numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tevkifatOran:
-          description: 
+          description: Tevkifat oranı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         tevkifatTutar:
+          description: Tevkifat tutarı.
           format: double
           nullable: true
           type: number
         ticaretsicilno:
-          description: 
+          description: Ticaret sicil numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         toplam:
+          description: Toplam tutar.
           format: double
           nullable: true
           type: number
         unvan:
-          description: Unvan veya başlık.
+          description: Kullanıcının unvanı.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         vd:
-          description: 
+          description: Vergi dairesi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         vn:
-          description: 
+          description: Vergi numarası.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         yazi:
-          description: 
+          description: Açıklama.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         yetkili:
-          description: 
+          description: Yetkili.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -33230,17 +33232,17 @@ components:
           nullable: true
           type: string
         aranacakKelimeIncludes:
-          description: Aranacak kelimenin içerikleri.
+          description: Aranacak kelime.
           items:
             type: string
           nullable: true
           type: array
-        aranacakKelimeInt:
-          description: Aranacak kelimenin tamsayı değeri.
+        aranacakKelimeInt: 
+          description: Aranacak kelime.
           format: int32
           type: integer
         aranacakKelimeSutuns:
-          description: Aranacak kelimenin sütunları.
+          description: Aranacak kelime.
           items:
             type: string
           nullable: true
@@ -33293,29 +33295,30 @@ components:
       additionalProperties: false
       properties:
         ajandaBildirimGoster:
+          description: Ajanda bildirim göster.
           maxLength: 255
           minLength: 0
           type: string
         ajandaGorevatama:
-          description: ajandaGorevatama açıklaması.
+          description: Ajanda göreve alma.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ajandaGorevlisteleme:
-          description: ajandaGorevlisteleme açıklaması.
+          description: Ajanda görev listeleme.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         banka:
-          description: banka açıklaması.
+          description: Banka.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         bankaBtnBankaSil:
-          description: bankaBtnBankaSil açıklaması.
+          description: Banka sil.
           maxLength: 10
           minLength: 0
           nullable: true
@@ -33441,353 +33444,390 @@ components:
           nullable: true
           type: string
         cariBtnTahsilatYap:
-          description: cariBtnTahsilatYap açıklaması.
+          description: Cari tahsilat yap butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cariBtnTaksitliSatis:
-          description: cariBtnTaksitliSatis açıklaması.
+          description: Cari taksitli satış butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cariBtnYeniCari:
-          description: cariBtnYeniCari açıklaması.
+          description: Yeni cari oluşturma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cariKart:
-          description: cariKart açıklaması.
+          description: Cari kartı bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cek:
-          description: cek açıklaması.
+          description: Çek bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnAra:
-          description: cekBtnAra açıklaması.
+          description: Çek arama butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnDuzelt:
-          description: cekBtnDuzelt açıklaması.
+          description: Çek düzeltme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnOdemeYap:
-          description: cekBtnOdemeYap açıklaması.
+          description: Çek ödeme yapma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnSil:
-          description: cekBtnSil açıklaması.
+          description: Çek silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnTahsilEt:
-          description: cekBtnTahsilEt açıklaması.
+          description: Çek tahsil etme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnYeniAlinanCek:
-          description: cekBtnYeniAlinanCek açıklaması.
+          description: Yeni alınan çek oluşturma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnYeniVerilenCek:
-          description: cekBtnYeniVerilenCek açıklaması.
+          description: Yeni verilen çek oluşturma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         efaturaAYarlartoolStripMenuItem:
+          description: e-Fatura ayarları menüsü.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnEfatura:
+          description: e-Fatura butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenExceleAktar:
+          description: Gelen e-Faturayı Excel'e aktarma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenLogKayitlari:
+          description: Gelen e-Faturanın log kayıtları butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenOkunduIsaretle:
+          description: Gelen e-Faturayı okundu olarak işaretleme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenOnayla:
+          description: Gelen e-Faturayı onaylama butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenPdfindir:
+          description: Gelen e-Faturayı PDF olarak indirme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenRapor:
+          description: Gelen e-Fatura raporu butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenReddet:
+          description: Gelen e-Faturayı reddetme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenXmlIndir:
+          description: Gelen e-Faturayı XML olarak indirme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenYazdir:
+          description: Gelen e-Faturayı yazdırma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenEmailGonder:
+          description: Giden e-Faturayı e-posta ile gönderme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenExceleAktar:
+          description: Giden e-Faturayı Excel'e aktarma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenFaturaDurumKontrol:
+          description: Giden e-Faturanın durumunu kontrol etme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenIptalEt:
+          description: Giden e-Faturayı iptal etme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenLogKayitlari:
+          description: Giden e-Faturanın log kayıtları butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenPdfindir:
+          description: Giden e-Faturayı PDF olarak indirme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenRapor:
+          description: Giden e-Fatura raporu butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenTekrarGonder:
+          description: Giden e-Faturayı tekrar gönderme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenXmlIndir:
+          description: Giden e-Faturayı XML olarak indirme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenYazdir:
+          description: Giden e-Faturayı yazdırma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakDuzenle:
+          description: Taslak e-Faturayı düzenleme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakExceleAktar:
+          description: Taslak e-Faturayı Excel'e aktarma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakFaturaOlustur:
+          description: Taslak e-Faturadan fatura oluşturma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakFaturalandir:
+          description: Taslak e-Faturayı faturalandırma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakPdfindir:
+          description: Taslak e-Faturayı PDF olarak indirme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakRapor:
+          description: Taslak e-Fatura raporu butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakSil:
+          description: Taslak e-Faturayı silme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakXmlIndir:
+          description: Taslak e-Faturayı XML olarak indirme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakYazdir:
+          description: Taslak e-Faturayı yazdırma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaFaturaListesiToolStripMenuItem:
+          description: e-Fatura listesi menüsü.
           maxLength: 255
           minLength: 0
           type: string
         efaturaFaturaListesiToolStripMenuItem1:
+          description: e-Fatura listesi menüsü 1.
           maxLength: 255
           minLength: 0
           type: string
         efaturaMuKellefliStesiToolStripMenuItem:
+          description: e-Fatura mükellef listesi menüsü.
           maxLength: 255
           minLength: 0
           type: string
         efaturaOnayBekleyenlerToolStripMenuItem:
+          description: Onay bekleyen e-Faturalar menüsü.    
           maxLength: 255
           minLength: 0
           type: string
         efaturaOnayBekleyenlerToolStripMenuItem1:
+          description: Onay bekleyen e-Faturalar menüsü 1.
           maxLength: 255
           minLength: 0
           type: string
         efaturaOnayBekliyorToolStripMenuItem:
+          description: Onay bekleyen e-Faturalar menüsü.
           maxLength: 255
           minLength: 0
           type: string
         efaturaTAslaklarToolStripMenuItem:
+          description: Taslak e-Faturalar menüsü.
           maxLength: 255
           minLength: 0
           type: string
         fatura:
-          description: fatura açıklaması.
+          description: Fatura bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnFaturaBas:
-          description: faturaBtnFaturaBas açıklaması.
+          description: Fatura basma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnFaturaDuzelt:
-          description: faturaBtnFaturaDuzelt açıklaması.
+          description: Fatura düzeltme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnFaturaSil:
-          description: faturaBtnFaturaSil açıklaması.
+          description: Fatura silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnIrsaliyeFaturalandir:
-          description: faturaBtnIrsaliyeFaturalandir açıklaması.
+          description: İrsaliyeyi faturalandırma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnIrsaliyeYazdir:
-          description: faturaBtnIrsaliyeYazdir açıklaması.
+          description: İrsaliye yazdırma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnMakbuzBas:
-          description: faturaBtnMakbuzBas açıklaması.
+          description: Makbuz basma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnRaporAl:
-          description: faturaBtnRaporAl açıklaması.
+          description: Fatura raporu alma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnYeniAlisFaturasi:
-          description: faturaBtnYeniAlisFaturasi açıklaması.
+          description: Yeni alış faturası butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnYeniIrsaliye:
-          description: faturaBtnYeniIrsaliye açıklaması.
+          description: Yeni irsaliye butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnYeniSatisFaturasi:
-          description: faturaBtnYeniSatisFaturasi açıklaması.
+          description: Yeni satış faturası butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         fiyatUpdate:
-          description: fiyatUpdate açıklaması.
+          description: Fiyat güncelleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         gider:
-          description: gider açıklaması.
+          description: Gider bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnDuzelt:
-          description: giderBtnDuzelt açıklaması.
+          description: Gider düzeltme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnDuzenle:
-          description: giderBtnDuzenle açıklaması.
+          description:  Gider düzenleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnEkle:
-          description: giderBtnEkle açıklaması.
+          description: Gider ekleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnGelirGiderSil:
-          description: giderBtnGelirGiderSil açıklaması.
+          description: Gelir/Gider silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnGelirIsle:
-          description: giderBtnGelirIsle açıklaması.
+          description: Gelir işleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnGiderIsle:
-          description: giderBtnGiderIsle açıklaması.
+          description: Gider işleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnOdemeTahsilat:
-          description: giderBtnOdemeTahsilat açıklaması.
+          description: Ödeme/Tahsilat butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnSil:
-          description: giderBtnSil açıklaması.
+          description: Gider silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderGrbRaporlama:
-          description: giderGrbRaporlama açıklaması.
+          description: Gider raporlama butonu.
           maxLength: 10
           minLength: 0
           nullable: true
@@ -33797,182 +33837,187 @@ components:
           format: int32
           type: integer
         izleme:
+          description: İzleme durumu.
           nullable: true
           type: boolean
         kasa:
-          description: kasa açıklaması.
+          description: Kasa bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnBankayaVirman:
-          description: kasaBtnBankayaVirman açıklaması.
+          description: Bankaya virman butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnCikisYap:
-          description: kasaBtnCikisYap açıklaması.
+          description: Kasa çıkışı yapma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnDuzelt:
-          description: kasaBtnDuzelt açıklaması.
+          description: Kasa düzeltme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnDuzenle:
-          description: kasaBtnDuzenle açıklaması.
+          description: Kasa düzenleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnEkle:
-          description: kasaBtnEkle açıklaması.
+          description: Kasa ekleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnGirisYap:
-          description: kasaBtnGirisYap açıklaması.
+          description: Kasa girişi yapma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnKasaSil:
-          description: kasaBtnKasaSil açıklaması.
+          description: Kasa silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnKasadanKasayaVirman:
-          description: kasaBtnKasadanKasayaVirman açıklaması.
+          description: Kasadan kasaya virman butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnSil:
-          description: kasaBtnSil açıklaması.
+          description: Kasa silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnYazdir:
-          description: kasaBtnYazdir açıklaması.
+          description: Kasa yazdırma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kullanici:
-          description: Kullanıcı adı.
+          description: Kullanıcı bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         personelTakip:
+          description: Personel takip bilgisi.
           maxLength: 255
           minLength: 0
           type: string
         programAyarListe:
+          description: Program ayar listesi.
           nullable: true
           type: string
         satis:
-          description: satis açıklaması.
+          description: Satış bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         sifre:
-          description: sifre açıklaması.
+          description: Şifre bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         stok:
-          description: stok açıklaması.
+          description: Stok bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnDuzelt:
-          description: stokBtnDuzelt açıklaması.
+          description: Stok düzeltme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnEtiketBas:
-          description: stokBtnEtiketBas açıklaması.
+          description: Stok etiket basma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnSil:
-          description: stokBtnSil açıklaması.
+          description: Stok silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnStokCikisi:
-          description: stokBtnStokCikisi açıklaması.
+          description: Stok çıkışı butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnStokDuzenle:
-          description: stokBtnStokDuzenle açıklaması.
+          description: Stok düzenleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnStokGirisi:
-          description: stokBtnStokGirisi açıklaması.
+          description: Stok girişi butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnStokHareket:
-          description: stokBtnStokHareket açıklaması.
+          description: Stok hareketi butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnStokKaydet:
-          description: stokBtnStokKaydet açıklaması.
+          description: Stok kaydetme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnStoksil:
-          description: stokBtnStoksil açıklaması.
+          description: Stok silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnSubedenAktar:
+          description: Şubeden stok aktarma butonu.
           maxLength: 255
           minLength: 0
           type: string
         stokBtnTopluStokRapor:
-          description: stokBtnTopluStokRapor açıklaması.
+          description: Toplu stok raporu butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnYeniStok:
-          description: stokBtnYeniStok açıklaması.
+          description: Yeni stok ekleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokTxtAlisFiyati:
-          description: stokTxtAlisFiyati açıklaması.
+          description: Stok alış fiyatı.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stoksuzUrunEkleme:
+          description: Stoksuz ürün ekleme.
           maxLength: 255
           minLength: 0
           type: string
@@ -33983,99 +34028,113 @@ components:
           nullable: true
           type: string
         taksit:
-          description: taksit açıklaması.
+          description: Taksit bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         taksitBtnHizliTaksitlendir:
-          description: taksitBtnHizliTaksitlendir açıklaması.
+          description: Hızlı taksitlendirme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         taksitBtnTaksitDuzenle:
-          description: taksitBtnTaksitDuzenle açıklaması.
+          description: Taksit düzenleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         taksitBtnTaksitIslIadeEt:
-          description: taksitBtnTaksitIslIadeEt açıklaması.
+          description: Taksit işlemi iade butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         taksitBtnTaksitIslTahsilEt:
-          description: taksitBtnTaksitIslTahsilEt açıklaması.
+          description: Taksit işlemi tahsil etme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         taksitBtnTaksitSil:
-          description: taksitBtnTaksitSil açıklaması.
+          description: Taksit silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         teklifBtnAlinanSiparisIrsaliyeDonustur:
+          description: Alınan siparişi irsaliyeye dönüştürme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnAlinanTeklifVerilenSipariseDonustur:
+          description: Alınan teklifi verilen siparişe dönüştürme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnBasTeklifSiparis:
+          description: Teklif/sipariş basma butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnDuzeltTeklifSiparis:
+          description: Teklif/sipariş düzeltme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnIptalEtTeklifSiparis:
+          description: Teklif/sipariş iptal etme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnRaporAl:
+          description: Teklif/sipariş raporu alma butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnSilTeklifSiparis:
+          description: Teklif/sipariş silme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnTeklifSiparis:
+          description: Teklif/sipariş butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnVerilenSiparisFaturaDonustur:
+          description: Verilen siparişi faturaya dönüştürme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnVerilenTeklifAlinanSipariseDonustur:
+          description: Verilen teklifi alınan siparişe dönüştürme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnYeniAlinanSiparis:
+          description: Yeni alınan sipariş butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnYeniAlinanTeklif:
+          description: Yeni alınan teklif butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnYeniVerilenSiparis:
+          description: Yeni verilen sipariş butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnYeniVerilenTeklif:
+          description: Yeni verilen teklif butonu.
           maxLength: 255
           minLength: 0
           type: string
         yonetim:
-          description: yonetim açıklaması.
+          description: Yönetim bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
@@ -34141,35 +34200,36 @@ components:
       additionalProperties: false
       properties:
         ajandaBildirimGoster:
+          description: Ajanda bildirim gösterme durumu.
           maxLength: 255
           minLength: 0
           type: string
         ajandaGorevatama:
-          description: ajandaGorevatama açıklaması.
+          description: Ajanda görev atama özelliği.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         ajandaGorevlisteleme:
-          description: ajandaGorevlisteleme açıklaması.
+          description: Ajanda görev listeleme özelliği.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         banka:
-          description: banka açıklaması.
+          description: Banka bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         bankaBtnBankaSil:
-          description: bankaBtnBankaSil açıklaması.
+          description: Banka silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         bankaBtnDuzelt:
-          description: Banka düzetme butonu.
+          description: Banka düzeltme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
@@ -34289,353 +34349,391 @@ components:
           nullable: true
           type: string
         cariBtnTahsilatYap:
-          description: cariBtnTahsilatYap açıklaması.
+          description: Cari tahsilat yap butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cariBtnTaksitliSatis:
-          description: cariBtnTaksitliSatis açıklaması.
+          description: Cari taksitli satış butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cariBtnYeniCari:
-          description: cariBtnYeniCari açıklaması.
+          description: Yeni cari oluşturma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cariKart:
-          description: cariKart açıklaması.
+          description: Cari kartı bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cek:
-          description: cek açıklaması.
+          description: Çek bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnAra:
-          description: cekBtnAra açıklaması.
+          description: Çek arama butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnDuzelt:
-          description: cekBtnDuzelt açıklaması.
+          description: Çek düzeltme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnOdemeYap:
-          description: cekBtnOdemeYap açıklaması.
+          description: Çek ödeme yapma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnSil:
-          description: cekBtnSil açıklaması.
+          description: Çek silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnTahsilEt:
-          description: cekBtnTahsilEt açıklaması.
+          description: Çek tahsil etme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnYeniAlinanCek:
-          description: cekBtnYeniAlinanCek açıklaması.
+          description: Yeni alınan çek oluşturma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         cekBtnYeniVerilenCek:
-          description: cekBtnYeniVerilenCek açıklaması.
+          description: Yeni verilen çek oluşturma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         efaturaAYarlartoolStripMenuItem:
+          description: e-Fatura ayarları menüsü.
+
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnEfatura:
+          description: e-Fatura butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenExceleAktar:
+          description: Gelen e-Faturayı Excel'e aktarma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenLogKayitlari:
+          description: Gelen e-Faturanın log kayıtları butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenOkunduIsaretle:
+          description: Gelen e-Faturayı okundu olarak işaretleme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenOnayla:
+          description: Gelen e-Faturayı onaylama butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenPdfindir:
+          description: Gelen e-Faturayı PDF olarak indirme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenRapor:
+          description: Gelen e-Fatura raporu butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenReddet:
+          description: Gelen e-Faturayı reddetme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenXmlIndir:
+          description: Gelen e-Faturayı XML olarak indirme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGelenYazdir:
+          description: Gelen e-Faturayı yazdırma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenEmailGonder:
+          description: Giden e-Faturayı e-posta ile gönderme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenExceleAktar:
+          description: Giden e-Faturayı Excel'e aktarma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenFaturaDurumKontrol:
+          description: Giden e-Faturanın durumunu kontrol etme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenIptalEt:
+          description: Giden e-Faturayı iptal etme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenLogKayitlari:
+          description: Giden e-Faturanın log kayıtları butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenPdfindir:
+          description: Giden e-Faturayı PDF olarak indirme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenRapor:
+          description: Giden e-Fatura raporu butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenTekrarGonder:
+          description: Giden e-Faturayı tekrar gönderme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenXmlIndir:
+          description: Giden e-Faturayı XML olarak indirme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnGidenYazdir:
+          description: Giden e-Faturayı yazdırma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakDuzenle:
+          description: Taslak e-Faturayı düzenleme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakExceleAktar:
+          description: Taslak e-Faturayı Excel'e aktarma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakFaturaOlustur:
+          description: Taslak e-Faturadan fatura oluşturma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakFaturalandir:
+          description: Taslak e-Faturayı faturalandırma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakPdfindir:
+          description: Taslak e-Faturayı PDF olarak indirme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakRapor:
+          description: Taslak e-Fatura raporu butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakSil:
+          description: Taslak e-Faturayı silme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakXmlIndir:
+          description: Taslak e-Faturayı XML olarak indirme butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaBtnTaslakYazdir:
+          description: Taslak e-Faturayı yazdırma butonu.
           maxLength: 255
           minLength: 0
           type: string
         efaturaFaturaListesiToolStripMenuItem:
+          description: e-Fatura listesi menüsü.
           maxLength: 255
           minLength: 0
           type: string
         efaturaFaturaListesiToolStripMenuItem1:
+          description: e-Fatura listesi menüsü 1.
           maxLength: 255
           minLength: 0
           type: string
         efaturaMuKellefliStesiToolStripMenuItem:
+          description: e-Fatura mükellef listesi menüsü.
           maxLength: 255
           minLength: 0
           type: string
         efaturaOnayBekleyenlerToolStripMenuItem:
+          description: Onay bekleyen e-Faturalar menüsü.
           maxLength: 255
           minLength: 0
           type: string
         efaturaOnayBekleyenlerToolStripMenuItem1:
+          description: Onay bekleyen e-Faturalar menüsü 1.
           maxLength: 255
           minLength: 0
           type: string
         efaturaOnayBekliyorToolStripMenuItem:
+          description: Onay bekleyen e-Faturalar menüsü.
           maxLength: 255
           minLength: 0
           type: string
         efaturaTAslaklarToolStripMenuItem:
+          description: Taslak e-Faturalar menüsü.
           maxLength: 255
           minLength: 0
           type: string
         fatura:
-          description: fatura açıklaması.
+          description: Fatura bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnFaturaBas:
-          description: faturaBtnFaturaBas açıklaması.
+          description: Fatura basma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnFaturaDuzelt:
-          description: faturaBtnFaturaDuzelt açıklaması.
+          description: Fatura düzeltme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnFaturaSil:
-          description: faturaBtnFaturaSil açıklaması.
+          description: Fatura silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnIrsaliyeFaturalandir:
-          description: faturaBtnIrsaliyeFaturalandir açıklaması.
+          description: İrsaliyeyi faturalandırma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnIrsaliyeYazdir:
-          description: faturaBtnIrsaliyeYazdir açıklaması.
+          description: İrsaliye yazdırma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnMakbuzBas:
-          description: faturaBtnMakbuzBas açıklaması.
+          description: Makbuz basma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnRaporAl:
-          description: faturaBtnRaporAl açıklaması.
+          description: Fatura raporu alma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnYeniAlisFaturasi:
-          description: faturaBtnYeniAlisFaturasi açıklaması.
+          description: Yeni alış faturası butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnYeniIrsaliye:
-          description: faturaBtnYeniIrsaliye açıklaması.
+          description: Yeni irsaliye butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         faturaBtnYeniSatisFaturasi:
-          description: faturaBtnYeniSatisFaturasi açıklaması.
+          description: Yeni satış faturası butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         fiyatUpdate:
-          description: fiyatUpdate açıklaması.
+          description: Fiyat güncelleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         gider:
-          description: gider açıklaması.
+          description: Gider bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnDuzelt:
-          description: giderBtnDuzelt açıklaması.
+          description: Gider düzeltme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnDuzenle:
-          description: giderBtnDuzenle açıklaması.
+          description: Gider düzenleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnEkle:
-          description: giderBtnEkle açıklaması.
+          description: Gider ekleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnGelirGiderSil:
-          description: giderBtnGelirGiderSil açıklaması.
+          description: Gelir/Gider silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnGelirIsle:
-          description: giderBtnGelirIsle açıklaması.
+          description: Gelir işleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnGiderIsle:
-          description: giderBtnGiderIsle açıklaması.
+          description: Gider işleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnOdemeTahsilat:
-          description: giderBtnOdemeTahsilat açıklaması.
+          description: Ödeme/Tahsilat butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderBtnSil:
-          description: giderBtnSil açıklaması.
+          description: Gider silme butonu.  
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         giderGrbRaporlama:
-          description: giderGrbRaporlama açıklaması.
+          description: Gider raporlama butonu.
           maxLength: 10
           minLength: 0
           nullable: true
@@ -34645,188 +34743,195 @@ components:
           format: int32
           type: integer
         izleme:
+          description: İzleme durumu.
           nullable: true
           type: boolean
         kasa:
-          description: kasa açıklaması.
+          description: Kasa bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnBankayaVirman:
-          description: kasaBtnBankayaVirman açıklaması.
+          description: Bankaya virman butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnCikisYap:
-          description: kasaBtnCikisYap açıklaması.
+          description: Kasa çıkışı yapma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnDuzelt:
-          description: kasaBtnDuzelt açıklaması.
+          description:  Kasa düzeltme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnDuzenle:
-          description: kasaBtnDuzenle açıklaması.
+          description: Kasa düzenleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnEkle:
-          description: kasaBtnEkle açıklaması.
+          description: Kasa ekleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnGirisYap:
-          description: kasaBtnGirisYap açıklaması.
+          description: Kasa girişi yapma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnKasaSil:
-          description: kasaBtnKasaSil açıklaması.
+          description: Kasa silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnKasadanKasayaVirman:
-          description: kasaBtnKasadanKasayaVirman açıklaması.
+          description: Kasadan kasaya virman butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnSil:
-          description: kasaBtnSil açıklaması.
+          description: Kasa silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kasaBtnYazdir:
-          description: kasaBtnYazdir açıklaması.
+          description: Kasa yazdırma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         kullanici:
-          description: Kullanıcı adı.
+          description: Kullanıcı bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         kullaniciEski:
+          description: Eski kullanıcı bilgisi.
           nullable: true
           type: string
         personelTakip:
+          description: Personel takip bilgisi.
           maxLength: 255
           minLength: 0
           type: string
         programAyarListe:
+          description: Program ayar listesi.
           nullable: true
           type: string
         satis:
-          description: satis açıklaması.
+          description: Satış bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         sifre:
-          description: sifre açıklaması.
+          description: Şifre bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
           type: string
         sifreEski:
+          description: Eski şifre bilgisi.
           nullable: true
           type: string
         stok:
-          description: stok açıklaması.
+          description: Stok bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnDuzelt:
-          description: stokBtnDuzelt açıklaması.
+          description: Stok düzeltme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnEtiketBas:
-          description: stokBtnEtiketBas açıklaması.
+          description: Stok etiket basma butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnSil:
-          description: stokBtnSil açıklaması.
+          description: Stok silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnStokCikisi:
-          description: stokBtnStokCikisi açıklaması.
+          description: Stok çıkışı butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnStokDuzenle:
-          description: stokBtnStokDuzenle açıklaması.
+          description: Stok düzenleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnStokGirisi:
-          description: stokBtnStokGirisi açıklaması.
+          description: Stok girişi butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnStokHareket:
-          description: stokBtnStokHareket açıklaması.
+          description: Stok hareketi butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnStokKaydet:
-          description: stokBtnStokKaydet açıklaması.
+          description: Stok kaydetme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnStoksil:
-          description: stokBtnStoksil açıklaması.
+          description: Stok silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnSubedenAktar:
+          description: Şubeden stok aktarma butonu.
           maxLength: 255
           minLength: 0
           type: string
         stokBtnTopluStokRapor:
-          description: stokBtnTopluStokRapor açıklaması.
+          description: Toplu stok raporu butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokBtnYeniStok:
-          description: stokBtnYeniStok açıklaması.
+          description: Yeni stok ekleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stokTxtAlisFiyati:
-          description: stokTxtAlisFiyati açıklaması.
+          description: Stok alış fiyatı.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         stoksuzUrunEkleme:
+          description: Stoksuz ürün ekleme.
           maxLength: 255
           minLength: 0
           type: string
@@ -34837,102 +34942,117 @@ components:
           nullable: true
           type: string
         taksit:
-          description: taksit açıklaması.
+          description: Taksit bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         taksitBtnHizliTaksitlendir:
-          description: taksitBtnHizliTaksitlendir açıklaması.
+          description: Hızlı taksitlendirme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         taksitBtnTaksitDuzenle:
-          description: taksitBtnTaksitDuzenle açıklaması.
+          description: Taksit düzenleme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         taksitBtnTaksitIslIadeEt:
-          description: taksitBtnTaksitIslIadeEt açıklaması.
+          description: Taksit işlemi iade butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         taksitBtnTaksitIslTahsilEt:
-          description: taksitBtnTaksitIslTahsilEt açıklaması.
+          description: Taksit işlemi tahsil etme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         taksitBtnTaksitSil:
-          description: taksitBtnTaksitSil açıklaması.
+          description: Taksit silme butonu.
           maxLength: 10
           minLength: 0
           nullable: true
           type: string
         teklifBtnAlinanSiparisIrsaliyeDonustur:
+          description: Alınan siparişi irsaliyeye dönüştürme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnAlinanTeklifVerilenSipariseDonustur:
+          description: Alınan teklifi verilen siparişe dönüştürme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnBasTeklifSiparis:
+          description: Teklif/sipariş basma butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnDuzeltTeklifSiparis:
+          description: Teklif/sipariş düzeltme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnIptalEtTeklifSiparis:
+          description: Teklif/sipariş iptal etme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnRaporAl:
+          description: Teklif/sipariş raporu alma butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnSilTeklifSiparis:
+          description: Teklif/sipariş silme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnTeklifSiparis:
+          description: Teklif/sipariş butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnVerilenSiparisFaturaDonustur:
+          description: Verilen siparişi faturaya dönüştürme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnVerilenTeklifAlinanSipariseDonustur:
+          description: Verilen teklifi alınan siparişe dönüştürme butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnYeniAlinanSiparis:
+          description: Yeni alınan sipariş butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnYeniAlinanTeklif:
+          description: Yeni alınan teklif butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnYeniVerilenSiparis:
+          description: Yeni verilen sipariş butonu.
           maxLength: 255
           minLength: 0
           type: string
         teklifBtnYeniVerilenTeklif:
+          description: Yeni verilen teklif butonu.
           maxLength: 255
           minLength: 0
           type: string
         vergiNo:
+          description: Vergi numarası.
           nullable: true
           type: string
         yonetim:
-          description: yonetim açıklaması.
+          description: Yönetim bilgisi.
           maxLength: 10
           minLength: 0
           nullable: true
@@ -35065,7 +35185,7 @@ components:
       additionalProperties: false
       properties:
         deger:
-          description: deger açıklaması.
+          description: Yetki değeri.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -35079,7 +35199,7 @@ components:
           nullable: true
           type: integer
         tag:
-          description: tag açıklaması.
+          description: Etiket bilgisi.
           maxLength: 255
           minLength: 0
           nullable: true
@@ -35166,7 +35286,7 @@ components:
           nullable: true
           type: string
         token:
-          description: token açıklaması.
+          description: Token.
           maxLength: 255
           minLength: 0
           nullable: true
