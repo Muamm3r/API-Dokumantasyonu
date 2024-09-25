@@ -23,20 +23,3 @@ API dökümantasyon sayfasının ekran görüntüleri linkten ulaşabilirsiniz:
 
 API dökümantasyonunu kullanarak API uç noktalarına nasıl istek yapılacağını öğrenebilir ve projeyi daha verimli bir şekilde kullanabilirsiniz. Dökümantasyon sayfasında her bir uç nokta için örnekler ve detaylı açıklamalar mevcuttur.
 
-#### Örnek Python İsteği
-import requests
-url = "https://virtserver.swaggerhub.com/Muammer/Bilsoft-Api-Documentation2/v1.2/api/ApiKullanici/add"
-payload = {
-  "apitur": "string",
-  "entegrasyontur": "string",
-  "id": 0,
-  "kullanici": "string",
-  "sifre": "string"
-}
-headers = {
-  "Content-Type": "application/*+json",
-  "Authorization": "YOUR_API_KEY_HERE"
-}
-response = requests.post(url, json=payload, headers=headers)
-data = response.json()
-print(data)
